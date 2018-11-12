@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+  <!--
+  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  + Copyright (C) Elektrobit
+  + All rights reserved
+  +
+  + NAME: plugin.xml
+  +
+  + $Id: plugin.xml,v 1.111 2009/04/15 13:12:57 mawe2550 Exp $
+  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  -->
+
+  <extension point="dreisoft.tresos.application.core.plugin.customization">
+    <customization 
+      id="EBtresosVariant"
+      applications="
+      dreisoft.tresos.application.launcher2.plugin.ApplicationTresosGUI
+      dreisoft.tresos.application.launcher2.plugin.ApplicationTresosCmd"
+      toolVersion="16.0.0  b141014-0350">
+
+      <variant name="EB tresos"
+        version=""
+        suffix=""
+        
+       />
+    </customization>
+  </extension>
+
+</plugin>
+

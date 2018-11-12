@@ -1,0 +1,93 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2014)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**   $FILENAME   : WdgTst.xdm $                                               **
+**                                                                            **
+**   $CC VERSION : \main\13 $                                                 **
+**                                                                            **
+**   $DATE       : 2015-07-20 $                                               **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX                                                **
+**                                                                            **
+**  VARIANT   : VariantLinkTime                                               **
+**                                                                            **
+**  AUTHOR    : DL-BLR-ATV-STC                                                **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY:[cover parentID=]                                            **
+**                                                                            **
+**  DESCRIPTION  : XML Data Model for WdgTst driver                           **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : Aurix-HE_SafeTlib_DS_CPU_Safety_WDGTest.docm, Ver 0.4  **
+**                                                                            **
+**  MAY BE CHANGED BY USER [yes/no]: No                                       **
+**                                                                            **
+*******************************************************************************/
+-->
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar"  
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX" type="AR-PACKAGE">        
+        <a:a name="UUID" value="93d9a111-9d4c-47b6-98cb-fe5aec24c8b0"/>
+        <d:lst type="ELEMENTS">
+          <d:chc name="WdgTst" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="RELEASE" value="asc:4.0"/>        
+              <a:a name="UUID" value="03eaa8c5-137e-402e-823d-8d7776c1de4d"/>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:da name="DEFAULT" value="VariantLinkTime"/>
+                <a:da name="RANGE" value="VariantLinkTime"/>
+              </v:var>
+              <v:lst name="WdgTstConfigSet" type="MULTIPLE-CONFIGURATION-CONTAINER">
+                <a:da name="MIN" value="1"/>
+                <v:ctr name="WdgTstConfigSet" type="MULTIPLE-CONFIGURATION-CONTAINER">
+                  <a:a name="DESC" 
+                       value="This is the base container that contains the link time configuration parameters"/>
+                  <a:a name="UUID" value="ccda81dc-46cf-4171-858b-7c947884702f"/>
+                  
+                  <v:var name="WdgTstPflowmEn" type="BOOLEAN">
+                    <a:da name="TOOLTIP" value="Defines whether the program flow scheme of the watchdog shall be tested or not."/>
+                    <a:a name="DESC">
+                      <a:v>This parameter defines whether the program flow scheme of the watchdog shall be tested or not. If not, only the ENDINIT protection scheme will be tested.</a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="Link">VariantLinkTime</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="132db8da-97cc-4ad8-a8c3-187626822716"/>
+                    <a:da name="DEFAULT" value="true"/>
+                   </v:var>
+                  
+                </v:ctr>                  
+              </v:lst>
+              </v:ctr>         
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+</datamodel>

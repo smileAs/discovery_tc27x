@@ -1,0 +1,22 @@
+
+Name: generate/inc/SafeWdgIf_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377424043505134082806213429713202220341198848975915752
+ 5591468387886636144199131735815498763230239261278170
+SignatureKeyID: Infineon
+
+Name: generate/src/SafeWdgIf_PBCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594753062770301774112347227435836286789140913991790287
+ 932008930050043020276150198730576280868829019429707753
+SignatureKeyID: Infineon
+
+Name: config/SafeWdgIf.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377425075083937710194932762494594688941360810437882336
+ 2508106569566137306302403457397758484583119684062887
+SignatureKeyID: Infineon
+

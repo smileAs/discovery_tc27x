@@ -1,0 +1,29 @@
+
+Name: config/Crc.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377423154014029334631607997924169482803216544637939915
+ 1676809885690054332834932347243537797259824105842382
+SignatureKeyID: Infineon
+
+Name: generate/Crc_ConfigDoc.html
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594746094054032862957989281354908363681128765506416350
+ 405673778537198456684126860938138990468052384351817086
+SignatureKeyID: Infineon
+
+Name: generate/inc/Crc_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594755117443288262650629558189798108502044481768728020
+ 374821880858155957273817926406700589964880659830627599
+SignatureKeyID: Infineon
+
+Name: generate/Crc_Bswmd.arxml
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594773963155917688013465053130960089966063974837697153
+ 478581389553000484394450899856027150514290795019203419
+SignatureKeyID: Infineon
+

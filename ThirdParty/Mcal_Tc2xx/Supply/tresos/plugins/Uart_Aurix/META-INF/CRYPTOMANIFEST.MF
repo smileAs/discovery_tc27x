@@ -1,0 +1,29 @@
+
+Name: config/Uart.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377422252332720116154408038979456401231131884864529302
+ 1130224538428479305677833210562343138926040120124083
+SignatureKeyID: Infineon
+
+Name: generate/Uart_Bswmd.arxml
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377424275861313111882473341745972735771409803805093626
+ 8506041499524247446281205422637982979973080011478331
+SignatureKeyID: Infineon
+
+Name: generate/inc/Uart_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594741745087822543794338863300930949460570826667702245
+ 962700933139129583090415627843642491886036162068731302
+SignatureKeyID: Infineon
+
+Name: generate/src/Uart_PBCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377421833603039886791212692095139882692003342927367285
+ 5637058246725934300968918319290759034240644743547520
+SignatureKeyID: Infineon
+

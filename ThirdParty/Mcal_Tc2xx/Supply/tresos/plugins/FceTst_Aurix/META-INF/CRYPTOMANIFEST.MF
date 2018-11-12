@@ -1,0 +1,22 @@
+
+Name: config/FceTst.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377425689308495581562962583585778543033261649581712080
+ 3828797021078724486213471600848833087292210544181461
+SignatureKeyID: Infineon
+
+Name: generate/src/FceTst_LCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594748134893820954511751864791136121368193516239233063
+ 784567245537842297006163775782961706478322539509142778
+SignatureKeyID: Infineon
+
+Name: generate/inc/FceTst_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377426992492556789588261544805465583271114408218093222
+ 2971478500793164578709418120361714866147418941989648
+SignatureKeyID: Infineon
+

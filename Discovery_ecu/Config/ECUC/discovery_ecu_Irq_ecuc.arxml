@@ -1,0 +1,1248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-1.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ActiveEcuC</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-MODULE-CONFIGURATION-VALUES UUID="d7b8af3d-78bb-4343-be42-52e52e8be281">
+          <SHORT-NAME>Irq</SHORT-NAME>
+          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/AURIX/Irq</DEFINITION-REF>
+          <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+          <MODULE-DESCRIPTION-REF DEST="BSW-IMPLEMENTATION">/AURIX/Irq_Impl</MODULE-DESCRIPTION-REF>
+          <CONTAINERS>
+            <ECUC-CONTAINER-VALUE UUID="4f9565f7-3f31-4a61-86e6-58bb084ec8d7">
+              <SHORT-NAME>IrqGeneral</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqGeneral</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX/Irq/IrqGeneral/IrqOsekEnable</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="a7c6f1e2-62f9-48af-9d43-b3d7618f77ba">
+              <SHORT-NAME>IrqQspiConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="f82ccd7e-9189-403b-9218-b290f8de7b7f">
+                  <SHORT-NAME>IrqQspiCatConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="2a505b46-7fa1-43dc-839d-7fce17607427">
+                      <SHORT-NAME>IrqQspiTxCatConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiTxCatConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiTxCatConfig/IrqQspi0TxCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiTxCatConfig/IrqQspi1TxCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiTxCatConfig/IrqQspi2TxCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiTxCatConfig/IrqQspi3TxCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="82fb9910-4508-48fc-bc75-6374ed369c4d">
+                      <SHORT-NAME>IrqQspiRxCatConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiRxCatConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiRxCatConfig/IrqQspi0RxCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiRxCatConfig/IrqQspi1RxCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiRxCatConfig/IrqQspi2RxCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiRxCatConfig/IrqQspi3RxCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="b352b08c-f575-44f4-9b93-c4afdd6c5a5c">
+                      <SHORT-NAME>IrqQspiErrCatConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiErrCatConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiErrCatConfig/IrqQspi0ErrCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiErrCatConfig/IrqQspi1ErrCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiErrCatConfig/IrqQspi2ErrCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiErrCatConfig/IrqQspi3ErrCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="e3756193-fe35-421b-9500-665d8f97c406">
+                      <SHORT-NAME>IrqQspiPTCatConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiPTCatConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiPTCatConfig/IrqQspi0PTCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiPTCatConfig/IrqQspi1PTCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiPTCatConfig/IrqQspi2PTCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiPTCatConfig/IrqQspi3PTCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="4e996932-1189-43bc-969c-327d714fe2a6">
+                      <SHORT-NAME>IrqQspiHCCatConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiHCCatConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiHCCatConfig/IrqQspi0HCCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiHCCatConfig/IrqQspi1HCCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiHCCatConfig/IrqQspi2HCCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiHCCatConfig/IrqQspi3HCCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="f9b05c3a-eed3-43e7-b093-011ad7313fbb">
+                      <SHORT-NAME>IrqQspiUDCatConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiUDCatConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiUDCatConfig/IrqQspi0UDCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiUDCatConfig/IrqQspi1UDCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiUDCatConfig/IrqQspi2UDCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiCatConfig/IrqQspiUDCatConfig/IrqQspi3UDCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="9bf44316-39b3-4f3c-b134-ac566a31c7f8">
+                  <SHORT-NAME>IrqQspiPrioConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="184bada1-67c2-4a4e-a272-27a5677dab7f">
+                      <SHORT-NAME>IrqQspiTxPrioConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiTxPrioConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiTxPrioConfig/IrqQspi0TxPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiTxPrioConfig/IrqQspi1TxPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiTxPrioConfig/IrqQspi2TxPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiTxPrioConfig/IrqQspi3TxPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="2fd72f5e-07ff-4594-ad0c-5b27d755f846">
+                      <SHORT-NAME>IrqQspiRxPrioConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiRxPrioConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiRxPrioConfig/IrqQspi0RxPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiRxPrioConfig/IrqQspi1RxPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiRxPrioConfig/IrqQspi2RxPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiRxPrioConfig/IrqQspi3RxPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="f9150373-dfac-4d0a-92da-17e6fe35732c">
+                      <SHORT-NAME>IrqQspiErrPrioConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiErrPrioConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiErrPrioConfig/IrqQspi0ErrPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiErrPrioConfig/IrqQspi1ErrPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiErrPrioConfig/IrqQspi2ErrPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiErrPrioConfig/IrqQspi3ErrPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="c393f4a4-e203-4859-ae50-a745470efb4b">
+                      <SHORT-NAME>IrqQspiPTPrioConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiPTPrioConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiPTPrioConfig/IrqQspi0PTPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiPTPrioConfig/IrqQspi1PTPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiPTPrioConfig/IrqQspi2PTPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiPTPrioConfig/IrqQspi3PTPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="10c845d8-722d-476a-8a7c-d2998bb7ae66">
+                      <SHORT-NAME>IrqQspiHCPrioConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiHCPrioConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiHCPrioConfig/IrqQspi0HCPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiHCPrioConfig/IrqQspi1HCPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiHCPrioConfig/IrqQspi2HCPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiHCPrioConfig/IrqQspi3HCPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="3c07879e-a9b3-476d-94ef-a9851e4eddc9">
+                      <SHORT-NAME>IrqQspiUDPrioConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiUDPrioConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiUDPrioConfig/IrqQspi0UDPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiUDPrioConfig/IrqQspi1UDPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiUDPrioConfig/IrqQspi2UDPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiPrioConfig/IrqQspiUDPrioConfig/IrqQspi3UDPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="fb741c5a-9ed1-40ef-909a-5125e6b2dd02">
+                  <SHORT-NAME>IrqQspiTosConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="7a47f4f1-f99c-44c8-9e02-95fc00aa847f">
+                      <SHORT-NAME>IrqQspiTxTosConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiTxTosConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiTxTosConfig/IrqQspi0TxTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiTxTosConfig/IrqQspi1TxTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiTxTosConfig/IrqQspi2TxTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiTxTosConfig/IrqQspi3TxTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="f6a60009-056c-48ba-b269-6e7f74b3f4e5">
+                      <SHORT-NAME>IrqQspiRxTosConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiRxTosConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiRxTosConfig/IrqQspi0RxTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiRxTosConfig/IrqQspi1RxTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiRxTosConfig/IrqQspi2RxTos</DEFINITION-REF>
+                          <VALUE>CPU1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiRxTosConfig/IrqQspi3RxTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="24d3cabf-99ec-42bc-b20a-7e68f26a2d65">
+                      <SHORT-NAME>IrqQspiErrTosConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiErrTosConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiErrTosConfig/IrqQspi0ErrTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiErrTosConfig/IrqQspi1ErrTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiErrTosConfig/IrqQspi2ErrTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiErrTosConfig/IrqQspi3ErrTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="9dbc13ad-fc5e-438a-aafb-dce3e0d690bf">
+                      <SHORT-NAME>IrqQspiPTTosConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiPTTosConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiPTTosConfig/IrqQspi0PTTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiPTTosConfig/IrqQspi1PTTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiPTTosConfig/IrqQspi2PTTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiPTTosConfig/IrqQspi3PTTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="0c5ff0e9-e5ef-49a0-86f0-b67cc18a282c">
+                      <SHORT-NAME>IrqQspiHCTosConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiHCTosConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiHCTosConfig/IrqQspi0HCTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiHCTosConfig/IrqQspi1HCTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiHCTosConfig/IrqQspi2HCTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiHCTosConfig/IrqQspi3HCTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="2a565dd2-9684-4f72-9aba-630cbfcf5a51">
+                      <SHORT-NAME>IrqQspiUDTosConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiUDTosConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiUDTosConfig/IrqQspi0UDTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiUDTosConfig/IrqQspi1UDTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiUDTosConfig/IrqQspi2UDTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqQspiConfig/IrqQspiTosConfig/IrqQspiUDTosConfig/IrqQspi3UDTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="730cba89-968e-406a-aeed-60e3631ae1b9">
+              <SHORT-NAME>IrqGptConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqGptConfig</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="2734044c-d9d9-4e6b-8a3c-6461a9a923d2">
+                  <SHORT-NAME>IrqGpt120Config</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="9aad7e2e-68f0-4442-a5e8-870683b6832c">
+                      <SHORT-NAME>IrqGpt120CatConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120CatConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120CatConfig/IrqGpt120CARPELCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120CatConfig/IrqGpt120T2Cat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120CatConfig/IrqGpt120T3Cat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120CatConfig/IrqGpt120T4Cat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120CatConfig/IrqGpt120T5Cat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120CatConfig/IrqGpt120T6Cat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="a9f648bf-8fc0-4a09-82c3-fc9c6943ac0b">
+                      <SHORT-NAME>IrqGpt120PrioConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120PrioConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120PrioConfig/IrqGpt120CARPELPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120PrioConfig/IrqGpt120T2Prio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120PrioConfig/IrqGpt120T3Prio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120PrioConfig/IrqGpt120T4Prio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120PrioConfig/IrqGpt120T5Prio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120PrioConfig/IrqGpt120T6Prio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="b49e9908-376d-43dd-a238-65f4507af1e2">
+                      <SHORT-NAME>IrqGpt120TosConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120TosConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120TosConfig/IrqGpt120CARPELTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120TosConfig/IrqGpt120T2Tos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120TosConfig/IrqGpt120T3Tos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120TosConfig/IrqGpt120T4Tos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120TosConfig/IrqGpt120T5Tos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqGptConfig/IrqGpt120Config/IrqGpt120TosConfig/IrqGpt120T6Tos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="b045978e-d17a-4307-8857-d18de8a730a2">
+              <SHORT-NAME>IrqGtmConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqGtmConfig</DEFINITION-REF>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="c9929b79-645d-4e7b-98bc-f8ac4404b668">
+              <SHORT-NAME>CommonPublishedInformation</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/CommonPublishedInformation</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/CommonPublishedInformation/ArMajorVersion</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/CommonPublishedInformation/ArMinorVersion</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/CommonPublishedInformation/ArPatchVersion</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/CommonPublishedInformation/SwMajorVersion</DEFINITION-REF>
+                  <VALUE>5</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/CommonPublishedInformation/SwMinorVersion</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/CommonPublishedInformation/SwPatchVersion</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/CommonPublishedInformation/ModuleId</DEFINITION-REF>
+                  <VALUE>255</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/CommonPublishedInformation/VendorId</DEFINITION-REF>
+                  <VALUE>17</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/AURIX/Irq/CommonPublishedInformation/Release</DEFINITION-REF>
+                  <VALUE>_TRICORE_TC277</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="e9c09518-0d73-41e3-8168-c430dc7804e9">
+              <SHORT-NAME>IrqAdcConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqAdcConfig</DEFINITION-REF>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="eeb8da26-d711-43ae-8b75-fe5b3787e352">
+              <SHORT-NAME>IrqAscLinConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqAscLinConfig</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="cd472cdc-2b7c-41bf-b512-b1d43a7dbc9c">
+                  <SHORT-NAME>IrqAscLinCatConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqAscLinConfig/IrqAscLinCatConfig</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="f0bf49ac-6872-4e19-95b3-87ccabca3873">
+                      <SHORT-NAME>IrqAscLinTxCatConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqAscLinConfig/IrqAscLinCatConfig/IrqAscLinTxCatConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqAscLinConfig/IrqAscLinCatConfig/IrqAscLinTxCatConfig/IrqAscLin0TxCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="4c00556c-2b7b-4d63-a127-b01c1e7fd466">
+                      <SHORT-NAME>IrqAscLinRxCatConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqAscLinConfig/IrqAscLinCatConfig/IrqAscLinRxCatConfig</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="65aac79f-645e-4e36-80c9-43b4ab1713c7">
+                      <SHORT-NAME>IrqAscLinErrCatConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqAscLinConfig/IrqAscLinCatConfig/IrqAscLinErrCatConfig</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="13120c0c-d4d2-4d5c-b3b1-7fcd84b55cd3">
+                  <SHORT-NAME>IrqAscLinPrioConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqAscLinConfig/IrqAscLinPrioConfig</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="5164cf04-40e1-423c-abee-f8465963f198">
+                      <SHORT-NAME>IrqAscLinTxPrioConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqAscLinConfig/IrqAscLinPrioConfig/IrqAscLinTxPrioConfig</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="14ead89f-ea44-4b25-ad7a-0b4dd622db7c">
+                      <SHORT-NAME>IrqAscLinRxPrioConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqAscLinConfig/IrqAscLinPrioConfig/IrqAscLinRxPrioConfig</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="72bbc339-3fec-4580-8ef7-db606b7459d6">
+                      <SHORT-NAME>IrqAscLinErrPrioConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqAscLinConfig/IrqAscLinPrioConfig/IrqAscLinErrPrioConfig</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="94ab57db-3e1d-48ba-b66a-3b87c1d8666f">
+                  <SHORT-NAME>IrqAscLinTosConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqAscLinConfig/IrqAscLinTosConfig</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="93666539-bacc-4861-aa43-505c9dd97aa3">
+                      <SHORT-NAME>IrqAscLinTxTosConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqAscLinConfig/IrqAscLinTosConfig/IrqAscLinTxTosConfig</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="0e7a6f1a-7e7f-4ec9-ad78-e3bdb00d2d29">
+                      <SHORT-NAME>IrqAscLinRxTosConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqAscLinConfig/IrqAscLinTosConfig/IrqAscLinRxTosConfig</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="a6e9c5af-0b19-4213-975d-119766afe61a">
+                      <SHORT-NAME>IrqAscLinErrTosConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqAscLinConfig/IrqAscLinTosConfig/IrqAscLinErrTosConfig</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="61c20de4-9b09-4ea9-94b7-b8de93477a76">
+              <SHORT-NAME>IrqCCU6Config</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqCCU6Config</DEFINITION-REF>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="27805428-034b-4e3b-9245-38a7e518abfc">
+              <SHORT-NAME>IrqCanConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqCanConfig</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="725c9dc9-491a-4e43-829a-78c439fb989d">
+                  <SHORT-NAME>IrqCanCatConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqCanConfig/IrqCanCatConfig</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="0abf89b1-9801-4ad0-a551-99da68ffa973">
+                  <SHORT-NAME>IrqCanPrioConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqCanConfig/IrqCanPrioConfig</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="2ef6c960-14f9-4470-807f-49ffaeb0247b">
+                  <SHORT-NAME>IrqCanTosConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqCanConfig/IrqCanTosConfig</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="d48b4db1-5f54-45c6-9513-baf0184807af">
+              <SHORT-NAME>IrqDSAdcConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqDSAdcConfig</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="697023f9-5fdb-4d49-a63f-988b704c437e">
+                  <SHORT-NAME>IrqDSAdcCatConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqDSAdcConfig/IrqDSAdcCatConfig</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="52f88934-64ee-4237-937a-70061580d898">
+                  <SHORT-NAME>IrqDSAdcPrioConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqDSAdcConfig/IrqDSAdcPrioConfig</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="5522d574-a098-49a1-b31c-652ce43b7891">
+                  <SHORT-NAME>IrqDSAdcTosConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqDSAdcConfig/IrqDSAdcTosConfig</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="9a926dbf-8698-477a-8fa6-ac4c08634fd7">
+              <SHORT-NAME>IrqDmaConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqDmaConfig</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="88c91338-0572-48bc-9647-c25a72fc93d9">
+                  <SHORT-NAME>IrqDmaCatConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqDmaConfig/IrqDmaCatConfig</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="a27e3767-7347-4bb9-ad7b-35115ea3a4ca">
+                  <SHORT-NAME>IrqDmaPrioConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqDmaConfig/IrqDmaPrioConfig</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="6690d67a-84f3-4ccd-90e1-19f5941ab09d">
+                  <SHORT-NAME>IrqDmaTosConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqDmaConfig/IrqDmaTosConfig</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="3fca7b66-2f88-4ec2-8b49-e2bed9d60416">
+              <SHORT-NAME>IrqETHConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqETHConfig</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="bfa901cc-f78e-428e-9ac9-a28a64a37109">
+                  <SHORT-NAME>IrqETHCatConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqETHConfig/IrqETHCatConfig</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqETHConfig/IrqETHCatConfig/IrqETHSRCat</DEFINITION-REF>
+                      <VALUE>CAT1</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="45135899-e02d-4e7c-9604-3263f02574c6">
+                  <SHORT-NAME>IrqETHPrioConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqETHConfig/IrqETHPrioConfig</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqETHConfig/IrqETHPrioConfig/IrqETHSRPrio</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="219d46f1-a0d3-489d-ba58-a107331bacb1">
+                  <SHORT-NAME>IrqETHTosConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqETHConfig/IrqETHTosConfig</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqETHConfig/IrqETHTosConfig/IrqETHSRTos</DEFINITION-REF>
+                      <VALUE>CPU0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="82ee4283-f959-4a7a-8f0e-d42f5b97e3b0">
+              <SHORT-NAME>IrqFlexRayConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqFlexRayConfig</DEFINITION-REF>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="087ef804-b49c-4e5a-af0e-fed8d5df425b">
+              <SHORT-NAME>IrqGPSRGroupConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqGPSRGroupConfig</DEFINITION-REF>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="e160fba0-13be-49dc-8eff-4728a4512b23">
+              <SHORT-NAME>IrqHSMConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHSMConfig</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="6f14efd8-ad36-4111-a28a-c9f862890b0b">
+                  <SHORT-NAME>IrqHSMCatConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHSMConfig/IrqHSMCatConfig</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHSMConfig/IrqHSMCatConfig/IrqHSMSR0Cat</DEFINITION-REF>
+                      <VALUE>CAT1</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHSMConfig/IrqHSMCatConfig/IrqHSMSR1Cat</DEFINITION-REF>
+                      <VALUE>CAT1</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="5a63fb51-99f0-4196-88d8-d6f3edb404f6">
+                  <SHORT-NAME>IrqHSMPrioConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHSMConfig/IrqHSMPrioConfig</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHSMConfig/IrqHSMPrioConfig/IrqHSMSR0Prio</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHSMConfig/IrqHSMPrioConfig/IrqHSMSR1Prio</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="d71ce1ae-1db5-4f43-9a83-4b8b9fc84571">
+                  <SHORT-NAME>IrqHSMTosConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHSMConfig/IrqHSMTosConfig</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHSMConfig/IrqHSMTosConfig/IrqHSMSR0Tos</DEFINITION-REF>
+                      <VALUE>CPU0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHSMConfig/IrqHSMTosConfig/IrqHSMSR1Tos</DEFINITION-REF>
+                      <VALUE>CPU0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="4e7281db-fbde-4745-880a-8a2211669a40">
+              <SHORT-NAME>IrqHsslConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHsslConfig</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="cef82fc0-e49b-4a08-9500-9827875a13df">
+                  <SHORT-NAME>IrqHsslCatConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="942e0636-1ed3-4c7a-8a32-c1b90b7f8669">
+                      <SHORT-NAME>IrqHsslCokCatConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslCokCatConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslCokCatConfig/IrqHssl0CokCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslCokCatConfig/IrqHssl1CokCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslCokCatConfig/IrqHssl2CokCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslCokCatConfig/IrqHssl3CokCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslCokCatConfig/IrqHssl4CokCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="908d3b93-74a6-4009-ae89-369b8d59ba79">
+                      <SHORT-NAME>IrqHsslTrgCatConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslTrgCatConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslTrgCatConfig/IrqHssl0TrgCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslTrgCatConfig/IrqHssl1TrgCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslTrgCatConfig/IrqHssl2TrgCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslTrgCatConfig/IrqHssl3TrgCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslTrgCatConfig/IrqHssl4TrgCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="e36540bd-5023-4d38-b2fb-1e42751b715c">
+                      <SHORT-NAME>IrqHsslRdiCatConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslRdiCatConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslRdiCatConfig/IrqHssl0RdiCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslRdiCatConfig/IrqHssl1RdiCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslRdiCatConfig/IrqHssl2RdiCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslRdiCatConfig/IrqHssl3RdiCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslRdiCatConfig/IrqHssl4RdiCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="ef951608-0f86-403a-b5bd-2055a08a0a44">
+                      <SHORT-NAME>IrqHsslErrCatConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslErrCatConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslErrCatConfig/IrqHssl0ErrCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslErrCatConfig/IrqHssl1ErrCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslErrCatConfig/IrqHssl2ErrCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslErrCatConfig/IrqHssl3ErrCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslErrCatConfig/IrqHssl4ErrCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="e9307abe-0c8c-4e7f-abbe-99470ee4b761">
+                      <SHORT-NAME>IrqHsslExiCatConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslExiCatConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslCatConfig/IrqHsslExiCatConfig/IrqHsslExiCat</DEFINITION-REF>
+                          <VALUE>CAT1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="5755ac19-b52a-4aa2-b106-4ab4f50ff960">
+                  <SHORT-NAME>IrqHsslPrioConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="4da633c9-7ef5-44bf-8c05-796ed8b5536e">
+                      <SHORT-NAME>IrqHsslCokPrioConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslCokPrioConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslCokPrioConfig/IrqHssl0CokPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslCokPrioConfig/IrqHssl1CokPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslCokPrioConfig/IrqHssl2CokPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslCokPrioConfig/IrqHssl3CokPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslCokPrioConfig/IrqHssl4CokPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="8447661f-301d-41a0-90fd-8ad175f30f11">
+                      <SHORT-NAME>IrqHsslTrgPrioConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslTrgPrioConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslTrgPrioConfig/IrqHssl0TrgPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslTrgPrioConfig/IrqHssl1TrgPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslTrgPrioConfig/IrqHssl2TrgPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslTrgPrioConfig/IrqHssl3TrgPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslTrgPrioConfig/IrqHssl4TrgPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="665cc0ad-43a6-427b-ade9-0ee650dd6c1f">
+                      <SHORT-NAME>IrqHsslRdiPrioConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslRdiPrioConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslRdiPrioConfig/IrqHssl0RdiPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslRdiPrioConfig/IrqHssl1RdiPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslRdiPrioConfig/IrqHssl2RdiPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslRdiPrioConfig/IrqHssl3RdiPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslRdiPrioConfig/IrqHssl4RdiPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="3685c4a3-6557-4580-9033-d735edc41cae">
+                      <SHORT-NAME>IrqHsslErrPrioConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslErrPrioConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslErrPrioConfig/IrqHssl0ErrPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslErrPrioConfig/IrqHssl1ErrPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslErrPrioConfig/IrqHssl2ErrPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslErrPrioConfig/IrqHssl3ErrPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslErrPrioConfig/IrqHssl4ErrPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="51eadbec-016d-4269-afff-f49560bbe7f4">
+                      <SHORT-NAME>IrqHsslExiPrioConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslExiPrioConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslPrioConfig/IrqHsslExiPrioConfig/IrqHsslExiPrio</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="d34ac887-4e0e-4e6c-965e-cf7585f84d0a">
+                  <SHORT-NAME>IrqHsslTosConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="adf470a7-1070-4c6f-8875-2cf22addba15">
+                      <SHORT-NAME>IrqHsslCokTosConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslCokTosConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslCokTosConfig/IrqHssl0CokTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslCokTosConfig/IrqHssl1CokTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslCokTosConfig/IrqHssl2CokTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslCokTosConfig/IrqHssl3CokTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslCokTosConfig/IrqHssl4CokTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="36c282a3-caeb-4812-b55b-0de5f19b724a">
+                      <SHORT-NAME>IrqHsslTrgTosConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslTrgTosConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslTrgTosConfig/IrqHssl0TrgTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslTrgTosConfig/IrqHssl1TrgTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslTrgTosConfig/IrqHssl2TrgTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslTrgTosConfig/IrqHssl3TrgTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslTrgTosConfig/IrqHssl4TrgTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="602b3299-3ce0-48c7-9125-8624091d10db">
+                      <SHORT-NAME>IrqHsslRdiTosConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslRdiTosConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslRdiTosConfig/IrqHssl0RdiTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslRdiTosConfig/IrqHssl1RdiTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslRdiTosConfig/IrqHssl2RdiTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslRdiTosConfig/IrqHssl3RdiTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslRdiTosConfig/IrqHssl4RdiTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="4397345c-7c5e-4835-915b-45ed4e788dc1">
+                      <SHORT-NAME>IrqHsslErrTosConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslErrTosConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslErrTosConfig/IrqHssl0ErrTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslErrTosConfig/IrqHssl1ErrTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslErrTosConfig/IrqHssl2ErrTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslErrTosConfig/IrqHssl3ErrTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslErrTosConfig/IrqHssl4ErrTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="38d10c4e-02a9-4b92-a1fe-d4461d9615fb">
+                      <SHORT-NAME>IrqHsslExiTosConfig</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslExiTosConfig</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX/Irq/IrqHsslConfig/IrqHsslTosConfig/IrqHsslExiTosConfig/IrqHsslExiTos</DEFINITION-REF>
+                          <VALUE>CPU0</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="e56eda34-aef0-4960-9786-7e021f9ba80c">
+              <SHORT-NAME>IrqI2CConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqI2CConfig</DEFINITION-REF>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="c452c8a0-5ca2-492d-8dff-43a35540538d">
+              <SHORT-NAME>IrqMscConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqMscConfig</DEFINITION-REF>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="d183ef92-2667-48a1-bc0d-d2e5cf6e5dbf">
+              <SHORT-NAME>IrqPMU0Config</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqPMU0Config</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="77032daa-76f5-4651-ae3d-d7c73679d3a1">
+                  <SHORT-NAME>IrqPMU0CatConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqPMU0Config/IrqPMU0CatConfig</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="d870b21e-8e95-467c-8cd2-893ff34fad22">
+                  <SHORT-NAME>IrqPMU0PrioConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqPMU0Config/IrqPMU0PrioConfig</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="e2d78e10-81e6-427b-97ba-148bc8e893a6">
+                  <SHORT-NAME>IrqPMU0TosConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqPMU0Config/IrqPMU0TosConfig</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="832b30e8-4519-45cb-963c-c0b5e558c0c3">
+              <SHORT-NAME>IrqScuConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqScuConfig</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="b0b4c4a6-3edd-4fab-9a55-a8baf0877a73">
+                  <SHORT-NAME>IrqScuCatConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqScuConfig/IrqScuCatConfig</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="0f301fb1-bb24-4b69-ac2e-0d75a1861021">
+                  <SHORT-NAME>IrqScuPrioConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqScuConfig/IrqScuPrioConfig</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="c2dc78a0-0dcf-42f3-b262-be56d485972b">
+                  <SHORT-NAME>IrqScuTosConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqScuConfig/IrqScuTosConfig</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="6bae6f92-c7a2-4067-8460-db5a949cfb5f">
+              <SHORT-NAME>IrqSentConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqSentConfig</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="ef30097e-c8a9-49b3-bab7-68130b2c030f">
+                  <SHORT-NAME>IrqSentCatConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqSentConfig/IrqSentCatConfig</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="d07114fc-5a92-46e1-b5a5-1885a63df32c">
+                  <SHORT-NAME>IrqSentPrioConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqSentConfig/IrqSentPrioConfig</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="4d51bebb-8b89-4fc2-b0fd-10eef77d571d">
+                  <SHORT-NAME>IrqSentTosConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqSentConfig/IrqSentTosConfig</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="c39a5759-e86d-409f-aead-4a97828e3444">
+              <SHORT-NAME>IrqStmConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX/Irq/IrqStmConfig</DEFINITION-REF>
+            </ECUC-CONTAINER-VALUE>
+          </CONTAINERS>
+        </ECUC-MODULE-CONFIGURATION-VALUES>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

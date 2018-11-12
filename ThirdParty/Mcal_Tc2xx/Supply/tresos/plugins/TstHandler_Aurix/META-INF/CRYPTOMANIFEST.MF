@@ -1,0 +1,36 @@
+
+Name: generate/SafeTlibCD_Cfg.mak
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377421590060689440533810552239496499379904197303694068
+ 5656559690525578595070687686404508471444308362675434
+SignatureKeyID: Infineon
+
+Name: generate/inc/TstHandler_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377422347973035853920222080975671795136770726250332633
+ 5916271437606733067921289038683705312190127057609945
+SignatureKeyID: Infineon
+
+Name: generate/SafeWdgCD_Cfg.mak
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 74155374890364299313694237970403358482347021600612460742976
+ 06422456587451072324826470519597456001703290224031346320
+SignatureKeyID: Infineon
+
+Name: generate/src/TstHandler_PBCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594741052076391872101261950963373825777963755161891980
+ 364898248381409213387805881266552102050045657403576474
+SignatureKeyID: Infineon
+
+Name: config/TstHandler.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594773964568286627429872023774426531475880995078139367
+ 570591919577889647369757333783782557070419562835336621
+SignatureKeyID: Infineon
+

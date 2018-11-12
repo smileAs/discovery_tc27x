@@ -1,0 +1,22 @@
+
+Name: generate/inc/SafeWdgQspi_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377423826296869474167407122977841020925324710855956934
+ 7738450039901441865091267717014211202705680270297597
+SignatureKeyID: Infineon
+
+Name: config/SafeWdgQspi.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594773971876431639669497156643655380403611552202982530
+ 824236713442798632286536857351115251921293024741702769
+SignatureKeyID: Infineon
+
+Name: generate/src/SafeWdgQspi_PBCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377424301367932402556346373356314580987192848773504292
+ 3138774324526055557637106313396146069853739283682375
+SignatureKeyID: Infineon
+

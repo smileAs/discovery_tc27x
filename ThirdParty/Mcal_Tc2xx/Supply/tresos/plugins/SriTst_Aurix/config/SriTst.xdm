@@ -1,0 +1,637 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2014)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**   $FILENAME   : SriTst.xdm $                                               **
+**                                                                            **
+**   $CC VERSION : \main\29 $                                                 **
+**                                                                            **
+**   $DATE       : 2016-06-22 $                                               **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX                                                **
+**                                                                            **
+**  VARIANT   : VariantLinkTime                                               **
+**                                                                            **
+**  AUTHOR    : DL-BLR-ATV-STC                                                **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY:[cover parentID=]                                            **
+**                                                                            **
+**  DESCRIPTION  : XML Data Model for SriTst driver                           **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) :                                                        **
+**                                                                            **
+**  MAY BE CHANGED BY USER [yes/no]: No                                       **
+**                                                                            **
+*******************************************************************************/
+-->
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX" type="AR-PACKAGE">        
+        <a:a name="UUID" value="93d9a111-9d4c-47b6-98cb-fe5aec24c8b0"/>
+        <d:lst type="ELEMENTS">
+          <d:chc name="SriTst" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="RELEASE" value="asc:4.0"/>
+              <a:a name="UUID" value="03eaa8c5-137e-402e-823d-8d7776c1de4d"/>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:da name="DEFAULT" value="VariantLinkTime"/>
+                <a:da name="RANGE">
+                  <a:v>VariantLinkTime</a:v>                  
+                </a:da>                
+              </v:var>
+            <v:lst name="SriTstConfigSet" 
+                     type="MULTIPLE-CONFIGURATION-CONTAINER">
+                <a:da name="MIN" value="1"/>  
+                <v:ctr name="SriTstConfigSet" 
+                       type="MULTIPLE-CONFIGURATION-CONTAINER">
+                <a:a name="DESC" 
+                     value="EN: This container is the base of an Configuration Set which contains the configured Sri Configuration."/>
+                <a:a name="UUID" value="3ea7abca-6ba4-4d14-befd-8bb9350fe86f"/>
+                <v:var name="LMUTestEnCpu0" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines whether the SRI EDC will include the LMU module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="98ce928e-6ed1-4968-93b2-21d90b1fa49f"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('LMUSRAMExists')='true' and ecu:get('Cpu0Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('LMUSRAMExists')='true' and ecu:get('Cpu0Exists')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('LMUSRAMExists')='true' and ecu:get('Cpu0Exists')='true'"/>
+                </v:var>
+                <v:var name="LMUTestEnCpu1" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines whether the SRI EDC will include the LMU module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="d85084e8-9b47-4340-8673-32afcb88502f"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('LMUSRAMExists')='true' and ecu:get('Cpu1Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('LMUSRAMExists')='true' and ecu:get('Cpu1Exists')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('LMUSRAMExists')='true' and ecu:get('Cpu1Exists')='true'"/>
+                </v:var>
+                <v:var name="LMUTestEnCpu2" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines whether the SRI EDC will include the LMU module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="c318f02a-92f3-46b0-9784-1c24be06226a"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('LMUSRAMExists')='true' and ecu:get('Cpu2Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('LMUSRAMExists')='true' and ecu:get('Cpu2Exists')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('LMUSRAMExists')='true' and ecu:get('Cpu2Exists')='true'"/>
+                </v:var>
+                <v:var name="PMUDFlashTestEnCpu0" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines whether the SRI EDC will include the PMUDFlash module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="c4db2e42-a9d6-41dd-a33d-4ae4fc723972"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="PMUDFlashTestEnCpu1" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines whether the SRI EDC will include the PMUDFlash module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="a5fc3628-73fb-41d0-8324-d18b35a3c91d"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>   				  
+                </v:var>
+                <v:var name="PMUDFlashTestEnCpu2" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines whether the SRI EDC will include the PMUDFlash module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="a00e7a33-bb50-491b-82d4-bc102ffb1b71"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('Cpu2Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('Cpu2Exists')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('Cpu2Exists')='true'"/>  				  
+                </v:var>
+                <v:var name="PMUPFlashTestEnCpu0" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines whether the SRI EDC will include the PMU PFlash address decoder. Data decoder is not tested -&gt; refer to Global Design Decisions."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="b39c3bfa-edbc-48e2-8d67-a3164e076311"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="PMUPFlashTestEnCpu1" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines whether the SRI EDC will include the PMU PFlash address decoder. Data decoder is not tested -&gt; refer to Global Design Decisions."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="043438c0-bf49-4ab0-9f91-a06063432aae"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>  					  
+                </v:var>
+                <v:var name="PMUPFlashTestEnCpu2" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines whether the SRI EDC will include the PMU PFlash address decoder. Data decoder is not tested -&gt; refer to Global Design Decisions."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="8742e504-fae5-4406-91d8-eff271fbccb7"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('Cpu2Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('Cpu2Exists')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('Cpu2Exists')='true'"/>  					  
+                </v:var>
+                <v:var name="DMATestEnCpu0" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines whether the SRI EDC will include the DMA module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ebdc5a68-8502-411f-9c6c-a3586ed4b42d"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="DMATestEnCpu1" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines whether the SRI EDC will include the DMA module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="c12c5ee3-9efc-4401-9f43-2a773d1e8d8e"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>  					  
+                </v:var>
+                <v:var name="DMATestEnCpu2" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines whether the SRI EDC will include the DMA module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="70b7bb19-18d7-40ed-99cb-ba02e891af3a"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('Cpu2Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('Cpu2Exists')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('Cpu2Exists')='true'"/>  					  
+                </v:var>
+                <v:var name="XBARTestEnCpu0" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines whether the SRI EDC will include the XBAR module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ebdc5a68-8502-411f-9c6c-a358aed4b42d"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="XBARTestEnCpu1" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines whether the SRI EDC will include the XBAR module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="c12c5ee3-9efc-4401-9f43-2a77bd1e8d8e"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>  					  
+                </v:var>
+                <v:var name="XBARTestEnCpu2" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines whether the SRI EDC will include the XBAR module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="70b7bb19-18d7-40ed-99cb-ba02c891af3a"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('Cpu2Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('Cpu2Exists')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('Cpu2Exists')='true'"/>  					  
+                </v:var>
+                <v:var name="SriTstPSPRTstAdrCpu0" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines the address where the accesses (read and write) into the PSPR memory are done during the SRI-CPUx.PMI test. Actually nothing shall ever be written to that address because due to the injected error."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+				          <a:a name="DEFAULT_RADIX" value="HEX" />				  
+                  <a:a name="UUID" value="d0831385-935c-4d80-9135-3a24a0f05a9a"/>
+                  <a:da name="DEFAULT" value="1880096768"/>
+                    <a:da name="INVALID" type="Multi">
+						<mt:xpath expr="((.) mod 8 != 0)"
+						true="Config Error in SriTstPSPRTstAdrCpu0 Address Should be 8 byte aligned."/>
+                         <mt:range>
+						<a:tst expr="&lt;=ecu:get('Mcu.CPU0PSPRAddEnd')"/>
+						<a:tst expr="&gt;=ecu:get('Mcu.CPU0PSPRAddStart')"/>                    
+						</mt:range>
+                  </a:da>
+				  
+                </v:var>
+                <v:var name="SriTstPSPRTstAdrCpu1" type="INTEGER">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>  					
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines the address where the accesses (read and write) into the PSPR memory are done during the SRI-CPUx.PMI test. Actually nothing shall ever be written to that address because due to the injected error."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" value="1295889e-c348-40e7-a2f7-93888e29a7fe"/>
+                  <a:da name="DEFAULT" value="1611661312"/>
+                    <a:da name="INVALID" type="Multi">
+						<mt:xpath expr="((.) mod 8 != 0)"
+						true="Config Error in SriTstPSPRTstAdrCpu1 Address Should be 8 byte aligned."/>
+                        <mt:range>
+						<a:tst expr="&lt;=ecu:get('Mcu.CPU1PSPRAddEnd')"/>
+						<a:tst expr="&gt;=ecu:get('Mcu.CPU1PSPRAddStart')"/>                    
+						</mt:range>
+                  </a:da>
+				  
+                    
+                </v:var>
+                <v:var name="SriTstPSPRTstAdrCpu2" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines the address where the accesses (read and write) into the PSPR memory are done during the SRI-CPUx.PMI test. Actually nothing shall ever be written to that address because due to the injected error."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" value="61a0dd2f-0f24-438e-afb6-c4295cb0ef9c"/>
+                  <a:da name="DEFAULT" value="1343225856"/>
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('CPU2PSPRExists')='true' and ecu:get('Cpu2Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('CPU2PSPRExists')='true' and ecu:get('Cpu2Exists')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('CPU2PSPRExists')='true'and ecu:get('Cpu2Exists')='true'"/>                                   
+                    <a:da name="INVALID" type="Multi">
+						<mt:xpath expr="((.) mod 8 != 0)"
+						true="Config Error in SriTstPSPRTstAdrCpu2 Address Should be 8 byte aligned."/>
+                        <mt:range>
+						<a:tst expr="&lt;=ecu:get('Mcu.CPU2PSPRAddEnd')"/>
+						<a:tst expr="&gt;=ecu:get('Mcu.CPU2PSPRAddStart')"/>   
+						</mt:range>
+                  </a:da>
+				  
+				  
+                </v:var>
+                <v:var name="SriTstDSPRTstAdrCpu0" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines the address where the accesses (read and write) into the DSPR memory are done during the SRI-CPUx.PMI test."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+				  <a:a name="DEFAULT_RADIX" value="HEX" />					  
+                  <a:a name="UUID" value="72177e02-4687-492e-9c73-95124f699152"/>
+                  <a:da name="DEFAULT" value="1879048192"/>
+                    <a:da name="INVALID" type="Multi">
+						<mt:xpath expr="((.) mod 32 != 0)"
+						true="Config Error in SriTstDSPRTstAdrCpu0 Address Should be 32 byte aligned."/>
+                        <mt:range>
+						<a:tst expr="&lt;=ecu:get('Mcu.CPU0DSPRAddEnd')"/>
+						<a:tst expr="&gt;=ecu:get('Mcu.CPU0DSPRAddStart')"/> 
+						</mt:range>
+                  </a:da>
+				  
+				  
+                </v:var>
+                <v:var name="SriTstDSPRTstAdrCpu1" type="INTEGER">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>  					
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines the address where the accesses (read and write) into the DSPR memory are done during the SRI-CPUx.PMI test."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" value="839c93ea-1745-40f7-91b2-8ae8814af80d"/>
+                      <a:da name="INVALID" type="Multi">
+						  <mt:xpath expr="((.) mod 32 != 0)"
+                          true="Config Error in SriTstDSPRTstAdrCpu1 Address Should be 32 byte aligned."/>						  
+						  <mt:range>
+                          <mt:tst expr="&gt;=ecu:get('Mcu.CPU1DSPRAddStart')"/>
+                          <mt:tst expr="&lt;=ecu:get('Mcu.CPU1DSPRAddEnd')"/>
+                         </mt:range>						 
+                       </a:da>
+                       <a:da name="DEFAULT" value="1610612736"/>
+					   
+					   
+                </v:var>
+                <v:var name="SriTstDSPRTstAdrCpu2" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines the address where the accesses (read and write) into the DSPR memory are done during the SRI-CPUx.PMI test."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" value="35467c8a-eeae-4380-9900-36698ece7675"/>
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('CPU2DSPRExists')='true' and ecu:get('Cpu2Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('CPU2DSPRExists')='true' and ecu:get('Cpu2Exists')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('CPU2DSPRExists')='true' and ecu:get('Cpu2Exists')='true'"/>                                            					   
+					   <a:da name="INVALID" type="Multi">
+						  <mt:xpath expr="((.) mod 32 != 0)"
+                          true="Config Error in SriTstDSPRTstAdrCpu2 Address Should be 32 byte aligned."/>						  
+						  <mt:range>
+                          <mt:tst expr="&gt;=ecu:get('Mcu.CPU2DSPRAddStart')"/>
+                          <mt:tst expr="&lt;=ecu:get('Mcu.CPU2DSPRAddEnd')"/>
+                         </mt:range>						 
+                       </a:da>					   
+                       <a:da name="DEFAULT" value="1342177280"/>
+					   
+                  </v:var>
+                <v:var name="SriTstLMUTstAdrCpu0" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines the address where the accesses (read and write) into and from the LMU memory are done during the SRI-LMU test. Actually nothing should ever be written to that address because due to the injected error."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" value="c6d44f36-0598-4f6f-9101-de77fe1ef346"/>
+                  <a:da name="DEFAULT" value="2952790016"/>
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('LMUSRAMExists')='true' and ecu:get('Cpu0Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('LMUSRAMExists')='true' and ecu:get('Cpu0Exists')='true' and ../LMUTestEnCpu0 = 'true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('LMUSRAMExists')='true' and ecu:get('Cpu0Exists')='true'"/>
+                  <a:da name="INVALID" type="Multi">
+				     <mt:xpath expr="((.) mod 8 != 0)"
+                     true="Config Error in SriTstLMUTstAdrCpu0 Address Should be 8 byte aligned."/>						  
+					 <mt:range>
+                     <a:tst expr="&lt;=2952822783"/>
+                     <a:tst expr="&gt;=2952790016"/>
+					 </mt:range>
+                  </a:da>
+				  
+				  
+                </v:var>
+                <v:var name="SriTstLMUTstAdrCpu1" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines the address where the accesses (read and write) into and from the LMU memory are done during the SRI-LMU test. Actually nothing should ever be written to that address because due to the injected error."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" value="b013dce2-94bd-472e-85e7-f66c0ccae750"/>
+                  <a:da name="DEFAULT" value="2952790016"/>
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('LMUSRAMExists')='true' and ecu:get('Cpu1Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('LMUSRAMExists')='true' and ecu:get('Cpu1Exists')='true' and ../LMUTestEnCpu1 = 'true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('LMUSRAMExists')='true' and ecu:get('Cpu1Exists')='true'"/>
+                  <a:da name="INVALID" type="Multi">
+					<mt:xpath expr="((.) mod 8 != 0)"
+                     true="Config Error in SriTstLMUTstAdrCpu1 Address Should be 8 byte aligned."/>						  
+					 <mt:range>
+                    <a:tst expr="&lt;=2952822783"/>
+                    <a:tst expr="&gt;=2952790016"/>
+					</mt:range>
+                  </a:da>
+				  
+				  
+                </v:var>
+                <v:var name="SriTstLMUTstAdrCpu2" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines the address where the accesses (read and write) into and from the LMU memory are done during the SRI-LMU test. Actually nothing should ever be written to that address because due to the injected error."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" value="4dec2175-ac1e-4272-ad80-0c711297db0e"/>
+                  <a:da name="DEFAULT" value="2952790016"/>
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('LMUSRAMExists')='true' and ecu:get('Cpu2Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('LMUSRAMExists')='true' and ecu:get('Cpu2Exists')='true' and ../LMUTestEnCpu2 = 'true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('LMUSRAMExists')='true' and ecu:get('Cpu2Exists')='true'"/>
+                  <a:da name="INVALID" type="Multi">
+					<mt:xpath expr="((.) mod 8 != 0)"
+                    true="Config Error in SriTstLMUTstAdrCpu2 Address Should be 8 byte aligned."/>						  
+					<mt:range>
+                    <a:tst expr="&lt;=2952822783"/>
+                    <a:tst expr="&gt;=2952790016"/>
+					</mt:range>
+                  </a:da>
+                </v:var>
+				
+                <v:var name="SriTstDFlashTstAdrCpu0" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines the address where the accesses (read and write) into the PSPR memory are done during the SRI-CPUx.PMI test. Actually nothing shall ever be written to that address because due to the injected error."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+				  <a:a name="DEFAULT_RADIX" value="HEX" />					  
+                  <a:a name="UUID" value="5608a8b8-ab01-4db0-80d5-0a026a046342"/>
+                  <a:da name="DEFAULT" value="2936012800"/>
+                  <a:da name="EDITABLE" type="XPath">
+                  <a:tst expr="../PMUDFlashTestEnCpu0 = 'true'"/>
+                  </a:da>                   
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=ecu:get('FlsLoader.Df0EndAddress')"/> 
+                    <a:tst expr="&gt;=ecu:get('FlsLoader.Df0StartAddress')"/>  
+                  </a:da>
+                </v:var>
+                <v:var name="SriTstDFlashTstAdrCpu1" type="INTEGER">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('Cpu1Exists')='true' and ../PMUDFlashTestEnCpu1 = 'true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>  					
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines the address where the accesses (read and write) into the PSPR memory are done during the SRI-CPUx.PMI test. Actually nothing shall ever be written to that address because due to the injected error."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" value="8091009d-f864-4c82-affa-2b6d38eaa28f"/>
+                  <a:da name="DEFAULT" value="2936012800"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=ecu:get('FlsLoader.Df0EndAddress')"/> 
+                    <a:tst expr="&gt;=ecu:get('FlsLoader.Df0StartAddress')"/>   
+                  </a:da>
+                </v:var>
+                <v:var name="SriTstDFlashTstAdrCpu2" type="INTEGER">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('Cpu2Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('Cpu2Exists')='true' and ../PMUDFlashTestEnCpu2 = 'true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('Cpu2Exists')='true'"/>  					
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines the address where the accesses (read and write) into the PSPR memory are done during the SRI-CPUx.PMI test. Actually nothing shall ever be written to that address because due to the injected error."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" value="add8b0de-34c0-4011-9b8c-e05b14cd56eb"/>
+                  <a:da name="DEFAULT" value="2936012800"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=ecu:get('FlsLoader.Df0EndAddress')"/> 
+                    <a:tst expr="&gt;=ecu:get('FlsLoader.Df0StartAddress')"/>   
+                  </a:da>
+                </v:var> 
+                <v:var name="SriTstPFlashTstAdrCpu0" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines the address where the accesses (read and write) into the PSPR memory are done during the SRI-CPUx.PMI test. Actually nothing shall ever be written to that address because due to the injected error."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+				  <a:a name="DEFAULT_RADIX" value="HEX" />					  
+                  <a:a name="UUID" value="64105e52-0dfb-43f9-9b2a-1ae3096f3188"/>
+                  <a:da name="DEFAULT" value="2684354560"/>
+                  <a:da name="EDITABLE" type="XPath">
+                  <a:tst expr="../PMUPFlashTestEnCpu0 = 'true'"/>
+                  </a:da>                    
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=ecu:get('SriTst.PFlashEndAddress')"/>
+                    <a:tst expr="&gt;=ecu:get('FlsLoader.Pf0StartAddress')"/>  
+                  </a:da>
+                </v:var>
+                <v:var name="SriTstPFlashTstAdrCpu1" type="INTEGER">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('Cpu1Exists')='true' and ../PMUPFlashTestEnCpu1 = 'true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('Cpu1Exists')='true'"/>  					
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines the address where the accesses (read and write) into the PSPR memory are done during the SRI-CPUx.PMI test. Actually nothing shall ever be written to that address because due to the injected error."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" value="445f08af-4031-460a-b0cc-13ab263bac41"/>
+                  <a:da name="DEFAULT" value="2684354560"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=ecu:get('SriTst.PFlashEndAddress')"/>
+                    <a:tst expr="&gt;=ecu:get('FlsLoader.Pf0StartAddress')"/>  
+                  </a:da>
+                </v:var>
+                <v:var name="SriTstPFlashTstAdrCpu2" type="INTEGER">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('Cpu2Exists')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('Cpu2Exists')='true' and ../PMUPFlashTestEnCpu2 = 'true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('Cpu2Exists')='true'"/>  					
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines the address where the accesses (read and write) into the PSPR memory are done during the SRI-CPUx.PMI test. Actually nothing shall ever be written to that address because due to the injected error."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="Link">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" value="0c56707e-543f-431d-8d77-b85444be0cc1"/>
+                  <a:da name="DEFAULT" value="2684354560"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=ecu:get('SriTst.PFlashEndAddress')"/>
+                    <a:tst expr="&gt;=ecu:get('FlsLoader.Pf0StartAddress')"/>  
+                  </a:da>
+                </v:var>
+              </v:ctr>
+           </v:lst>
+              <v:ctr name="SriTstGeneral" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: General configuration (parameters) of the SriTst driver software module."/>
+                 <a:a name="UUID" value="a868aef7-06f0-5e10-9482-3b9f6ca77cb2"/>                
+                <v:var name="SriTstDMAChannelNum" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This parameter defines which DMA channel shall be used for the SRI test. The Maximum channel numbers varies between device to device"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="e03d91fc-1eed-435f-a52a-c33f687c3a58"/>                        
+                       <a:da name="DEFAULT" value="0"/>
+                       <a:da name="INVALID" type="Range">
+                         <a:tst expr="&lt;ecu:get('SafeTlib.DmaMaxChannels')"/>
+                         <a:tst expr="&gt;=0"/>
+                       </a:da>                       
+                </v:var>                  
+              </v:ctr>           
+            </v:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

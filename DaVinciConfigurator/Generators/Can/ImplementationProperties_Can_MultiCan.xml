@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Settings Name="com.vector.cfg.core.sip.ISIPService">
+    <Settings Name="ModuleList">
+      <Settings Name="Can">
+        <Settings Name="TC1_x_x_1000_">
+          <Setting Name="PinLayout" Value="" />
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];GreenHills[BBC47DF5-C78B-4E8E-8F86-0EF503FD3198];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+          <Setting Name="NameForCpuDefine" Value="" />
+        </Settings>
+        <Settings Name="TC1_4_128_0000_">
+          <Setting Name="PinLayout" Value="" />
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];GreenHills[BBC47DF5-C78B-4E8E-8F86-0EF503FD3198];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+          <Setting Name="NameForCpuDefine" Value="" />
+        </Settings>
+        <Settings Name="TC1_3_128_0000_">
+          <Setting Name="PinLayout" Value="" />
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];GreenHills[BBC47DF5-C78B-4E8E-8F86-0EF503FD3198];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+          <Setting Name="NameForCpuDefine" Value="" />
+        </Settings>
+        <Settings Name="TC1_2_64_0000_">
+          <Setting Name="PinLayout" Value="" />
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];GreenHills[BBC47DF5-C78B-4E8E-8F86-0EF503FD3198];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+          <Setting Name="NameForCpuDefine" Value="" />
+        </Settings>
+        <Settings Name="TC1_3_64_0100_">
+          <Setting Name="PinLayout" Value="" />
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];GreenHills[BBC47DF5-C78B-4E8E-8F86-0EF503FD3198];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+          <Setting Name="NameForCpuDefine" Value="" />
+        </Settings>
+        <Settings Name="TC1_4_128_0001_">
+          <Setting Name="PinLayout" Value="" />
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];GreenHills[BBC47DF5-C78B-4E8E-8F86-0EF503FD3198];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+          <Setting Name="NameForCpuDefine" Value="" />
+        </Settings>
+        <Settings Name="TC2_x_x_1110_">
+          <Setting Name="PinLayout" Value="" />
+          <Setting Name="Compiler" Value="Diab[44266E21-0E8C-4DDA-B800-91CE20104931];Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];GreenHills[BBC47DF5-C78B-4E8E-8F86-0EF503FD3198];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+          <Setting Name="NameForCpuDefine" Value="" />
+        </Settings>
+        <Settings Name="TC2_8_256_1110_">
+          <Setting Name="PinLayout" Value="" />
+          <Setting Name="Compiler" Value="Diab[44266E21-0E8C-4DDA-B800-91CE20104931];Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];GreenHills[BBC47DF5-C78B-4E8E-8F86-0EF503FD3198];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+          <Setting Name="NameForCpuDefine" Value="" />
+        </Settings>
+        <Settings Name="TC2_4_256_1110_">
+          <Setting Name="PinLayout" Value="" />
+          <Setting Name="Compiler" Value="Diab[44266E21-0E8C-4DDA-B800-91CE20104931];Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];GreenHills[BBC47DF5-C78B-4E8E-8F86-0EF503FD3198];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+          <Setting Name="NameForCpuDefine" Value="" />
+        </Settings>
+        <Settings Name="TC2_4_256_11101_2_128_">
+          <Setting Name="PinLayout" Value="" />
+          <Setting Name="Compiler" Value="Diab[44266E21-0E8C-4DDA-B800-91CE20104931];Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];GreenHills[BBC47DF5-C78B-4E8E-8F86-0EF503FD3198];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+          <Setting Name="NameForCpuDefine" Value="" />
+        </Settings>
+        <Settings Name="TC2_5_256_1110_">
+          <Setting Name="PinLayout" Value="" />
+          <Setting Name="Compiler" Value="Diab[44266E21-0E8C-4DDA-B800-91CE20104931];Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];GreenHills[BBC47DF5-C78B-4E8E-8F86-0EF503FD3198];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+          <Setting Name="NameForCpuDefine" Value="" />
+        </Settings>
+        <Settings Name="TC2_3_128_1110_">
+          <Setting Name="PinLayout" Value="" />
+          <Setting Name="Compiler" Value="Diab[44266E21-0E8C-4DDA-B800-91CE20104931];Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];GreenHills[BBC47DF5-C78B-4E8E-8F86-0EF503FD3198];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+          <Setting Name="NameForCpuDefine" Value="" />
+        </Settings>
+        <Settings Name="TC2_3_128_11101_3_128_">
+          <Setting Name="PinLayout" Value="" />
+          <Setting Name="Compiler" Value="Diab[44266E21-0E8C-4DDA-B800-91CE20104931];Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];GreenHills[BBC47DF5-C78B-4E8E-8F86-0EF503FD3198];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+          <Setting Name="NameForCpuDefine" Value="" />
+        </Settings>
+        <Settings Name="XC2_x_x_1000_">
+          <Setting Name="PinLayout" Value="" />
+          <Setting Name="Compiler" Value="Keil[4CB9AF8B-EECF-43A7-85F0-0345B56CB067];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+          <Setting Name="NameForCpuDefine" Value="" />
+        </Settings>
+        <Settings Name="XC2_6_256_1000_">
+          <Setting Name="PinLayout" Value="" />
+          <Setting Name="Compiler" Value="Keil[4CB9AF8B-EECF-43A7-85F0-0345B56CB067];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+          <Setting Name="NameForCpuDefine" Value="" />
+        </Settings>
+        <Settings Name="XC2_5_128_1000_">
+          <Setting Name="PinLayout" Value="" />
+          <Setting Name="Compiler" Value="Keil[4CB9AF8B-EECF-43A7-85F0-0345B56CB067];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+          <Setting Name="NameForCpuDefine" Value="" />
+        </Settings>
+        <Settings Name="XC2_3_64_1000_">
+          <Setting Name="PinLayout" Value="" />
+          <Setting Name="Compiler" Value="Keil[4CB9AF8B-EECF-43A7-85F0-0345B56CB067];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+          <Setting Name="NameForCpuDefine" Value="" />
+        </Settings>
+        <Settings Name="XC2_2_64_1000_">
+          <Setting Name="PinLayout" Value="" />
+          <Setting Name="Compiler" Value="Keil[4CB9AF8B-EECF-43A7-85F0-0345B56CB067];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+          <Setting Name="NameForCpuDefine" Value="" />
+        </Settings>
+        <Settings Name="XC2_1_64_1000_">
+          <Setting Name="PinLayout" Value="" />
+          <Setting Name="Compiler" Value="Keil[4CB9AF8B-EECF-43A7-85F0-0345B56CB067];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+          <Setting Name="NameForCpuDefine" Value="" />
+        </Settings>
+      </Settings>
+    </Settings>
+  </Settings>
+</Settings>

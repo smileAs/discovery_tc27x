@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtModuleInitialization xmlns="InitService" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="InitService .\InitService.xsd">
+<InitModule>
+  <ModuleRef>/AURIX/Adc</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Adc_Init</InitFunctionName> 
+  <InitFunctionHeader>Adc.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE_LATE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>Adc_ConfigRoot</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Adc_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>
+<InitModule>
+  <ModuleRef>/AURIX/Dio</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Dio_Init</InitFunctionName> 
+  <InitFunctionHeader>Dio.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>Dio_ConfigRoot</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Dio_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>
+<InitModule>
+  <ModuleRef>/AURIX/Fee</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Fee_Init</InitFunctionName> 
+  <InitFunctionHeader>Fee.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE_LATE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName></ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Fee_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+</InitModule>    
+<InitModule>
+  <ModuleRef>/AURIX/Fls</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Fls_17_Pmu_Init</InitFunctionName> 
+  <InitFunctionHeader>Fls_17_Pmu.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>Fls_17_Pmu_ConfigRoot</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Fls_17_Pmu_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>
+<InitModule>
+  <ModuleRef>/AURIX/Gpt</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Gpt_Init</InitFunctionName> 
+  <InitFunctionHeader>Gpt.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>Gpt_ConfigRoot</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Gpt_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>
+<InitModule>
+  <ModuleRef>/AURIX/Icu</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Icu_17_GtmCcu6_Init</InitFunctionName> 
+  <InitFunctionHeader>Icu_17_GtmCcu6.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE_LATE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>Icu_ConfigRoot</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Icu_17_GtmCcu6_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+</InitModule>
+<InitModule>
+  <ModuleRef>/AURIX/Irq</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Irq_Init</InitFunctionName> 
+  <InitFunctionHeader>Irq.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE_LATE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>&amp;NULL_PTR</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Irq_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+</InitModule>  
+<InitModule>
+  <ModuleRef>/AURIX/Mcu</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Mcu_Init</InitFunctionName> 
+  <InitFunctionHeader>Mcu.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE_EARLY</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>Mcu_ConfigRoot</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Mcu_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>
+<InitModule>
+  <ModuleRef>/AURIX/Port</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Port_Init</InitFunctionName> 
+  <InitFunctionHeader>Port.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE_EARLY</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>Port_ConfigRoot</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Port_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>
+<InitModule>
+  <ModuleRef>/AURIX/Pwm</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Pwm_17_Gtm_Init</InitFunctionName> 
+  <InitFunctionHeader>Pwm_17_Gtm.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>Pwm_ConfigRoot</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Pwm_17_Gtm_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>
+<InitModule>
+  <ModuleRef>/AURIX/Spi</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Spi_Init</InitFunctionName> 
+  <InitFunctionHeader>Spi.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>Spi_ConfigRoot</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Spi_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>
+<InitModule>
+  <ModuleRef>/AURIX/Uart</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Uart_Init</InitFunctionName> 
+  <InitFunctionHeader>Uart.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>Uart_ConfigRoot</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Uart_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>
+<InitModule>
+  <ModuleRef>/AURIX/I2c</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>I2c_Init</InitFunctionName> 
+  <InitFunctionHeader>I2c.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>I2c_ConfigRoot</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>I2c_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>
+<InitModule>
+  <ModuleRef>/AURIX/Wdg</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Wdg_17_Scu_Init</InitFunctionName> 
+  <InitFunctionHeader>Wdg_17_Scu.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>Wdg_ConfigRoot</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Wdg_17_Scu_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>
+  </ExtModuleInitialization>

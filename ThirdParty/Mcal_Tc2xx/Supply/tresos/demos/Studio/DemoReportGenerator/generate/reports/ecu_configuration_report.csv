@@ -1,0 +1,76 @@
+ [!NOCODE!]
+
+--------------------------------------------------------------------------------------------------------------------- 
+ Template for a csv report of the configuration generator.
+ 
+ Copy directory DemoReportGenerator to plugins/ directory of EB tresos Studio and change the plug-in
+ and this template to your needs.
+ 
+ A report is generated each time code is generated for a project. The report is stored into the file
+ reports/ecu_configuration_report.csv
+
+ Copyright (C) Elektrobit Automotive GmbH - All rights reserved
+ ---------------------------------------------------------------------------------------------------------------------
+
+- 
+- This macro replace hostile characters in comments and values
+-
+[!MACRO "clean","field"="'desc'"!][!//
+"[!"text:replaceAll(text:replaceAll(doc:field(.,'COMMENTS',0,$field,'text/plain',$lang),';',' '),'["\r\n]','')"!]"[!//
+[!ENDMACRO!] 
+
+[!AUTOSPACING!]
+[!ENDNOCODE!][!//
+[!INDENT "0"!][!//
+Project: [!"$project"!]
+
+Module;Summary;Comment;Status;User;Date;Language;Value;Path;
+[!/* loop over all elements */!][!//
+[!LOOP "/AUTOSAR/TOP-LEVEL-PACKAGES/*/ELEMENTS/*"!][!//
+[!/* Only print information for modules for which code is generated */!][!//
+  [!IF "./@type='MODULE-CONFIGURATION' and node:exists(.)"!][!//
+    [!IF "node:containsValue( text:split( $generateModules ), concat( name(.), '_', name(node:dtos(.)/../..) ) )"!][!//
+[!/* get the Module name*/!][!//
+      [!VAR "module" = "text:replaceAll(name(.),';',' ')"!][!//
+      [!VAR "len" = "length(node:path(.))+2"!][!//
+[!/* Loop about all children in the tree*/!][!//
+      [!LOOP ".//*"!][!//
+[!/*If comments are present add them to the output*/!][!//
+        [!IF "doc:has(.,'COMMENTS')"!][!//
+[!/* get used Languages*/!][!//
+          [!VAR "langs" = "replace(replace(replace( doc:languages(., "COMMENTS", 0), '[', ''), ']', ''), ' ','')"!][!//
+          [!VAR "nrOfLangs" = "count(text:split($langs, ','))"!][!//
+[!/*Loop over all Languages*/!][!//
+          [!FOR "x" = "1" TO "$nrOfLangs"!][!//
+[!/*get the language*/!][!//
+            [!VAR "lang" = "text:split($langs, ',')[num:i($x)]"!][!//
+[!/*Print the Module*/!][!//
+            [!"$module"!];[!//
+[!/*Print the Label*/!][!//
+            [!CALL "clean","field"="'label'"!];[!//
+[!/*Print the Description*/!][!//
+            [!CALL "clean","field"="'desc'"!];[!//
+[!/*Print the Status*/!][!//
+            [!CALL "clean","field"="'status'"!];[!//
+[!/*Print the user*/!][!//
+            [!CALL "clean","field"="'user'"!];[!//
+[!/*Print the date*/!][!//
+            [!CALL "clean","field"="'date'"!];[!//
+[!/*Print the language*/!][!//
+            [!"$lang"!];[!//
+[!/*Print the Value*/!][!//
+            [!"text:replace(.,';',' ')"!];[!//
+            [!"text:replaceAll(substring(node:path(.),$len),'/',';')"!]
+          [!ENDFOR!][!//
+        [!ELSE!][!//
+[!/*Print the Module*/!][!//
+          [!"$module"!];[!//
+[!/*If no comment is available print out empty cells*/!][!//
+          ;;;;;;[!"text:replace(.,';',' ')"!];[!//
+          [!"text:replaceAll(substring(node:path(.),$len),'/',';')"!]
+        [!ENDIF!][!//
+      [!ENDLOOP!][!//
+   [!ENDIF!][!//
+  [!ENDIF!][!//
+[!ENDLOOP!][!//
+[!ENDINDENT!][!//

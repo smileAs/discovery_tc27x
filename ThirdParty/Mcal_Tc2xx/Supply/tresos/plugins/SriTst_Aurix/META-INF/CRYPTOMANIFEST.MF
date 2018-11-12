@@ -1,0 +1,22 @@
+
+Name: generate/src/SriTst_LCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594773970918941121988473304312953895686193718163461940
+ 035166133855583012783135800144361734859768927982026180
+SignatureKeyID: Infineon
+
+Name: generate/inc/SriTst_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594745806293191175744593008989125954519501404728969181
+ 525567614658102565690717518395085969224486320831406028
+SignatureKeyID: Infineon
+
+Name: config/SriTst.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594740721530294332396327306338055969141846218744387850
+ 880666274521512415753631242360714603047868989965576798
+SignatureKeyID: Infineon
+

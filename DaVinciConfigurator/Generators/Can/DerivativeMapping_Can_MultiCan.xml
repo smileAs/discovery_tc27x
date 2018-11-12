@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Settings Name="com.vector.cfg.core.sip.ISIPService">
+    <Settings Name="ModuleList">
+      <Settings Name="Can">
+        <Settings Name="TC2_8_256_1110_">
+          <Setting Name="SIP_Folder" Value="Can_TriCore" />
+          <Settings Name="50191910-00FB-4BD9-8CD3-DE12EB270635">
+            <Setting Name="Derivative" Value="TC277" />
+            <Setting Name="SIP_Folder" Value="Can_TriCore" />
+            <Setting Name="ReleaseType" Value="Hardware Reference Checked" />
+          </Settings>
+        </Settings>
+      </Settings>
+    </Settings>
+  </Settings>
+</Settings>

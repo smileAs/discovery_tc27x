@@ -1,0 +1,22 @@
+
+Name: generate/src/LmuBusMpuLfmTst_LCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377426606945550561250700136001947196658284369134670452
+ 2823310988389009158738700678009214367491582547657384
+SignatureKeyID: Infineon
+
+Name: generate/inc/LmuBusMpuLfmTst_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594773974182365731186161264390253580458942019749307553
+ 388547856993705199891249587725937446175707448298426134
+SignatureKeyID: Infineon
+
+Name: config/LmuBusMpuLfmTst.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377421231964335818538218013556343997673321145042814842
+ 8352371424574569603250643334743011315738846154946364
+SignatureKeyID: Infineon
+

@@ -1,0 +1,197 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2014)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**   $FILENAME   : SfrTst.xdm $                                               **
+**                                                                            **
+**   $CC VERSION : \main\20 $                                                 **
+**                                                                            **
+**   $DATE       : 2016-05-04 $                                               **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX                                                **
+**                                                                            **
+**  VARIANT   : VariantLinkTime                                               **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY:[cover parentID=]                                            **
+**                                                                            **
+**  DESCRIPTION  : XML Data Model for SfrTst driver                           **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) :                                                        **
+**                                                                            **
+**  MAY BE CHANGED BY USER [yes/no]: No                                       **
+**                                                                            **
+*******************************************************************************/
+-->
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar"  
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd"
+		 xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX" type="AR-PACKAGE">        
+        <a:a name="UUID" value="93d9a111-9d4c-47b6-98cb-fe5aec24c8b0"/>
+        <d:lst type="ELEMENTS">
+          <d:chc name="SfrTst" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="RELEASE" value="asc:4.0"/>        
+              <a:a name="UUID" value="03eaa8c5-137e-402e-823d-8d7776c1de4d"/>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:da name="DEFAULT" value="VariantLinkTime"/>
+                <a:da name="RANGE" value="VariantLinkTime"/>                
+              </v:var>
+              <v:lst name="SfrTstConfigSet" type="MULTIPLE-CONFIGURATION-CONTAINER">
+                <a:da name="MIN" value="1"/>
+                <v:ctr name="SfrTstConfigSet" type="MULTIPLE-CONFIGURATION-CONTAINER">
+                  <a:a name="DESC" 
+                       value="This is the base container that contains the link time configuration parameters"/>
+                  <a:a name="UUID" value="ccda81dc-46cf-4171-858b-7c947884702f"/>
+                  <v:lst name="SfrTstRegister" type="MAP">
+                    <a:da name="MIN" value="1"/>                    
+                    <v:ctr name="SfrTstRegister" type="IDENTIFIABLE">                      
+                       <a:a name="DESC" 
+                              value="EN: This is the base container having parameter to be configured SfrTstRegister Name, bitfield, Mask, Expected crcresult "/>
+                      <a:a name="UUID" 
+                        value="97e6fd09-f2da-4944-b2e0-edc4dc70e5a3"/>
+                       <v:var name="SfrTstRegisterName" type="STRING">
+                         <a:a name="DESC" 
+                              value="EN: Name of the register to be edited, e.g. LMU_CLC, SMU_FSP, SMU_AG etc."/>
+                         <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="Link">VariantLinkTime</icc:v>
+                         </a:a>
+                         <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                         <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                         <a:a name="UUID" 
+                              value="ECUC:d3117de4-d573-e62d-12aa-c0febc0b1cc6"/>
+                         <a:da name="DEFAULT" value="LMU_CLC"/>
+                       </v:var>                     
+                       <v:var name="SfrTstRegisterValue" type="INTEGER">
+                         <a:da name="TOOLTIP">
+						 <a:v>This parameter defines the expected value of the register to be tested.
+						 </a:v>
+						 </a:da>
+                         <a:da name="DESC">
+                           <a:v>This parameter defines the expected value of the register to be tested. 
+                           </a:v>
+                         </a:da>
+                         <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="Link">VariantLinkTime</icc:v>
+                         </a:a>                                                   
+                         <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                         <a:a name="UUID" 
+                              value="98ce928e-8ed1-2968-93b2-24d30b1fa49e"/>
+                         <a:da name="DEFAULT" value="0"/>
+                        <a:da name="INVALID" type="Multi">
+                         <mt:xpath expr="(../SfrTstRegisterBitWidth = 'STL_BIT_16') and .> num:i(65535)" true="Error in configuration. for 16 bit register the range should be within 0 to 65535"/>
+						 <mt:xpath expr="(../SfrTstRegisterBitWidth = 'STL_BIT_32') and .> num:i(4294967295)" true="Error in configuration. for 32 bit registers the range should be within 0 to 4294967295"/>
+                         <mt:range>
+                          <mt:tst expr="&gt;=0"/>
+                          <mt:tst expr="&lt;=4294967295"/>
+                         </mt:range>                        
+                        </a:da>
+                       </v:var>
+                       <v:var name="SfrTstRegisterMask" type="INTEGER">
+                         <a:da name="TOOLTIP">
+						 <a:v>This parameter defines a mask to omit certain bits of the register from the SFR test.
+						 </a:v>
+						 </a:da>
+                         <a:da name="DESC">
+                           <a:v>This parameter defines a mask to omit certain bits of the register from the SFR test. 
+                           </a:v>
+                         </a:da>
+                         <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="Link">VariantLinkTime</icc:v>
+                         </a:a>                                                   
+                         <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                         <a:a name="UUID" 
+                              value="98ce928e-7ed1-9968-93b2-24d30b1fa49e"/>
+                         <a:da name="DEFAULT" value="0"/>
+						 <a:da name="INVALID" type="Multi">
+                         <mt:xpath expr="(../SfrTstRegisterBitWidth = 'STL_BIT_16') and .> num:i(65535)" true="Error in configuration. for 16 bit register the range should be within 0 to 65535"/>
+						 <mt:xpath expr="(../SfrTstRegisterBitWidth = 'STL_BIT_32') and .> num:i(4294967295)" true="Error in configuration. for 32 bit registers the range should be within 0 to 4294967295"/>
+                         <mt:range>
+                          <mt:tst expr="&gt;=0"/>
+                          <mt:tst expr="&lt;=4294967295"/>
+                         </mt:range>                        
+                        </a:da>						 
+                       </v:var> 
+                    <v:var name="SfrTstRegisterBitWidth" type="ENUMERATION">
+                    <a:da name="TOOLTIP">
+					<a:v>Select 16-bit/32-bit based on configured SFR
+					</a:v>
+					</a:da>
+                    <a:da name="DESC">
+                    <a:v>Select 16-bit/32-bit based on configured SFR
+					</a:v>
+					</a:da>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="LINK">VariantLinkTime</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" 
+                         value="ECUC:57dcff50-89c4-444b-b345-2c797a2881f7"/>
+                    <a:da name="RANGE">
+                      <a:v>STL_BIT_16</a:v>
+                      <a:v>STL_BIT_32</a:v>
+                    </a:da>
+                    <a:da name="DEFAULT" value="STL_BIT_32"/>
+                  </v:var> 					   
+                    </v:ctr>
+                  </v:lst>          
+                  <v:var name="SfrTstExpectedCrcResult" type="INTEGER">
+                    <a:da name="TOOLTIP">
+                    <a:v>This parameter defines the Expected CRC result
+					</a:v>
+					</a:da>
+                    <a:da name="DESC">
+                      <a:v>This parameter defines the CRC value over all registers configured in container SfrTstRegister.
+                      </a:v>
+                    </a:da>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="Link">VariantLinkTime</icc:v>
+                    </a:a>                          
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="98ce928e-7ed1-4368-95b2-21d30b1fa49e"/>
+                    <a:da name="DEFAULT" value="0"/>
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=4294967295"/>
+                      <a:tst expr="&gt;=0"/>
+                    </a:da>
+                  </v:var>           
+                </v:ctr>                  
+              </v:lst>
+              </v:ctr>         
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+</datamodel>

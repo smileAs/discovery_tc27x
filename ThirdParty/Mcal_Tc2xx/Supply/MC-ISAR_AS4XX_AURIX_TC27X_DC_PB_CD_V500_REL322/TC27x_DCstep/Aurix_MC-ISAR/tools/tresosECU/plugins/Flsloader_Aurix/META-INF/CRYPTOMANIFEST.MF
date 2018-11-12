@@ -1,0 +1,22 @@
+
+Name: generate/Flsloader_Bswmd.arxml
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594738463093760035651273230502576591309774580424208855
+ 168611003062638358632285257484171740080011900066002948
+SignatureKeyID: Infineon
+
+Name: generate/inc/FlsLoader_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594743687826209895623728079032824336861536747713073415
+ 947323460825461437542077026487865821457664227561164713
+SignatureKeyID: Infineon
+
+Name: config/FlsLoader.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377427029932268705207108545903284386995887327003963688
+ 5763311863255298447989159705008549653730081179052307
+SignatureKeyID: Infineon
+

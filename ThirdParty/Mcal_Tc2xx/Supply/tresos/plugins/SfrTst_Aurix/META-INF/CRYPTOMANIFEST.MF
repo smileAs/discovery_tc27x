@@ -1,0 +1,22 @@
+
+Name: generate/src/SfrTst_LCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 44189296964251334319874030120179866217220594924397229542536
+ 5769053285031860868566468446083865109593418074310
+SignatureKeyID: Infineon
+
+Name: generate/inc/SfrTst_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377422538663565752603925148295651218637611563637896817
+ 9244765951255164032683734952787701335524328582398996
+SignatureKeyID: Infineon
+
+Name: config/SfrTst.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377424111206752657424538479353416883034285373042184577
+ 5985674485886410433321321625298789751146193796266355
+SignatureKeyID: Infineon
+

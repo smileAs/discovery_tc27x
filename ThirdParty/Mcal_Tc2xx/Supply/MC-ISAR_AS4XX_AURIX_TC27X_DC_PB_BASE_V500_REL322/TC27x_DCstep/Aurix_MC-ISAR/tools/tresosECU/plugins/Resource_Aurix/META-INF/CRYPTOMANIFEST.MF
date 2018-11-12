@@ -1,0 +1,8 @@
+
+Name: config/Resource.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377425416023037584019335353351766705452793709501819886
+ 5998852569338536972366768919635519447709135028464556
+SignatureKeyID: Infineon
+

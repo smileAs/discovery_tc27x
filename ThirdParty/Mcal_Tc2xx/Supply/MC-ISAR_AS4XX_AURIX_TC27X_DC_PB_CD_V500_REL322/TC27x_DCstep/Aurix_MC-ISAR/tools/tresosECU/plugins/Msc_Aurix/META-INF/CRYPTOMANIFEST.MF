@@ -1,0 +1,36 @@
+
+Name: generate/Msc.m
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377423432975723227821078984447526432597621683796936941
+ 1695107628437303767562495767035070910898372414904893
+SignatureKeyID: Infineon
+
+Name: config/Msc.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377422826107542673439816484955571894386465469659357538
+ 1876793548281878245206213627022770995496237597242047
+SignatureKeyID: Infineon
+
+Name: generate/Msc_Bswmd.arxml
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594773971100940777669800749679473753495564619713006408
+ 406829443541504561896354847637919521345270297171998467
+SignatureKeyID: Infineon
+
+Name: generate/inc/Msc_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377426812788787641843243516664028680575149452092322433
+ 9429811212411321670795031054852925377761805101791105
+SignatureKeyID: Infineon
+
+Name: generate/src/Msc_PBCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377422988891078820678605006238903908947844656797084180
+ 6990190393912911866770021856629766255297230219616705
+SignatureKeyID: Infineon
+

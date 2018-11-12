@@ -1,0 +1,22 @@
+
+Name: config/WdgTst.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377426719792653512840070523002840927431382618097443214
+ 5210009462038140715801850574956492557852081029724549
+SignatureKeyID: Infineon
+
+Name: generate/inc/WdgTst_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377424220176597610318639355955977023104550389128806986
+ 1871553347989086076554226212312621045076018172395614
+SignatureKeyID: Infineon
+
+Name: generate/src/WdgTst_LCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377424791353433447942372860099561084815646072804455950
+ 7537737725316230793184504455623207565257487536193266
+SignatureKeyID: Infineon
+

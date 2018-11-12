@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Settings Name="com.vector.cfg.core.sip.ISIPService">
+    <Settings Name="ModuleList">
+      <Settings Name="Lin">
+        <Settings Name="LIN_GROUP_TC27X">
+          <Setting Name="SIP_Folder" Value="Lin" />
+          <Settings Name="50191910-00FB-4BD9-8CD3-DE12EB270635">
+            <Setting Name="Derivative" Value="TC277" />
+            <Setting Name="SIP_Folder" Value="TC27x" />
+            <Setting Name="ReleaseType" Value="Hardware Reference Checked" />
+          </Settings>
+        </Settings>
+      </Settings>
+    </Settings>
+  </Settings>
+</Settings>

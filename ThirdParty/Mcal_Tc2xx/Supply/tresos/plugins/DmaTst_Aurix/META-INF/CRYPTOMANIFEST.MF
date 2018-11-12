@@ -1,0 +1,22 @@
+
+Name: config/DmaTst.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377422491087233377740263039190256724848093405745560906
+ 1967848669622227150665979067910132416862117996364796
+SignatureKeyID: Infineon
+
+Name: generate/src/DmaTst_LCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377426881944559239926349573642101539164205937272383604
+ 9858752678758336594980657993782442164052631292217325
+SignatureKeyID: Infineon
+
+Name: generate/inc/DmaTst_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594744505079743446122451608130652623907397535376289833
+ 580062069542653938077440650952180800697220136185972088
+SignatureKeyID: Infineon
+

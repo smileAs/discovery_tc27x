@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.8.2
+Created-By: 1.6.0_24-b07 (Sun Microsystems Inc.)
+Bundle-ManifestVersion: 2
+Bundle-Name: Launcher2 Application Plug-in
+Bundle-Vendor: Elektrobit Automotive GmbH
+Bundle-Copyright: Copyright 2003-2014 Elektrobit Automotive GmbH
+Bundle-SymbolicName: dreisoft.tresos.application.launcher2.plugin;single
+ ton:=true
+Bundle-Version: 16.0.0.b141014-0350
+Bundle-Activator: dreisoft.tresos.application.launcher2.plugin.PlugInApp
+ licationLauncher2
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,dreisoft.tresos.
+ lib2.plugin,dreisoft.tresos.lib2.api.plugin,dreisoft.tresos.application
+ .core.plugin,dreisoft.tresos.launcher2.plugin,dreisoft.tresos.datamodel
+ 2.plugin,org.eclipse.core.resources,org.eclipse.ui.intro,org.eclipse.ui
+ .ide,org.eclipse.ui.views,org.eclipse.search,org.eclipse.ui.workbench.t
+ exteditor,dreisoft.tresos.guidedconfig.api.plugin
+Eclipse-LazyStart: true
+Export-Package: dreisoft.tresos.application.launcher2,dreisoft.tresos.ap
+ plication.launcher2.application,dreisoft.tresos.application.launcher2.h
+ andlers,dreisoft.tresos.application.launcher2.platform
+
+

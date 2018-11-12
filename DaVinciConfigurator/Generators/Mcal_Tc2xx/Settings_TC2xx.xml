@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+============================================================================
+
+Copyright (c) 2016 by Vector Informatik GmbH. All rights reserved.
+
+This software is copyright protected and proprietary to Vector Informatik GmbH.
+Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+All other rights remain with Vector Informatik GmbH.
+
+============================================================================
+
+This file is needed for internal use.
+Please do not modify this file, otherwise the software may behave in
+unexpected way.
+
+============================================================================
+
+============================================================================
+                P R O J E C T
+============================================================================
+Module
+=======================
+Tc2xxInf01Asr4Sub
+============================================================================
+                A U T H O R   I D E N T I T Y
+============================================================================
+Initials	Name							Company
+=====	=================	================================================
+virgaj		Andrej Gazvoda				Vector Informatik GmbH
+virrsu	Roland Suess				Vector Informatik GmbH
+============================================================================
+                R E V I S I O N   H I S T O R Y
+============================================================================
+Date				Ver			Author		Description
+=========	=======	=====		============================================
+2016-09-29	1.00.00		virgaj			SUPERSET - Intial revision
+2017-03-30	1.00.01		virgaj			Changes in InitFunctions_Settings.xml
+2017-04-18	1.00.02		virrsu		Removed ConfigPtr of Fee_Init (InitFunctions_Setting.xml)
+***********************************************************************************************************************
+-->
+
+<Settings>
+	<Settings Name="com.vector.cfg.gen.Tresos_proxy.settings.TresosSettings">   <!-- Constant -->
+		<Settings Name="ModuleList">
+			<Settings Name="Adc_Aurix">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/AURIX/Adc"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Adc_AurixAS403"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="AURIX"/>
+				<Setting Name="Derivate" Value="TC277"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\DaVinciConfigurator\Generators\Mcal_Tc2xx\prepare_output_TC2xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module -->
+				    <Setting Name="Resource" Value="/AURIX/Resource"/>
+				    <Setting Name="Adc" Value="/AURIX/Adc"/>
+				    <Setting Name="Mcu" Value="/AURIX/Mcu"/>
+			    </Settings>  
+			</Settings>
+			<Settings Name="Wdg_Aurix">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/AURIX/Wdg"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Wdg_AurixAS403"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="AURIX"/>
+				<Setting Name="Derivate" Value="TC277"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\DaVinciConfigurator\Generators\Mcal_Tc2xx\prepare_output_TC2xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module -->
+				    <Setting Name="Resource" Value="/AURIX/Resource"/>
+				    <Setting Name="Dem" Value="/[ANY]/Dem"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="Dio" Value="/AURIX/Dio"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="Mcu" Value="/AURIX/Mcu"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="Spi" Value="/AURIX/Spi"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+			    </Settings>  
+			</Settings>
+			<Settings Name="Dio_Aurix">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/AURIX/Dio"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Dio_AurixAS403"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="AURIX"/>
+				<Setting Name="Derivate" Value="TC277"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\DaVinciConfigurator\Generators\Mcal_Tc2xx\prepare_output_TC2xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module -->
+				    <Setting Name="Resource" Value="/AURIX/Resource"/>
+			    </Settings>  
+			</Settings>
+			<Settings Name="Fee_Aurix">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/AURIX/Fee"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Fee_AurixAS403"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="AURIX"/>
+				<Setting Name="Derivate" Value="TC277"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\DaVinciConfigurator\Generators\Mcal_Tc2xx\prepare_output_TC2xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module -->
+				     <Setting Name="Resource" Value="/AURIX/Resource"/>
+				    <Setting Name="Fls" Value="/AURIX/Fls"/>
+					<Setting Name="Dem" Value="/[ANY]/Dem"/>				    
+			    </Settings>  
+			</Settings>
+			<Settings Name="Fls_Aurix">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/AURIX/Fls"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Fls_AurixAS403"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="AURIX"/>
+				<Setting Name="Derivate" Value="TC277"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\DaVinciConfigurator\Generators\Mcal_Tc2xx\prepare_output_TC2xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module -->
+				    <Setting Name="Resource" Value="/AURIX/Resource"/>
+				    <Setting Name="Dem" Value="/[ANY]/Dem"/>
+				    <Setting Name="Fee" Value="/AURIX/Fee"/>
+				    <Setting Name="Spi" Value="/AURIX/Spi"/>
+			    </Settings>  
+			</Settings>
+			<Settings Name="Gpt_Aurix">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/AURIX/Gpt"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Gpt_AurixAS403"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="AURIX"/>
+				<Setting Name="Derivate" Value="TC277"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\DaVinciConfigurator\Generators\Mcal_Tc2xx\prepare_output_TC2xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module -->
+				    <Setting Name="Resource" Value="/AURIX/Resource"/>
+				    <Setting Name="EcuM" Value="/[ANY]/EcuM"/>
+				    <Setting Name="Mcu" Value="/AURIX/Mcu"/>	
+			    </Settings>  
+			</Settings>
+			<Settings Name="Icu_Aurix">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/AURIX/Icu"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Icu_AurixAS403"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="AURIX"/>
+				<Setting Name="Derivate" Value="TC277"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\DaVinciConfigurator\Generators\Mcal_Tc2xx\prepare_output_TC2xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module -->
+				    <Setting Name="Resource" Value="/AURIX/Resource"/>
+				    <Setting Name="Mcu" Value="/AURIX/Mcu"/>
+				    <Setting Name="EcuM" Value="/[ANY]/EcuM"/>
+			    </Settings>  
+			</Settings>
+			<Settings Name="Irq_Aurix">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/AURIX/Irq"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Irq_AurixAS403"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="AURIX"/>
+				<Setting Name="Derivate" Value="TC277"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\DaVinciConfigurator\Generators\Mcal_Tc2xx\prepare_output_TC2xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module -->
+				    <Setting Name="Resource" Value="/AURIX/Resource"/>
+				    <Setting Name="Icu" Value="/AURIX/Icu"/>
+				    <Setting Name="Adc" Value="/AURIX/Adc"/>
+				    <Setting Name="Gpt" Value="/AURIX/Gpt"/>
+				    <Setting Name="Spi" Value="/AURIX/Spi"/>
+				    <Setting Name="Fls" Value="/AURIX/Fls"/>
+				    <Setting Name="Mcu" Value="/AURIX/Mcu"/>
+			    </Settings>  
+			</Settings>
+			<Settings Name="Mcu_Aurix">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/AURIX/Mcu"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Mcu_AurixAS403"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="AURIX"/>
+				<Setting Name="Derivate" Value="TC277"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\DaVinciConfigurator\Generators\Mcal_Tc2xx\prepare_output_TC2xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module -->
+				    <Setting Name="Resource" Value="/AURIX/Resource"/>
+				    <Setting Name="Dem" Value="/[ANY]/Dem"/>
+					<Setting Name="Pwm" Value="/AURIX/Pwm"/>
+				    <Setting Name="Icu" Value="/AURIX/Icu"/>
+				    <Setting Name="Gpt" Value="/AURIX/Gpt"/>
+			    </Settings>  
+			</Settings>
+			<Settings Name="Port_Aurix">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/AURIX/Port"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Port_AurixAS403"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="AURIX"/>
+				<Setting Name="Derivate" Value="TC277"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\DaVinciConfigurator\Generators\Mcal_Tc2xx\prepare_output_TC2xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module -->
+				    <Setting Name="Resource" Value="/AURIX/Resource"/> 
+			    </Settings>  
+			</Settings>
+			<Settings Name="Pwm_Aurix">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/AURIX/Pwm"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Pwm_AurixAS403"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="AURIX"/>
+				<Setting Name="Derivate" Value="TC277"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\DaVinciConfigurator\Generators\Mcal_Tc2xx\prepare_output_TC2xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module -->
+				    <Setting Name="Resource" Value="/AURIX/Resource"/> 
+				    <Setting Name="Mcu" Value="/AURIX/Mcu"/>
+			    </Settings>  
+			</Settings>
+			<Settings Name="Spi_Aurix">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/AURIX/Spi"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Spi_AurixAS403"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="AURIX"/>
+				<Setting Name="Derivate" Value="TC277"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\DaVinciConfigurator\Generators\Mcal_Tc2xx\prepare_output_TC2xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module -->
+				    <Setting Name="Resource" Value="/AURIX/Resource"/>
+				    <Setting Name="Dem" Value="/[ANY]/Dem"/>
+					<Setting Name="Mcu" Value="/AURIX/Mcu"/>				    
+			    </Settings>  
+			</Settings>
+			<Settings Name="Uart_Aurix">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/AURIX/Uart"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Uart_AurixAS403"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="AURIX"/>
+				<Setting Name="Derivate" Value="TC277"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\DaVinciConfigurator\Generators\Mcal_Tc2xx\prepare_output_TC2xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module -->
+				    <Setting Name="Resource" Value="/AURIX/Resource"/>
+					<Setting Name="Mcu" Value="/AURIX/Mcu"/>				    
+			    </Settings>  
+			</Settings>
+			<Settings Name="I2c_Aurix">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/AURIX/I2c"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="I2c_AurixAS403"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="AURIX"/>
+				<Setting Name="Derivate" Value="TC277"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\DaVinciConfigurator\Generators\Mcal_Tc2xx\prepare_output_TC2xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module -->
+				    <Setting Name="Resource" Value="/AURIX/Resource"/>
+					<Setting Name="Mcu" Value="/AURIX/Mcu"/>				    
+			    </Settings>  
+			</Settings>
+		</Settings>
+	</Settings>
+</Settings>	

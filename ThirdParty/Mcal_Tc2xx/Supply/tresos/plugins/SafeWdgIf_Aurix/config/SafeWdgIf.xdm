@@ -1,0 +1,180 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2014)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**   $FILENAME   : SafeWdgIf.xdm $                                            **
+**                                                                            **
+**   $CC VERSION : \main\20 $                                                 **
+**                                                                            **
+**   $DATE       : 2016-04-01 $                                               **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX                                                **
+**                                                                            **
+**  VARIANT   : VariantPostBuild                                                    **
+**                                                                            **
+**  AUTHOR    : DL-BLR-ATV-STC                                                **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY:[cover parentID=]                                            **
+**                                                                            **
+**  DESCRIPTION  : XML Data Model for SafeWdgIf driver                        **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : Aurix-HE_SafeTlib_DS_SafeWdgIf.docm, Ver 1.1           **
+**                                                                            **
+**  MAY BE CHANGED BY USER [yes/no]: No                                       **
+**                                                                            **
+*******************************************************************************/
+-->
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar"  
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX" type="AR-PACKAGE">        
+        <a:a name="UUID" value="93d9a111-9d4c-47b6-98cb-fe5aec24c8b0"/>
+        <d:lst type="ELEMENTS">
+          <d:chc name="SafeWdgIf" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="RELEASE" value="asc:4.0"/>        
+              <a:a name="UUID" value="03eaa8c5-137e-402e-823d-8d7776c1de4d"/>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:da name="DEFAULT" value="VariantPostBuildSelectable"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPostBuildLoadable</a:v>
+                  <a:v>VariantPostBuildSelectable</a:v>
+                </a:da>
+              </v:var>
+              <v:lst name="SafeWdgIfConfigSet" type="MULTIPLE-CONFIGURATION-CONTAINER">
+                <a:da name="MIN" value="1"/>
+                <v:ctr name="SafeWdgIfConfigSet" type="MULTIPLE-CONFIGURATION-CONTAINER">
+                  <a:a name="DESC" 
+                       value="This is the base container that contains the post-build selectable configuration parameters"/>
+                  <a:a name="UUID" value="ccda81dc-46cf-4171-858b-7c947884702f"/>
+                  
+                  
+                   <v:var name="SafeWdgIfIntWdgConfigIndex" type="INTEGER">
+                    <a:da name="TOOLTIP" value="This contains the index of the internal safety watchdog configuration to be used for initialisation."/>
+                    <a:a name="DESC">
+                      <a:v>This contains the index of the internal safety watchdog configuration to be used for initialisation.
+This parameter will be considered only if IntWdgOnly or IntCnRWdg_ExtTLFWindowWdg combination is selected.
+                      </a:v>
+                    </a:a>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="98ce938e-6ed1-5962-93b2-24d30b1fa49e"/>
+                    <a:da name="DEFAULT" value="0"/>
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=255"/>
+                      <a:tst expr="&gt;=0"/>
+                    </a:da>							
+		    <a:da name="EDITABLE" type="XPath" expr="((../../../SafeWdgIfGeneral/SafeWdgIfWdgCombination ='SWDG_INT_WDG_ONLY') or (../../../SafeWdgIfGeneral/SafeWdgIfWdgCombination ='SWDG_INT_CNR_WDG_EXT_TLF_WINDOW_WDG'))"/>	
+                						
+                  </v:var>
+
+                
+                   <v:var name="SafeWdgIfExtWdgCicConfigIndex" type="INTEGER">
+                    <a:da name="TOOLTIP" value="This contains the index of the external CIC61508 watchdog configuration to be used for initialization."/>
+                    <a:a name="DESC">
+                      <a:v>This contains the index of the external CIC watchdog configuration to be used for initialization. 
+This parameter will be considered only if ExtCICWdg is selected. 
+                      </a:v>
+                    </a:a>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="98ce938e-6ee1-5962-93b2-24d21b1fa49e"/>
+                    <a:da name="DEFAULT" value="0"/>
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=255"/>
+                      <a:tst expr="&gt;=0"/>
+                    </a:da>
+		    <a:da name="EDITABLE" type="XPath" expr="../../../SafeWdgIfGeneral/SafeWdgIfWdgCombination ='SWDG_EXT_CIC_WDG_ONLY'"/>
+                  </v:var>                   
+
+                 
+                   <v:var name="SafeWdgIfExtWdgTlfConfigIndex" type="INTEGER">
+                    <a:da name="TOOLTIP" value="This contains the index of the external TLF watchdog configuration to be used for initialization."/>
+                    <a:a name="DESC">
+                      <a:v>This contains the index of the external TLF watchdog configuration to be used for initialization. 
+This parameter will be considered only if ExtTLFWdg or or IntCnRWdg_ExtTLFWindowWdg is selected. 
+                      </a:v>
+                    </a:a>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="98ce938e-6ee1-5962-93b2-24d21b1fa49a"/>
+                    <a:da name="DEFAULT" value="0"/>
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=255"/>
+                      <a:tst expr="&gt;=0"/>
+                    </a:da>
+                 <a:da name="EDITABLE" type="XPath" expr="((../../../SafeWdgIfGeneral/SafeWdgIfWdgCombination ='SWDG_EXT_TLF_WDG_ONLY') or (../../../SafeWdgIfGeneral/SafeWdgIfWdgCombination ='SWDG_INT_CNR_WDG_EXT_TLF_WINDOW_WDG'))"/>					
+                  </v:var>                   
+                </v:ctr>                  
+              </v:lst>
+	      <v:ctr name="SafeWdgIfGeneral" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: General configuration parameters for SafeWdg interface module."/>
+                 <a:a name="UUID" value="a868aef7-06f0-5e10-9482-3b9f6ca77cb2"/> 
+		 <v:var name="SafeWdgIfWdgCombination" type="ENUMERATION">
+                        <a:a name="DESC" 
+                             value="EN: This parameter selects the type of watchdog combination used."/>
+												<a:da name="RANGE">
+												<a:v>SWDG_INT_WDG_ONLY</a:v> 
+												<a:v>SWDG_INT_CNR_WDG_EXT_TLF_WINDOW_WDG</a:v>
+												<a:v>SWDG_EXT_CIC_WDG_ONLY</a:v>
+												<a:v>SWDG_EXT_TLF_WDG_ONLY</a:v>
+												</a:da>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf11-8b4f-4719-abde-2f2d65e8614a"/>
+                        <a:da name="DEFAULT" value="SWDG_INT_WDG_ONLY"/>
+                        <a:da name="TOOLTIP" value=" This parameter selects watchdog combination used."/>
+										</v:var>
+                </v:ctr>
+
+            </v:ctr>         
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+</datamodel>

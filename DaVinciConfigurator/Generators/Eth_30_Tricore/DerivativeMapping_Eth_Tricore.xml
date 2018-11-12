@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Settings Name="com.vector.cfg.core.sip.ISIPService">
+    <Settings Name="ModuleList">
+      <Settings Name="Eth">
+        <Settings Name="ETH_TRICORE">
+          <Setting Name="SIP_Folder" Value="Eth" />
+          <Settings Name="50191910-00FB-4BD9-8CD3-DE12EB270635">
+            <Setting Name="Derivative" Value="TC277" />
+            <Setting Name="SIP_Folder" Value="Eth" />
+            <Setting Name="ReleaseType" Value="Tested" />
+          </Settings>
+        </Settings>
+      </Settings>
+    </Settings>
+  </Settings>
+</Settings>

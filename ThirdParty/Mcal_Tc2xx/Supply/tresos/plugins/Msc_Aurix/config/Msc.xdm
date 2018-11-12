@@ -1,0 +1,1484 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2013)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  $FILENAME   : Msc.xdm $                                                  **
+**                                                                            **
+**  $CC VERSION : \main\42 $                                                 **
+**                                                                            **
+**  $DATE       : 2016-07-05 $                                               **
+**                                                                            **
+**  PLATFORM  : Infineon Aurix                                                **
+**                                                                            **
+**  AUTHOR      : DL-AUTOSAR-Engineering                                      **
+**                                                                            **
+**  VENDOR      : Infineon Technologies                                       **
+**                                                                            **
+**  DESCRIPTION : This file contains                                          **
+**                functionality of <> driver.                                 **
+**                                                                            **
+**  MAY BE CHANGED BY USER [yes/no]: No                                       **
+**                                                                            **
+*******************************************************************************/
+/*******************************************************************************
+TRACEABILITY : 
+[cover parentID=DS_NAS_MSC_PR69_PR469_PR122_PR123,DS_NAS_MSC_PR647,
+DS_NAS_MSC_PR63_1,DS_NAS_MSC_PR63_2,DS_NAS_MSC_PR63_3,DS_NAS_MSC_PR63_4,
+DS_NAS_MSC_PR913,DS_NAS_MSC_PR1070_1,DS_NAS_MSC_PR1070_2 DS_NAS_MSC_PR483,
+DS_NAS_MSC_PR127,DS_NAS_MSC_PR228_1,DS_NAS_MSC_PR228_2,DS_NAS_MSC_PR228_3,
+DS_NAS_MSC_PR228_4,DS_NAS_MSC_PR228_5,DS_NAS_MSC_PR228_6,DS_NAS_MSC_PR228_7,
+DS_NAS_MSC_PR228_8,DS_NAS_MSC_PR228_9,DS_NAS_MSC_PR228_10,
+DS_NAS_MSC_PR228_11,DS_NAS_MSC_PR228_12,DS_NAS_MSC_PR228_45,DS_NAS_MSC_PR228_46,
+DS_NAS_MSC_PR228_13,DS_NAS_MSC_PR228_14,DS_NAS_MSC_PR228_15,DS_NAS_MSC_PR228_16,
+DS_NAS_MSC_PR228_17,DS_NAS_MSC_PR228_18,DS_NAS_MSC_PR228_19,DS_NAS_MSC_PR228_20,
+DS_NAS_MSC_PR228_21,DS_NAS_MSC_PR228_22,DS_NAS_MSC_PR228_23,DS_NAS_MSC_PR228_24,
+DS_NAS_MSC_PR228_25,DS_NAS_MSC_PR228_26,DS_NAS_MSC_PR228_27,DS_NAS_MSC_PR228_28,
+DS_NAS_MSC_PR228_29,DS_NAS_MSC_PR228_30,DS_NAS_MSC_PR228_31,DS_NAS_MSC_PR228_32,
+DS_NAS_MSC_PR228_33,DS_NAS_MSC_PR228_34,DS_NAS_MSC_PR228_35,DS_NAS_MSC_PR228_36,
+DS_NAS_MSC_PR228_37,DS_NAS_MSC_PR228_38,DS_NAS_MSC_PR228_39,DS_NAS_MSC_PR228_40,
+DS_NAS_MSC_PR228_41,DS_NAS_MSC_PR228_42,DS_NAS_MSC_PR228_43,DS_NAS_MSC_PR228_44,
+DS_NAS_MSC_PR228_47,DS_NAS_MSC_PR228_48,DS_NAS_MSC_PR655,
+DS_NAS_MSC_PR700,DS_NAS_MSC_PR701,DS_NAS_MSC_PR713,DS_NAS_MSC_PR716,
+DS_NAS_MSC_PR717,DS_NAS_MSC_PR719,DS_NAS_MSC_PR720,DS_NAS_MSC_PR723,
+DS_NAS_MSC_PR724,SAS_NAS_MSC_PR79_PR80_PR623,SAS_NAS_MSC_PR667,
+DS_NAS_MSC_PR728,SAS_NAS_MSC_PR725,DS_NAS_HE2_MSC_PR3017,
+SAS_NAS_MSC_PR726,SAS_NAS_MSC_PR77,SAS_NAS_MSC_PR646,SAS_NAS_MSC_PR65,
+SAS_NAS_MSC_PR227,SAS_NAS_MSC_PR78,DS_NAS_MSC_PR2848,SAS_NAS_MSC_PR64,
+SAS_NAS_MSC_PR640, SAS_NAS_HE2_MSC_PR3054_1,SAS_NAS_HE2_MSC_PR3054_2,
+SAS_NAS_HE2_MSC_PR3054_3,SAS_NAS_HE2_MSC_PR3054_4]
+[/cover]
+*******************************************************************************/
+-->
+<datamodel version="3.0"
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd"
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd"
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd"
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar"
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd"
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd"
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX" type="AR-PACKAGE">
+        <a:a name="UUID" value="DCE:3ae9f400-6b6b-42ec-8312-f89a678b9617"/>
+        <d:lst type="ELEMENTS">
+          <d:chc name="MscParameterDefinition" type="AR-ELEMENT"
+                 value="ECU_PARAMETER_DEFINITION">
+            <d:ctr type="AR-ELEMENT">
+              <a:a name="DEF"
+                   value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+              <a:a name="UUID" value="ECUC:4c30de73-30fc-43b3-a1b3-e74211eedff3"/>
+            </d:ctr>
+          </d:chc>
+          <d:chc name="Msc" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="RELEASE" value="asc:4.0"/>
+              <a:a name="UUID" value="DCE:d9c9a60e-d7b6-4d89-9688-5de76e41a4c1"/>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+			  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+               </a:a>			  
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:da name="DEFAULT" value="VariantPostBuildSelectable"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPostBuildSelectable</a:v>
+                  <a:v>VariantPostBuildLoadable</a:v>
+                </a:da>
+              </v:var>
+               <v:ctr name="MscGeneral" type="IDENTIFIABLE">
+                <a:a name="DESC"
+                       value="EN: General configuration of MSC Driver module"/>
+                <a:a name="UUID"
+                     value="DCE:dcc39b88-cc2b-4358-ba88-30120722c6c3"/>
+                <v:var name="MscDevErrorDetect" type="BOOLEAN">
+                  <a:a name="DESC"
+                       value="FR: Enables/Disables the Development Error Detection in the MSC Driver"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID"
+                       value="DCE:a4e850e4-be6b-4d72-b360-c13bb0bff7f6"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="MscVersionInfoApi" type="BOOLEAN">
+                  <a:a name="DESC"
+                       value="FR: This parameter decides the availability of the API Msc_GetVersionInfo in the code"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID"
+                       value="DCE:9812df82-892b-4abc-99d9-66bfcc61986b"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="MscPassiveFrameCounterApi" type="BOOLEAN">
+                  <a:a name="DESC"
+                       value="FR: This parameter decides the availability of the API Msc_GetPassiveTimeFrameCounter in the code"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID"
+                       value="DCE:9812df82-892b-4abc-99d9-66bfcc61981b"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="MscDeInitApi" type="BOOLEAN">
+                  <a:a name="DESC"
+                       value="FR: This parameter decides the availability of the API Msc_DeInit"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID"
+                       value="DCE:b8ede77d-3270-4da8-b3b5-3bf169de9ae9"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="MscEmergencyDataApi" type="BOOLEAN">
+                  <a:a name="DESC"
+                       value="FR: This parameter decides the availability of the API Msc_ReconfigureEmergencyData"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID"
+                       value="DCE:b8ede77d-3270-4da8-b3b5-3bf169de9ae6"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="MscPBFixedAddress" type="BOOLEAN">
+                  <a:a name="DESC"
+                       value="FR: This parameter decides if PB Fixed Address is ON"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID"
+                       value="DCE:b8ede77d-3270-4da8-b3b5-3bf169de4ae6"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="INVALID" type="XPath">
+                  <a:tst expr="(num:i(count(../../MscConfigSet/*))) > 1 and . = 'true'"
+                   true="Wrong Configuration. When MscPBFixedAddress is enabled then only 1 Config set is permitted. Remove the other Config sets."/>
+                  </a:da>
+                </v:var>
+                <v:var name="MscDebugSupport" type="BOOLEAN">
+                  <a:a name="DESC"
+                       value="FR: This parameter decides if Msc variables are available for debug"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID"
+                       value="492f8472-3e2c-4bf1-b27f-01fd7ac25799"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                 <v:var name="MscResetSfrAtInit" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Enables / Disables Reset of SFR's to default value at init"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                          <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:aec58ac0-ad1c-4351-b464-9f4301e99577"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+				<v:var name="MscRunningInUser0Mode" type="BOOLEAN">
+                  <a:a name="DESC"
+                       value="If this parameter is set to FALSE, then Protected Mode(user mode) register access will not be done and API is run in Supervisor mode."/>
+                  <a:a name="TOOLTIP"
+                       value="EN: Pre-processor switch to enable/disable the Normal/Protected mode."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="01abc1fb-1589-455e-9b2b-cfbb4d920850"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="MscUserModeInitApiEnable" type="BOOLEAN">
+                  <a:a name="DESC"
+                       value="Pre-processor switch to enable / disable protected register access in all the Init API."/>
+                  <a:a name="TOOLTIP"
+                       value="EN: Pre-processor switch to enable / disable protected register access in all the Init API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="01abc1fb-1589-455e-9b2e-cfbb4d929136"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="MscUserModeDeInitApiEnable" type="BOOLEAN">
+                  <a:a name="DESC"
+                       value="Pre-processor switch to enable / disable protected register access in all the DeInit API."/>
+                  <a:a name="TOOLTIP"
+                       value="EN: Pre-processor switch to enable / disable protected register access in all the DeInit API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="01abc1fb-1589-455e-9b2b-cfee4d999436"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="MscUserModeRuntimeApiEnable" type="BOOLEAN">
+                  <a:a name="DESC"
+                       value="Pre-processor switch to enable / disable protected register access in all the APIs other than Init/Deinit APIs"/>
+                  <a:a name="TOOLTIP"
+                       value="EN: Pre-processor switch to enable / disable protected register access in all the APIs other than Init/Deinit APIs."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="01abc1fb-1589-455e-9b2b-efbb4d660436"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+              </v:ctr>
+              <v:lst name="MscConfigSet" type="MULTIPLE-CONFIGURATION-CONTAINER">
+                <a:da name="MIN" value="1"/>
+                <v:ctr name="MscConfigSet" type="MULTIPLE-CONFIGURATION-CONTAINER">
+                <a:a name="DESC"
+                       value="EN: Config Set of MSC Driver"/>
+                  <a:a name="UUID"
+                       value="DCE:de4e4d33-13eb-4ca2-ae8c-e1a5bd519721"/>
+                  <v:lst name="MscModuleConfiguration" type="MAP">
+                    <a:da name="MIN" value="1"/>
+                    <a:da name="MAX" type="XPath" expr="ecu:get('Msc.NoOfModules')"/>
+                  <v:ctr name="MscModuleConfiguration" type="IDENTIFIABLE">
+                <a:a name="DESC"
+                       value="EN: Module Configuration of MSC Driver"/>
+                    <a:a name="UUID"
+                         value="DCE:ab2e385e-d710-4d97-a9d7-06bbfc6c74dd"/>
+                    <v:ctr name="MscClockConfiguration" type="IDENTIFIABLE">
+                      <a:a name="DESC"
+                       value="EN: Clock Configuration MSC Driver"/>
+                      <a:a name="POSTBUILDCHANGEABLE" value="false"/>
+                      <a:a name="UUID"
+                           value="DCE:6062ca80-76f1-43eb-8fae-6b10a59e236f"/>
+                      <v:var name="MscClockStepValue" type="INTEGER">
+                        <a:a name="DESC"
+                             value="Divider Value for deriving the MSC Clock to be used for transmission of data"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                         <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                         <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID"
+                             value="DCE:d6ea9dd7-1d6e-4d4b-b3a3-24e9f55ce8f1"/>
+                        <a:da name="DEFAULT" value="1023"/>
+                        <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=1023"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                      </v:var>
+                      <v:var name="MscClockDividerMode" type="ENUMERATION">
+                        <a:a name="DESC"
+                             value="FR: Divider Mode for deriving the MSC Clock to be used for transmission of data"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                         <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                         <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID"
+                             value="DCE:213664d2-5a6b-41ca-af7d-cbfa8215f9dd"/>
+                        <a:da name="DEFAULT" value="NORMAL_DIVIDER_MODE"/>
+                        <a:da name="RANGE">
+                          <a:v>NORMAL_DIVIDER_MODE</a:v>
+                          <a:v>FRACTIONAL_DIVIDER_MODE</a:v>
+                        </a:da>
+                      </v:var>
+                      <v:var name="MscSleepMode" type="ENUMERATION">
+                        <a:a name="DESC"
+                             value="FR: Enables/Disables the Sleep Mode for the MSC peripheral"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                         <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                         <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID"
+                             value="DCE:d4aec598-5cc7-4487-9530-36ee9e853d1b"/>
+                        <a:da name="DEFAULT" value="SLEEP_ENABLE"/>
+                        <a:da name="RANGE">
+                          <a:v>SLEEP_ENABLE</a:v>
+                          <a:v>SLEEP_DISABLE</a:v>
+                        </a:da>
+                      </v:var>
+                    </v:ctr>
+                    <v:ctr name="MscTxConfiguration" type="IDENTIFIABLE">
+                      <a:a name="DESC"
+                           value="FR: This container contains the configuration parameters and sub-containers required to configure the MSC transmitter"/>
+                      <a:a name="UUID"
+                           value="DCE:e43a0c5e-f707-4aa7-a127-9b7866cb198b"/>
+                      <v:var name="MscTxClockType" type="ENUMERATION">
+                        <a:a name="DESC"
+                             value="FR: Determines if the clock signal is generated always or only during the active phase of frame transmission"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                         <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                         <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID"
+                             value="DCE:cf8fb070-6d62-4707-a73f-f16af346bdb7"/>
+                        <a:da name="DEFAULT" value="CLOCK_ALWAYS"/>
+                        <a:da name="RANGE">
+                          <a:v>CLOCK_ACTIVEPHASE</a:v>
+                          <a:v>CLOCK_ALWAYS</a:v>
+                        </a:da>
+                      </v:var>
+                      <v:var name="MscTxBaudRate" type="ENUMERATION">
+                        <a:a name="DESC"
+                             value="FR: Defines the clock frequency for MSC frame transmission (on downstream channel)"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                         <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                         <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID"
+                             value="DCE:661fb8c0-a062-4855-8ff2-d4da44325514"/>
+                        <a:da name="DEFAULT" value="MSC_CLOCK_DIV_2"/>
+                        <a:da name="RANGE" value="MSC_CLOCK_DIV_2"/>
+                      </v:var>
+                      <v:ctr name="MscTxSignalTypeConfiguration"
+                             type="IDENTIFIABLE">
+                <a:a name="DESC"
+                       value="Tx Signal Type Configuration"/>
+                        <a:a name="UUID"
+                             value="DCE:e5fde1b2-973a-44b9-ada3-b297337a40b5"/>
+                        <v:var name="MscTxClockSignalType" type="ENUMERATION">
+                          <a:a name="DESC"
+                               value="This parameter determines the polarity of the transmitted clock signal of the MSC transmitter"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:127592a1-6db5-4307-983a-a3845953c876"/>
+                          <a:da name="DEFAULT" value="SIGNAL_INVERT_OFF"/>
+                          <a:da name="RANGE">
+                            <a:v>SIGNAL_INVERT_ON</a:v>
+                            <a:v>SIGNAL_INVERT_OFF</a:v>
+                          </a:da>
+                        </v:var>
+                        <v:var name="MscTxDataSignalType" type="ENUMERATION">
+                          <a:a name="DESC"
+                               value="This parameter determines the polarity of the transmitted data signal of the MSC transmitter"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:60ee8a00-13d2-4e83-a84c-d8180ff13b26"/>
+                          <a:da name="DEFAULT" value="SIGNAL_INVERT_OFF"/>
+                          <a:da name="RANGE">
+                            <a:v>SIGNAL_INVERT_ON</a:v>
+                            <a:v>SIGNAL_INVERT_OFF</a:v>
+                          </a:da>
+                        </v:var>
+                        <v:var name="MscTxChipSelectSignalType"
+                               type="ENUMERATION">
+                          <a:a name="DESC"
+                               value="This parameter determines the polarity of the transmitted Enable (chipselect) signal of the MSC transmitter"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:f88fd5f5-b352-4af6-99e9-8abbaccf451e"/>
+                          <a:da name="DEFAULT" value="SIGNAL_INVERT_OFF"/>
+                          <a:da name="RANGE">
+                            <a:v>SIGNAL_INVERT_ON</a:v>
+                            <a:v>SIGNAL_INVERT_OFF</a:v>
+                          </a:da>
+                        </v:var>
+                      </v:ctr>
+                      <v:ctr name="MscCmdFrameConfiguration"
+                             type="IDENTIFIABLE">
+                        <a:a name="DESC"
+                             value="FR: This container contains the settings for transmission of command frames"/>
+                        <a:a name="UUID"
+                             value="DCE:70804f21-d5d0-4087-b94d-33161c9a0bb6"/>
+                        <v:var name="MscCmdFrameIntPtr" type="ENUMERATION">
+                         <a:a name="DESC"
+                           value="Configuration parameters for Command Frame"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:95341b14-4ab1-4f61-acf0-7f710ef1c42e"/>
+                          <a:da name="DEFAULT" value="INTR_DISABLE"/>
+                          <a:da name="RANGE">
+                            <a:v>INTR_DISABLE</a:v>
+                            <a:v>INTRPTR_SR0</a:v>
+                            <a:v>INTRPTR_SR1</a:v>
+                            <a:v>INTRPTR_SR2</a:v>
+                            <a:v>INTRPTR_SR3</a:v>
+                          </a:da>
+                          <a:da name="INVALID" type="XPath">
+                          <a:tst expr="( ((../../MscTimeFrameConfiguration/MscTimeFrameIntPtr = (.)) or
+                                         ((../../MscDataFrameConfiguration/MscDataFrameIntrPtr = (.)) and (../../MscDataFrameConfiguration/MscDataFrameIntrInput != 'INTR_DISABLE')) or
+                                         ((../../../MscRxConfiguration/MscRxFrameIntrPtr = (.)) and (../../../MscRxConfiguration/MscRxFrameIntrInput != 'INTR_DISABLE'))) and
+                                         ((.) != 'INTR_DISABLE'))"
+                                      true="Same Service Request (INTRPTR_SRx) is selected for some other Interrupt also. Select some other Service Request(INTRPTR_SRx). "/>
+                          </a:da>
+                        </v:var>
+                        <v:var name="MscCmdFrameNotification" type="FUNCTION-NAME">
+                          <a:a name="DESC"
+                               value="Specifies the application define function name, that will called on Command Frame Interrupt"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:a971022f-6462-4325-9caa-708b582b3288"/>
+                          <a:da name="DEFAULT" value="NULL_PTR"/>
+                          <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(../MscCmdFrameIntPtr != 'INTR_DISABLE') "/>
+                          </a:da>
+                        </v:var>
+                        <v:var name="MscCmdFrameLen" type="INTEGER">
+                          <a:a name="DESC"
+                               value="Specifies the number of bits to be transmitted in the Command frame"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:a971022f-6462-4325-9caa-708b582b3269"/>
+                          <a:da name="DEFAULT" value="0"/>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=32"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da>
+                        </v:var>
+                        <v:var name="MscAutomaticDataInsertionEnable" type="ENUMERATION">
+                          <a:a name="DESC" 
+                           value="Configuration for Automatic insertion of Data Frame"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:95341b14-4ab1-4f61-acf0-7f710ef1c43e"/>
+                          <a:da name="DEFAULT" value="MSC_AUTO_DATA_INSERTION_DISABLE"/>
+                          <a:da name="RANGE">
+                            <a:v>MSC_AUTO_DATA_INSERTION_DISABLE </a:v>
+                            <a:v>MSC_AUTO_DATA_INSERTION_ENABLE </a:v>
+                          </a:da>
+                        </v:var>
+                        <v:var name="MscCmdPassivePhaseLen" type="INTEGER">
+                          <a:a name="DESC"
+                               value="Specifies the length of command passive phase of command frame, passive time frame transmission"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:e72ba5ff-f753-4e24-a444-60544540ad77"/>
+                          <a:da name="DEFAULT" value="2"/>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=65"/>
+                            <a:tst expr="&gt;=2"/>
+                          </a:da>
+                        </v:var>
+                      </v:ctr>
+                      <v:ctr name="MscTimeFrameConfiguration"
+                             type="IDENTIFIABLE">
+                        <a:a name="DESC"
+                             value="FR: Selects the service request to be raised when a Time frame interrupt is triggered"/>
+                        <a:a name="UUID"
+                             value="DCE:90d350d1-e58f-45c9-901b-f4177fd66729"/>
+                        <v:var name="MscTimeFrameIntPtr" type="ENUMERATION">
+                          <a:a name="DESC"
+                               value="FR: This container contains the settings for transmission of passive time frames"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:03fbcd0a-a572-46a9-9b72-20a7ea637193"/>
+                          <a:da name="DEFAULT" value="INTR_DISABLE"/>
+                          <a:da name="RANGE">
+                            <a:v>INTR_DISABLE</a:v>
+                            <a:v>INTRPTR_SR0</a:v>
+                            <a:v>INTRPTR_SR1</a:v>
+                            <a:v>INTRPTR_SR2</a:v>
+                            <a:v>INTRPTR_SR3</a:v>
+                          </a:da>
+                          <a:da name="INVALID" type="XPath">
+                          <a:tst expr="( ((../../MscCmdFrameConfiguration/MscCmdFrameIntPtr = (.)) or
+                                         ((../../MscDataFrameConfiguration/MscDataFrameIntrPtr = (.)) and (../../MscDataFrameConfiguration/MscDataFrameIntrInput != 'INTR_DISABLE')) or
+                                         ((../../../MscRxConfiguration/MscRxFrameIntrPtr = (.)) and (../../../MscRxConfiguration/MscRxFrameIntrInput!='INTR_DISABLE'))) and
+                                         ((.) != 'INTR_DISABLE'))"
+                                      true="Same Service Request (INTRPTR_SRx) is selected for some other Interrupt also. Select some other Service Request(INTRPTR_SRx). "/>
+                          </a:da>
+                        </v:var>
+                       <v:var name="MscTimeFrameNotification" type="FUNCTION-NAME">
+                          <a:a name="DESC"
+                               value="FR: Specifies the application define function name, that will called on Time Frame Interrupt"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:a971022f-6462-4325-9caa-708b582b3298"/>
+                          <a:da name="DEFAULT" value="NULL_PTR"/>
+                          <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(../MscTimeFrameIntPtr != 'INTR_DISABLE') "/>
+                          </a:da>
+                        </v:var>
+                        <v:var name="MscTimeFrameCount" type="INTEGER">
+                          <a:a name="DESC"
+                               value="FR: Specifies the number of time frames to be inserted between data frames in Data Repetition Mode"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:b16c2ed9-c95a-4951-bd72-973a2928404b"/>
+                          <a:da name="DEFAULT" value="0"/>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=15"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da>
+                        </v:var>
+                      </v:ctr>
+                      <v:ctr name="MscDataFrameConfiguration"
+                             type="IDENTIFIABLE">
+                        <a:a name="DESC"
+                             value="FR: This container contains the settings for transmission of data frames"/>
+                        <a:a name="UUID"
+                             value="DCE:bc00ae72-c510-433a-b751-90ce2325523f"/>
+                        <v:var name="MscDataFrameIntrInput"
+                               type="ENUMERATION">
+                          <a:a name="DESC"
+                               value="FR: Selects the trigger for generating a data frame interrupt"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:15f65c5f-2368-4a39-8dd4-b41bb73466cf"/>
+                          <a:da name="DEFAULT" value="INTR_DISABLE"/>
+                          <a:da name="RANGE">
+                            <a:v>INTR_DISABLE</a:v>
+                            <a:v>INTR_TRIG_LASTBIT</a:v>
+                            <a:v>INTR_TRIG_FIRSTBIT</a:v>
+                          </a:da>
+                        </v:var>
+                        <v:var name="MscDataFrameIntrPtr" type="ENUMERATION">
+                          <a:a name="DESC"
+                               value="FR: Selects the service request to be raised when a data frame interrupt is triggered"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:836f3fdc-52b1-4cdc-b17a-293a5695142f"/>
+                          <a:da name="DEFAULT" value="INTRPTR_SR0"/>
+                          <a:da name="RANGE">
+                            <a:v>INTRPTR_SR0</a:v>
+                            <a:v>INTRPTR_SR1</a:v>
+                            <a:v>INTRPTR_SR2</a:v>
+                            <a:v>INTRPTR_SR3</a:v>
+                          </a:da>
+                          <a:da name="INVALID" type="XPath">
+                          <a:tst expr="( ((../../MscCmdFrameConfiguration/MscCmdFrameIntPtr = (.)) or
+                                          (../../MscTimeFrameConfiguration/MscTimeFrameIntPtr = (.))or
+                                         ((../../../MscRxConfiguration/MscRxFrameIntrPtr = (.)) and (../../../MscRxConfiguration/MscRxFrameIntrInput!='INTR_DISABLE'))) and
+                                         (../MscDataFrameIntrInput != 'INTR_DISABLE'))"
+                                     true="Same Service Request (INTRPTR_SRx) is selected for some other Interrupt also. Select some other Service Request(INTRPTR_SRx). "/>
+                          </a:da>
+                          <a:da name="EDITABLE" type="XPath">
+                          <a:tst expr="../MscDataFrameIntrInput != 'INTR_DISABLE'"/>
+                          </a:da>
+                        </v:var>
+                        <v:var name="MscDataFrameNotification" type="FUNCTION-NAME">
+                          <a:a name="DESC"
+                               value="FR: Specifies the application define function name, that will called on Data Frame Interrupt"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="49111472-3e2c-4bf1-b27f-01fd7ac35788"/>
+                          <a:da name="DEFAULT" value="NULL_PTR"/>
+                          <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(../MscDataFrameIntrInput != 'INTR_DISABLE') "/>
+                          </a:da>
+                        </v:var>
+                        <v:var name="MscDataFrameTxMode" type="ENUMERATION">
+                          <a:a name="DESC"
+                               value="FR: Selects the mode for transmission of data frames"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:25c1f0e1-234b-4e51-bfda-f83354ada516"/>
+                          <a:da name="DEFAULT" value="TX_TRIGGERMODE"/>
+                          <a:da name="RANGE">
+                            <a:v>TX_TRIGGERMODE</a:v>
+                            <a:v>TX_REPEATMODE</a:v>
+                          </a:da>
+                        </v:var>
+                        <v:var name="MscSelectionBitHighEnable"
+                               type="ENUMERATION">
+                          <a:a name="DESC"
+                               value="FR: This parameter enables/disables the transmission of a selection bit"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:62db5e3b-a5bb-4432-8e74-53f9099c5b51"/>
+                          <a:da name="DEFAULT" value="TX_DATAFRM_SELBIT_PRESENT"/>
+                          <a:da name="RANGE">
+                            <a:v>TX_DATAFRM_SELBIT_PRESENT</a:v>
+                            <a:v>TX_DATAFRM_SELBIT_ABSENT</a:v>
+                          </a:da>
+                        </v:var>
+                        <v:var name="MscSelectionBitLowEnable"
+                               type="ENUMERATION">
+                          <a:a name="DESC"
+                               value="FR: This parameter enables/disables the transmission of a selection bit"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:fcfae685-4d60-4851-a9c5-544f9d673374"/>
+                          <a:da name="DEFAULT" value="TX_DATAFRM_SELBIT_PRESENT"/>
+                          <a:da name="RANGE">
+                            <a:v>TX_DATAFRM_SELBIT_PRESENT</a:v>
+                            <a:v>TX_DATAFRM_SELBIT_ABSENT</a:v>
+                          </a:da>
+                        </v:var>
+                        <v:var name="MscPassivePhaseLen" type="INTEGER">
+                          <a:a name="DESC"
+                               value="FR: Specifies the length of passive phase of data frame, passive time frame transmission"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:e72ba5ff-f753-4e24-a444-60544540ad76"/>
+                          <a:da name="DEFAULT" value="2"/>
+                        <a:da name="INVALID" type="Multi">
+                          <mt:xpath expr="((../MscExtensionEnableValue = 'EXTENSION_ENABLE') and (.&gt;=128))"
+                          true="Invalid Configuration, if MscExtensionEnableValue is EXTENSION_ENABLE then the Range should be between 2 to 127"/>
+                          <mt:xpath expr="((../MscExtensionEnableValue = 'EXTENSION_DISABLE') and (.&gt;=32))"
+                          true="Invalid Configuration, if MscExtensionEnableValue is EXTENSION_DISABLE then the Range should be between 2 to 31"/>
+                          <mt:range>
+                          <mt:tst expr="&gt;=2"/>
+                          <mt:tst expr="&lt;=127"/>
+                         </mt:range>
+                       </a:da>
+                        </v:var>
+                        <v:var name="MscInjP0Enable" type="ENUMERATION">
+                          <a:a name="DESC"
+                               value="FR: This parameter enables/disables injection of bit at port pin PIN0"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="492f8472-3e2c-4121-b27f-01fd7ac35788"/>
+                          <a:da name="DEFAULT" value="PIN0_INJECTION_DISABLE"/>
+                          <a:da name="RANGE">
+                            <a:v>PIN0_INJECTION_DISABLE </a:v>
+                            <a:v>PIN0_INJECTION_ENABLE </a:v>
+                          </a:da>
+                        </v:var>
+                        <v:var name="MscInjP0Pos" type="INTEGER">
+                          <a:a name="DESC"
+                               value="FR: Specifies the bit postion of the external one bit signal injected at PIN0. The valid Range for this parameter is if MscExtensionEnableValue is EXTENSION_ENABLE then the Range should be between 0 to 63 or else if MscExtensionEnableValue is EXTENSION_DISABLE then the Range should be between 0 to 31"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="492f8472-3e2c-4bf1-b123-01fd7ac35788"/>
+                          <a:da name="DEFAULT" value="0"/>
+                          <a:da name="INVALID" type="Multi">
+                            <mt:xpath expr="((../MscExtensionEnableValue = 'EXTENSION_ENABLE') and (.&gt;=64))"
+                            true="Invalid Configuration, if MscExtensionEnableValue is EXTENSION_ENABLE then the Range should be between 0 to 63"/>
+                            <mt:xpath expr="((../MscExtensionEnableValue = 'EXTENSION_DISABLE') and (.&gt;=32))"
+                            true="Invalid Configuration, if MscExtensionEnableValue is EXTENSION_DISABLE then the Range should be between 0 to 31 "/>
+                            <mt:range>
+                            <mt:tst expr="&gt;=0"/>
+                            <mt:tst expr="&lt;=63"/>
+                           </mt:range>
+                          </a:da>
+                          <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(../MscInjP0Enable = 'PIN0_INJECTION_ENABLE') "/>
+                          </a:da>
+                        </v:var>
+                        <v:var name="MscInjP0EmergencyValue" type="ENUMERATION">
+                          <a:a name="DESC"
+                               value="FR: This parameter sends high/low for selected bit position during Emergency"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="49212342-3e2c-4bf1-b27f-01fd7ac35788"/>
+                          <a:da name="DEFAULT" value="INJP0_EMERGENCY_LOGICAL_LOW"/>
+                          <a:da name="RANGE">
+                            <a:v>INJP0_EMERGENCY_LOGICAL_LOW</a:v>
+                            <a:v>INJP0_EMERGENCY_LOGICAL_HIGH</a:v>
+                          </a:da>
+                          <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(../MscInjP0Enable = 'PIN0_INJECTION_ENABLE') "/>
+                          </a:da>
+                        </v:var>
+                        <v:var name="MscInjP1Enable" type="ENUMERATION">
+                          <a:a name="DESC"
+                               value="FR: This parameter enables/disables injection of bit at port pin PIN1"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:fcfae685-4d60-4851-a9c5-544f9d673355"/>
+                          <a:da name="DEFAULT" value="PIN1_INJECTION_DISABLE"/>
+                          <a:da name="RANGE">
+                            <a:v>PIN1_INJECTION_DISABLE </a:v>
+                            <a:v>PIN1_INJECTION_ENABLE </a:v>
+                          </a:da>
+                        </v:var>
+                        <v:var name="MscInjP1Pos" type="INTEGER">
+                          <a:a name="DESC"
+                               value="FR: Specifies the bit postion of the external one bit signal injected at PIN1. The valid Range for this parameter is if MscExtensionEnableValue is EXTENSION_ENABLE then the Range should be between 0 to 63 or else if MscExtensionEnableValue is EXTENSION_DISABLE then the Range should be between 0 to 31"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:e72ba5ff-f753-4e24-a444-60544540ad36"/>
+                          <a:da name="DEFAULT" value="0"/>
+                          <a:da name="INVALID" type="Multi">
+                            <mt:xpath expr="((../MscExtensionEnableValue = 'EXTENSION_ENABLE') and (.&gt;=64))"
+                            true="Invalid Configuration, if MscExtensionEnableValue is EXTENSION_ENABLE then the Range should be between 0 to 63"/>
+                            <mt:xpath expr="((../MscExtensionEnableValue = 'EXTENSION_DISABLE') and (.&gt;=32))"
+                            true="Invalid Configuration, if MscExtensionEnableValue is EXTENSION_DISABLE then the Range should be between 0 to 31 "/>
+                            <mt:range>
+                            <mt:tst expr="&gt;=0"/>
+                            <mt:tst expr="&lt;=63"/>
+                           </mt:range>
+                          </a:da>
+                          <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(../MscInjP1Enable = 'PIN1_INJECTION_ENABLE')"/>
+                          </a:da>
+                        </v:var>
+                        <v:var name="MscInjP1EmergencyValue" type="ENUMERATION">
+                          <a:a name="DESC"
+                               value="FR: This parameter sends high/low for selected bit position during Emergency"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:fcfae685-4d60-4851-a9c5-544f9d673356"/>
+                          <a:da name="DEFAULT" value="INJP1_EMERGENCY_LOGICAL_LOW"/>
+                          <a:da name="RANGE">
+                            <a:v>INJP1_EMERGENCY_LOGICAL_LOW</a:v>
+                            <a:v>INJP1_EMERGENCY_LOGICAL_HIGH</a:v>
+                          </a:da>
+                          <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(../MscInjP1Enable = 'PIN1_INJECTION_ENABLE') "/>
+                          </a:da>
+                        </v:var>
+                        <v:var name="MscExtensionEnableValue" type="ENUMERATION">
+                          <a:a name="DESC"
+                               value="FR: Enables/Disables the Extension enable bit fields in the Downstream control register"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:fcfae685-4d60-4851-a9c5-544f9d673357"/>
+                          <a:da name="DEFAULT" value="EXTENSION_DISABLE"/>
+                          <a:da name="RANGE">
+                            <a:v>EXTENSION_ENABLE</a:v>
+                            <a:v>EXTENSION_DISABLE</a:v>
+                          </a:da>
+                        </v:var>
+                        <v:lst name="MscDataBitLowConfiguration" type="MAP">
+                          <a:da name="MIN" type="XPath" expr="node:fallback(../MscExtensionEnableValue,'EXTENSION_ENABLE') = 'EXTENSION_ENABLE'" true="0" false="0"/>
+                          <a:da name="MAX" type="XPath" expr="node:fallback(../MscExtensionEnableValue,'EXTENSION_ENABLE') = 'EXTENSION_ENABLE'" true="32" false="16"/>
+                          <a:da name="INVALID" type="XPath" expr="(../MscExtensionEnableValue = 'EXTENSION_ENABLE') and ((num:i(count(../MscDataBitLowConfiguration/*)))&lt; num:i(17))" true="Invalid Configuration.if MscExtensionEnableValue is 'EXTENSION_ENABLE then the number of MscDataBitLowConfiguration should be greater than 16."/>
+                          <v:ctr name="MscDataBitLowConfiguration"
+                                 type="IDENTIFIABLE">
+                           <a:a name="DESC"
+                             value="Container for Low Data Bits Configuration"/>
+
+                            <a:a name="UUID"
+                                 value="DCE:baa247ee-aea0-488d-96a7-1d4ac9300dff"/>
+                            <v:var name="MscDataBitIndex" type="INTEGER">
+                              <a:a name="DESC"
+                                   value="FR: This parameter identifies the data bit of the data frame using an index. This index is used for further configuration of the data bit source,emergency stop behaviour"/>
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                                <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                              </a:a>
+                              <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                              <a:a name="UUID"
+                                   value="DCE:ecae37b6-0ab2-4385-999e-184389cc7100"/>
+                               <a:da name="DEFAULT" type="XPath" expr="num:i((node:fallback((node:current()/../@index),0)))"/>
+                               <a:da name="INVALID" type="Multi">
+                                 <mt:xpath expr="text:uniq(../../*/MscDataBitIndex,.)"
+                                 false="MscDataBitIndex should be unique.Enter different Number"/>
+                                 <mt:xpath expr="node:isconsecutive(../../*/MscDataBitIndex, 0)"
+                                 false="MscDataBitIndex is not Consecutive. It should start from 0 and be consecutive"/>
+                                 <mt:range>
+                                 <mt:tst expr="&gt;=0"/>
+                                 <mt:tst expr="&lt;=31"/>
+                                </mt:range>
+                               </a:da>
+                            </v:var>
+                            <v:var name="MscDataBitSrc" type="ENUMERATION">
+                              <a:a name="DESC"
+                                   value="FR: This parameter selects the data source for the data bit indexed by MscDataBitIndex"/>
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                                <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                              </a:a>
+                              <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                              <a:a name="UUID"
+                                   value="DCE:78fc8d1d-efd4-446d-ae4f-a07e62ad6a2a"/>
+                              <a:da name="DEFAULT" value="SRC_DOWNSTREAMDATA"/>
+                              <a:da name="RANGE">
+                                <a:v>SRC_DOWNSTREAMDATA</a:v>
+                                <a:v>SRC_GTMSIGNAL</a:v>
+                                <a:v>SRC_GTMSIGNAL_INVERTED</a:v>
+                              </a:da>
+                            </v:var>
+                            <v:var name="MscDataBitEmergencyStopActive"
+                                   type="ENUMERATION">
+                              <a:a name="DESC"
+                                   value="FR: This parameter selects the emergency stop behaviour for the data bit indexed by MscDataBitIndex"/>
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                                <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                              </a:a>
+                              <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                              <a:a name="UUID"
+                                   value="DCE:36b736ae-2d13-4ab6-98d2-5ff6eea642c1"/>
+                              <a:da name="DEFAULT" value="EMERGENCYSTOP_DISABLE"/>
+                              <a:da name="RANGE">
+                                <a:v>EMERGENCYSTOP_DISABLE</a:v>
+                                <a:v>EMERGENCYSTOP_ENABLE</a:v>
+                              </a:da>
+                              <a:da name="EDITABLE" type="XPath">
+                               <a:tst expr="(../MscDataBitSrc != 'SRC_DOWNSTREAMDATA') "/>
+                             </a:da>
+                              <a:da name="INVALID" type="XPath">
+                             <a:tst expr="( (../MscDataBitSrc = 'SRC_DOWNSTREAMDATA') and ((.) != 'EMERGENCYSTOP_DISABLE') )"
+                                      true="MscDataBitEmergencyStopActive should have a value EMERGENCYSTOP_DISABLE, if MscDataBitSrc has a value SRC_DOWNSTREAMDATA "/>
+                             </a:da>
+                              </v:var>
+                              <v:var name="MscDataBitEmergencyValue" type="ENUMERATION">
+                                <a:a name="DESC"
+                                     value="FR: This parameter sends high/low for selected bit position during Emergency"/>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                type="IMPLEMENTATIONCONFIGCLASS">
+                                 <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                                 <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                                <a:a name="UUID"
+                                     value="492f8412-3e2c-4bf1-b27f-01fd7ac35788"/>
+                                <a:da name="DEFAULT" value="EMERGENCY_DATA_LOGICAL_LOW"/>
+                                <a:da name="RANGE">
+                                  <a:v>EMERGENCY_DATA_LOGICAL_LOW</a:v>
+                                  <a:v>EMERGENCY_DATA_LOGICAL_HIGH</a:v>
+                                </a:da>
+                                <a:da name="EDITABLE" type="XPath">
+                                  <a:tst expr="(../MscDataBitSrc != 'SRC_DOWNSTREAMDATA') "/>
+                                </a:da>
+                                <a:da name="INVALID" type="XPath">
+                                <a:tst expr="( (../MscDataBitEmergencyStopActive = 'EMERGENCYSTOP_DISABLE') and ((.) != 'EMERGENCY_DATA_LOGICAL_LOW') )"
+                                       true="MscDataBitEmergencyValue should have a value EMERGENCY_DATA_LOGICAL_LOW, if MscDataBitEmergencyStopActive has a value EMERGENCYSTOP_DISABLE "/>
+                                </a:da>
+                              </v:var>
+                          </v:ctr>
+                        </v:lst>
+                        <v:lst name="MscDataBitHighConfiguration" type="MAP">
+                          <a:da name="MIN" type="XPath" expr="node:fallback(../MscExtensionEnableValue,'EXTENSION_ENABLE') = 'EXTENSION_ENABLE'" true="0" false="0"/>
+                          <a:da name="MAX" type="XPath" expr="node:fallback(../MscExtensionEnableValue,'EXTENSION_ENABLE') = 'EXTENSION_ENABLE'" true="32" false="16"/>
+                          <a:da name="INVALID" type="XPath" expr="(../MscExtensionEnableValue = 'EXTENSION_ENABLE') and ((num:i(count(../MscDataBitHighConfiguration/*)))&lt; num:i(17))" true="Invalid Configuration.if MscExtensionEnableValue is 'EXTENSION_ENABLE then the number of MscDataBitHighConfiguration should be greater than 16."/>
+                          <v:ctr name="MscDataBitHighConfiguration"
+                                 type="IDENTIFIABLE">
+                          <a:a name="DESC"
+                            value="Container for High Data Bits Configuration"/>
+
+                            <a:a name="UUID"
+                                 value="DCE:5865544d-3983-461f-9eda-5e8a1a1ad3c5"/>
+                            <v:var name="MscDataBitIndex" type="INTEGER">
+                              <a:a name="DESC"
+                                   value="FR: This parameter identifies the data bit of the data frame using an index. This index is used for further configuration of the data bit source,emergency stop behaviour"/>
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                                <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                              </a:a>
+                              <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                              <a:a name="UUID"
+                                   value="DCE:77fc53e1-87b2-4ea5-9428-4109af108d0c"/>
+                               <a:da name="DEFAULT" type="XPath" expr="num:i((node:fallback((node:current()/../@index),0)))"/>
+                               <a:da name="INVALID" type="Multi">
+                                 <mt:xpath expr="text:uniq(../../*/MscDataBitIndex,.)"
+                                 false="MscDataBitIndex should be unique.Enter different Number"/>
+                                 <mt:xpath expr="node:isconsecutive(../../*/MscDataBitIndex, 0)"
+                                 false="MscDataBitIndex is not Consecutive. It should start from 0 and be consecutive"/>
+                                 <mt:range>
+                                 <mt:tst expr="&gt;=0"/>
+                                 <mt:tst expr="&lt;=31"/>
+                                </mt:range>
+                               </a:da>
+                            </v:var>
+                            <v:var name="MscDataBitSrc" type="ENUMERATION">
+                              <a:a name="DESC"
+                                   value="FR: This parameter selects the data source for the data bit indexed by MscDataBitIndex"/>
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                                <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                              </a:a>
+                              <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                              <a:a name="UUID"
+                                   value="DCE:31ad3144-aa55-4963-9cf5-5ee1a68a9b79"/>
+                              <a:da name="DEFAULT" value="SRC_DOWNSTREAMDATA"/>
+                              <a:da name="RANGE">
+                                <a:v>SRC_DOWNSTREAMDATA</a:v>
+                                <a:v>SRC_GTMSIGNAL</a:v>
+                                <a:v>SRC_GTMSIGNAL_INVERTED</a:v>
+                              </a:da>
+                            </v:var>
+                            <v:var name="MscDataBitEmergencyStopActive"
+                                   type="ENUMERATION">
+                              <a:a name="DESC"
+                                   value="FR: This parameter selects the emergency stop behaviour for the data bit indexed by MscDataBitIndex"/>
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                                 <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                                 <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                              </a:a>
+                              <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                              <a:a name="UUID"
+                                   value="DCE:51ba99d8-4c73-4556-a8b4-4d6e2ba7f46d"/>
+                              <a:da name="DEFAULT" value="EMERGENCYSTOP_DISABLE"/>
+                              <a:da name="RANGE">
+                                <a:v>EMERGENCYSTOP_DISABLE</a:v>
+                                <a:v>EMERGENCYSTOP_ENABLE</a:v>
+                              </a:da>
+                              <a:da name="EDITABLE" type="XPath">
+                               <a:tst expr="(../MscDataBitSrc != 'SRC_DOWNSTREAMDATA') "/>
+                              </a:da>
+                              <a:da name="INVALID" type="XPath">
+                             <a:tst expr="( (../MscDataBitSrc = 'SRC_DOWNSTREAMDATA') and ((.) != 'EMERGENCYSTOP_DISABLE') )"
+                                      true="MscDataBitEmergencyStopActive should have a value EMERGENCYSTOP_DISABLE, if MscDataBitSrc has a value SRC_DOWNSTREAMDATA "/>
+                             </a:da>
+                            </v:var>
+                           <v:var name="MscDataBitEmergencyValue" type="ENUMERATION">
+                             <a:a name="DESC"
+                                  value="FR: This parameter sends high/low for selected bit position during Emergency"/>
+                             <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                                 <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                                 <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                             </a:a>
+                             <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                             <a:a name="UUID"
+                                  value="492f8466-3e2c-4bf1-b27f-01fd7ac35788"/>
+                             <a:da name="DEFAULT" value="EMERGENCY_DATA_LOGICAL_LOW"/>
+                             <a:da name="RANGE">
+                               <a:v>EMERGENCY_DATA_LOGICAL_LOW</a:v>
+                               <a:v>EMERGENCY_DATA_LOGICAL_HIGH</a:v>
+                             </a:da>
+                             <a:da name="EDITABLE" type="XPath">
+                               <a:tst expr="(../MscDataBitSrc != 'SRC_DOWNSTREAMDATA') "/>
+                             </a:da>
+                             <a:da name="INVALID" type="XPath">
+                             <a:tst expr="( (../MscDataBitEmergencyStopActive = 'EMERGENCYSTOP_DISABLE') and ((.) != 'EMERGENCY_DATA_LOGICAL_LOW') )"
+                                    true="MscDataBitEmergencyValue should have a value EMERGENCY_DATA_LOGICAL_LOW, if MscDataBitEmergencyStopActive has a value EMERGENCYSTOP_DISABLE "/>
+                             </a:da>
+                           </v:var>
+                          </v:ctr>
+                        </v:lst>
+                      </v:ctr>
+                    </v:ctr>
+                    <v:ctr name="MscRxConfiguration" type="IDENTIFIABLE">
+                      <a:a name="DESC"
+                           value="FR: This container contains the configuration parameters required to configure the MSC receiver (upstream channel)"/>
+                      <a:a name="UUID"
+                           value="DCE:2b87742d-0553-462f-b45c-a30f1774f252"/>
+                      <v:var name="MscRxBaudRate" type="ENUMERATION">
+                        <a:a name="DESC"
+                             value="FR: Defines the clock frequency for MSC frame reception (on upstream channel)"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                               <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                               <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID"
+                             value="DCE:42b1f623-42b5-48cd-a359-9346e6be3ebb"/>
+                        <a:da name="DEFAULT" value="MSC_CLOCK_DISABLE"/>
+                        <a:da name="RANGE">
+                          <a:v>MSC_CLOCK_DISABLE</a:v>
+                          <a:v>MSC_CLOCK_DIV_4</a:v>
+                          <a:v>MSC_CLOCK_DIV_8</a:v>
+                          <a:v>MSC_CLOCK_DIV_16</a:v>
+                          <a:v>MSC_CLOCK_DIV_32</a:v>
+                          <a:v>MSC_CLOCK_DIV_64</a:v>
+                          <a:v>MSC_CLOCK_DIV_128</a:v>
+                          <a:v>MSC_CLOCK_DIV_256</a:v>
+                        </a:da>
+                      </v:var>
+                      <v:var name="MscRxFrameType" type="ENUMERATION">
+                        <a:a name="DESC"
+                             value="FR: Defines if the Address field is present/absent in the frames to be received"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                               <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                               <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID"
+                             value="DCE:b1c5e0a5-16c4-46be-9eeb-4ec9cd04ea2b"/>
+                        <a:da name="DEFAULT" value="RX_ADDR_ABSENT"/>
+                        <a:da name="RANGE">
+                          <a:v>RX_ADDR_PRESENT</a:v>
+                          <a:v>RX_ADDR_ABSENT</a:v>
+                        </a:da>
+                      </v:var>
+                      <v:var name="MscRxFrameIntrInput" type="ENUMERATION">
+                        <a:a name="DESC"
+                             value="FR: Selects the trigger for generating a Rx frame interrupt"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                               <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                               <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID"
+                             value="DCE:d46001de-2027-4737-b1d6-867098128bd0"/>
+                        <a:da name="DEFAULT" value="INTR_DISABLE"/>
+                        <a:da name="RANGE">
+                          <a:v>INTR_DISABLE</a:v>
+                          <a:v>INTR_TRIG_RX_ALL</a:v>
+                          <a:v>INTR_TRIG_NONZERODATA</a:v>
+                          <a:v>INTR_TRIG_RX_UD3</a:v>
+                        </a:da>
+                      </v:var>
+                      <v:var name="MscRxFrameIntrPtr" type="ENUMERATION">
+                        <a:a name="DESC"
+                             value="FR: Selects the service request to be raised when a data frame interrupt is triggered"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                               <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                               <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID"
+                             value="DCE:5a1b3a57-29f5-42cc-9ac0-fa5deb19b6a6"/>
+                        <a:da name="DEFAULT" value="INTRPTR_SR0"/>
+                        <a:da name="RANGE">
+                          <a:v>INTRPTR_SR0</a:v>
+                          <a:v>INTRPTR_SR1</a:v>
+                          <a:v>INTRPTR_SR2</a:v>
+                          <a:v>INTRPTR_SR3</a:v>
+                        </a:da>
+                        <a:da name="INVALID" type="XPath">
+                        <a:tst expr="( ((../../MscTxConfiguration/MscCmdFrameConfiguration/MscCmdFrameIntPtr = (.)) or
+                                       ((../../MscTxConfiguration/MscDataFrameConfiguration/MscDataFrameIntrPtr = (.)) and (../../MscTxConfiguration/MscDataFrameConfiguration/MscDataFrameIntrInput != 'INTR_DISABLE')) or
+                                       (../../MscTxConfiguration/MscTimeFrameConfiguration/MscTimeFrameIntPtr = (.))) and
+                                        (../MscRxFrameIntrInput != 'INTR_DISABLE'))"
+                                    true="Same Service Request (INTRPTR_SRx) is selected for some other Interrupt also. Select some other Service Request(INTRPTR_SRx). "/>
+                        </a:da>
+                        <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../MscRxFrameIntrInput != 'INTR_DISABLE'"/>
+                        </a:da>
+                      </v:var>
+                        <v:var name="MscRxFrameNotification" type="FUNCTION-NAME">
+                          <a:a name="DESC"
+                               value="FR: Specifies the application define function name, that will called on Rx Frame Interrupt"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                               <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                               <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:a971022f-6462-4325-9caa-708b582b4298"/>
+                          <a:da name="DEFAULT" value="NULL_PTR"/>
+                          <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(../MscRxFrameIntrInput != 'INTR_DISABLE') "/>
+                          </a:da>
+                        </v:var>
+
+                      <v:var name="MscRxParityType" type="ENUMERATION">
+                        <a:a name="DESC"
+                             value="FR: Selects parity type used in Rx frames"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                               <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                               <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID"
+                             value="DCE:db261afe-917b-4dc0-9d52-47173d6e8874"/>
+                        <a:da name="DEFAULT" value="RX_EVEN_PARITY"/>
+                        <a:da name="RANGE">
+                          <a:v>RX_ODD_PARITY</a:v>
+                          <a:v>RX_EVEN_PARITY</a:v>
+                        </a:da>
+                      </v:var>
+                      <v:var name="MscRxDataSignalType" type="ENUMERATION">
+                        <a:a name="DESC"
+                             value="FR: This parameter determines the polarity of the DATA signal of the MSC receiver"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                               <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                               <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID"
+                             value="DCE:18f7f3d3-5116-40ba-a772-e5817354fb6e"/>
+                        <a:da name="DEFAULT" value="SIGNAL_INVERT_OFF"/>
+                        <a:da name="RANGE">
+                          <a:v>SIGNAL_INVERT_ON</a:v>
+                          <a:v>SIGNAL_INVERT_OFF</a:v>
+                        </a:da>
+                      </v:var>
+                      <v:var name="MscRxIntDelayEnabled" type="ENUMERATION">
+                        <a:a name="DESC"
+                             value="FR: Enables a delay of one bit dealy for Rx Interrupt generated by Hardware"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                               <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                               <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID"
+                             value="492f8472-43aa-4bf1-b27f-01fd7ac35788"/>
+                        <a:da name="DEFAULT" value="RX_INTERRUPT_DELAY_DISABLE"/>
+                        <a:da name="RANGE">
+                          <a:v>RX_INTERRUPT_DELAY_ENABLE</a:v>
+                          <a:v>RX_INTERRUPT_DELAY_DISABLE</a:v>
+                        </a:da>
+                      </v:var>
+                        <v:var name="MscUpstreamTimeoutPrescalar" type="INTEGER">
+                          <a:a name="DESC"
+                               value="FR: Specifies the prescalar for upstream timeout"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                               <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                               <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:e72ba5ff-f753-4e24-a444-60544540ad46"/>
+                          <a:da name="DEFAULT" value="0"/>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=15"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da>
+                        </v:var>
+                       <v:var name="MscUpstreamTimeoutValue" type="INTEGER">
+                          <a:a name="DESC"
+                               value="FR: Specifies the value for upstream timeout"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                               <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                               <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID"
+                               value="DCE:e72ba5ff-f753-4e24-a444-60544540ad96"/>
+                          <a:da name="DEFAULT" value="0"/>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=15"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da>
+                        </v:var>
+                    </v:ctr>
+                  </v:ctr>
+                  </v:lst>
+                </v:ctr>
+              </v:lst>
+              <v:ctr name="MscPublishedInformation" type="IDENTIFIABLE">
+                <a:a name="DESC"
+                  value="EN: This container contains the published information of the MSC driver."/>
+                <a:a name="UUID" value="6981f177-fe69-4ba3-8e4e-5be27814175b"/>
+              </v:ctr>
+              <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+  <a:a name="DESC" value="EN: Common container, aggregated by all modules. It contains published information about vendor and versions."/>
+  <a:a name="UUID" value="192f8472-3e2c-4bf1-b27f-01fd7ac35788"/>
+                  <v:var name="ArMajorVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Major version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-88fe-1166b258bb8a"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+                <v:var name="ArMinorVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Minor version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="73f87c7f-e230-4178-bff0-ea2704aae656"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+                <v:var name="ArPatchVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Patch level version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="2380135d-6778-417a-a34b-e100aad4dd54"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+                <v:var name="SwMajorVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Major version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="fca015e3-5f28-4cbe-8949-8fab87d86827"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="1"/>
+                </v:var>
+                <v:var name="SwMinorVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Minor version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="14ab81e0-3d80-43dc-8b92-2a7e5a542df9"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="3"/>
+                </v:var>
+                <v:var name="SwPatchVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="32e37bfd-18b6-41d1-9248-a81dae0fe4c5"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+                <v:var name="ModuleId" type="INTEGER">
+                  <a:a name="DESC" value="EN: Module ID of this module from Module List"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="3b407478-6902-4f80-b7cf-f33b0854e638"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="255"/>
+                </v:var>
+                <v:var name="VendorId" type="INTEGER">
+                  <a:a name="DESC" value="EN: Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="7d650b2d-4adb-41f0-aa8e-5f0c416501d1"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="17"/>
+                </v:var>
+                <v:var name="VendorApiInfix" type="STRING">
+                  <a:a name="DESC">
+                    <a:v>EN: In driver modules which can be instantiated several times on a single ECU, BSW00347 requires that the name of APIs is extended by the VendorId and a vendor specific name.
+This parameter is used to specify the vendor specific name. In total, the implementation specific name is generated as follows:
+&lt;ModuleName&gt;_&gt;VendorId&gt;_&lt;VendorApiInfix&gt;&lt;Api name from SWS&gt;.
+E.g.  assuming that the VendorId of the implementor is 123 and the implementer chose a VendorApiInfix of &quot;v11r456&quot; a api name Can_Write defined in the SWS will translate to Can_123_v11r456Write.
+This parameter is mandatory for all modules with upper multiplicity &gt; 1. It shall not be used for modules with upper multiplicity =1.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ad363b41-e945-4717-b12f-c2f800ef138e"/>
+                  <a:da name="ENABLE" value="false"/>
+                  <a:da name="DEFAULT" value=""/>
+                </v:var>
+                <v:var name="Release" type="STRING">
+                  <a:a name="DESC" value="EN: Aurix derivative used for thr implementation"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="3b407478-6902-4f40-b7cf-f33b0854e638"/>
+                  <a:da name="DEFAULT" type="XPath" expr="ecu:get('Rel.Derivate')"/>
+                </v:var>
+             </v:ctr>
+            </v:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

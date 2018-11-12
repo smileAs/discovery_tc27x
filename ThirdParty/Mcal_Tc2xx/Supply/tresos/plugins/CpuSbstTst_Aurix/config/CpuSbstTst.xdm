@@ -1,0 +1,205 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2013)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**   $FILENAME   : CpuSbstTst.xdm $                                           **
+**                                                                            **
+**   $CC VERSION : \main\13 $                                                 **
+**                                                                            **
+**   $DATE       : 2016-07-26 $                                               **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX                                                **
+**                                                                            **
+**  VARIANT   : VariantPB                                                     **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY:[cover parentID=]                                            **
+**                                                                            **
+**  DESCRIPTION  : XML Data Model for CpuSbstTst driver                       **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) :                                                        **
+**                                                                            **
+**  MAY BE CHANGED BY USER [yes/no]: No                                       **
+**                                                                            **
+*******************************************************************************/
+-->
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar"  
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX" type="AR-PACKAGE">        
+        <a:a name="UUID" value="93d9a111-9d4c-47b6-98cb-fe5aec24c8b0"/>
+        <d:lst type="ELEMENTS">
+          <d:chc name="CpuSbstTst" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="RELEASE" value="asc:4.0"/>        
+              <a:a name="UUID" value="03eaa8c5-137e-402e-823d-8d7776c1de4d"/>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:da name="DEFAULT" value="VariantPreCompile"/>
+                <a:da name="RANGE" value="VariantPreCompile"/>
+              </v:var> 
+              <v:ctr name="CpuSbstTstGeneral" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: General configuration (parameters) of the CpuSbstTst driver software module."/>
+                 <a:a name="UUID" value="a868aef7-06f0-5e10-9482-3b9f6ca77cb2"/>                
+                  <v:var name="CpuSbstTstEnterSafeTcore" type="FUNCTION-NAME">
+				                     <a:da name="TOOLTIP">
+<a:v>SBST Test Enter call back 
+notification function name
+</a:v>
+					</a:da>
+                    <a:a name="DESC"> 
+					<a:v>This parameter is the SBST Test Enter 
+call back notification function name. 
+The user must define a function by this name. 
+If no call back notification is required 
+this parameter must be configured as NULL_PTR.
+If defining function for call backs,
+user need to define valid functions for both
+Enter and Exit Call backs.
+</a:v>
+					</a:a>
+					<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID"  value="ECUC:3b4f73c8-354a-4d0e-86e6-0e2d07ba5591"/>
+                  <a:da name="DEFAULT" value="NULL_PTR"/>
+                  </v:var>
+                  <v:var name="CpuSbstTstExitSafeTcore" type="FUNCTION-NAME">
+				                     <a:da name="TOOLTIP">
+<a:v>SBST Test Exit call back 
+notification function name
+</a:v>
+					</a:da>
+                    <a:a name="DESC"> 
+<a:v>This parameter is the SBST Test Exit 
+call back notification function name. 
+The user must define a function by this name. 
+If no call back notification is required
+this parameter must be configured as NULL_PTR.
+If defining function for call backs,
+user need to define valid functions for both
+Enter and Exit Call backs.
+</a:v>
+                    </a:a>
+					<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID"  value="ECUC:3b4f73c8-354a-4d0e-86e6-0e2d07ba5592"/>
+                  <a:da name="DEFAULT" value="NULL_PTR"/>
+                  </v:var>  
+				  
+                <v:var name="CpuSbstTstExpectedCrcValue" type="INTEGER">
+                   <a:da name="TOOLTIP">
+<a:v>SBST Expected CRC value
+</a:v>
+					</a:da>
+                   <a:a name="DESC">
+<a:v>This parameter defines the CpuTst_CpuSbstETst
+Expected Crc value for 27x/26x/23x/22x/21x
+derivatives, 
+CpuTst_CpuSbstPTst Expected Crc value 
+for 29x derivative
+and if there is no separate crc required
+for CpuTst_CpuSbstETst and CpuTst_CpuSbstPTst,
+CpuTst_CpuSbstPTst Expected Crc value
+for 26x/27x derivative.
+SBST Expected CRC value is based on the
+DSPR and PSPR memory location. 
+The default Expected CRC value used in safetlib
+is based on the SBST DSPR 0xd0000000 to 0xd0000100
+and SBST PSPR 0xc0000000 to 0xc0000040.If user 
+changes the DSPR and PSPR memory location,then 
+the expected CRC value to be configured 
+accordingly in the CpuSbstTstExpectedCrcValue parameter.
+</a:v>
+                   </a:a>
+                   <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                     <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                   </a:a>                                                   
+                   <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                   <a:a name="UUID" 
+                        value="98ce928e-6ed1-5968-93b2-24d30b1fa4bf"/>
+                   <a:da name="DEFAULT" value="2416807949"/>                        
+                   <a:da name="INVALID" type="Range">
+                     <a:tst expr="&lt;=4294967295"/>
+                     <a:tst expr="&gt;=0"/>
+                   </a:da>
+                 </v:var> 
+                <v:var name="CpuSbstPTstExpectedCrcValue" type="INTEGER">
+                   <a:da name="TOOLTIP">
+<a:v>SBST Expected CRC value for CpuTst_CpuSbstPTst,
+if Separate Expected CRC value required for 
+CpuTst_CpuSbstETst and CpuTst_CpuSbstPTst.
+This Parameter Can Enable/Disable using
+Red/Green button on left to the parameter.
+</a:v>
+					</a:da>
+                   <a:a name="DESC">
+<a:v>This parameter defines the CpuTst_CpuSbstPTst
+Expected Crc value for 26x/27x derivative,
+if Separate Expected CRC value required for
+CpuTst_CpuSbstETst and CpuTst_CpuSbstPTst.
+SBST Expected CRC value is based on the
+DSPR and PSPR memory location. 
+The default Expected CRC value used in safetlib
+is based on the SBST DSPR 0xd0000000 to 0xd0000100
+and SBST PSPR 0xc0000000 to 0xc0000040.If user 
+changes the DSPR and PSPR memory location,then 
+the expected CRC value to be configured 
+accordingly in the CpuSbstTstPTstExpectedCrcValue parameter.
+</a:v>
+                   </a:a>
+                   <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                     <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                   </a:a>                                                   
+                   <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                   <a:a name="UUID" 
+                        value="98ce928e-6ed1-5968-93b2-24d30b1fa4be"/>
+						<a:a name="OPTIONAL" value="true"/>
+				  <a:da name="EDITABLE" type="XPath" expr="ecu:get('CpuSbstPTst')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('CpuSbstPTst')='true' "/>
+                   <a:da name="DEFAULT" value="2416807949"/>                        
+                   <a:da name="INVALID" type="Range">
+                     <a:tst expr="&lt;=4294967295"/>
+                     <a:tst expr="&gt;=0"/>
+                   </a:da>
+                 </v:var>  				 
+                </v:ctr>
+              </v:ctr>         
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+</datamodel>

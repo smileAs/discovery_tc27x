@@ -1,0 +1,29 @@
+
+Name: generate/src/PflashMonTst_LCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377421311850250405111129636913904206031194194593121373
+ 4992683923482441299161272570795293260655104501660320
+SignatureKeyID: Infineon
+
+Name: generate/inc/PmuEccEdcTst_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377421962422895193952003123022634478918320448475539185
+ 5568268383959885636896048395110257645525405634845573
+SignatureKeyID: Infineon
+
+Name: config/PmuEccEdcTst.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377423351036000200762838861371290958580715509067957406
+ 8756625944833835534891421216723452266997872713935424
+SignatureKeyID: Infineon
+
+Name: generate/inc/PflashMonTst_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377424703823730132219633270593983330553566385544552212
+ 6013819951260590654020105509061298805814212397712303
+SignatureKeyID: Infineon
+

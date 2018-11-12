@@ -1,0 +1,953 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2014)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**   $FILENAME   : SpbTst.xdm $                                               **
+**                                                                            **
+**   $CC VERSION : \main\23 $                                                 **
+**                                                                            **
+**   $DATE       : 2015-07-20 $                                               **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX                                                **
+**                                                                            **
+**  VARIANT   : VariantLinkTime                                               **
+**                                                                            **
+**  AUTHOR    : DL-BLR-ATV-STC                                                **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY:[cover parentID=]                                            **
+**                                                                            **
+**  DESCRIPTION  : XML Data Model for SpbTst driver                           **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : Aurix-HE_SafeTlib_DS_SPB_Test.docm, Ver 1.4            **
+**                                                                            **
+**  MAY BE CHANGED BY USER [yes/no]: No                                       **
+**                                                                            **
+*******************************************************************************/
+-->
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX" type="AR-PACKAGE">        
+        <a:a name="UUID" value="93d9a111-9d4c-47b6-98cb-fe5aec24c8b0"/>
+        <d:lst type="ELEMENTS">
+          <d:chc name="SpbTst" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="RELEASE" value="asc:4.0.2"/>
+              <a:a name="UUID" value="03eaa8c5-137e-402e-823d-8d7776c1de4d"/>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:da name="DEFAULT" value="VariantLinkTime"/>
+                <a:da name="RANGE" value="VariantLinkTime"/>
+              </v:var>
+             <v:lst name="SpbTstConfigSet" 
+                     type="MULTIPLE-CONFIGURATION-CONTAINER">
+                <a:da name="MIN" value="1"/>  
+                <v:ctr name="SpbTstConfigSet" 
+                       type="MULTIPLE-CONFIGURATION-CONTAINER">
+                <a:a name="DESC" 
+                     value="EN: This container is the base of Configuration Set which contains the configured Spb Configuration."/>
+                <a:a name="UUID" value="3ea7abca-6ba4-4d14-befd-8bb9350fe86f"/>
+                <v:var name="MultiCANTestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the MultiCAN+ module."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="98ce928e-6ed1-4968-93b2-21d90b1fa48f"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="ASCLIN0TestEn" type="BOOLEAN">
+                    <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the ASCLIN0 module."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="d85084e8-9b47-4340-8673-32afcb88502f"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="ASCLIN1TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the ASCLIN1 module."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="c318f02a-92f3-46b0-9784-1c24be06226a"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="ASCLIN2TestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.Asclin2TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.Asclin2TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.Asclin2TestEnExist')='true'"/>    		                                               
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the ASCLIN2 module."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="c318f02a-92f3-46b0-9784-1c24be06226b"/>
+                    <a:da name="DEFAULT" value="false"/>
+                </v:var>  
+                <v:var name="ASCLIN3TestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.Asclin3TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.Asclin3TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.Asclin3TestEnExist')='true'"/>  		                
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the ASCLIN3 module."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="777e5734-a0f0-456c-b4a6-fc94dbb9fbef"/>
+                    <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="QSPI0TestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.QSPI0TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.QSPI0TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.QSPI0TestEnExist')='true'"/>                
+                    <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the QSPI0 module."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="34a688a8-ef27-45e6-9d8e-da268f253d6a"/>
+                    <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="QSPI1TestEn" type="BOOLEAN">
+                    <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the QSPI1 module."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="de555da2-8d8e-4c25-80b4-24cd242483f6"/>
+                    <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="QSPI2TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the QSPI2 module."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="b18db97f-139b-42bd-9802-61d890e1b033"/>
+                    <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="QSPI3TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the QSPI3 module."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="58e8143b-31bc-4b79-a657-84b182d4e9c1"/>
+                    <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="QSPI4TestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.QSPI4TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.QSPI4TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.QSPI4TestEnExist')='true'"/>                
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the QSPI4 module."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="58e8143b-31bc-4b79-a657-84b182d4e9c2"/>
+                    <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="QSPI5TestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.QSPI5TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.QSPI5TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.QSPI5TestEnExist')='true'"/>                
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the QSPI5 module."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="58e8143b-31bc-4b79-a657-84b182d4e9c3"/>
+                    <a:da name="DEFAULT" value="false"/>
+                </v:var>                 
+                <v:var name="GTMTestEn" type="BOOLEAN">
+                    <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the GTM module."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="6ee3cb83-c2f8-4da4-b0e2-1837130097fe"/>
+                    <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="MSC0TestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.MSC0TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.MSC0TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.MSC0TestEnExist')='true'"/>  			                
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the MSC0 module."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="f86b83c7-ee90-478d-a143-5243b803eb32"/>
+                    <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="MSC1TestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.MSC1TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.MSC1TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.MSC1TestEnExist')='true'"/> 		                 
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the MSC1 module."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="cc47460c-ab77-4de2-8f58-f734052d110f"/>
+                    <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="EtherMacTestEn" type="BOOLEAN">
+				          <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.EtherMacTestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.EtherMacTestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.EtherMacTestEnExist')='true'"/>
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the EtherMac module."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="63b66aae-a4a3-4f4d-a4e9-cadfb3361291"/>
+                    <a:da name="DEFAULT" value="false"/>
+                </v:var>   
+                <v:var name="I2CTestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.I2cTestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.I2cTestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.I2cTestEnExist')='true'"/> 			                 
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the I2C module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="4e4b6335-21c7-46d1-8e9f-1bd92f79800a"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="SENTTestEn" type="BOOLEAN">
+                    <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the SENT module."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="175a2f83-2731-4f49-9924-08e6a6a4806a"/>
+                  <a:da name="DEFAULT" value="false"/>
+                 </v:var> 
+                <v:var name="ERay0TestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.Eray0TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.Eray0TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.Eray0TestEnExist')='true'"/>   				
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the ERAY0 module."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="c5440459-8deb-441c-9aaa-0a2d1f5c59b1"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="ERay1TestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.Eray1TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.Eray1TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.Eray1TestEnExist')='true'"/>                  
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the ERAY1 module."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="11fc940b-3408-4e21-830f-41dafcb35022"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>				
+                <v:var name="CCU60TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the CCU60 module."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="dca034c1-42b2-4545-9fd6-5f0a9d334ab8"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="CCU61TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the CCU61 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="e63c7a3c-1468-436b-99c9-c1454d3b7c95"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>                                 
+                <v:var name="PSI5TestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.PSI5TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.PSI5TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.PSI5TestEnExist')='true'"/>                                  
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PSI5 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="dfb03536-7c34-4992-b9f7-8e721bce8d91"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="PSI5_STestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.PSI5STestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.PSI5STestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.PSI5STestEnExist')='true'"/>                                   
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PSI5_S module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="b335ae3e-bb0b-4208-8c38-7f86bc9f5ac5"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="GPT12TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="PERFORM_TEST: This parameter defines whether the SPB RAP will include the GPT12 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" value="98ce928e-6ed1-4968-93b2-21d90b1fa49f"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="Port00TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT0 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="a71fb53c-bfd1-4414-9b15-3fac66c5ee24"/>
+                  <a:da name="DEFAULT" value="false"/>
+                 </v:var> 
+                <v:var name="Port01TestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.Port01TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.Port01TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.Port01TestEnExist')='true'"/>                               
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT1 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="38fbe49c-e38b-465d-b49d-24ddbdd8f433"/>
+                  <a:da name="DEFAULT" value="false"/>
+               </v:var> 
+                <v:var name="Port02TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT2 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="b2556713-3453-4e97-8343-1ef4cf9e5dd6"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="Port10TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT10 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="6152d1d8-208b-4d1d-819d-600d69d8d412"/>
+                  <a:da name="DEFAULT" value="false"/>
+               </v:var> 
+                <v:var name="Port11TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT11 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="407b412f-1e70-4dca-b9e0-8dbfc61f0973"/>
+                  <a:da name="DEFAULT" value="false"/>
+                 </v:var> 
+                <v:var name="Port12TestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.Port12TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.Port12TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.Port12TestEnExist')='true'"/> 								                               
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT12 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="35021ca4-9a0f-42c7-8ba2-154a591b654f"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="Port13TestEn" type="BOOLEAN">
+				<a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.Port13TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.Port13TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.Port13TestEnExist')='true'"/> 								                               
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT13 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="14a79aa9-ede6-4234-a1e2-3c51e465f700"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>    
+                <v:var name="Port14TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT14 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="740f17ba-0fff-4234-bb74-f3d447081a55"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="Port15TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT15 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="bf52ad64-ed3f-45e5-85be-169d78967a75"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="Port20TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT20 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="fd54babc-5193-4b14-a964-0746be53db01"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="Port21TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT21 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="50afcf01-7475-4471-975a-fbe878fd98bc"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="Port22TestEn" type="BOOLEAN">
+				          <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.Port22TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.Port22TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.Port22TestEnExist')='true'"/> 								                               				
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT22 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="4d3dace0-39f5-4ee8-90ca-05acd4ebf677"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="Port23TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT23 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="d68b5fb4-70cc-4c3a-80cc-78ef8ff5da18"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="Port24TestEn" type="BOOLEAN">
+				          <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.Port24TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.Port24TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.Port24TestEnExist')='true'"/> 								                               				
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT24 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="4d3dace0-39f5-4ee8-90ca-05acd4ebf671"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="Port25TestEn" type="BOOLEAN">
+				          <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.Port25TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.Port25TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.Port25TestEnExist')='true'"/> 								                               				
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT25 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="4d3dace0-39f5-4ee8-90ca-05acd4ebf672"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="Port26TestEn" type="BOOLEAN">
+				          <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.Port26TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.Port26TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.Port26TestEnExist')='true'"/> 								                               				
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT26 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="4d3dace0-39f5-4ee8-90ca-05acd4ebf673"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="Port30TestEn" type="BOOLEAN">
+				          <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.Port30TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.Port30TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.Port30TestEnExist')='true'"/> 								                               				
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT30 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="4d3dace0-39f5-4ee8-90ca-05acd4ebf674"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="Port31TestEn" type="BOOLEAN">
+				          <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.Port31TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.Port31TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.Port31TestEnExist')='true'"/> 								                               				
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT31 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="4d3dace0-39f5-4ee8-90ca-05acd4ebf675"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>                
+                <v:var name="Port32TestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.Port32TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.Port32TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.Port32TestEnExist')='true'"/>                                     
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT32 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="7e153898-0485-4276-834f-b8a85332195e"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>   
+                <v:var name="Port33TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT33 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="c8142879-70a4-4110-ae83-1731fd08f9bc"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="Port34TestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.Port34TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.Port34TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.Port34TestEnExist')='true'"/> 								                             
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT34 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="ff44ec98-0405-43eb-b64f-d21e9be4d8b1"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="Port40TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT40 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="eee44118-f9e8-41c2-a873-5f29c494f3b3"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="Port41TestEn" type="BOOLEAN">
+				          <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.Port41TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.Port41TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.Port41TestEnExist')='true'"/> 								                               				
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PORT41 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="4d3dace0-39f5-4ee8-90ca-05acd4ebf676"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>                
+                <v:var name="SMUTestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the SMU module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="ee60050e-85d1-4cb3-82a2-964bd338e978"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="IOMTestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the IOM module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="55e65d50-7ac3-485c-803e-2977b766677a"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="FCETestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.FceTestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.FceTestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.FceTestEnExist')='true'"/>                                     
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the FCE module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="e8117c5b-1cbe-443c-931e-cd5d2c4fd339"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="STM0TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the STM0 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="04e463ee-6516-4f9e-94aa-3f5077e1d2a2"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>     
+                <v:var name="STM1TestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.STM1TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.STM1TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.STM1TestEnExist')='true'"/>                  
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the STM1 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="93443d17-818e-4648-9e9e-3f105f57c246"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="STM2TestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.STM2TestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.STM2TestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.STM2TestEnExist')='true'"/>                  
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the STM2 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="8ead7c7c-ab52-4b69-8e00-935f1008f491"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="IntRouter0TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the IntRouter0 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="d52570f7-c94a-4481-8c3a-b7a00bf19440"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="IntRouter1TestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the IntRouter1 module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="44fb07c3-3c1d-4e75-97fb-9fbf2fe47012"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>    
+                <v:var name="DSADCxTestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.DsAdcTestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.DsAdcTestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.DsAdcTestEnExist')='true'"/>                                   
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the DSADCx module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="bcd575c5-119f-4fd8-b793-adb49423661f"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="VADCxTestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the VADCx module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="c84b683f-2f76-43b9-8c98-9e053f36f9e7"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>   
+                <v:var name="SCUTestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the SCU module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="c989a254-e2f9-4503-9da1-1cdb8c9c205d"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+                <v:var name="MTUTestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the MTU module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="c44147a6-1054-46fa-bd1f-dbd127445740"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="HSSLTestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.HSSLTestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.HSSLTestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.HSSLTestEnExist')='true'"/>                 
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the HSSL module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="c44147a6-1054-46fa-bd1f-dbd127845740"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>                
+                <v:var name="HSCTTestEn" type="BOOLEAN">
+                  <a:da name="ENABLE" type="XPath" expr="ecu:get('SpbTst.HSCTTestEnExist')='true'"/>
+                  <a:da name="EDITABLE" type="XPath" expr="ecu:get('SpbTst.HSCTTestEnExist')='true'"/>
+                  <a:a name="VISIBLE" type="XPath" expr="ecu:get('SpbTst.HSCTTestEnExist')='true'"/>                 
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the HSCT module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="c44147a6-1054-46fa-bd1f-dbd127945740"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>                 
+                <v:var name="SBCUTestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the SBCU module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="c44147a6-1054-46fa-bd1f-dbd197445740"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>                
+                <v:var name="DMATestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the DMA module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="c44147a6-1054-46fa-bd1f-dbd627445740"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="XBARTestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the XBAR module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="c44147a6-1054-48fa-bd1f-dbd627445740"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="PMUTestEn" type="BOOLEAN">
+                  <a:a name="DESC" 
+                         value="FOR-ALL: PERFORM_TEST: This parameter defines whether the SPB RAP will include the PMU-PFLASH module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                         value="c44147a6-1054-49fa-bd1f-dbd627445740"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var> 
+              </v:ctr>
+           </v:lst> 
+            </v:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

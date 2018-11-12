@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2015)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**   $FILENAME   : plugin.xml $                                               **
+**                                                                            **
+**   $CC VERSION : \main\dev_tc29xbc_as4.0.3\dev_tc27xdc_as4.0.3\4 $          **
+**                                                                            **
+**   $DATE       : 2017-02-04 $                                               **
+**                                                                            **
+**   AUTHOR      : DL-AUTOSAR-Engineering                                     **
+**                                                                            **
+**   VENDOR      : Infineon Technologies                                      **
+**                                                                            **
+**   DESCRIPTION : This file contains                                         **
+**                 - tresosECU plug-in description for resource manager.      **
+**                                                                            **
+**   MAY BE CHANGED BY USER [Yes/No]: No                                      **
+**                                                                            **
+*******************************************************************************/
+/*******************************************************************************
+**  Traceability   :                                                          **
+**  [cover parentID=SAS_NAS_ETH_PR753,SAS_NAS_ETH_PR744,
+                SAS_NAS_FLS_PR753,SAS_NAS_FLS_PR744,
+                SAS_NAS_FEE_PR753,SAS_NAS_FEE_PR744,
+                SAS_NAS_CAN_PR753,SAS_NAS_CAN_PR744,
+                SAS_NAS_FR_PR753,SAS_NAS_FR_PR744,
+                SAS_NAS_MSC_PR753,SAS_NAS_MSC_PR744,
+                SAS_NAS_SPI_PR753,SAS_NAS_SPI_PR744,
+                SAS_NAS_ICU_PR753,SAS_NAS_ICU_PR744,
+                SAS_NAS_WDG_PR753,SAS_NAS_WDG_PR744
+                SAS_NAS_LIN_PR753,SAS_NAS_LIN_PR744,
+                SAS_NAS_PWM_PR753,SAS_NAS_PWM_PR744,
+                SAS_NAS_FLSLOADER_PR753,SAS_NAS_FLSLOADER_PR744,
+                SAS_NAS_DMA_PR753,SAS_NAS_DMA_PR744,
+                SAS_NAS_STDLIN_PR753,SAS_NAS_STDLIN_PR744,
+                SAS_NAS_DIO_PR753,SAS_NAS_DIO_PR744,
+                SAS_NAS_GTM_PR753,SAS_NAS_GTM_PR744,SAS_NAS_UART_PR744,
+                SAS_NAS_PORT_PR744,SAS_NAS_PORT_PR753,
+                SAS_NAS_GPT_PR753,SAS_NAS_GPT_PR744,
+                SAS_NAS_CANTRCV_PR753,SAS_NAS_CANTRCV_PR744,
+                SAS_NAS_CRC_PR744,SAS_NAS_CRC_PR753,
+                SAS_NAS_HE2_MCU_PR3045,SAS_NAS_HE2_ADC_PR3045,
+                SAS_NAS_HE2_ETH_PR3045,SAS_NAS_HE2_FLS_PR3045,
+                SAS_NAS_HE2_FEE_PR3045,SAS_NAS_HE2_CAN_PR3045,
+                SAS_NAS_HE2_FR_PR3045,SAS_NAS_HE2_MSC_PR3045,
+                SAS_NAS_HE2_SPI_PR3045,SAS_NAS_HE2_ICU_PR3045,
+                SAS_NAS_HE2_WDG_PR3045,SAS_NAS_HE2_LIN_PR3045,
+                SAS_NAS_HE2_PWM_PR3045,SAS_NAS_HE2_FLSLOADER_PR3045,
+                SAS_NAS_HE2_DMA_PR3045,SAS_NAS_HE2_STDLIN_PR3045,
+                SAS_NAS_HE2_DIO_PR3045,SAS_NAS_HE2_GTM_PR3045,
+                SAS_NAS_HE2_PORT_PR3045,SAS_NAS_HE2_GPT_PR3045,
+                SAS_NAS_HE2_CANTRCV_PR3045,SAS_NAS_HE2_CRC_PR3045,
+                SAS_NAS_HE2_UART_PR3045]
+    [/cover]                                                                  **
+*******************************************************************************/
+-->
+<plugin>
+<extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="Resource_AurixAS403_ModuleExt"
+             name="Resource Module for selecting sub-derivative">
+
+    <module id="Resource_AurixAS403"
+            label="%ModuleLabel"
+            mandatory="true"
+            allowMultiple="false"
+            description="MCAL:ECU Resource Manager"
+            copyright="(c) 2015 Infineon Technologies"
+            swVersionMajor="1"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="0"
+            specVersionMinor="0"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionMajor="4"
+            relVersionMinor="0"
+            relVersionPatch="3"
+            categoryType="Resource"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <ecuType target="AURIX" derivate="TC275"/>
+      <ecuType target="AURIX" derivate="TC277"/>
+   </module>
+  </extension>
+
+    <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="Resource_AurixAS403_ConfigExt"
+             name="Resource_Aurix Configuration">
+    <configuration moduleId="Resource_AurixAS403">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Resource.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/AURIX/Resource"/>
+      </data>
+
+      <editor id="Resource_AurixAS403_Edit"
+              label="%ModuleName"
+              tooltip="%ModuleDesc">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/AURIX/Resource"/>
+          <parameter name="title" value="Resource"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+  </extension>
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="Resource_AurixAS403_GenExt"
+              name="Resource_Aurix Generator">
+    <generator moduleId="Resource_AurixAS403"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+
+      <!-- common template path parameters -->
+      <parameter name="templates"
+                 mode="generate,verify" value="generate"/>
+      <!-- swcd modes and template path parameters -->
+      <parameter name="mode_type"
+                 mode="generate_swcd" value="generate"/>
+
+      <parameter name="mode_type"
+                 mode="verify_swcd" value="verify"/>
+
+      <parameter name="templates"
+                 mode="generate_swcd,verify_swcd" value="generate_swcd"/>
+    </generator>
+  </extension>
+  
+<!-- /* Include for TC275 common property file */-->
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX"
+     derivate="TC275"
+     moduleId="Resource_AurixAS403"
+     file="resources/AURIX_TC27X_DC/AURIX_TC275.properties">
+    </ecuresource>
+  </extension>
+
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX"
+     derivate="TC275"
+     moduleId="Resource_AurixAS403"
+     file="resources/AURIX_TC27X_DC/AURIX_TC275T_64F200W.properties">
+     <parameter name="subderivative" value="TC275T_64F200W"/>
+    </ecuresource>
+  </extension>
+
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX"
+     derivate="TC275"
+     moduleId="Resource_AurixAS403"
+     file="resources/AURIX_TC27X_DC/AURIX_TC275TC_64F200W.properties">
+     <parameter name="subderivative" value="TC275TC_64F200W"/>
+    </ecuresource>
+  </extension>
+
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX"
+     derivate="TC275"
+     moduleId="Resource_AurixAS403"
+     file="resources/AURIX_TC27X_DC/AURIX_TC275TP_64F200N.properties">
+     <parameter name="subderivative" value="TC275TP_64F200N"/>
+    </ecuresource>
+  </extension>
+
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX"
+     derivate="TC275"
+     moduleId="Resource_AurixAS403"
+     file="resources/AURIX_TC27X_DC/AURIX_TC275T_64F200N.properties">
+     <parameter name="subderivative" value="TC275T_64F200N"/>
+    </ecuresource>
+  </extension>
+  
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX"
+     derivate="TC275"
+     moduleId="Resource_AurixAS403"
+     file="resources/AURIX_TC27X_DC/AURIX_TC275TP_64F200W.properties">
+     <parameter name="subderivative" value="TC275TP_64F200W"/>
+    </ecuresource>
+  </extension>
+  
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX"
+     derivate="TC275"
+     moduleId="Resource_AurixAS403"
+     file="resources/AURIX_TC27X_DC/AURIX_TC275TC_64F200N.properties">
+     <parameter name="subderivative" value="TC275TC_64F200N"/>
+    </ecuresource>
+  </extension>
+
+  
+<!-- /* Include for TC277 common property file */-->
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX"
+     derivate="TC277"
+     moduleId="Resource_AurixAS403"
+     file="resources/AURIX_TC27X_DC/AURIX_TC277.properties">
+    </ecuresource>
+  </extension>
+
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX"
+     derivate="TC277"
+     moduleId="Resource_AurixAS403"
+     file="resources/AURIX_TC27X_DC/AURIX_TC277T_64F200S.properties">
+     <parameter name="subderivative" value="TC277T_64F200S"/>
+    </ecuresource>
+  </extension>
+  
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX"
+     derivate="TC277"
+     moduleId="Resource_AurixAS403"
+     file="resources/AURIX_TC27X_DC/AURIX_TC277TC_64F200S.properties">
+     <parameter name="subderivative" value="TC277TC_64F200S"/>
+    </ecuresource>
+  </extension>
+  
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX"
+     derivate="TC277"
+     moduleId="Resource_AurixAS403"
+     file="resources/AURIX_TC27X_DC/AURIX_TC277TP_64F200N.properties">
+     <parameter name="subderivative" value="TC277TP_64F200N"/>
+    </ecuresource>
+  </extension>
+
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX"
+     derivate="TC277"
+     moduleId="Resource_AurixAS403"
+     file="resources/AURIX_TC27X_DC/AURIX_TC277T_64F200N.properties">
+     <parameter name="subderivative" value="TC277T_64F200N"/>
+    </ecuresource>
+  </extension>
+
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX"
+     derivate="TC277"
+     moduleId="Resource_AurixAS403"
+     file="resources/AURIX_TC27X_DC/AURIX_TC277TP_64F200S.properties">
+     <parameter name="subderivative" value="TC277TP_64F200S"/>
+    </ecuresource>
+  </extension>
+  
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX"
+     derivate="TC277"
+     moduleId="Resource_AurixAS403"
+     file="resources/AURIX_TC27X_DC/AURIX_TC277TC_64F200N.properties">
+     <parameter name="subderivative" value="TC277TC_64F200N"/>
+    </ecuresource>
+  </extension>
+  
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX"
+     derivate="TC277"
+     moduleId="Resource_AurixAS403"
+     file="resources/AURIX_TC27X_DC/AURIX_TC270TP_64F200N.properties">
+     <parameter name="subderivative" value="TC270TP_64F200N"/>
+    </ecuresource>
+  </extension>
+  
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresourcefinder">
+    <ecuresourcefinder>
+      <finder class="dreisoft.tresos.autosar2.api.ecuresource.DefaultEcuResourceFinder">
+      </finder>
+    </ecuresourcefinder>
+  </extension>
+
+
+   <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresourcefinder">
+    <ecuresourcefinder>
+      <finder class="dreisoft.tresos.autosar2.api.ecuresource.DefaultEcuResourceFinder">
+        <parameter name="name" value="subderivative"/>
+        <parameter name="path" value="/AUTOSAR/TOP-LEVEL-PACKAGES/AURIX/ELEMENTS/Resource/ResourceGeneral/ResourceSubDerivative"/>
+      </finder>
+    </ecuresourcefinder>
+  </extension>
+
+</plugin>
+

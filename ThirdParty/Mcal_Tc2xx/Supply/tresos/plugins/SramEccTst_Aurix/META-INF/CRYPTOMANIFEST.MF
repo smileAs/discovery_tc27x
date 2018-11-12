@@ -1,0 +1,22 @@
+
+Name: config/SramEccTst.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594773970458834606181343735437967082902547126307558587
+ 730184501359939137652265229389184196849646337700207565
+SignatureKeyID: Infineon
+
+Name: generate/inc/SramEccTst_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377426336429596087293989287431889601740007367854503015
+ 4598472891266430435708984720854532800140700896839473
+SignatureKeyID: Infineon
+
+Name: generate/src/SramEccTst_LCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377422841828387581145891460809531739718747042955879903
+ 7289813582897725238416885310955759932255942508727456
+SignatureKeyID: Infineon
+

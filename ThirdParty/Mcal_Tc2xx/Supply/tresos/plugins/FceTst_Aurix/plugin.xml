@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2013)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**   $FILENAME   : plugin.xml $                                               **
+**                                                                            **
+**   $CC VERSION : \main\7 $                                                  **
+**                                                                            **
+**   $DATE       : 2014-07-03 $                                               **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  DESCRIPTION  : This file contains                                         **
+**                 - tresosECU plug-in description for FceTst driver          **
+**                                                                            **
+**  MAY BE CHANGED BY USER [Yes/No]: Yes                                      **
+**                                                                            **
+*******************************************************************************/
+
+-->
+<plugin>
+
+  <!--
+    ** brief FceTst_Aurix plugin
+    ** project AUTOSAR Complex driver
+    **
+    ** All rights exclusively reserved for Elektrobit Automotive GmbH,
+    ** unless expressly agreed to otherwise.
+  -->
+
+
+
+ <extension point="dreisoft.tresos.launcher2.plugin.module"
+	       id="FceTst_AurixAS403_ModuleExt"
+	       name="FceTst Driver PlugIn with a TemplateGenerator">
+
+          <module id="FceTst_AurixAS403"
+            label="%ModuleLabel"
+            mandatory="false"
+            allowMultiple="true"
+            description="%ModuleDesc"
+            copyright="(c) 2014 Infineon Technologies"
+            swVersionMajor="0"
+            swVersionMinor="0"
+            swVersionPatch="1"
+            swVersionSuffix=""
+            specVersionMajor="0"
+            specVersionMinor="0"
+            specVersionPatch="0"
+            specVersionSuffix="0000"
+            relVersionMajor="4"
+            relVersionMinor="0"
+            relVersionPatch="3"
+            relVersionSuffix=""
+            categoryType="FceTst"
+            categoryLayer="SafeTlib"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <ecuType target="AURIX" derivate="TC275"/>
+      <ecuType target="AURIX" derivate="TC277"/>
+    
+      
+    </module>
+  </extension>
+
+    <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+              id="FceTst_AurixAS403_ConfigExt"
+              name="FceTst Driver Parameter Definition Extension">
+    <configuration moduleId="FceTst_AurixAS403">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/FceTst.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/AURIX/FceTst"/>
+      </data>
+
+           <editor id="FceTst_AurixAS403_Edit" 
+              label="%ModuleName"
+              tooltip="%ModuleDesc">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/AURIX/FceTst"/>
+          <parameter name="title" value="FceTst"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="FceTst_AurixAS403_GenExt"
+	      name="FceTst driver TemplateGenerator">
+    <generator moduleId="FceTst_AurixAS403"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+
+      <!-- common template path parameters -->
+      <parameter name="templates"
+                 mode="generate,verify" value="generate"/>
+
+      <!-- swcd modes and template path parameters -->
+      <parameter name="mode_type"
+                 mode="generate_swcd" value="generate"/>
+
+      <parameter name="mode_type"
+                 mode="verify_swcd" value="verify"/>
+
+      <parameter name="templates"
+                 mode="generate_swcd,verify_swcd" value="generate_swcd"/>
+
+    </generator>
+  </extension>
+
+
+</plugin>

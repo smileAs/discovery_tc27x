@@ -1,0 +1,22 @@
+
+Name: config/PhlSramTst.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377426373278347873009577692008967928187438053602549312
+ 5934792978395346458002024798293326702627666848980752
+SignatureKeyID: Infineon
+
+Name: generate/inc/PhlSramTst_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 74155374890382207222934374706305023073351805728122959287096
+ 59310477660414982404980157579422329723624480091606997295
+SignatureKeyID: Infineon
+
+Name: generate/src/PhlSramTst_LCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594773966517664698869623599390028748135466579337047327
+ 803898065016659271992461405304819829764198986172508758
+SignatureKeyID: Infineon
+

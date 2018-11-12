@@ -1,0 +1,2208 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2014)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  $FILENAME   : CryHsm.xdm $                                                **
+**                                                                            **
+**  $CC VERSION : \main\dev_as4.0.3\29 $                                      **
+**                                                                            **
+**  $DATE       : 2015-01-06 $                                                **
+**                                                                            **
+**  AUTHOR      : DL-AUTOSAR-Engineering                                      **
+**                                                                            **
+**  VENDOR      : Infineon Technologies                                       **
+**                                                                            **
+**  DESCRIPTION  : XML Data Model for CryHsm driver                           **
+**                                                                            **
+**  MAY BE CHANGED BY USER [yes/no]: No                                       **
+**                                                                            **
+*******************************************************************************/
+/*  TRACEABILITY : [cover parentID= 
+
+TO DO: Tags to be added
+
+ ]
+ 
+    [/cover]                                                                  */
+-->
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar"  
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX" type="AR-PACKAGE">
+        <a:a name="UUID" value="9a8b82b6-c3a9-4a4d-b2d3-617b2e1b4a0c"/>
+        <d:lst type="ELEMENTS">
+          <d:chc name="CryHsm" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="RELEASE" value="asc:4.0.3"/>
+              <a:a name="UUID" value="DCE:1e78c361-65c1-41e9-b234-9b219048e324"/>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="LABEL" value="ConfigVariant"/>
+                <a:da name="DEFAULT" value="VariantPreCompile"/>
+                <a:da name="RANGE" value="VariantPreCompile"/>
+                <a:da name="EDITABLE" value="false"/>
+              </v:var>
+              <v:ctr name="CryHsmGeneral" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: General configuration settings for CryHsm-Handler"/>
+                <v:var name="CryHsmTriggeredInit" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: TRUE:The HSM init is triggered from TriCore,FALSE:The HSM init is performed independently from any TriCore trigger."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6ef30998-101c-4cfe-a0fb-d8b6a23527cd"/>
+                  <a:da name="DEFAULT" value="true"/>
+                  <a:da name="TOOLTIP" value="Switches the Hsm Init triggered from Tricore or independently."/>
+                </v:var>
+				<v:var name="CryHsmUseSyncInit" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: TRUE:The HSM init is triggered in synchronous mode,FALSE:The HSM init is triggered in asynchronous mode."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6ef30998-101c-4cfe-a0fb-d8b6a23500cd"/>
+                  <a:da name="DEFAULT" value="true"/>
+                  <a:da name="TOOLTIP" value="Switches the Hsm Init triggered in synchronous or asynchronous mode."/>
+                </v:var>
+                <v:var name="CryHsmMacSafeVerify" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: TRUE: the MAC verify is performed to support safety,FALSE: The MAC verify is QM."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6ef30998-101c-4cfe-a0fb-d8b6a2352788"/>
+                  <a:da name="DEFAULT" value="true"/>
+                  <a:da name="TOOLTIP" value="Enable or disable the MAC verify to support safety."/>
+                </v:var>
+                <v:var name="CryHsmSecureBoot" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: TRUE: the HSM Secure Boot is enabled,FALSE: the HSM Secure Boot is disabled.When the secure boot feature is enabled, the secure boot behaves as described in SHE standard."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>	
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6ef30998-101c-4cfe-a0fb-d8b232334788"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="TOOLTIP" value="Enable or disable the secure boot"/>
+                </v:var>
+                <v:var name="CryHsmUserTimeoutApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: TRUE: the user defined timeout interfaces used,FALSE: the AUTOSAR Gpt timeout Interfaces used."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>				   
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6ef30998-101c-4cfe-a0fb-d81244352788"/>
+                  <a:da name="DEFAULT" value="true"/>
+                  <a:da name="TOOLTIP" value="Selects the type of timeout user defined timeout/Gpt."/>
+                </v:var>
+                 <v:var name="CryHsmUserStartTimerApiName" type="FUNCTION-NAME">
+                  <a:a name="DESC" 
+                       value="EN: Name of the User Start timer API."/>	
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+					  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+					  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+					  <a:a name="UUID" value="6ef30998-101c-4cfe-a0fb-d81244352409"/>
+					  <a:da name="DEFAULT" value="SwFrt_GetRawCount"/>
+					  <a:da name="INVALID" type="XPath">
+						<a:tst expr="((.='NULL') or (.='Null') or (.='false') or (.='FALSE') or (.='null') or (.='null_ptr') or (.='Null_Ptr'))" 
+						  true="Invalid name of the CryHsmUserStartTimerApiName. Must be valid C function name or NULL_PTR."/>
+						<a:tst expr="text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$')" 
+						  false="Invalid name of the CryHsmUserStartTimerApiName. Must be valid C function name or NULL_PTR."/>
+					  </a:da>
+					<a:da name="ENABLE" type="XPath">
+					  <a:tst expr="((node:exists(../CryHsmUserTimeoutApi)) and (node:value(../CryHsmUserTimeoutApi) = 'true'))"/>
+					</a:da>
+                </v:var>
+                <v:var name="CryHsmUserDeltaTimerApiName" type="FUNCTION-NAME">
+                  <a:a name="DESC" 
+                       value="EN: Name of the User Delta Timer API."/>	
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>			
+					  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+					  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+					  <a:a name="UUID" value="6ef30998-101c-4cfe-a0fb-d8124435241a"/>
+					  <a:da name="DEFAULT" value="SwFrt_GetRawDelta"/>
+					  <a:da name="INVALID" type="XPath">
+						<a:tst expr="((.='NULL') or (.='Null') or (.='false') or (.='FALSE') or (.='null') or (.='null_ptr') or (.='Null_Ptr'))" 
+						  true="Invalid name of the CryHsmUserDeltaTimerApiName. Must be valid C function name or NULL_PTR."/>
+						<a:tst expr="text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$')" 
+						  false="Invalid name of the CryHsmUserDeltaTimerApiName. Must be valid C function name or NULL_PTR."/>
+					  </a:da>
+					<a:da name="ENABLE" type="XPath">
+					  <a:tst expr="((node:exists(../../CryHsmGeneral/CryHsmUserTimeoutApi)) and (node:value(../../CryHsmGeneral/CryHsmUserTimeoutApi) = 'true'))"/>
+					</a:da>
+                </v:var>
+                <v:var name="CryHsmUserStopTimerApiName" type="FUNCTION-NAME">
+                  <a:a name="DESC" 
+                       value="EN: Name of the Stop timer API."/>	
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>				
+					  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+					  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+					  <a:a name="UUID" value="6ef30998-101c-4cfe-a0fb-d8124435241b"/>
+					  <a:da name="DEFAULT" value="SwFrt_StopTimer"/>
+					  <a:da name="INVALID" type="XPath">
+						<a:tst expr="((.='NULL') or (.='Null') or (.='false') or (.='FALSE') or (.='null') or (.='null_ptr') or (.='Null_Ptr'))" 
+						  true="Invalid name of the CryHsmUserStopTimerApiName. Must be valid C function name or NULL_PTR."/>
+						<a:tst expr="text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$')" 
+						  false="Invalid name of the CryHsmUserStopTimerApiName. Must be valid C function name or NULL_PTR."/>
+					  </a:da>
+					<a:da name="ENABLE" type="XPath">
+					  <a:tst expr="((node:exists(../../CryHsmGeneral/CryHsmUserTimeoutApi)) and (node:value(../../CryHsmGeneral/CryHsmUserTimeoutApi) = 'true'))"/>
+					</a:da>
+                </v:var>																		
+				<v:var name="CryHsmUserTimerFileName" type="FUNCTION-NAME">
+                  <a:a name="DESC" 
+                       value="EN: Name of the User timer File."/>	
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+					  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+					  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+					  <a:a name="UUID" value="6ef30998-101c-4cfe-a0fb-d81244352510"/>
+					  <a:da name="DEFAULT" value="Cry_CustomerTimeoutApi"/>
+					  <a:da name="INVALID" type="XPath">
+						<a:tst expr="((.='NULL') or (.='Null') or (.='false') or (.='FALSE') or (.='null') or (.='null_ptr') or (.='Null_Ptr'))" 
+						  true="Invalid name of the CryHsmUserTimerFileName. Must be valid C function name or NULL_PTR."/>
+						<a:tst expr="text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$')" 
+						  false="Invalid name of the CryHsmUserTimerFileName. Must be valid C function name or NULL_PTR."/>
+					  </a:da>
+					<a:da name="ENABLE" type="XPath">
+					  <a:tst expr="((node:exists(../CryHsmUserTimeoutApi)) and (node:value(../CryHsmUserTimeoutApi) = 'true'))"/>
+					</a:da>
+					</v:var>
+				<v:var name="CryHsmTickCountValue" type="FLOAT">
+                  <a:a name="DESC" 
+                       value="EN: Tick count for 1 micro second (Which will be used for tick conversion in case of customer specific timer api is implemented)."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac3a"/>
+                  <a:da name="DEFAULT" value="64.0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255.0"/>
+                    <a:tst expr="&gt;=0.0"/>
+                  </a:da>
+                  <a:da name="TOOLTIP" value="Tick count for 1uS"/>
+                </v:var>
+                <v:var name="CryHsmBswMErrorNotification" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: TRUE: SHE error reported to BswM module,FALSE: SHE error not reported to BswM module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6ef30998-101c-4cfe-a0fb-d8b641152729"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="TOOLTIP" value="Enable or disable the error reporting to BswM."/>
+                </v:var>
+				<v:var name="CryHsmInitTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmInitTimeout * SAFETY_FACTOR)"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac80"/>
+                  <a:da name="DEFAULT" value="200000"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                </v:var>	
+                <v:var name="CryHsmRndSeedInitStartTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmRndSeedInitStartTimeout * SAFETY_FACTOR)"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac28"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                </v:var>	
+                <v:var name="CryHsmRndSeedInitUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is the constant part for  Cry_HsmRandomSeedInitUpdate API"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac27"/>
+                  <a:da name="DEFAULT" value="150"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                </v:var>
+				<v:var name="CryHsmRndSeedInitPerByteUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is variable part for Cry_HsmRandomSeedInitUpdate API. After elapsed the time of ((CryHsmRndSeedInitUpdateTimeout) +(No of Bytes * CryHsmRndSeedInitPerByteUpdateTimeout))*SAFTEY_FACTOR Cry_HsmRandomSeedInitUpdate API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac26"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                </v:var>
+                <v:var name="CryHsmRndSeedInitFinishTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN:Timeout in micro seconds, after time elapsed of (CryHsmRndSeedInitFinishTimeout * SAFETY_FACTOR)Cry_HsmRandomSeedInitFinish API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac25"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                </v:var>																		
+                <v:var name="CryHsmRndSeedExtendStartTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmRndSeedExtendStartTimeout * SAFETY_FACTOR)Cry_HsmRandomSeedExtendStart API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout for Cry_HsmRandomSeedExtendStart"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac24"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmRndSeedExtendUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is the constant part for  Cry_HsmRandomSeedExtendUpdate API"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac23"/>
+                  <a:da name="DEFAULT" value="200"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmRndSeedExtendPerByteUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is variable part for Cry_HsmRandomSeedExtendUpdate. After elapsed the time of ((CryHsmRndSeedExtendUpdateTimeout) +(No of Bytes * CryHsmRndSeedExtendPerByteUpdateTimeout))*SAFTEY_FACTOR Cry_HsmRandomSeedExtendUpdate API stops and returns CSM_E_NOT_OK"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in micro seconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac22"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmRndSeedExtendFinishTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmRndSeedExtendFinishTimeout * SAFETY_FACTOR)Cry_HsmRandomSeedExtendFinish API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in micro seconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac21"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>				
+                <v:var name="CryHsmRndGenerateStartTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmRndGenerateStartTimeout * SAFETY_FACTOR) Cry_HsmRandomGenerateStart API stops and returns CSM_E_NOT_OK.Not applicable in present software"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout for Cry_HsmRandomGenerateStart"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac20"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmRndGenerateUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is the constant part for  Cry_HsmRandomGenerateUpdate API"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac1f"/>
+                  <a:da name="DEFAULT" value="50"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmRndGeneratePerByteUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is variable part for Cry_HsmRandomGenerateUpdate API. After elapsed the time of ((CryHsmRndGenerateUpdateTimeout) +(No of Bytes * CryHsmRndGeneratePerByteUpdateTimeout))*SAFTEY_FACTOR Cry_HsmRandomGenerateUpdate API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac1e"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmRndGenerateFinishTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmRndGenerateFinishTimeout * SAFETY_FACTOR) Cry_HsmRandomGenerateFinish API stops and returns CSM_E_NOT_OK.Not applicable in present software"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout for Cry_HsmRandomGenerateFinish API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac1d"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmTrueRndGenerateStartTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmTrueRndGenerateStartTimeout * SAFETY_FACTOR) Cry_HsmTrueRandomGenerateStart API stops and returns CSM_E_NOT_OK.Not applicable in present software"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout for Cry_HsmTrueRandomGenerateStart"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13c69-ebb2-42d3-abb2-b63e218cac20"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmTrueRndGenerateUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is the constant part for  Cry_HsmTrueRandomGenerateUpdate API"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ecb2-42d3-abb2-b63e218cac1f"/>
+                  <a:da name="DEFAULT" value="50"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmTrueRndGeneratePerByteUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is variable part for Cry_HsmTrueRandomGenerateUpdate API. After elapsed the time of ((CryHsmTrueRndGenerateUpdateTimeout) +(No of Bytes * CryHsmTrueRndGeneratePerByteUpdateTimeout))*SAFTEY_FACTOR Cry_HsmRandomGenerateUpdate API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ecb2-42d3-abb2-b63e218cac1e"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmTrueRndGenerateFinishTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmTrueRndGenerateFinishTimeout * SAFETY_FACTOR) Cry_HsmTrueRandomGenerateFinish API stops and returns CSM_E_NOT_OK.Not applicable in present software"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout for Cry_HsmTrueRandomGenerateFinish API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13b69-ebb2-42d3-abb2-b63e218cac1d"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmAesEcbEncryptStartTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmAesEcbEncryptStartTimeout * SAFETY_FACTOR)Cry_HsmAesEcbEncryptStart API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in micro seconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac1c"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmAesEcbEncryptUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is the constant part for  Cry_HsmAesEcbEncryptUpdate timeout"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac1b"/>
+                  <a:da name="DEFAULT" value="100"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmAesEcbEncryptPerByteUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is variable part for Cry_HsmAesEcbEncryptUpdate. After elapsed the time of ((CryHsmAesEcbEncryptUpdateTimeout) +(No of Bytes * CryHsmAesEcbEncryptPerByteUpdateTimeout))*SAFTEY_FACTOR Cry_HsmAesEcbEncryptUpdate API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac1a"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmAesEcbEncryptFinishTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmAesEcbEncryptFinishTimeout * SAFETY_FACTOR)Cry_HsmAesEcbEncryptFinish API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac19"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>								
+                <v:var name="CryHsmAesEcbDecryptStartTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmAesEcbDecryptStartTimeout * SAFETY_FACTOR)Cry_HsmAesEcbDecryptStart API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in micro seconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac1c"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmAesEcbDecryptUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is the constant part for  Cry_HsmAesEcbDecryptUpdate timeout"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac1b"/>
+                  <a:da name="DEFAULT" value="80"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmAesEcbDecryptPerByteUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is variable part for Cry_HsmAesEcbDecryptUpdate. After elapsed the time of ((CryHsmAesEcbDecryptUpdateTimeout) +(No of Bytes * CryHsmAesEcbDecryptPerByteUpdateTimeout))*SAFTEY_FACTOR Cry_HsmAesEcbDecryptUpdate API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac1a"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmAesEcbDecryptFinishTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmAesEcbDecryptFinishTimeout * SAFETY_FACTOR)Cry_HsmAesEcbDecryptFinish API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac19"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>				
+                <v:var name="CryHsmAesEncryptStartTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmEncryptStartTimeout * SAFETY_FACTOR)Cry_HsmEncryptStart API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac18"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>				
+                <v:var name="CryHsmAesEncryptUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is the constant part for Cry_HsmAesEncryptUpdate timeout"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout for Cry_HsmAesEncryptUpdate"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac17"/>
+                  <a:da name="DEFAULT" value="150"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>				
+                <v:var name="CryHsmAesEncryptPerByteUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is variable part for Cry_HsmAesEncryptUpdate. After elapsed the time of ((CryHsmAesEncryptUpdateTimeout) +(No of Bytes * CryHsmAesEncryptPerByteUpdateTimeout))*SAFTEY_FACTOR Cry_HsmAesEncryptUpdate API stops and returns CSM_E_NOT_OK"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac16"/>
+                  <a:da name="DEFAULT" value="1"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmAesEncryptFinishTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmAesEncryptStartTimeout * SAFETY_FACTOR)Cry_HsmAesEncryptStart API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac15"/>
+                  <a:da name="DEFAULT" value="150"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmAesDecryptStartTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmAesDecryptStartTimeout * SAFETY_FACTOR)Cry_HsmAesDecryptStart API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac18"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmAesDecryptUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is the constant part for  Cry_HsmAesDecryptUpdate timeout"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout for Cry_HsmAesDecryptUpdate API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac17"/>
+                  <a:da name="DEFAULT" value="100"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>				
+                <v:var name="CryHsmAesDecryptPerByteUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is variable part for Cry_HsmAesDecryptUpdate. After elapsed the time of ((CryHsmAesDecryptUpdateTimeout) +(No of Bytes * CryHsmAesDecryptPerByteUpdateTimeout))*SAFTEY_FACTOR Cry_HsmAesDecryptUpdate API stops and returns CSM_E_NOT_OK"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac16"/>
+                  <a:da name="DEFAULT" value="1"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmAesDecryptFinishTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmAesDecryptFinishTimeout * SAFETY_FACTOR)Cry_HsmAesDecryptFinish API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac15"/>
+                  <a:da name="DEFAULT" value="150"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>				
+                <v:var name="CryHsmAesCmacGenerateStartTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmAesCmacGenerateStartTimeout * SAFETY_FACTOR)Cry_HsmAesCmacGenerateStart API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac14"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmAesCmacGenerateUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is the constant part for  Cry_HsmAesCmacGenerateUpdate timeout"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac13"/>
+                  <a:da name="DEFAULT" value="80"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmAesCmacGeneratePerByteUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is variable part for Cry_HsmAesCmacGenerateUpdate. After elapsed the time of ((CryHsmAesCmacGenerateUpdateTimeout) +(No of Bytes * CryHsmAesCmacGeneratePerByteUpdateTimeout))*SAFTEY_FACTOR Cry_HsmAesCmacGenerateUpdate API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac13"/>
+                  <a:da name="DEFAULT" value="1"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmAesCmacGenerateFinishTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmAesCmacGenerateFinishTimeout * SAFETY_FACTOR)Cry_HsmAesCmacGenerateFinish API stops and returns CSM_E_NOT_OK"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac12"/>
+                  <a:da name="DEFAULT" value="150"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmAesCmacVerifyStartTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmAesCmacVerifyStartTimeout * SAFETY_FACTOR)Cry_HsmAesCmacVerifyStart API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac11"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>				
+                <v:var name="CryHsmAesCmacVerifyUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is the constant part for  Cry_HsmAesCmacVerifyUpdate timeout"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac10"/>
+                  <a:da name="DEFAULT" value="40"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmAesCmacVerifyPerByteUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is variable part for Cry_HsmAesCmacVerifyUpdate. After elapsed the time of ((CryHsmAesCmacVerifyUpdateTimeout) +(No of Bytes * CryHsmAesCmacVerifyPerByteUpdateTimeout))*SAFTEY_FACTOR Cry_HsmAesCmacVerifyUpdate API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac9f"/>
+                  <a:da name="DEFAULT" value="1"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmAesCmacVerifyFinishTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmAesCmacVerifyFinishTimeout * SAFETY_FACTOR)Cry_HsmAesCmacVerifyFinish API stops and returns CSM_E_NOT_OK.."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac9e"/>
+                  <a:da name="DEFAULT" value="130"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>												
+                <v:var name="CryHsmKeyLoadStartTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmKeyLoadStartTimeout * SAFETY_FACTOR)Cry_HsmKeyLoadStart API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac9d"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmKeyLoadUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is the constant part for  Cry_HsmKeyLoadUpdate timeout"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac9c"/>
+                  <a:da name="DEFAULT" value="100000"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmKeyLoadPerByteUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is variable part for Cry_HsmKeyLoadUpdate. After elapsed the time of ((CryHsmKeyLoadUpdateTimeout) +(No of Bytes * CryHsmKeyLoadPerByteUpdateTimeout))*SAFTEY_FACTOR Cry_HsmKeyLoadUpdate API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac9b"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmKeyLoadFinishTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmKeyLoadFinishTimeout * SAFETY_FACTOR)Cry_HsmKeyLoadFinish API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac9a"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>				
+                <v:var name="CryHsmKeyLoadPlainStartTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmKeyLoadPlainStartTimeout * SAFETY_FACTOR)Cry_HsmKeyLoadPlainStart API stops and returns CSM_E_NOT_OK"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in micro seconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac99"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmKeyLoadPlainUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is the constant part for  Cry_HsmKeyLoadPlainUpdate timeout"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in micro seconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac98"/>
+                  <a:da name="DEFAULT" value="80"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=80"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmKeyLoadPlainPerByteUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is variable part for Cry_HsmKeyLoadPlainUpdate. After elapsed the time of ((CryHsmKeyLoadPlainUpdateTimeout) +(No of Bytes * CryHsmKeyLoadPlainPerByteUpdateTimeout))*SAFTEY_FACTOR Cry_HsmKeyLoadPlainUpdate API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in micro seconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac97"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmKeyLoadPlainFinishTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmKeyLoadPlainFinishTimeout * SAFETY_FACTOR)Cry_HsmKeyLoadPlainFinish API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in micro seconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac96"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>				
+                <v:var name="CryHsmKeyLoadRamKeyStartTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmKeyLoadRamKeyStartTimeout * SAFETY_FACTOR)Cry_HsmKeyLoad Start API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac95"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmKeyLoadRamKeyUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is the constant part for  Cry_HsmKeyLoad Update timeout"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac93"/>
+                  <a:da name="DEFAULT" value="1000"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmKeyLoadRamKeyPerByteUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is variable part for Cry_HsmKeyLoad Update. After elapsed the time of ((CryHsmKeyLoadRamKeyUpdateTimeout) +(No of Bytes * CryHsmKeyLoadRamKeyPerByteUpdateTimeout))*SAFTEY_FACTOR Cry_HsmKeyLoad Update API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac92"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmKeyLoadRamKeyFinishTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmKeyLoadRamKeyFinishTimeout * SAFETY_FACTOR)Cry_HsmKeyLoad Finish API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout  in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac91"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>				
+                <v:var name="CryHsmKeyExportStartTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmKeyExportStartTimeout * SAFETY_FACTOR)Cry_HsmKeyExportStart API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac90"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmKeyExportUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is the constant part for  Cry_HsmKeyExportUpdate timeout"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout for Cry_HsmKeyExportUpdate"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac8f"/>
+                  <a:da name="DEFAULT" value="700"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmKeyExportPerByteUpdateTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, which is variable part for Cry_HsmKeyExportUpdate. After elapsed the time of ((CryHsmKeyExportUpdateTimeout) +(No of Bytes * CryHsmKeyExportPerByteUpdateTimeout))*SAFTEY_FACTOR Cry_HsmKeyExportUpdate API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout for Cry_HsmKeyExportUpdate"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac8e"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="CryHsmKeyExportFinishTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmKeyExportFinishTimeout * SAFETY_FACTOR)Cry_HsmKeyExportFinish API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout for Cry_HsmKeyExportFinish"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac8d"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmDebugStartTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmDebugStartTimeout * SAFETY_FACTOR)CryHsmDebugStart API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218aac90"/>
+                  <a:da name="DEFAULT" value="100"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>	
+				<v:var name="CryHsmDebugFinishTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmDebugFinishTimeout * SAFETY_FACTOR)CryHsmDebugFinish API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218caa8d"/>
+                  <a:da name="DEFAULT" value="200000"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmGetUidTimeout" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Timeout in micro seconds, after time elapsed of (CryHsmGetUidTimeout * SAFETY_FACTOR)Cry_HsmGetSheUID API stops and returns CSM_E_NOT_OK."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>						   
+                  <a:da name="TOOLTIP" value="Timeout in microseconds"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218aac99"/>
+                  <a:da name="DEFAULT" value="100"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>				
+				<v:var name="CryHsmSidMacGenerateStart" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesCMacGenerateStart API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesCMacGenerateStart API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac81"/>
+                  <a:da name="DEFAULT" value="6"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidMacGenerateUpdate" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesCMacGenerateUpdate API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesCMacGenerateUpdate API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac82"/>
+                  <a:da name="DEFAULT" value="7"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidMacGenerateFinish" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesCMacGenerateFinish API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesCMacGenerateFinish API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac83"/>
+                  <a:da name="DEFAULT" value="8"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidMacVerifyStart" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesCMacVerifyStart API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesCMacVerifyStart API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac84"/>
+                  <a:da name="DEFAULT" value="9"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidMacVerifyUpdate" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesCMacVerifyUpdate API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesCMacVerifyUpdate API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218bab84"/>
+                  <a:da name="DEFAULT" value="10"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidMacVerifyFinish" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesCMacVerifyFinish API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesCMacVerifyFinish API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac85"/>
+                  <a:da name="DEFAULT" value="11"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidRndSeedInitStart" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmRandomSeedInitStart API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmRandomSeedInitStart API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac86"/>
+                  <a:da name="DEFAULT" value="12"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidRndSeedInitUpdate" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmRandomSeedInitUpdate API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmRandomSeedInitUpdate API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac87"/>
+                  <a:da name="DEFAULT" value="13"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidRndSeedInitFinish" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmRandomSeedInitFinish API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmRandomSeedInitFinish API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac88"/>
+                  <a:da name="DEFAULT" value="14"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidRndSeedExtendStart" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmRandomSeedExtendStart API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmRandomSeedExtendStart API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cac89"/>
+                  <a:da name="DEFAULT" value="15"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidRndSeedExtendUpdate" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmRandomSeedExtendUpdate API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmRandomSeedExtendUpdate API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab90"/>
+                  <a:da name="DEFAULT" value="16"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidRndSeedExtendFinish" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmRandomSeedExtendFinish API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmRandomSeedExtendFinish API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab91"/>
+                  <a:da name="DEFAULT" value="17"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidRndGenerate" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmRandomGenerate API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmRandomGenerate API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab92"/>
+                  <a:da name="DEFAULT" value="18"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidTrueRndGenerate" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmTrueRandomGenerate API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmTrueRandomGenerate API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab93"/>
+                  <a:da name="DEFAULT" value="19"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidAesEncryptStart" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesEncryptStart API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesEncryptStart API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab94"/>
+                  <a:da name="DEFAULT" value="20"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidAesEncryptUpdate" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesEncryptUpdate API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesEncryptUpdate API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab95"/>
+                  <a:da name="DEFAULT" value="21"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidAesEncryptFinish" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesEncryptFinish API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesEncryptFinish API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab96"/>
+                  <a:da name="DEFAULT" value="22"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidAesDecryptStart" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesDecryptStart API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesDecryptStart API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab97"/>
+                  <a:da name="DEFAULT" value="23"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidAesDecryptUpdate" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesDecryptUpdate API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesDecryptUpdate API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab98"/>
+                  <a:da name="DEFAULT" value="24"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidAesDecryptFinish" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesDecryptFinish API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesDecryptFinish API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab99"/>
+                  <a:da name="DEFAULT" value="25"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidAesEcbEncryptStart" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesEcbEncryptStart API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesEcbEncryptStart API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab00"/>
+                  <a:da name="DEFAULT" value="26"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidAesEcbEncryptUpdate" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesEcbEncryptUpdate API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesEcbEncryptUpdate API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab01"/>
+                  <a:da name="DEFAULT" value="27"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidAesEcbEncryptFinish" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesEcbEncryptFinish API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesEcbEncryptFinish API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab02"/>
+                  <a:da name="DEFAULT" value="28"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidAesEcbDecryptStart" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesEcbDecryptStart API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesEcbDecryptStart API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab03"/>
+                  <a:da name="DEFAULT" value="29"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidAesEcbDecryptUpdate" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesEcbDecryptUpdate API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesEcbDecryptUpdate API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab04"/>
+                  <a:da name="DEFAULT" value="30"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidAesEcbDecryptFinish" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesEcbDecryptFinish API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesEcbDecryptFinish API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab05"/>
+                  <a:da name="DEFAULT" value="31"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidAesGcmEncryptStart" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesGcmEncryptStart API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesGcmEncryptStart API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab06"/>
+                  <a:da name="DEFAULT" value="32"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidAesGcmEncryptUpdate" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesGcmEncryptUpdate API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesGcmEncryptUpdate API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab07"/>
+                  <a:da name="DEFAULT" value="33"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidAesGcmEncryptFinish" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesGcmEncryptFinish API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesGcmEncryptFinish API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab08"/>
+                  <a:da name="DEFAULT" value="34"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidAesGcmDecryptStart" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesGcmDecryptStart API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesGcmDecryptStart API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab09"/>
+                  <a:da name="DEFAULT" value="35"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidAesGcmDecryptUpdate" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesGcmDecryptUpdate API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesGcmDecryptUpdate API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab10"/>
+                  <a:da name="DEFAULT" value="36"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidAesGcmDecryptFinish" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmAesGcmDecryptFinish API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmAesGcmDecryptFinish API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab11"/>
+                  <a:da name="DEFAULT" value="37"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidKeyLoadStart" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmKeyLoadStart API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmKeyLoadStart API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab12"/>
+                  <a:da name="DEFAULT" value="38"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidKeyLoadUpdate" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmKeyLoadUpdate API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmKeyLoadUpdate API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab13"/>
+                  <a:da name="DEFAULT" value="39"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidKeyLoadFinish" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmKeyLoadFinish API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmKeyLoadFinish API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab14"/>
+                  <a:da name="DEFAULT" value="40"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidKeyLoadPlainStart" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmKeyLoadPlainStart API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmKeyLoadPlainStart API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab15"/>
+                  <a:da name="DEFAULT" value="41"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidKeyLoadPlainUpdate" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmKeyLoadPlainUpdate API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmKeyLoadPlainUpdate API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab99"/>
+                  <a:da name="DEFAULT" value="48"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidKeyLoadPlainFinish" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmKeyLoadPlainFinish API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmKeyLoadPlainFinish API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab17"/>
+                  <a:da name="DEFAULT" value="49"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidKeyExportStart" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmKeyExportStart API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmKeyExportStart API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab18"/>
+                  <a:da name="DEFAULT" value="50"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidKeyExportUpdate" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmKeyExportUpdate API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmKeyExportUpdate API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab19"/>
+                  <a:da name="DEFAULT" value="51"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryHsmSidKeyExportFinish" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmKeyExportFinish API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmKeyExportFinish API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab20"/>
+                  <a:da name="DEFAULT" value="52"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>				
+				<v:var name="CryHsmSidDebugStart" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmDebugStart API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmDebugStart API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cad87"/>
+                  <a:da name="DEFAULT" value="254"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>			
+				<v:var name="CryHsmSidDebugFinish" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for CryHsmSidDebugFinish API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for CryHsmSidDebugFinish API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab22"/>
+                  <a:da name="DEFAULT" value="253"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>			
+				<v:var name="CryHsmSidGetUid" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmGetSheUID API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmGetSheUID API."/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab25"/>
+                  <a:da name="DEFAULT" value="252"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>				
+				<v:var name="CryHsmSidInit" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for Cry_HsmInit API."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for Cry_HsmInit API"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab21"/>
+                  <a:da name="DEFAULT" value="53"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+				<v:var name="CryModuleId" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Service ID for CryModule"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>					   
+                  <a:da name="TOOLTIP" value="Service ID for CryModule"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6da13a69-ebb2-42d3-abb2-b63e218cab80"/>
+                  <a:da name="DEFAULT" value="255"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+			 </v:ctr>            
+              <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <a:a name="DESC" value="EN: Common container, aggregated by all modules. It contains published information about vendor and versions."/>
+                <a:a name="UUID" value="492f8482-3e2c-4bf1-b27f-01fd7ac35788"/>
+                <v:var name="ArMajorVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Major version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-88fe-1166b258bb8a"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+                <v:var name="ArMinorVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Minor version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="73f87c7f-e230-4178-bff0-eb2704aae656"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+                <v:var name="ArPatchVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Patch level version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="2380135d-6778-417a-a34b-e10017d4dd54"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+                <v:var name="SwMajorVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Major version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="fca015e3-5f28-4cbe-8949-8f4b87d86827"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="7"/>
+                </v:var>
+                <v:var name="SwMinorVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Minor version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="14ab81e0-3d80-43dc-8b92-247e5a542df9"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+                <v:var name="SwPatchVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="32e37bfd-18b6-41d1-9248-a81dbe0fe4c5"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="3"/>
+                </v:var>
+                <v:var name="ModuleId" type="INTEGER">
+                  <a:a name="DESC" value="EN: Module ID of this module from Module List"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="3b407478-6902-4f80-b7cf-f33b0854e638"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+                <v:var name="VendorId" type="INTEGER">
+                  <a:a name="DESC" value="EN: Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="7d650b2d-4adb-41f0-a68e-5f0c416501d1"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+                <v:var name="VendorApiInfix" type="STRING">
+                  <a:a name="DESC">
+                    <a:v>EN: In driver modules which can be instantiated several times on a single ECU, BSW00347 requires that the name of APIs is extended by the VendorId and a vendor specific name. 
+This parameter is used to specify the vendor specific name. In total, the implementation specific name is generated as follows:
+&lt;ModuleName&gt;_&gt;VendorId&gt;_&lt;VendorApiInfix&gt;&lt;Api name from SWS&gt;.
+
+E.g.  assuming that the VendorId of the implementor is 123 and the implementer chose a VendorApiInfix of &quot;v11r456&quot; a api name Can_Write defined in the SWS will translate to Can_123_v11r456Write. 
+
+This parameter is mandatory for all modules with upper multiplicity &gt; 1. It shall not be used for modules with upper multiplicity =1.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ad363b41-e945-4717-b12f-c2f800ef138e"/>
+                  <a:da name="ENABLE" value="false"/>
+                  <a:da name="DEFAULT" value=""/>
+                </v:var>
+                <v:var name="Release" type="STRING">
+                  <a:a name="DESC" value="EN: Aurix derivative used for the implementation"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="3b407478-6902-4f40-b7cf-f33b0854e638"/>
+                  <a:da name="DEFAULT" type="XPath" expr="ecu:get('Rel.Derivate')"/>
+                </v:var>
+              </v:ctr>                           
+            </v:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

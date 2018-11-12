@@ -1,0 +1,606 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2014)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**   $FILENAME   : SramEccTst.xdm $                                           **
+**                                                                            **
+**   $CC VERSION : \main\27 $                                                 **
+**                                                                            **
+**   $DATE       : 2016-04-07 $                                               **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX                                                **
+**                                                                            **
+**  VARIANT   : VariantLinkTime                                               **
+**                                                                            **
+**  AUTHOR    : DL-BLR-ATV-STC                                                **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  DESCRIPTION  : XML Data Model for SramECC driver                          **
+**                                                                            **
+**  MAY BE CHANGED BY USER [yes/no]: No                                       **
+**                                                                            **
+*******************************************************************************/
+-->
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX" type="AR-PACKAGE">        
+        <a:a name="UUID" value="93d9a111-9d4c-47b6-98cb-fe5aec24c8b0"/>
+        <d:lst type="ELEMENTS">
+          <d:chc name="SramEccTst" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="RELEASE" value="asc:4.0"/>
+              <a:a name="UUID" value="03eaa8c5-137e-402e-823d-8d7776c1de4d"/>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:da name="DEFAULT" value="VariantLinkTime"/>
+                <a:da name="RANGE" value="VariantLinkTime"/>
+              </v:var>
+              <v:lst name="SramEccTstConfigSet" 
+                     type="MULTIPLE-CONFIGURATION-CONTAINER">
+                <a:da name="MIN" value="1"/>
+                <v:ctr name="SramEccTstConfigSet" 
+                       type="MULTIPLE-CONFIGURATION-CONTAINER">
+                  <a:a name="DESC" 
+                       value="FOR-ALL: This is the base container that contains the link time configuration parameters"/>
+                  <a:a name="UUID" value="ccda81dc-46cf-4171-858b-7c947884702f"/>
+                  <v:var name="SramEccTstCpu2DsprSelect" type="BOOLEAN">
+				  <a:da name="TOOLTIP">
+					<a:v>
+This parameter defines whether or not CPU2 DSPR SRAM is 
+tested and / or initialized by this test.This parameter must be 
+stored to bit 9 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU2 DSPR SRAM for testing and / or initialization
+1: Select CPU2 DSPR SRAM for testing and / or initialization
+					</a:v>
+				   </a:da>
+                    <a:da name="DESC">
+					<a:v>
+This parameter defines whether or not CPU2 DSPR SRAM is 
+tested and / or initialized by this test.This parameter must be 
+stored to bit 9 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU2 DSPR SRAM for testing and / or initialization
+1: Select CPU2 DSPR SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="98ce928e-6ed2-4968-93b2-21d90b1fa49f"/>
+                    <a:da name="DEFAULT" value="false"/>
+                    <a:da name="ENABLE" type="XPath" expr="ecu:get('CPU2DsprExists')='true'"/>
+                    <a:da name="EDITABLE" type="XPath" expr="ecu:get('CPU2DsprExists')='true'"/>
+                    <a:a name="VISIBLE" type="XPath" expr="ecu:get('CPU2DsprExists')='true'"/>                     
+                  </v:var>
+                  <v:var name="SramEccTstCpu2DtagSelect" type="BOOLEAN">
+				  	<a:da name="TOOLTIP">
+					<a:v>
+This parameter defines whether or not CPU2 DTAG SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 11 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU2 DTAG SRAM for testing and / or initialization                        
+1: Select CPU2 DTAG SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+                    <a:da name="DESC" >
+					<a:v>
+This parameter defines whether or not CPU2 DTAG SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 11 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU2 DTAG SRAM for testing and / or initialization                        
+1: Select CPU2 DTAG SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="98ce928e-6ed1-4969-93b2-21d90b1fa49f"/>
+                    <a:da name="DEFAULT" value="false"/>
+                    <a:da name="ENABLE" type="XPath" expr="ecu:get('CPU2DtagExists')='true'"/>
+                    <a:da name="EDITABLE" type="XPath" expr="ecu:get('CPU2DtagExists')='true'"/>
+                    <a:a name="VISIBLE" type="XPath" expr="ecu:get('CPU2DtagExists')='true'"/>     
+                  </v:var>
+                  <v:var name="SramEccTstCpu2PsprSelect" type="BOOLEAN">
+				  	<a:da name="TOOLTIP">
+					<a:v>
+This parameter defines whether or not CPU2 PSPR SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 12 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU2 PSPR SRAM for testing and / or initialization
+1: Select CPU2 PSPR SRAM for testing and / or initialization
+					</a:v>
+					</a:da>	
+                    <a:da name="DESC" >
+					<a:v>
+This parameter defines whether or not CPU2 PSPR SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 12 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU2 PSPR SRAM for testing and / or initialization
+1: Select CPU2 PSPR SRAM for testing and / or initialization					
+					</a:v>
+					</a:da>					
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="98ce928e-6ed1-4968-93b1-21d90b1fa49f"/>
+                    <a:da name="DEFAULT" value="false"/>                      
+                    <a:da name="ENABLE" type="XPath" expr="ecu:get('CPU2PsprExists')='true'"/>
+                    <a:da name="EDITABLE" type="XPath" expr="ecu:get('CPU2PsprExists')='true'"/>
+                    <a:a name="VISIBLE" type="XPath" expr="ecu:get('CPU2PsprExists')='true'"/>  
+                  </v:var>
+                  <v:var name="SramEccTstCpu2PtagSelect" type="BOOLEAN">
+				  	<a:da name="TOOLTIP">
+					<a:v>
+This parameter defines whether or not CPU2 PTAG SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 13 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU2 PTAG SRAM for testing and / or initialization
+1: Select CPU2 PTAG SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+                    <a:da name="DESC" >
+					<a:v>
+This parameter defines whether or not CPU2 PTAG SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 13 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU2 PTAG SRAM for testing and / or initialization
+1: Select CPU2 PTAG SRAM for testing and / or initialization
+					</a:v>
+					</a:da>					
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="98ce928e-6ed1-4968-93b2-21d90b1fa49f"/>
+                    <a:da name="DEFAULT" value="false"/>
+                    <a:da name="ENABLE" type="XPath" expr="ecu:get('CPU2PtagExists')='true'"/>
+                    <a:da name="EDITABLE" type="XPath" expr="ecu:get('CPU2PtagExists')='true'"/>
+                    <a:a name="VISIBLE" type="XPath" expr="ecu:get('CPU2PtagExists')='true'"/>  
+                  </v:var>
+                  <v:var name="SramEccTstCpu1DsprSelect" type="BOOLEAN">
+				  	<a:da name="TOOLTIP">
+					<a:v>
+This parameter defines whether or not CPU1 DSPR SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 4 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU1 DSPR SRAM for testing and / or initialization
+1: Select CPU1 DSPR SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+				  	<a:da name="DESC">
+					<a:v>
+This parameter defines whether or not CPU1 DSPR SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 4 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU1 DSPR SRAM for testing and / or initialization
+1: Select CPU1 DSPR SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="aaed939e-b37e-48df-8994-fc511333c7dc"/>
+                    <a:da name="DEFAULT" value="false"/>
+                    <a:da name="ENABLE" type="XPath" expr="ecu:get('CPU1DsprExists')='true'"/>
+                    <a:da name="EDITABLE" type="XPath" expr="ecu:get('CPU1DsprExists')='true'"/>
+                    <a:a name="VISIBLE" type="XPath" expr="ecu:get('CPU1DsprExists')='true'"/>
+                  </v:var>
+                  <v:var name="SramEccTstCpu1DtagSelect" type="BOOLEAN">
+				  	<a:da name="TOOLTIP">
+					<a:v>
+This parameter defines whether or not CPU1 DTAG SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 6 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU1 DTAG SRAM for testing and / or initialization
+1: Select CPU1 DTAG SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+				  	<a:da name="DESC">
+					<a:v>
+This parameter defines whether or not CPU1 DTAG SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 6 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU1 DTAG SRAM for testing and / or initialization
+1: Select CPU1 DTAG SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="97fa87ed-8709-4fcb-9c11-c9fea02f7869"/>
+                    <a:da name="DEFAULT" value="false"/>
+                   <a:da name="ENABLE" type="XPath" expr="ecu:get('CPU1DtagExists')='true'"/>
+                    <a:da name="EDITABLE" type="XPath" expr="ecu:get('CPU1DtagExists')='true'"/>
+                    <a:a name="VISIBLE" type="XPath" expr="ecu:get('CPU1DtagExists')='true'"/> 
+                  </v:var>
+                  <v:var name="SramEccTstCpu1PsprSelect" type="BOOLEAN">
+				  	<a:da name="TOOLTIP">
+					<a:v>
+This parameter defines whether or not CPU1 PSPR SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 7 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU1 PSPR SRAM for testing and / or initialization
+1: Select CPU1 PSPR SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+				  	<a:da name="DESC">
+					<a:v>
+This parameter defines whether or not CPU1 PSPR SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 7 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU1 PSPR SRAM for testing and / or initialization
+1: Select CPU1 PSPR SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="a733a8ca-771f-4f00-85f6-ca2d294e3971"/>
+                    <a:da name="DEFAULT" value="false"/>
+                    <a:da name="ENABLE" type="XPath" expr="ecu:get('CPU1PsprExists')='true'"/>
+                    <a:da name="EDITABLE" type="XPath" expr="ecu:get('CPU1PsprExists')='true'"/>
+                    <a:a name="VISIBLE" type="XPath" expr="ecu:get('CPU1PsprExists')='true'"/>  
+                  </v:var>
+                  <v:var name="SramEccTstCpu1PtagSelect" type="BOOLEAN">
+				  	<a:da name="TOOLTIP">
+					<a:v>
+This parameter defines whether or not CPU1 PTAG SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 8 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU1 PTAG SRAM for testing and / or initialization
+1: Select CPU1 PTAG SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+				  	<a:da name="DESC">
+					<a:v>
+This parameter defines whether or not CPU1 PTAG SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 8 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU1 PTAG SRAM for testing and / or initialization
+1: Select CPU1 PTAG SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="1fb7bb84-0e81-4cf7-8d49-fab500664283"/>
+                    <a:da name="DEFAULT" value="false"/>
+                    <a:da name="ENABLE" type="XPath" expr="ecu:get('CPU1PtagExists')='true'"/>
+                    <a:da name="EDITABLE" type="XPath" expr="ecu:get('CPU1PtagExists')='true'"/>
+                    <a:a name="VISIBLE" type="XPath" expr="ecu:get('CPU1PtagExists')='true'"/> 
+                  </v:var>
+                  <v:var name="SramEccTstCpu0DsprSelect" type="BOOLEAN">
+				  	<a:da name="TOOLTIP">
+					<a:v>
+This parameter defines whether or not CPU0 DSPR SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 0 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU0 DSPR SRAM for testing and / or initialization
+1: Select CPU0 DSPR SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+				  	<a:da name="DESC">
+					<a:v>
+This parameter defines whether or not CPU0 DSPR SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 0 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU0 DSPR SRAM for testing and / or initialization
+1: Select CPU0 DSPR SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="f2789f75-1651-4598-b8ce-76d92c112c6a"/>
+                    <a:da name="DEFAULT" value="false"/>                 
+                  </v:var>
+                  <v:var name="SramEccTstCpu0PsprSelect" type="BOOLEAN">
+				  	<a:da name="TOOLTIP">
+					<a:v>
+This parameter defines whether or not CPU0 PSPR SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 2 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU0 PSPR SRAM for testing and / or initialization
+1: Select CPU0 PSPR SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+					<a:da name="DESC">
+					<a:v>
+This parameter defines whether or not CPU0 PSPR SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 2 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU0 PSPR SRAM for testing and / or initialization
+1: Select CPU0 PSPR SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="99a6bc30-9d77-422f-9004-7086a76ec91a"/>
+                    <a:da name="DEFAULT" value="false"/>
+                     <a:da name="ENABLE" type="XPath" expr="ecu:get('CPU0PsprExists')='true'"/>
+                    <a:da name="EDITABLE" type="XPath" expr="ecu:get('CPU0PsprExists')='true'"/>
+                    <a:a name="VISIBLE" type="XPath" expr="ecu:get('CPU0PsprExists')='true'"/>
+                  </v:var>
+                  <v:var name="SramEccTstCpu0PtagSelect" type="BOOLEAN">
+				  	<a:da name="TOOLTIP">
+					<a:v>
+This parameter defines whether or not CPU0 PTAG SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 3 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU0 PTAG SRAM for testing and / or initialization
+1: Select CPU0 PTAG SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+				  	<a:da name="DESC">
+					<a:v>
+This parameter defines whether or not CPU0 PTAG SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 3 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU0 PTAG SRAM for testing and / or initialization
+1: Select CPU0 PTAG SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="fe1b3a4a-8c1a-4959-b9e4-8a485c4af77a"/>
+                    <a:da name="DEFAULT" value="false"/>
+                   <a:da name="ENABLE" type="XPath" expr="ecu:get('CPU0PtagExists')='true'"/>
+                    <a:da name="EDITABLE" type="XPath" expr="ecu:get('CPU0PtagExists')='true'"/>
+                    <a:a name="VISIBLE" type="XPath" expr="ecu:get('CPU0PtagExists')='true'"/>  
+                  </v:var>
+                  <v:var name="SramEccTstCpu0DtagSelect" type="BOOLEAN">
+				  	<a:da name="TOOLTIP">
+					<a:v>
+This parameter defines whether or not CPU0 DTAG SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 1 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU0 DTAG SRAM for testing and / or initialization
+1: Select CPU0 DTAG SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+				  	<a:da name="DESC">
+					<a:v>
+This parameter defines whether or not CPU0 DTAG SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 1 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU0 DTAG SRAM for testing and / or initialization
+1: Select CPU0 DTAG SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="e5144eb3-1b23-466a-af42-f065e102166f"/>
+                    <a:da name="DEFAULT" value="false"/>
+                      <a:da name="ENABLE" type="XPath" expr="ecu:get('Cpu0DtagExists')='true'"/>
+                    <a:da name="EDITABLE" type="XPath" expr="ecu:get('Cpu0DtagExists')='true'"/>
+                    <a:a name="VISIBLE" type="XPath" expr="ecu:get('Cpu0DtagExists')='true'"/>  
+                  </v:var>
+                  <v:var name="SramEccTstCpu1Dspr2Select" type="BOOLEAN">
+				  	<a:da name="TOOLTIP">
+					<a:v>
+This parameter defines whether or not CPU1 DSPR2 SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 5 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU1 DSPR2 SRAM for testing and / or initialization
+1: Select CPU1 DSPR2 SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+				  	<a:da name="DESC">
+					<a:v>
+This parameter defines whether or not CPU1 DSPR2 SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 5 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU1 DSPR2 SRAM for testing and / or initialization
+1: Select CPU1 DSPR2 SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="8ff3014c-8304-4b98-b72f-9cf55d5bc94c"/>
+                    <a:da name="DEFAULT" value="false"/>
+                    <a:da name="ENABLE" type="XPath" expr="ecu:get('Cpu1Dspr2Exists')='true'"/>
+                    <a:da name="EDITABLE" type="XPath" expr="ecu:get('Cpu1Dspr2Exists')='true'"/>
+                    <a:a name="VISIBLE" type="XPath" expr="ecu:get('Cpu1Dspr2Exists')='true'"/> 
+                  </v:var>
+                  <v:var name="SramEccTstCpu2Dspr2Select" type="BOOLEAN">
+				  	<a:da name="TOOLTIP">
+					<a:v>
+This parameter defines whether or not CPU2 DSPR2 SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 10 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU2 DSPR2 SRAM for testing and / or initialization
+1: Select CPU2 DSPR2 SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+				  	<a:da name="DESC">
+					<a:v>
+This parameter defines whether or not CPU2 DSPR2 SRAM is 
+tested and / or initialized by this test.This parameter must 
+be stored to bit 10 of SramEccTst_ConfigType.MemorySelect[0].
+
+0: Do not select CPU2 DSPR2 SRAM for testing and / or initialization
+1: Select CPU2 DSPR2 SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="6eda2679-ee85-4c45-98a5-30a52f563ebc"/>
+                    <a:da name="DEFAULT" value="false"/>
+                    <a:da name="ENABLE" type="XPath" expr="ecu:get('Cpu2Dspr2Exists')='true'"/>
+                    <a:da name="EDITABLE" type="XPath" expr="ecu:get('Cpu2Dspr2Exists')='true'"/>
+                    <a:a name="VISIBLE" type="XPath" expr="ecu:get('Cpu2Dspr2Exists')='true'"/> 
+                  </v:var>
+                 <v:var name="SramEccTstDamSelect" type="BOOLEAN">
+				 	<a:da name="TOOLTIP">
+					<a:v>
+This parameter defines whether or not DAM SRAM is 
+tested and / or initialized by this test.This parameter 
+must be stored to bit 4 of SramEccTst_ConfigType.MemorySelect[2].
+
+0: Do not select DAM SRAM for testing and / or initialization
+1: Select DAM SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+				 	<a:da name="DESC">
+					<a:v>
+This parameter defines whether or not DAM SRAM is 
+tested and / or initialized by this test.This parameter 
+must be stored to bit 4 of SramEccTst_ConfigType.MemorySelect[2].
+
+0: Do not select DAM SRAM for testing and / or initialization
+1: Select DAM SRAM for testing and / or initialization
+					</a:v>
+					</a:da>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="c3ebcdbc-bb1b-4e22-aee0-792984cfc7a5"/>
+                    <a:da name="DEFAULT" value="false"/>
+                    <a:da name="ENABLE" type="XPath" expr="ecu:get('DamExists')='true'"/>
+                    <a:da name="EDITABLE" type="XPath" expr="ecu:get('DamExists')='true'"/>                    
+                    <a:a name="VISIBLE" type="XPath" expr="ecu:get('DamExists')='true'"/> 					
+                  </v:var>
+                  <v:var name="SramEccTstBackupMemory" type="BOOLEAN">
+				  	<a:da name="TOOLTIP">
+					<a:v>
+This parameter defines whether all SRAMs selected via 
+SramEccTstMemorySelect configuration parameter are tested 
+using the select memory test algorithm. If both, memory 
+testing and initialization are enabled, then testing is 
+done before the memory initialization. 
+If neither memory testing nor memory initialization is 
+enabled, nothing will be done.
+
+0: Do not test memory
+1: Test memory
+					</a:v>
+					</a:da>
+				  	<a:da name="DESC">
+					<a:v>
+This parameter defines whether all SRAMs selected via 
+SramEccTstMemorySelect configuration parameter are tested 
+using the select memory test algorithm. If both, memory 
+testing and initialization are enabled, then testing is 
+done before the memory initialization. 
+If neither memory testing nor memory initialization is 
+enabled, nothing will be done.
+
+0: Do not test memory
+1: Test memory
+					</a:v>
+					</a:da>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="c39818d9-04de-44ac-9192-7730461cbe6f"/>
+                    <a:da name="DEFAULT" value="false"/>
+                  
+                  </v:var>
+                </v:ctr>
+              </v:lst>
+            </v:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

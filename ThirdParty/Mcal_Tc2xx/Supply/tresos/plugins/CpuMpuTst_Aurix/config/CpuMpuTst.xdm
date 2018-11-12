@@ -1,0 +1,450 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2014)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**   $FILENAME   : CpuMpuTst.xdm $                                            **
+**                                                                            **
+**   $CC VERSION : \main\13 $                                                 **
+**                                                                            **
+**   $DATE       : 2015-07-15 $                                               **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX                                                **
+**                                                                            **
+**  VARIANT   : VariantLinkTime                                               **
+**                                                                            **
+**  AUTHOR    : SafeTlib Team                                                 **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY:[cover parentID=]                                            **
+**                                                                            **
+**  DESCRIPTION  : XML Data Model for CpuMpuTst driver                        **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) :                                                        **
+**                                                                            **
+**  MAY BE CHANGED BY USER [yes/no]: No                                       **
+**                                                                            **
+*******************************************************************************/
+-->
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar"  
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX" type="AR-PACKAGE">        
+        <a:a name="UUID" value="93d9a111-9d4c-47b6-98cb-fe5aec24c8b0"/>
+        <d:lst type="ELEMENTS">
+          <d:chc name="CpuMpuTst" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="RELEASE" value="asc:4.0"/>        
+              <a:a name="UUID" value="03eaa8c5-137e-402e-823d-8d7776c1de4d"/>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:da name="DEFAULT" value="VariantLinkTime"/>
+                <a:da name="RANGE" value="VariantLinkTime"/>                
+              </v:var>              
+              <v:lst name="CpuMpuTstConfigSet" type="MULTIPLE-CONFIGURATION-CONTAINER">
+                <a:da name="MIN" value="1"/>
+                <v:ctr name="CpuMpuTstConfigSet" type="MULTIPLE-CONFIGURATION-CONTAINER">
+                  <a:a name="DESC" 
+                       value="This is the base container that contains the post-build selectable configuration parameters"/>
+                  <a:a name="UUID" value="ccda81dc-46cf-4171-858b-7c947884702f"/>
+                  <v:ctr name="CpuMpuTstDataProtectionTest" type="IDENTIFIABLE">
+                    <a:a name="DESC" 
+                         value="EN: This container holds post build configuration data for customizing the Data Protection test."/>
+                    <a:a name="UUID" value="3ea7abca-6ba4-5d14-befd-8bb9351fe86f"/>
+                      
+                      <v:var name="CpuMpuTstDataRange00TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Data Protection Range 00 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Data Protection Range 00 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce730-c48a-499a-8eff-8b03a15032cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstDataRange01TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Data Protection Range 01 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Data Protection Range 01 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce740-c48a-499a-8eff-8b03a15032cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstDataRange02TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Data Protection Range 02 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Data Protection Range 02 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce732-c48a-499a-8eff-8b03a15032cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstDataRange03TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Data Protection Range 03 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Data Protection Range 03 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce733-c48a-499a-8eff-8b03a15032cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstDataRange04TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Data Protection Range 04 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Data Protection Range 04 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce734-c48a-499a-8eff-8b03a15032cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstDataRange05TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Data Protection Range 05 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Data Protection Range 05 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce735-c48a-499a-8eff-8b03a15032cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstDataRange06TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Data Protection Range 06 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Data Protection Range 06 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce736-c48a-499a-8eff-8b03a15032cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstDataRange07TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Data Protection Range 07 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Data Protection Range 07 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce737-c48a-499a-8eff-8b03a15032cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstDataRange08TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Data Protection Range 08 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Data Protection Range 08 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce738-c48a-499a-8eff-8b03a15032cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstDataRange09TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Data Protection Range 09 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Data Protection Range 09 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce739-c48a-499a-8eff-8b03a15032cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstDataRange10TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Data Protection Range 10 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Data Protection Range 10 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce73a-c48a-499a-8eff-8b03a15032cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstDataRange11TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Data Protection Range 11 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Data Protection Range 11 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce73b-c48a-499a-8eff-8b03a15032cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstDataRange12TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Data Protection Range 12 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Data Protection Range 12 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce73c-c48a-499a-8eff-8b03a15032cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstDataRange13TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Data Protection Range 13 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Data Protection Range 13 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce73d-c48a-499a-8eff-8b03a15032cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstDataRange14TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Data Protection Range 14 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Data Protection Range 14 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce73e-c48a-499a-8eff-8b03a15032cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>                
+                      <v:var name="CpuMpuTstDataRange15TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Data Protection Range 15 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Data Protection Range 15 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce73f-c48a-499a-8eff-8b03a15032cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>                   
+                  </v:ctr>
+                  <v:ctr name="CpuMpuTstCodeProtectionTest" type="IDENTIFIABLE">
+                    <a:a name="DESC" 
+                         value="EN: This container holds post build configuration data for customizing the Code Protection test."/>
+                    <a:a name="UUID" value="3ea7abca-7ba4-4d14-befd-8bb9351fe86f"/>
+                      
+                      <v:var name="CpuMpuTstCodeRange00TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Code Protection Range 00 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Code Protection Range 00 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce730-c48a-494a-8eff-8b03a15032cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstCodeRange01TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Code Protection Range 01 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Code Protection Range 01 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce740-c48a-499a-8eff-8b03a15132cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstCodeRange02TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Code Protection Range 02 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Code Protection Range 02 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce732-c48a-499a-8eff-8b03a15232cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstCodeRange03TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Code Protection Range 03 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Code Protection Range 03 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce733-c48a-499a-8eff-8b03a15332cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstCodeRange04TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Code Protection Range 04 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Code Protection Range 04 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce734-c48a-499a-8eff-8b03a15432cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstCodeRange05TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Code Protection Range 05 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Code Protection Range 05 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce735-c48a-499a-8eff-8b03a15532cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstCodeRange06TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Code Protection Range 06 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Code Protection Range 06 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce736-c48a-499a-8eff-8b03a15632cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                      <v:var name="CpuMpuTstCodeRange07TstEn" type="BOOLEAN">
+                        <a:da name="TOOLTIP" value="Specifies whether or not Code Protection Range 07 is tested by the MPU test"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter specifies whether or not Code Protection Range 07 is tested by the MPU test.</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="Link">VariantLinkTime</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ef9ce737-c48a-499a-8eff-8b03a15732cc"/>
+                        <a:da name="DEFAULT" value="true"/>
+                      </v:var>
+                  </v:ctr>
+                </v:ctr>                  
+              </v:lst>                    
+              <v:ctr name="CpuMpuTstGeneral" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: General configuration (parameters) of the CpuMpuTst driver software module."/>
+                <a:a name="UUID" value="3ea7abca-6ba4-4d14-befd-8bb9350fe86f"/>
+                   <v:var name="CpuMpuTstProtRegisterSet" type="INTEGER">
+                     <a:da name="TOOLTIP" value="Defines the set of protection registers (DPRE_x, DPWE_x and CPXE_x) used for testing"/>
+                     <a:a name="DESC">
+                       <a:v>This parameter defines the set of protection registers (DPRE_x, DPWE_x and CPXE_x) used for testing.
+Note: CPXE_0 is always used by the test, independently of the value of CpuMpuTstProtRegisterSet. This is because register set 0 is automatically selected upon entry of a trap.
+</a:v>
+                     </a:a>
+                     <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                          type="IMPLEMENTATIONCONFIGCLASS">
+                       <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                     </a:a>                          
+                     <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                     <a:a name="UUID" 
+                          value="98ce928e-7edf-4968-95b2-21d30b1fa49e"/>
+                     <a:da name="DEFAULT" value="1"/>
+                     <a:da name="INVALID" type="Range">
+                       <a:tst expr="&lt;=3"/>
+                       <a:tst expr="&gt;=0"/>
+                     </a:da>
+                   </v:var>                  
+              </v:ctr>
+              </v:ctr>         
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+</datamodel>

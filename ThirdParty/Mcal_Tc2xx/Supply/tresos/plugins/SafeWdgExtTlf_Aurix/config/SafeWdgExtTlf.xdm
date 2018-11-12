@@ -1,0 +1,1079 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2014)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**   $FILENAME   : SafeWdgExtTlf.xdm $                                        **
+**                                                                            **
+**   $CC VERSION : \main\18 $                                                 **
+**                                                                            **
+**   $DATE       : 2016-02-11 $                                               **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX                                                **
+**                                                                            **
+**  VARIANT   : VariantPostBuild                                                    **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY:[cover parentID=]                                            **
+**                                                                            **
+**  DESCRIPTION  : XML Data Model for SafeWdgExtTlf driver                    **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) :                                                        **
+**                                                                            **
+**  MAY BE CHANGED BY USER [yes/no]: No                                       **
+**                                                                            **
+*******************************************************************************/
+-->
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar"  
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX" type="AR-PACKAGE">
+        <a:a name="UUID" value="93d9a111-9d4c-47b6-98cb-fe5aec24c8b0"/>
+        <d:lst type="ELEMENTS">
+          <d:chc name="SafeWdgExtTlf" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="RELEASE" value="asc:4.0"/>        
+              <a:a name="UUID" value="03eaa8c5-137e-402e-823d-8d7776c1de4d"/>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:da name="DEFAULT" value="VariantPostBuildSelectable"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPostBuildLoadable</a:v>
+                  <a:v>VariantPostBuildSelectable</a:v>
+                </a:da>
+              </v:var>
+
+            
+		<v:ctr name="SafeWdgExtTlfErrPinMontr" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: Configuration of error pin monitoring by TLF driver"/>
+                 <a:a name="UUID" value="a268aef7-0612-5e12-9481-3b9f6ca77cb3"/> 
+                 
+                 <v:var name="SafeWdgExtTlfErrPinMontrEn" type="BOOLEAN">
+                    <a:a name="DESC" 
+                         value="This parameter will decide if ERR pin monitoring will be done by TLF driver.If it is set to TRUE , TLF should be supplied with a valid Error signal input from the micro controller."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+		    <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                    value="d85084e1-9b47-4340-8273-32aeef88502e"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                </v:ctr>                
+
+		<v:ctr name="SafeWdgExtTlfSysPCfg0" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: Configuration of SYSPCFG0 configuration register"/>
+                 <a:a name="UUID" value="a268aef7-06ab-5e12-9481-3b9f6ca77cb3"/> 
+                 
+                 <v:var name="SafeWdgExtTlfStbyEn" type="BOOLEAN">
+                    <a:a name="DESC" 
+                         value="This parameter will decide if standby LDO has to be enabled."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+		    <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                    value="d85084e1-9b47-4340-8273-32aeef885123"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                </v:ctr>
+
+		<v:ctr name="SafeWdgExtTlfSysPCfg1" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: Configuration of SYSPCFG1 configuration register"/>
+                 <a:a name="UUID" value="a268aef7-06ab-5e12-9481-3b9f6ca77123"/> 
+
+                        <v:var name="SafeWdgExtTlfErrRec" type="ENUMERATION">
+                        <a:a name="DESC" 
+                             value="EN:This parameter decides ERR pin monitor recovery time "/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="ba9cdd11-8b23-4719-abde-2f2ba5e8aec"/>
+                        <a:da name="DEFAULT" value="ErrRec_1ms"/>
+                        <a:da name="TOOLTIP" value=""/>
+												<a:da name="RANGE">
+												<a:v>ErrRec_1ms</a:v>
+												<a:v>ErrRec_2_5ms</a:v>
+												<a:v>ErrRec_5ms</a:v>
+												<a:v>ErrRec_10ms</a:v>
+												</a:da>
+											</v:var>
+
+                 <v:var name="SafeWdgExtTlfErrRecEn" type="BOOLEAN">
+                    <a:a name="DESC" 
+                         value="This parameter will decide if ERR pin monitor recovery has to be enabled."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+		    <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                    value="d85084e1-9b47-4340-8273-32aeef88512a"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>                      
+
+                 <v:var name="SafeWdgExtTlfErrSlpEn" type="BOOLEAN">
+                    <a:a name="DESC" 
+                         value="This parameter will decide if ERR pin monitor functionality will be enabled,while the system is in
+SLEEP mode."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+		    <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                    value="d85084e1-9b47-4340-8273-32aeef8851ab"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>    
+
+             <v:var name="SafeWdgExtTlfSs2Del" type="ENUMERATION">
+              <a:a name="DESC" 
+                   value="EN:This parameter decides Safe state 2 delay time "/>
+            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+               type="IMPLEMENTATIONCONFIGCLASS">
+              <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+              <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+            </a:a>                        
+              <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+              <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+              <a:a name="UUID" 
+                   value="ba9cdd11-8b23-4719-abde-2f2d65e8abc"/>
+              <a:da name="DEFAULT" value="Ss2Del_0ms"/>
+              <a:da name="TOOLTIP" value=""/>
+              <a:da name="RANGE">
+              <a:v>Ss2Del_0ms</a:v>
+              <a:v>Ss2Del_10ms</a:v>
+              <a:v>Ss2Del_50ms</a:v>
+              <a:v>Ss2Del_100ms</a:v>
+              <a:v>Ss2Del_250ms</a:v>
+              </a:da>
+            </v:var>                
+                
+ </v:ctr>  
+
+		<v:ctr name="SafeWdgExtTlfWdCfg1" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: Configuration of WDCFG1 configuration register"/>
+                 <a:a name="UUID" value="a268aef7-06ab-5e12-9481-3b9f6ca77fab"/> 
+                 
+                 <v:var name="SafeWdgExtTlfWdSlpEn" type="BOOLEAN">
+                    <a:a name="DESC" 
+                         value="This parameter will decide if watchdog functionality has to be Enabling while the TLF35584 is in SLEEP mode"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+		    <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                    value="d85084e1-9b47-4340-8273-32aeef885fea"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                </v:ctr> 
+                
+		<v:ctr name="SafeWdgExtTlfDevCtrl" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: Configuration of DEVCTRL configuration register"/>
+                 <a:a name="UUID" value="a268aef7-06ab-5e12-9481-3b9f6ca77eac"/> 
+                 
+                 <v:var name="SafeWdgExtTlfVrefEn" type="BOOLEAN">
+                    <a:a name="DESC" 
+                         value="This parameter will decide if reference voltage has to be enabled."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+		    <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                    value="d85084e1-9b47-4340-8273-32aeef885aef"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+
+                 <v:var name="SafeWdgExtTlfComEn" type="BOOLEAN">
+                    <a:a name="DESC" 
+                         value="This parameter will decide if communication LDO has to be enabled."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+		    <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                    value="d85084e1-9b47-4340-8273-32aeef885bef"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>                
+
+                 <v:var name="SafeWdgExtTlfTrk1En" type="BOOLEAN">
+                    <a:a name="DESC" 
+                         value="This parameter will decide if TRK1EN LDO has to be enabled."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+		    <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                    value="d85084e1-9b47-4340-8273-32aeef885cef"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>                  
+                
+                 <v:var name="SafeWdgExtTlfTrk2En" type="BOOLEAN">
+                    <a:a name="DESC" 
+                         value="This parameter will decide if TRK2EN LDO has to be enabled."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+		    <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                    value="d85084e1-9b47-4340-8273-32aeef885faf"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>    
+                
+                </v:ctr>                 
+
+                
+			  <v:lst name="SafeWdgExtTlfConfigSet" type="MULTIPLE-CONFIGURATION-CONTAINER">
+                <a:da name="MIN" value="1"/>
+                <v:ctr name="SafeWdgExtTlfConfigSet" type="MULTIPLE-CONFIGURATION-CONTAINER">
+                  <a:a name="DESC" 
+                       value="This is the base container that contains the post-build selectable configuration parameters"/>
+                  <a:a name="UUID" value="ccda81dc-46cf-4171-158b-7c947884702f"/>
+
+                  <v:ref name="SafeWdgExtTlfQspiCfgRef" type="CHOICE-REFERENCE">
+                    <a:da name="TOOLTIP" value="This parameter represents the pointer to configuration of QSPI module used by TLF"/>
+                    <a:a name="DESC">
+                      <a:v>EN: This parameter represents the pointer to configuration of QSPI module used by TLF</a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                      <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                    </a:a>                    
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="999ccf11-8b4f-4719-abde-3f2d65e8614a"/>
+                    <a:da name="REF">
+                    <a:v>ASPathDataOfSchema:/AURIX/SafeWdgQspi/SafeWdgQspiChannelConfigSet</a:v> 
+                    </a:da>
+                  </v:ref> 
+
+										<v:var name="SafeWdgExtTlfMode" type="ENUMERATION">
+                        <a:a name="DESC" 
+                             value="EN: This parameter sets the mode of watchdog.(Functional /Functional + SPI triggered
+																				window watchdog / WDI pin triggered window / SPI triggered window watchdog) to be configured."/>
+												<a:da name="RANGE">
+												<a:v>TLF_WM_FWD</a:v>
+												<a:v>TLF_WM_FWD_WWD_SPI</a:v>
+												<a:v>TLF_WM_WWD_WDI</a:v>
+												<a:v>TLF_WM_WWD_SPI</a:v>
+												</a:da>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf11-8b4f-4219-abde-2f2d65e8614a"/>
+                        <a:da name="DEFAULT" value="TLF_WM_FWD_WWD_SPI"/>
+                        <a:da name="TOOLTIP" value=" This parameter sets the mode of watchdog."/>
+									</v:var>
+
+                        <v:var name="SafeWdgExtTlfOpenWinTime" type="ENUMERATION">
+                        <a:a name="DESC" 
+                             value="EN:This parameter sets the open window time in milliseconds for the window watchdog.
+                             When TLF_WM_FWD_WWD_SPI is selected, window time for the functional watchdog will be automatically
+                             calculated as sume of SafeWdgExtTlfCloseWinTime and SafeWdgExtTlfOpenWinTime"/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="ba9cdd11-8b23-4719-abde-2f2d65e86a4a"/>
+                        <a:da name="DEFAULT" value="OpenWinTime_15ms"/>
+                        <a:da name="TOOLTIP" value=""/>
+												<a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="( (../SafeWdgExtTlfMode = 'TLF_WM_WWD_WDI') or ((../SafeWdgExtTlfMode = 'TLF_WM_WWD_SPI')) or ((../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI')) )"/>
+												</a:da> 
+												<a:da name="RANGE">
+												<a:v>OpenWinTime_5ms</a:v>
+												<a:v>OpenWinTime_10ms</a:v>
+												<a:v>OpenWinTime_15ms</a:v>
+												<a:v>OpenWinTime_20ms</a:v>
+                        <a:v>OpenWinTime_25ms</a:v>
+												<a:v>OpenWinTime_30ms</a:v>
+												<a:v>OpenWinTime_35ms</a:v>
+												<a:v>OpenWinTime_40ms</a:v>
+												<a:v>OpenWinTime_45ms</a:v>
+												<a:v>OpenWinTime_50ms</a:v>
+												<a:v>OpenWinTime_55ms</a:v>
+												<a:v>OpenWinTime_60ms</a:v>
+                        <a:v>OpenWinTime_65ms</a:v>
+												<a:v>OpenWinTime_70ms</a:v>
+												<a:v>OpenWinTime_75ms</a:v>
+												<a:v>OpenWinTime_80ms</a:v>
+												<a:v>OpenWinTime_85ms</a:v>
+												<a:v>OpenWinTime_90ms</a:v>
+												<a:v>OpenWinTime_95ms</a:v>
+												<a:v>OpenWinTime_100ms</a:v>
+                        <a:v>OpenWinTime_105ms</a:v>
+												<a:v>OpenWinTime_110ms</a:v>
+												<a:v>OpenWinTime_115ms</a:v>
+												<a:v>OpenWinTime_120ms</a:v>
+												<a:v>OpenWinTime_125ms</a:v>
+												<a:v>OpenWinTime_130ms</a:v>
+												<a:v>OpenWinTime_135ms</a:v>
+												<a:v>OpenWinTime_140ms</a:v>
+                        <a:v>OpenWinTime_145ms</a:v>
+												<a:v>OpenWinTime_150ms</a:v>
+												<a:v>OpenWinTime_155ms</a:v>
+												<a:v>OpenWinTime_160ms</a:v>
+												<a:v>OpenWinTime_200ms</a:v>
+												<a:v>OpenWinTime_250ms</a:v>
+												<a:v>OpenWinTime_300ms</a:v>
+												<a:v>OpenWinTime_350ms</a:v>
+                        <a:v>OpenWinTime_400ms</a:v>
+												<a:v>OpenWinTime_450ms</a:v>
+												<a:v>OpenWinTime_500ms</a:v>
+												<a:v>OpenWinTime_550ms</a:v>
+												<a:v>OpenWinTime_600ms</a:v>
+												<a:v>OpenWinTime_650ms</a:v>
+												<a:v>OpenWinTime_700ms</a:v>
+												<a:v>OpenWinTime_750ms</a:v>
+                        <a:v>OpenWinTime_800ms</a:v>
+												<a:v>OpenWinTime_850ms</a:v>
+												<a:v>OpenWinTime_900ms</a:v>
+												<a:v>OpenWinTime_950ms</a:v>
+												<a:v>OpenWinTime_1000ms</a:v>
+												<a:v>OpenWinTime_1050ms</a:v>
+												<a:v>OpenWinTime_1100ms</a:v>
+                        <a:v>OpenWinTime_1150ms</a:v>
+												<a:v>OpenWinTime_1200ms</a:v>
+												<a:v>OpenWinTime_1250ms</a:v>
+												<a:v>OpenWinTime_1300ms</a:v>
+												<a:v>OpenWinTime_1350ms</a:v>
+												<a:v>OpenWinTime_1400ms</a:v>
+												<a:v>OpenWinTime_1450ms</a:v>
+												<a:v>OpenWinTime_1500ms</a:v>
+                        <a:v>OpenWinTime_1550ms</a:v>
+												<a:v>OpenWinTime_1600ms</a:v>
+												</a:da>
+											</v:var>
+
+                        <v:var name="SafeWdgExtTlfCloseWinTime" type="ENUMERATION">
+                        <a:a name="DESC" 
+                             value="EN: This parameter sets the close window time in milliseconds for the window watchdog.
+                             When TLF_WM_FWD_WWD_SPI is selected, window time for the functional watchdog will be automatically
+                             calculated as sume of SafeWdgExtTlfCloseWinTime and SafeWdgExtTlfOpenWinTime."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="bb9ccf11-824d-4719-23de-2f2d65e86a4a"/>
+                        <a:da name="DEFAULT" value="CloseWinTime_10ms"/>
+                        <a:da name="TOOLTIP" value=""/>
+												<a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="( (../SafeWdgExtTlfMode = 'TLF_WM_WWD_WDI') or ((../SafeWdgExtTlfMode = 'TLF_WM_WWD_SPI')) or ((../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI')) )"/>
+												</a:da> 
+												<a:da name="RANGE">
+												<a:v>CloseWinTime_5ms</a:v>
+												<a:v>CloseWinTime_10ms</a:v>
+												<a:v>CloseWinTime_15ms</a:v>
+												<a:v>CloseWinTime_20ms</a:v>
+                        <a:v>CloseWinTime_25ms</a:v>
+												<a:v>CloseWinTime_30ms</a:v>
+												<a:v>CloseWinTime_35ms</a:v>
+												<a:v>CloseWinTime_40ms</a:v>
+												<a:v>CloseWinTime_45ms</a:v>
+												<a:v>CloseWinTime_50ms</a:v>
+												<a:v>CloseWinTime_55ms</a:v>
+												<a:v>CloseWinTime_60ms</a:v>
+                        <a:v>CloseWinTime_65ms</a:v>
+												<a:v>CloseWinTime_70ms</a:v>
+												<a:v>CloseWinTime_75ms</a:v>
+												<a:v>CloseWinTime_80ms</a:v>
+												<a:v>CloseWinTime_85ms</a:v>
+												<a:v>CloseWinTime_90ms</a:v>
+												<a:v>CloseWinTime_95ms</a:v>
+												<a:v>CloseWinTime_100ms</a:v>
+                        <a:v>CloseWinTime_105ms</a:v>
+												<a:v>CloseWinTime_110ms</a:v>
+												<a:v>CloseWinTime_115ms</a:v>
+												<a:v>CloseWinTime_120ms</a:v>
+												<a:v>CloseWinTime_125ms</a:v>
+												<a:v>CloseWinTime_130ms</a:v>
+												<a:v>CloseWinTime_135ms</a:v>
+												<a:v>CloseWinTime_140ms</a:v>
+                        <a:v>CloseWinTime_145ms</a:v>
+												<a:v>CloseWinTime_150ms</a:v>
+												<a:v>CloseWinTime_155ms</a:v>
+												<a:v>CloseWinTime_160ms</a:v>
+												<a:v>CloseWinTime_200ms</a:v>
+												<a:v>CloseWinTime_250ms</a:v>
+												<a:v>CloseWinTime_300ms</a:v>
+												<a:v>CloseWinTime_350ms</a:v>
+                        <a:v>CloseWinTime_400ms</a:v>
+												<a:v>CloseWinTime_450ms</a:v>
+												<a:v>CloseWinTime_500ms</a:v>
+												<a:v>CloseWinTime_550ms</a:v>
+												<a:v>CloseWinTime_600ms</a:v>
+												<a:v>CloseWinTime_650ms</a:v>
+												<a:v>CloseWinTime_700ms</a:v>
+												<a:v>CloseWinTime_750ms</a:v>
+                        <a:v>CloseWinTime_800ms</a:v>
+												<a:v>CloseWinTime_850ms</a:v>
+												<a:v>CloseWinTime_900ms</a:v>
+												<a:v>CloseWinTime_950ms</a:v>
+												<a:v>CloseWinTime_1000ms</a:v>
+												<a:v>CloseWinTime_1050ms</a:v>
+												<a:v>CloseWinTime_1100ms</a:v>
+                        <a:v>CloseWinTime_1150ms</a:v>
+												<a:v>CloseWinTime_1200ms</a:v>
+												<a:v>CloseWinTime_1250ms</a:v>
+												<a:v>CloseWinTime_1300ms</a:v>
+												<a:v>CloseWinTime_1350ms</a:v>
+												<a:v>CloseWinTime_1400ms</a:v>
+												<a:v>CloseWinTime_1450ms</a:v>
+												<a:v>CloseWinTime_1500ms</a:v>
+                        <a:v>CloseWinTime_1550ms</a:v>
+												<a:v>CloseWinTime_1600ms</a:v>
+                        </a:da>
+                     </v:var>
+
+                     <v:var name="SafeWdgExtTlfFuncWdgTime" type="ENUMERATION">
+                        <a:a name="DESC" 
+                             value="EN: This parameter sets the window in milliseconds for the functional watchdog."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="bb9ccf11-8b4f-4719-abde-2f2d65e86a23"/>
+                        <a:da name="DEFAULT" value="FuncWdgTime_30ms"/>
+                        <a:da name="TOOLTIP" value=""/>
+												 <a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="( (../SafeWdgExtTlfMode = 'TLF_WM_FWD') or ((../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI'))  )"/>
+												</a:da> 
+												<a:da name="RANGE">
+												<a:v>FuncWdgTime_5ms</a:v>
+												<a:v>FuncWdgTime_10ms</a:v>
+												<a:v>FuncWdgTime_15ms</a:v>
+												<a:v>FuncWdgTime_20ms</a:v>
+                        <a:v>FuncWdgTime_25ms</a:v>
+												<a:v>FuncWdgTime_30ms</a:v>
+												<a:v>FuncWdgTime_35ms</a:v>
+												<a:v>FuncWdgTime_40ms</a:v>
+												<a:v>FuncWdgTime_45ms</a:v>
+												<a:v>FuncWdgTime_50ms</a:v>
+												<a:v>FuncWdgTime_55ms</a:v>
+												<a:v>FuncWdgTime_60ms</a:v>
+                        <a:v>FuncWdgTime_65ms</a:v>
+												<a:v>FuncWdgTime_70ms</a:v>
+												<a:v>FuncWdgTime_75ms</a:v>
+												<a:v>FuncWdgTime_80ms</a:v>
+												<a:v>FuncWdgTime_85ms</a:v>
+												<a:v>FuncWdgTime_90ms</a:v>
+												<a:v>FuncWdgTime_95ms</a:v>
+												<a:v>FuncWdgTime_100ms</a:v>
+                        <a:v>FuncWdgTime_105ms</a:v>
+												<a:v>FuncWdgTime_110ms</a:v>
+												<a:v>FuncWdgTime_115ms</a:v>
+												<a:v>FuncWdgTime_120ms</a:v>
+												<a:v>FuncWdgTime_125ms</a:v>
+												<a:v>FuncWdgTime_130ms</a:v>
+												<a:v>FuncWdgTime_135ms</a:v>
+												<a:v>FuncWdgTime_140ms</a:v>
+                        <a:v>FuncWdgTime_145ms</a:v>
+												<a:v>FuncWdgTime_150ms</a:v>
+												<a:v>FuncWdgTime_155ms</a:v>
+												<a:v>FuncWdgTime_160ms</a:v>
+												<a:v>FuncWdgTime_200ms</a:v>
+												<a:v>FuncWdgTime_250ms</a:v>
+												<a:v>FuncWdgTime_300ms</a:v>
+												<a:v>FuncWdgTime_350ms</a:v>
+                        <a:v>FuncWdgTime_400ms</a:v>
+												<a:v>FuncWdgTime_450ms</a:v>
+												<a:v>FuncWdgTime_500ms</a:v>
+												<a:v>FuncWdgTime_550ms</a:v>
+												<a:v>FuncWdgTime_600ms</a:v>
+												<a:v>FuncWdgTime_650ms</a:v>
+												<a:v>FuncWdgTime_700ms</a:v>
+												<a:v>FuncWdgTime_750ms</a:v>
+                        <a:v>FuncWdgTime_800ms</a:v>
+												<a:v>FuncWdgTime_850ms</a:v>
+												<a:v>FuncWdgTime_900ms</a:v>
+												<a:v>FuncWdgTime_950ms</a:v>
+												<a:v>FuncWdgTime_1000ms</a:v>
+												<a:v>FuncWdgTime_1050ms</a:v>
+												<a:v>FuncWdgTime_1100ms</a:v>
+                        <a:v>FuncWdgTime_1150ms</a:v>
+												<a:v>FuncWdgTime_1200ms</a:v>
+												<a:v>FuncWdgTime_1250ms</a:v>
+												<a:v>FuncWdgTime_1300ms</a:v>
+												<a:v>FuncWdgTime_1350ms</a:v>
+												<a:v>FuncWdgTime_1400ms</a:v>
+												<a:v>FuncWdgTime_1450ms</a:v>
+												<a:v>FuncWdgTime_1500ms</a:v>
+                        <a:v>FuncWdgTime_1550ms</a:v>
+												<a:v>FuncWdgTime_1600ms</a:v>
+                        </a:da>
+                     </v:var>
+
+                       <v:var name="SafeWdgExtTlfWWDErrThreshold" type="INTEGER">
+                        <a:a name="DESC" 
+                             value="EN: This parameter sets error threshold for the Window watchdog TLF to enter into FAILSAFE
+condition in case of error during watchdog servicing."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf11-8b4f-4719-abde-2f2d65e8614b"/>
+                        <a:da name="DEFAULT" value="9"/>
+                        <a:da name="TOOLTIP" value="This parameter sets error threshold for the Window watchdog TLF to enter into FAILSAFE
+condition in case of error during watchdog servicing."/>
+                        <a:da name="ENABLE" type="XPath"> 
+			<a:tst expr="( (../SafeWdgExtTlfMode = 'TLF_WM_WWD_WDI') or ((../SafeWdgExtTlfMode = 'TLF_WM_WWD_SPI')) or ((../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI')) )"/>
+			</a:da>
+			<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=15"/>
+                          <a:tst expr="&gt;=2"/>
+                        </a:da>
+                     </v:var>
+                       <v:var name="SafeWdgExtTlfFWDErrThreshold" type="INTEGER">
+                        <a:a name="DESC" 
+                             value="EN: This parameter sets error threshold for the Functional watchdog TLF to enter into FAILSAFE
+condition in case of error during watchdog servicing."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf11-8b4f-4719-abde-2f2d65e8614c"/>
+                        <a:da name="DEFAULT" value="9"/>
+                        <a:da name="TOOLTIP" value="This parameter sets error threshold for the Functional watchdog TLF to enter into FAILSAFE
+condition in case of error during watchdog servicing."/>
+                        <a:da name="ENABLE" type="XPath"> 
+			<a:tst expr="( (../SafeWdgExtTlfMode = 'TLF_WM_FWD') or ((../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI'))  )"/>
+			</a:da>
+			<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=15"/>
+                          <a:tst expr="&gt;=2"/>
+                        </a:da>
+                     </v:var>
+                       <v:var name="SafeWdgExtTlfWDIPortNum" type="STRING">
+                        <a:a name="DESC" 
+                             value="EN: This parameter represents the port number of the AURIX microcontroller to which WDI pin 
+														 of TLF watchdog is connected."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf11-8b4f-4719-abde-2f2d65e8614f"/>
+                        <a:da name="DEFAULT" value="20"/>
+                        <a:da name="TOOLTIP" value="This parameter represents the port number of the AURIX microcontroller."/>
+												<a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="((../SafeWdgExtTlfMode = 'TLF_WM_WWD_WDI'))"/>
+												</a:da>
+												<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=40"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                     </v:var>
+
+                       <v:var name="SafeWdgExtTlfWDIPinOffset" type="INTEGER">
+                        <a:a name="DESC" 
+                             value="EN: This parameter represents the pin offset of the AURIX microcontroller pin
+to which WDI pin of TLF watchdog is connected."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf11-8b4f-4719-abde-2f2d65e8624a"/>
+                        <a:da name="DEFAULT" value="9"/>
+                        <a:da name="TOOLTIP" value="This parameter represents the pin offset of the AURIX microcontroller pin
+to which WDI pin of TLF watchdog is connected."/>
+												<a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="((../SafeWdgExtTlfMode = 'TLF_WM_WWD_WDI'))"/>
+												</a:da>
+												<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=15"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                     </v:var>
+
+                       <v:var name="SafeWdgExtTlfXorMask0x0" type="STRING">
+                        <a:a name="DESC" 
+                             value="EN: This parameter represents the xor mask offset 0x0 to generate TLF answer(respone) for
+challenge (seed) 0x0."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="9abccf10-8b4f-4719-abde-2f2d65e8624a"/>
+												
+                        <a:da name="DEFAULT" value="0xBAEB862E"/>
+                        <a:da name="TOOLTIP" value="This parameter represents the xor mask offset 0x0 to generate TLF answer(respone) for
+challenge (seed) 0x0."/>
+												<a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="((../SafeWdgExtTlfMode = 'TLF_WM_FWD') or (../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI'))"/>
+												</a:da>
+												<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=0xFFFFFFFF"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                     </v:var>
+
+                       <v:var name="SafeWdgExtTlfXorMask0x01" type="STRING">
+                        <a:a name="DESC" 
+                             value="EN: This parameter represents the xor mask offset 0x01 to generate TLF answer(respone) for
+challenge (seed) 0x01."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccfde-8b4f-4719-abde-2f2d65e8624a"/>
+                        <a:da name="DEFAULT" value="0x4B460497"/>
+                        <a:da name="TOOLTIP" value="This parameter represents the xor mask offset 0x01 to generate TLF answer(respone) for
+challenge (seed) 0x01."/>
+												<a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="((../SafeWdgExtTlfMode = 'TLF_WM_FWD') or (../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI'))"/>
+												</a:da>
+												<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=0xFFFFFFFF"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                     </v:var>
+
+                       <v:var name="SafeWdgExtTlfXorMask0x02" type="STRING">
+                        <a:a name="DESC" 
+                             value="EN: This parameter represents the xor mask offset 0x02 to generate TLF answer(respone) for
+challenge (seed) 0x02."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf12-8b4f-4719-abde-2f2d65e8624a"/>
+                        <a:da name="DEFAULT" value="0x5B8D1212"/>
+                        <a:da name="TOOLTIP" value="This parameter represents the xor mask offset 0x02 to generate TLF answer(respone) for
+challenge (seed) 0x02."/>
+												<a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="((../SafeWdgExtTlfMode = 'TLF_WM_FWD') or (../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI'))"/>
+												</a:da>
+												<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=0xFFFFFFFF"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                     </v:var>
+
+                       <v:var name="SafeWdgExtTlfXorMask0x03" type="STRING">
+                        <a:a name="DESC" 
+                             value="EN: This parameter represents the xor mask offset 0x03 to generate TLF answer(respone) for
+challenge (seed) 0x03."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf13-8b4f-4719-abde-2f2d65e8624a"/>
+                        <a:da name="DEFAULT" value="0xAA2090AB"/>
+                        <a:da name="TOOLTIP" value="This parameter represents the xor mask offset 0x03 to generate TLF answer(respone) for
+challenge (seed) 0x03."/>
+												<a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="((../SafeWdgExtTlfMode = 'TLF_WM_FWD') or (../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI'))"/>
+												</a:da>
+												<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=0xFFFFFFFF"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                     </v:var>
+
+                       <v:var name="SafeWdgExtTlfXorMask0x04" type="STRING">
+                        <a:a name="DESC" 
+                             value="EN: This parameter represents the xor mask offset 0x04 to generate TLF answer(respone) for
+challenge (seed) 0x04."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf14-8b4f-4719-abde-2f2d65e8624a"/>
+                        <a:da name="DEFAULT" value="0x9DAB8CD1"/>
+                        <a:da name="TOOLTIP" value="This parameter represents the xor mask offset 0x04 to generate TLF answer(respone) for
+challenge (seed) 0x04."/>
+												<a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="((../SafeWdgExtTlfMode = 'TLF_WM_FWD') or (../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI'))"/>
+												</a:da>
+												<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=0xFFFFFFFF"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                     </v:var>
+
+                       <v:var name="SafeWdgExtTlfXorMask0x05" type="STRING">
+                        <a:a name="DESC" 
+                             value="EN: This parameter represents the xor mask offset 0x05 to generate TLF answer(respone) for
+challenge (seed) 0x05."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf15-8b4f-4719-abde-2f2d65e8624a"/>
+                        <a:da name="DEFAULT" value="0x6C060E68"/>
+                        <a:da name="TOOLTIP" value="This parameter represents the xor mask offset 0x05 to generate TLF answer(respone) for
+challenge (seed) 0x05."/>
+												<a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="((../SafeWdgExtTlfMode = 'TLF_WM_FWD') or (../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI'))"/>
+												</a:da>
+												<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=0xFFFFFFFF"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                     </v:var>
+
+                       <v:var name="SafeWdgExtTlfXorMask0x06" type="STRING">
+                        <a:a name="DESC" 
+                             value="EN: This parameter represents the xor mask offset 0x06 to generate TLF answer(respone) for
+challenge (seed) 0x06."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf16-8b4f-4719-abde-2f2d65e8624a"/>
+                        <a:da name="DEFAULT" value="0x7CCD18ED"/>
+                        <a:da name="TOOLTIP" value="This parameter represents the xor mask offset 0x06 to generate TLF answer(respone) for
+challenge (seed) 0x06."/>
+												<a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="((../SafeWdgExtTlfMode = 'TLF_WM_FWD') or (../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI'))"/>
+												</a:da>
+												<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=0xFFFFFFFF"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                     </v:var>
+
+                       <v:var name="SafeWdgExtTlfXorMask0x07" type="STRING">
+                        <a:a name="DESC" 
+                             value="EN: This parameter represents the xor mask offset 0x07 to generate TLF answer(respone) for
+challenge (seed) 0x07."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf17-8b4f-4719-abde-2f2d65e8624a"/>
+                        <a:da name="DEFAULT" value="0x8D609A54"/>
+                        <a:da name="TOOLTIP" value="This parameter represents the xor mask offset 0x07 to generate TLF answer(respone) for
+challenge (seed) 0x07."/>
+												<a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="((../SafeWdgExtTlfMode = 'TLF_WM_FWD') or (../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI'))"/>
+												</a:da>
+												<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=0xFFFFFFFF"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                     </v:var>
+
+                       <v:var name="SafeWdgExtTlfXorMask0x08" type="STRING">
+                        <a:a name="DESC" 
+                             value="EN: This parameter represents the xor mask offset 0x08 to generate TLF answer(respone) for
+challenge (seed) 0x08."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf18-8b4f-4719-abde-2f2d65e8624a"/>
+                        <a:da name="DEFAULT" value="0xC71E3CED"/>
+                        <a:da name="TOOLTIP" value="This parameter represents the xor mask offset 0x08 to generate TLF answer(respone) for
+challenge (seed) 0x08."/>
+												<a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="((../SafeWdgExtTlfMode = 'TLF_WM_FWD') or (../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI'))"/>
+												</a:da>
+												<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=0xFFFFFFFF"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                     </v:var>
+
+                       <v:var name="SafeWdgExtTlfXorMask0x09" type="STRING">
+                        <a:a name="DESC" 
+                             value="EN: This parameter represents the xor mask offset 0x09 to generate TLF answer(respone) for
+challenge (seed) 0x09."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf19-8b4f-4719-abde-2f2d65e8624a"/>
+                        <a:da name="DEFAULT" value="0x36B3BE54"/>
+                        <a:da name="TOOLTIP" value="This parameter represents the xor mask offset 0x09 to generate TLF answer(respone) for
+challenge (seed) 0x09."/>
+												<a:da
+												name="ENABLE" type="XPath"> 
+												<a:tst expr="((../SafeWdgExtTlfMode = 'TLF_WM_FWD') or (../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI'))"/>
+												</a:da>
+												<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=0xFFFFFFFF"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                     </v:var>
+
+                       <v:var name="SafeWdgExtTlfXorMask0x0A" type="STRING">
+                        <a:a name="DESC" 
+                             value="EN: This parameter represents the xor mask offset 0x0 to generate TLF answer(respone) for
+challenge (seed) 0x00."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf1a-8b4f-4719-abde-2f2d65e8624a"/>
+                        <a:da name="DEFAULT" value="0x2678A8D1"/>
+                        <a:da name="TOOLTIP" value="This parameter represents the xor mask offset 0x0A to generate TLF answer(respone) for
+challenge (seed) 0x0A."/>
+												<a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="((../SafeWdgExtTlfMode = 'TLF_WM_FWD') or (../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI'))"/>
+												</a:da>
+												<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=0xFFFFFFFF"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                     </v:var>
+
+										<v:var name="SafeWdgExtTlfXorMask0x0B" type="STRING">
+                        <a:a name="DESC" 
+                             value="EN: This parameter represents the xor mask offset 0x0B to generate TLF answer(respone) for
+challenge (seed) 0x0B."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf1b-8b4f-4719-abde-2f2d65e8624a"/>
+                        <a:da name="DEFAULT" value="0xD7D52A68"/>
+                        <a:da name="TOOLTIP" value="This parameter represents the xor mask offset 0x0B to generate TLF answer(respone) for
+challenge (seed) 0x0B."/>
+												<a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="((../SafeWdgExtTlfMode = 'TLF_WM_FWD') or (../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI'))"/>
+												</a:da>
+												<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=0xFFFFFFFF"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                     </v:var>
+
+                       <v:var name="SafeWdgExtTlfXorMask0x0C" type="STRING">
+                        <a:a name="DESC" 
+                             value="EN: This parameter represents the xor mask offset 0x0C to generate TLF answer(respone) for
+challenge (seed) 0x0C."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf1c-8b4f-4719-abde-2f2d65e8624a"/>
+                        <a:da name="DEFAULT" value="0xE05E3612"/>
+                        <a:da name="TOOLTIP" value="This parameter represents the xor mask offset 0x0C to generate TLF answer(respone) for
+challenge (seed) 0x0C."/>
+												<a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="((../SafeWdgExtTlfMode = 'TLF_WM_FWD') or (../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI'))"/>
+												</a:da>
+												<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=0xFFFFFFFF"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                     </v:var>
+
+                       <v:var name="SafeWdgExtTlfXorMask0x0D" type="STRING">
+                        <a:a name="DESC" 
+                             value="EN: This parameter represents the xor mask offset 0x0D to generate TLF answer(respone) for
+challenge (seed) 0x0D."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf1d-8b4f-4719-abde-2f2d65e8624a"/>
+                        <a:da name="DEFAULT" value="0x11F3B4AB"/>
+                        <a:da name="TOOLTIP" value="This parameter represents the xor mask offset 0x0D to generate TLF answer(respone) for
+challenge (seed) 0x0D."/>
+												<a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="((../SafeWdgExtTlfMode = 'TLF_WM_FWD') or (../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI'))"/>
+												</a:da>
+												<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=0xFFFFFFFF"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                     </v:var>
+
+                       <v:var name="SafeWdgExtTlfXorMask0x0E" type="STRING">
+                        <a:a name="DESC" 
+                             value="EN: This parameter represents the xor mask offset 0x0E to generate TLF answer(respone) for
+challenge (seed) 0x0E."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf1e-8b4f-4719-abde-2f2d65e8624a"/>
+                        <a:da name="DEFAULT" value="0x138A22E"/>
+                        <a:da name="TOOLTIP" value="This parameter represents the xor mask offset 0x0E to generate TLF answer(respone) for
+challenge (seed) 0x0E."/>
+												<a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="((../SafeWdgExtTlfMode = 'TLF_WM_FWD') or (../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI'))"/>
+												</a:da>
+												<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=0xFFFFFFFF"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                     </v:var>
+
+                       <v:var name="SafeWdgExtTlfXorMask0x0F" type="STRING">
+                        <a:a name="DESC" 
+                             value="EN: This parameter represents the xor mask offset 0x0F to generate TLF answer(respone) for
+challenge (seed) 0x0F."/>
+											<a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+												<icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+												<icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+											</a:a>                        
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                             value="999ccf1f-8b4f-4719-abde-2f2d65e8624a"/>
+                        <a:da name="DEFAULT" value="0xF0952097"/>
+                        <a:da name="TOOLTIP" value="This parameter represents the xor mask offset 0x0F to generate TLF answer(respone) for
+challenge (seed) 0x0F."/>
+												<a:da name="ENABLE" type="XPath"> 
+												<a:tst expr="((../SafeWdgExtTlfMode = 'TLF_WM_FWD') or (../SafeWdgExtTlfMode = 'TLF_WM_FWD_WWD_SPI'))"/>
+												</a:da>
+												<a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=0xFFFFFFFF"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                     </v:var>
+										 
+										 
+                </v:ctr>                  
+              </v:lst>
+              </v:ctr> 
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+</datamodel>

@@ -1,0 +1,2407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-1-1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0">
+	<AR-PACKAGES>
+		<AR-PACKAGE UUID="935f58ca-0600-49d5-a0a5-8a9081457304">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<AR-PACKAGES>
+				<AR-PACKAGE UUID="2edadb25-278b-4b72-9b54-2a0c14a47314">
+					<SHORT-NAME>Eth_Tricore</SHORT-NAME>
+					<ELEMENTS>
+						<ECUC-MODULE-DEF UUID="e0712368-4093-4709-8764-8af7849381c2">
+							<SHORT-NAME>Eth</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">Ethernet Controller Driver</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">Configuration of the Eth (Ethernet driver) module.</L-2>
+							</DESC>
+							<CATEGORY>VENDOR_SPECIFIC_MODULE_DEFINITION</CATEGORY>
+							<ADMIN-DATA>
+								<DOC-REVISIONS>
+									<DOC-REVISION>
+										<REVISION-LABEL>01.01.00</REVISION-LABEL>
+										<STATE>beta</STATE>
+										<ISSUED-BY>vishaw</ISSUED-BY>
+										<DATE>2013-07-24T01:25:53+02:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Initial creation of ASR4 BSWMD</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>01.01.01</REVISION-LABEL>
+										<STATE>beta</STATE>
+										<ISSUED-BY>vishaw</ISSUED-BY>
+										<DATE>2013-10-17T12:34:00+02:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Implementation updated</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>02.00.00</REVISION-LABEL>
+										<STATE>beta</STATE>
+										<ISSUED-BY>vishaw</ISSUED-BY>
+										<DATE>2014-02-17T05:22:21+01:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Multiple ESCANS</L-2>
+												</CHANGE>
+												<REASON>
+													<L-2 L="EN">ESCAN00073764, ESCAN00072290, ESCAN00073991</L-2>
+												</REASON>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>02.01.00</REVISION-LABEL>
+										<STATE>beta</STATE>
+										<ISSUED-BY>vishaw</ISSUED-BY>
+										<DATE>2014-07-21T10:50:43+02:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Break condition of MII access via API Eth_ReadMii() / Eth_WriteMii() is same as Eth_ControllerInit()</L-2>
+												</CHANGE>
+												<REASON>
+													<L-2 L="EN">ESCAN00077243</L-2>
+												</REASON>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>02.02.00</REVISION-LABEL>
+										<STATE>beta</STATE>
+										<ISSUED-BY>vishaw</ISSUED-BY>
+										<DATE>2014-12-11T08:38:13+01:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">AR4-535: RTM Runtime Measurement Points</L-2>
+												</CHANGE>
+												<REASON>
+													<L-2 L="EN">ESCAN00080155</L-2>
+												</REASON>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>02.02.01</REVISION-LABEL>
+										<STATE>beta</STATE>
+										<ISSUED-BY>vismha</ISSUED-BY>
+										<DATE>2015-03-03T10:29:44+01:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Multiplicity of EthRxBufConfig is not in line with the one of the Base BSWMD file</L-2>
+												</CHANGE>
+												<REASON>
+													<L-2 L="EN">ESCAN00081567</L-2>
+												</REASON>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+								</DOC-REVISIONS>
+							</ADMIN-DATA>
+							<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+							<REFINED-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/AUTOSAR/EcucDefs/Eth</REFINED-MODULE-DEF-REF>
+							<SUPPORTED-CONFIG-VARIANTS>
+								<SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+							</SUPPORTED-CONFIG-VARIANTS>
+							<CONTAINERS>
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="e56ec852-f1c8-4364-89d8-5fd7e6d32645">
+									<SHORT-NAME>EthGeneral</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">General configuration of Ethernet Driver module</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<PARAMETERS>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="01093e15-9407-479e-95ee-96c6451a85e9">
+											<SHORT-NAME>EthDevErrorDetect</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Dev Error Detect</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter switches the Development Error Detection and Notification ON or OFF.
+true:	Development error detection is enabled.
+false:	Development error detection is disabled.
+
+Note: In general, the development error detection is recommended during pre-test phase. It is not recommended to enable the development error detection in production code due to increased runtime and ROM needs.
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<SCOPE>LOCAL</SCOPE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="ca776f48-090a-495e-b132-cdd9b24da82d">
+											<SHORT-NAME>EthVersionInfoApi</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Version Info API</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter enables/disables the function Eth_GetVersionInfo() to get major, minor and patch version information.
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<SCOPE>LOCAL</SCOPE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="9bbadf54-d21f-476d-b952-effe8b7415d8">
+											<SHORT-NAME>EthVersionInfoApiMacro</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Version Info API Macro</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">Parameter not used.
+
+This parameter defines if Eth_GetVersionInfo() is implemented as a macro.
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<SCOPE>LOCAL</SCOPE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-STRING-PARAM-DEF UUID="33a90de9-319c-4505-a82b-a65c102063ce">
+											<SHORT-NAME>EthUserConfigFile</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">User Config File</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">Reference to an external text file that will be included during generation to Eth_Cfg.h.
+The content of the user configuration file will be added at the end of the generated module configuration file and allows altering or extending the generated code.
+
+Caution: User configuration files can cause the software module to malfunction and must only be used with great care!
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<SCOPE>LOCAL</SCOPE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</ECUC-STRING-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="1034c65b-a680-4aac-99b2-d64b26c54bd6">
+											<SHORT-NAME>EthEnableMibCounter</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Enable Mib Counter</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter defines if the MIB (Management information base) counter support is enabled.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<SCOPE>LOCAL</SCOPE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="eafedabb-2587-40fa-9c9b-15ef9be9defd">
+											<SHORT-NAME>EthEnableRxInterrupt</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Enable Rx Interrupt</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter defines if the receive interrupt is used.
+
+Restrictions: 'EthEnableRxInterrupt' and 'EthIfEnableRxInterrupt' must be set to the same value.
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<SCOPE>LOCAL</SCOPE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="4a522b51-ceea-4f50-afd0-7acb767922d1">
+											<SHORT-NAME>EthEnableTxInterrupt</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Enable Tx Interrupt</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter defines if the transmit interrupt is used.
+
+Restrictions: 'EthEnableTxInterrupt' and 'EthIfEnableTxInterrupt' must be set to the same value.
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<SCOPE>LOCAL</SCOPE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-INTEGER-PARAM-DEF UUID="61de4959-433a-4c5b-8661-a0205d748b6c">
+											<SHORT-NAME>EthIndex</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Specifies the InstanceId of this module instance. If only one instance is present it shall have the Id 0.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<SCOPE>LOCAL</SCOPE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MAX>255</MAX>
+											<MIN>0</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<ECUC-INTEGER-PARAM-DEF UUID="38e2e05a-a5a6-4016-b73a-45a50d102b7a">
+											<SHORT-NAME>EthMaxCtrlsSupported</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This value specifies the maximum number of controller configurations per driver.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<SCOPE>LOCAL</SCOPE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>1</DEFAULT-VALUE>
+											<MAX>255</MAX>
+											<MIN>1</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="41a7f81e-52dc-4b32-9285-2d0d5b74b86c">
+											<SHORT-NAME>EthUpdatePhysAddrFilter</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Enables/Disables optional API Eth_UpdatePhysAddrFilter.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<SCOPE>LOCAL</SCOPE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="ad7e053d-102d-4f07-9c11-e24a072c056b">
+											<SHORT-NAME>EthEnableExplicitBufferMapping</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter defines if RX and TX Ethernet buffers of different controllers and descriptor queues can be mapped to different memory locations. The final mapping is done via AUTOSAR Memory Map, whereas the user must implement the buffer specific memory sections within the memory map by himself.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<SCOPE>LOCAL</SCOPE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-ENUMERATION-PARAM-DEF UUID="498cefc2-0219-43a9-a1d1-f26968def2a9">
+											<SHORT-NAME>EthOsIsrCategory</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter specifies how the interrupt routines will be handled.
+
+If CATEGORY_1 or CATEGORY_2 is selected the Os will handle the interrupts according to the seleted category.
+For interrupt handling without support from Os the value NO_OS_SUPPORT must be selected.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<SCOPE>LOCAL</SCOPE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>CATEGORY_2</DEFAULT-VALUE>
+											<LITERALS>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="aa184494-2f3d-499c-9ef6-aa0432194d59">
+													<SHORT-NAME>CATEGORY_1</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">CATEGORY_1</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="fbb92072-d7e4-42f2-b980-871e1ba5da42">
+													<SHORT-NAME>CATEGORY_2</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">CATEGORY_2</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="1062e9bd-eff5-4765-a732-57f00243d155">
+													<SHORT-NAME>NO_OS_SUPPORT</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">NO_OS_SUPPORT</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ECUC-ENUMERATION-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="5b6222d0-ac02-4efc-9513-ca1de360bb43">
+											<SHORT-NAME>EthRuntimeMeasurementSupport</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled runtime measurement points are added to the BSW module code and are added to the module configuration of MICROSAR RTM. The available measurement points can be seen and configured in the RTM module configuration. Availability of the MICROSAR RTM module is a prerequisite to make use of the runtime measurement functionality.
+Runtime measurement should be disabled in production code as measurement points may inflict additional runtime.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<SCOPE>LOCAL</SCOPE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="e490f4c5-4c90-45ea-950e-1cdc2018f5fa">
+											<SHORT-NAME>EthUsePeripheralAccessApi</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Use Peripheral Access Api</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter defines if the Peripheral Access APIs are used for accessing protected registers related to the Ethernet driver.
+
+Depending on the derivative some Ethernet driver related register may be only accessibly in a Privileged Mode. If the Ethernet driver is not running in a necessary Privileged Mode then the OS has to support the register access by Peripheral Access APIs.
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<SCOPE>LOCAL</SCOPE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-INTEGER-PARAM-DEF UUID="ac3d3859-f296-423a-9cd4-997b70627015">
+											<SHORT-NAME>EthZeroCopyBufferStartOffset</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Zero Copy Buffer Start Offset</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">Configure the buffer start offset for zero copy extension.
+
+This offset will be added to each buffer start. The additional space can be used for transmission on other bus systems. It will not be used for external provided buffers.
+
+Note: The size of the offset must be a multiple of the expected controller alignment size. Value 0 is allowed to disable the offset.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:Display">
+														<SD GID="DV:BaseUnit">BYTE</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<SCOPE>LOCAL</SCOPE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MIN>0</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<ECUC-INTEGER-PARAM-DEF UUID="96dfb45d-f382-4a6b-a0b3-24ee6e02817e">
+											<SHORT-NAME>EthMainfunctionPeriod</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter specifies the period for the Mainfunction call of the Ethernet driver. The Mainfuction is used for processing descriptors, which could not be finished in interrupt context.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<SCOPE>LOCAL</SCOPE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>5</DEFAULT-VALUE>
+											<MIN>1</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<ECUC-STRING-PARAM-DEF UUID="93badfd4-e315-4a6f-9a06-147959d46aa2">
+											<SHORT-NAME>EthAdditionalIncludes</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Additional Includes</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter defines an additional file to be included in the Eth_Lcfg.h.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<SCOPE>LOCAL</SCOPE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</ECUC-STRING-PARAM-DEF>
+										<ECUC-ENUMERATION-PARAM-DEF UUID="2af74ed4-740f-4723-8b4b-e4a16dfd5dde">
+											<SHORT-NAME>EthRuntimeEnvironment</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Runtime Environment</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter defines the runtime environment the Ethernet driver is executed on.
+
+ETH_AUTOSAR_OS:
+The driver is executed in a common AUTOSAR OS environment.
+
+ETH_GREENHILLS_INTEGRITY:
+The driver is executed in a Greenhills INTEGRITY OS environment.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<SCOPE>LOCAL</SCOPE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>ETH_AUTOSAR_OS</DEFAULT-VALUE>
+											<LITERALS>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="3799cc82-7f11-44f0-a35b-b934ca437ed5">
+													<SHORT-NAME>ETH_AUTOSAR_OS</SHORT-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="b4a32d97-1dbb-4fe0-a855-29b62ebb2201">
+													<SHORT-NAME>ETH_GREENHILLS_INTEGRITY</SHORT-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ECUC-ENUMERATION-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="1c15acae-7c8c-4337-8d3e-f70cd0d0266e">
+											<SHORT-NAME>EthSafeBswChecks</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Selects if safety checks are used. These checks improve robustness as e.g. invalid parameters are checked before function is executed. This attribute has to be enabled for safety projects where this component is mapped to an ASIL partition.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<SCOPE>LOCAL</SCOPE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+									</PARAMETERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="cf0fca59-e022-4455-9ef5-ce80c94031c2">
+									<SHORT-NAME>EthConfigSet</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container includes containers and parameters that may be part of a multiple configuration set.</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<SUB-CONTAINERS>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="20c7eea3-ed07-4e41-ba84-45eaf60c0694">
+											<SHORT-NAME>EthCtrlConfig</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container includes the configuration of the individual controller.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<PARAMETERS>
+												<ECUC-BOOLEAN-PARAM-DEF UUID="1bb92531-0e22-4d7b-ba5e-30b7e6b16031">
+													<SHORT-NAME>EthCtrlEnableMii</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Enable MII</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter defines if the Media Independent Interface (MII) for transceiver access is enabled.
+
+Restrictions: Must be enabled for transceiver usage.
+</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>true</DEFAULT-VALUE>
+												</ECUC-BOOLEAN-PARAM-DEF>
+												<ECUC-BOOLEAN-PARAM-DEF UUID="2a780b30-007b-41a7-9ebd-25c1964ae7a5">
+													<SHORT-NAME>EthCtrlEnableRxInterrupt</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Enable Rx Interrupt</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter defines if the receive interrupt for the controller is enabled.
+
+Restrictions: 'EthCtrlEnableRxInterrupt' must be equal for all controllers and equal to 'EthEnableRxInterrupt'</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>true</DEFAULT-VALUE>
+												</ECUC-BOOLEAN-PARAM-DEF>
+												<ECUC-BOOLEAN-PARAM-DEF UUID="145d19eb-6135-4725-8796-1450c3db9bd0">
+													<SHORT-NAME>EthCtrlEnableTxInterrupt</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Enable Tx Interrupt</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter defines if the transmit interrupt for the controller is enabled.
+
+Restrictions: 'EthCtrlEnableTxInterrupt' must be equal for all controllers and equal to 'EthEnableTxInterrupt'
+</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>true</DEFAULT-VALUE>
+												</ECUC-BOOLEAN-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="3feadf7f-8c39-446d-905f-00bdb28eba89">
+													<SHORT-NAME>EthCtrlIdx</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Controller Index</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This value specifies the instance ID of the configured controller.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>0</DEFAULT-VALUE>
+													<MAX>255</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="a65515ee-8a9e-453f-8efe-65de678f9eab">
+													<SHORT-NAME>EthCtrlRxBufLenByte</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Rx Buffer Length</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This value specifies the maximum receive buffer length (frame length).
+
+Restrictions: Value has to be the maximum value of all 'EthCtrlRxBufLenByte' in 'EthRxBufConfig' containers.
+</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">BYTE</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>1522</DEFAULT-VALUE>
+													<MAX>1522</MAX>
+													<MIN>64</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="540298ff-0d7f-4908-afef-ca14247927db">
+													<SHORT-NAME>EthCtrlTxBufLenByte</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Tx Buffer Length</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This value specifies the maximum transmit buffer length (frame length).
+
+Resctrictions: Value has to be the maximum value of all 'EthCtrlTxBufLenByte' in 'EthTxBufConfig' containers.
+</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">BYTE</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>1522</DEFAULT-VALUE>
+													<MAX>1522</MAX>
+													<MIN>64</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="821a8c31-d521-4664-9d92-5711dbe1d3c4">
+													<SHORT-NAME>EthRxBufTotal</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Rx Buffer Count</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This value specifies the number of receive buffers.
+Resctrictions: Value has to be the sum of all values of 'EthRxBufTotal' in container 'EthRxBufConfig'.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>2</DEFAULT-VALUE>
+													<MAX>255</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="1d973d26-f1c7-49bd-9589-e22cf87139a2">
+													<SHORT-NAME>EthTxBufTotal</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Tx Buffer Count</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This value specifies the number of transmit buffers.
+Restrictions: Value has to be the sum of all values of 'EthTxBufTotal' in container 'EthTxBufConfig'.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>2</DEFAULT-VALUE>
+													<MAX>255</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-STRING-PARAM-DEF UUID="df5b0730-6407-4760-a684-eba6f8d652d7">
+													<SHORT-NAME>EthCtrlPhysAddr</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Physical Address (MAC-Address)</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter defines the Controller Physical Hardware Address (MAC-Address). The input format has to match xx:xx:xx:xx:xx:xx, where x stands for a hex value between 0 and F.
+</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</ECUC-STRING-PARAM-DEF>
+												<ECUC-BOOLEAN-PARAM-DEF UUID="483138d5-6ce7-4ff2-8ef0-25c2ce2b7426">
+													<SHORT-NAME>EthCtrlEnableMacWriteAccess</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Enable MAC-Address Write Access</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter defines if access to an NvM block containing the MAC address and the corresponding API is enabled.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>false</DEFAULT-VALUE>
+												</ECUC-BOOLEAN-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="486db883-2ea1-4b9f-8dc6-3492441e9a61">
+													<SHORT-NAME>EthMmcMemBaseAddress</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter specifies the controllers MAC Management Counters (MMC) start address.
+</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:DefaultFormat">HEX</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>4026654976</DEFAULT-VALUE>
+													<MAX>4294967295</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="b9bd748a-0e94-488b-825c-3ac5860c0e5d">
+													<SHORT-NAME>EthMmcMemLastAddress</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter specifies the controllers MAC Management Counters (MMC) end address.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:DefaultFormat">HEX</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>4026655484</DEFAULT-VALUE>
+													<MAX>4294967295</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-BOOLEAN-PARAM-DEF UUID="bc48de04-a8f3-4120-9dfd-35cb1d5ab1ef">
+													<SHORT-NAME>EthCtrlEnablePtp</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter defines if Precision-Time-Protocol support is enabled or not. PTP is mostly used in combination with Audio Video Bridging (AVB)</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>false</DEFAULT-VALUE>
+												</ECUC-BOOLEAN-PARAM-DEF>
+												<ECUC-BOOLEAN-PARAM-DEF UUID="f7fdec0d-db36-4545-a2a2-dad6af20e4f0">
+													<SHORT-NAME>EthCtrlEnableOsfMode</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter defines whether OSF mode is used for frame transmission. When OSF mode is enabled, the processing of a second Tx-descriptor is started before the first one is transmitted completely. This results in increased throughput in transmission.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>true</DEFAULT-VALUE>
+												</ECUC-BOOLEAN-PARAM-DEF>
+												<ECUC-ENUMERATION-PARAM-DEF UUID="1abd41e2-c060-4321-a463-bb9072166b3f">
+													<SHORT-NAME>EthCtrlMiiInterface</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">PHY Managment Interface</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter defines the management interface type used to connect PHY and MAC.
+
+Please refere to the derivative's reference manual and the board schematic to retrieve the correct management interface type.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>MII</DEFAULT-VALUE>
+													<LITERALS>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="1dd2a336-fa34-407c-9f39-f8305363713e">
+															<SHORT-NAME>ETH_MII_MODE</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">ETH_MII_MODE</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="0da41a7e-0119-432f-85e2-67ca4d244bd3">
+															<SHORT-NAME>ETH_RMII_MODE</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">ETH_RMII_MODE</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ECUC-ENUMERATION-PARAM-DEF>
+												<ECUC-BOOLEAN-PARAM-DEF UUID="36aa7f63-3450-4690-9fd0-13da8658d2d8">
+													<SHORT-NAME>EthCtrlPreControllerInitCallout</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Pre Controller Init Callout</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter defines if a callout is generated, which can be used to add special startup handling before Eth_ControllerInit is execeuted.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>false</DEFAULT-VALUE>
+												</ECUC-BOOLEAN-PARAM-DEF>
+												<ECUC-BOOLEAN-PARAM-DEF UUID="a221f223-e9fd-4705-a16a-fb32f641566c">
+													<SHORT-NAME>EthCtrlPostControllerInitCallout</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Post Controller Init Callout</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter defines if a callout is generated, which can be used to add special startup handling after Eth_ControllerInit is execeuted.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>false</DEFAULT-VALUE>
+												</ECUC-BOOLEAN-PARAM-DEF>
+												<ECUC-FUNCTION-NAME-DEF UUID="072d367e-d4de-457a-a42b-28ce523a62d6">
+													<SHORT-NAME>EthCtrlPeripheralRegionOsIdentifier</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Peripheral Region Os Identifier</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Unique C Identifier which is used by the Ethernet Controller driver for accessing the OS configured peripheral region.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</ECUC-FUNCTION-NAME-DEF>
+												<ECUC-BOOLEAN-PARAM-DEF UUID="acf13ace-ab30-46e0-bf1a-a1328d533cda">
+													<SHORT-NAME>EthCtrlEnableRxBufferSegmentation</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter defines whether Rx Buffer Segmentation is enabled, This allows splitting frames into several buffers / descriptors for more efficient memory usage.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>false</DEFAULT-VALUE>
+												</ECUC-BOOLEAN-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="a212bbee-c9bc-490d-9c1e-af16fb5d7e0f">
+													<SHORT-NAME>EthCtrlResetLoopMaxCycles</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Controller Reset Loop Cycles</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This value specifies the number of loop cycles after the controller reset timeout occurs.
+</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>1000</DEFAULT-VALUE>
+													<MAX>1000000</MAX>
+													<MIN>1</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="7547b83b-9789-4eb3-885a-53e35a61d3ec">
+													<SHORT-NAME>EthCtrlLoopMaxCycles</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Controller Loop Cycles</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This value specifies the number of loop cycles after hardware dependent loop timeouts occur.
+</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>1000</DEFAULT-VALUE>
+													<MAX>1000000</MAX>
+													<MIN>1</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="ca4984dc-3f14-47ae-a1b0-6471b6bef733">
+													<SHORT-NAME>EthCtrlMiiLoopMaxCycles</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Controller MII Loop Cycles</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This value specifies the number of loop cycles after the timeout for MII accesses occurs.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>1000</DEFAULT-VALUE>
+													<MAX>1000000</MAX>
+													<MIN>1</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<ECUC-REFERENCE-DEF UUID="b03b3399-652e-407d-9b10-b08eae314e7a">
+													<SHORT-NAME>EthCtrlNvmBlockDescriptor</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">NvM Block Descriptor</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Reference to an NvM block descriptor which is used to store the MAC address that is used as Ethernet source address.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/NvM/NvMBlockDescriptor</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<ECUC-REFERENCE-DEF UUID="a42be7c5-7da6-4d3c-9a06-18178f685392">
+													<SHORT-NAME>EthPtpRefClock</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Ctrl Ptp Ref Clock</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This value specifies the frequency of the PTP reference clock.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SCOPE>LOCAL</SCOPE>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+											<SUB-CONTAINERS>
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="cc08f294-5173-45a3-add0-1e8c641d8875">
+													<SHORT-NAME>EthTxBufConfig</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This container includes configuration of a Tx buffer.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:postBuildSelectableChangeable">false</SD>
+																<SD GID="DV:postBuildNotDeletable">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+													<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<PARAMETERS>
+														<ECUC-INTEGER-PARAM-DEF UUID="92f7eb3f-8b03-4345-afe9-11c263c46af9">
+															<SHORT-NAME>EthCtrlTxBufLenByte</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Maximum Tx Buffer Size</L-4>
+															</LONG-NAME>
+															<DESC>
+																<L-2 L="EN">This value limits the maximum length (including Ethernet header + payload + CRC) of the Ethernet frame in bytes. 
+In case VLAN is enabled the Ethernet header length is 18, otherwise 14. The maximum payload length is 1500 bytes and the minimum length is 46 bytes. The CRC consists of 4 bytes.
+
+Example:
+- Configuring a buffer that shall hold a VLAN tagged Ethernet frame with a maximum payload of 1500 bytes, the overall frame length is 1500 bytes payload + 18 bytes header + 4 bytes CRC = 1522 bytes.
+- Configuring a buffer that shall hold an Ethernet frame without VLAN tag and a minimum payload of 46 bytes, the overall frame length is 46 bytes payload + 14 bytes header + 4 bytes CRC = 64 bytes.
+</L-2>
+															</DESC>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:Display">
+																		<SD GID="DV:BaseUnit">BYTE</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>1518</DEFAULT-VALUE>
+															<MAX>1522</MAX>
+															<MIN>64</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<ECUC-INTEGER-PARAM-DEF UUID="d566d729-c3c9-4bd2-a155-1e956b9fc4a4">
+															<SHORT-NAME>EthTxBufTotal</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Number of Tx Buffers</L-4>
+															</LONG-NAME>
+															<DESC>
+																<L-2 L="EN">This value specifies the number of transmit buffers.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>2</DEFAULT-VALUE>
+															<MAX>255</MAX>
+															<MIN>2</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+													</PARAMETERS>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="41e7dee4-86a1-4e90-a50c-db2fdfd191c7">
+													<SHORT-NAME>EthDemEventParameterRefs</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This container includes the references to DemEventParameter elements which shall be invoked using the API Dem_ReportErrorStatus API in case the corresponding error occurs. The EventId is taken from the referenced DemEventParameter's DemEventId value.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:postBuildSelectableChangeable">false</SD>
+																<SD GID="DV:postBuildNotDeletable">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<REFERENCES>
+														<ECUC-SYMBOLIC-NAME-REFERENCE-DEF UUID="72cb8991-13d4-4965-84af-fef135fc6edc">
+															<SHORT-NAME>ETH_E_ACCESS</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Reference to the DemEventParameter which shall be issued when the error ETH_E_ACCESS has occurred.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter</DESTINATION-REF>
+														</ECUC-SYMBOLIC-NAME-REFERENCE-DEF>
+													</REFERENCES>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="906c4ad0-2b4b-4e77-9e11-fffd5af9f76a">
+													<SHORT-NAME>EthRxBufConfig</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This container includes the configuration of an Rx buffer.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:postBuildSelectableChangeable">false</SD>
+																<SD GID="DV:postBuildNotDeletable">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+													<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<PARAMETERS>
+														<ECUC-INTEGER-PARAM-DEF UUID="aebf5aec-1722-496c-8816-dd3665eba209">
+															<SHORT-NAME>EthRxSegmentNumber</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Number of Rx Segments</L-4>
+															</LONG-NAME>
+															<DESC>
+																<L-2 L="EN">This value defines the number of Rx segments the receiver buffer is assembled of.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>2</DEFAULT-VALUE>
+															<MAX>65535</MAX>
+															<MIN>2</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<ECUC-INTEGER-PARAM-DEF UUID="8de47f57-6ee6-487f-8c08-0572fe69a16e">
+															<SHORT-NAME>EthRxSegmentSize</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Rx Buffer Segment Size</L-4>
+															</LONG-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines the size of a segment the receive buffer is built of.
+
+Multiple of these segments are used to hold a complete Ethernet frame.</L-2>
+															</DESC>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:Display">
+																		<SD GID="DV:BaseUnit">BYTE</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>1518</DEFAULT-VALUE>
+															<MAX>1522</MAX>
+															<MIN>60</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<ECUC-INTEGER-PARAM-DEF UUID="3777c3c6-b2d1-41da-a534-85987a15698a">
+															<SHORT-NAME>EthRxMaxFrameSize</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Maximum Rx Frame Size</L-4>
+															</LONG-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines the maximum length of an Ethernet frame, which is allowed to be received.</L-2>
+															</DESC>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:Display">
+																		<SD GID="DV:BaseUnit">BYTE</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>1518</DEFAULT-VALUE>
+															<MAX>1522</MAX>
+															<MIN>60</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+													</PARAMETERS>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="fc07aac8-9192-4bc0-b5b1-3063fc7ad8f4">
+													<SHORT-NAME>EthCtrlOffloading</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This container includes the configuration for checksum offloading.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:postBuildSelectableChangeable">false</SD>
+																<SD GID="DV:postBuildNotDeletable">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<PARAMETERS>
+														<ECUC-BOOLEAN-PARAM-DEF UUID="eccfeeff-7e90-4125-b6d1-1333b88d285b">
+															<SHORT-NAME>EthCtrlEnableOffloadChecksumIPv4</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines that the IPv4 checksum calculation is offloaded to the ethernet controller and calculated by hardware.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>false</DEFAULT-VALUE>
+														</ECUC-BOOLEAN-PARAM-DEF>
+														<ECUC-BOOLEAN-PARAM-DEF UUID="b8b20e45-bab4-4d9f-ad38-7cae2c150353">
+															<SHORT-NAME>EthCtrlEnableOffloadChecksumICMP</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines that the ICMP checksum calculation is offloaded to the ethernet controller and calculated by hardware.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>false</DEFAULT-VALUE>
+														</ECUC-BOOLEAN-PARAM-DEF>
+														<ECUC-BOOLEAN-PARAM-DEF UUID="879765f8-4969-41ab-a6d8-e56070d45e22">
+															<SHORT-NAME>EthCtrlEnableOffloadChecksumTCP</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines that the checksum calculation for IPv4 encapsulated TCP segments is offloaded to the ethernet controller and calculated by hardware.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>false</DEFAULT-VALUE>
+														</ECUC-BOOLEAN-PARAM-DEF>
+														<ECUC-BOOLEAN-PARAM-DEF UUID="2fcb6ae4-b8c4-4c7d-b0f9-241024253f0e">
+															<SHORT-NAME>EthCtrlEnableOffloadChecksumUDP</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines that the checksum calculation for IPv4 encapsulated UDP is offloaded to the ethernet controller and calculated by hardware.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>false</DEFAULT-VALUE>
+														</ECUC-BOOLEAN-PARAM-DEF>
+														<ECUC-BOOLEAN-PARAM-DEF UUID="eb9fef2e-6511-48cf-a561-4675768e5acd">
+															<SHORT-NAME>EthCtrlEnableOffloadChecksumTCPv6</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Ctrl Enable Offload Checksum IPv6 encapsulated TCP</L-4>
+															</LONG-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines that the checksum calculation for IPv6 encapsulated TCPis offloaded to the ethernet controller and calculated by hardware.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>false</DEFAULT-VALUE>
+														</ECUC-BOOLEAN-PARAM-DEF>
+														<ECUC-BOOLEAN-PARAM-DEF UUID="846b266a-84ee-4ead-9ae2-31da675944d5">
+															<SHORT-NAME>EthCtrlEnableOffloadChecksumICMPv6</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Ctrl Enable Offload Checksum ICMPv6</L-4>
+															</LONG-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines that the ICMPv6 checksum calculation is offloaded to the ethernet controller and calculated by hardware.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>false</DEFAULT-VALUE>
+														</ECUC-BOOLEAN-PARAM-DEF>
+														<ECUC-BOOLEAN-PARAM-DEF UUID="b0897a6b-c859-4faf-9da2-74778eae1a50">
+															<SHORT-NAME>EthCtrlEnableOffloadChecksumIPv6HeaderRouting</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines that the checksum offloading  for protocols encapsulated in IPv6 with Routing extension header is enabled.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>false</DEFAULT-VALUE>
+														</ECUC-BOOLEAN-PARAM-DEF>
+														<ECUC-BOOLEAN-PARAM-DEF UUID="5c917c4b-5772-4e73-b26a-315bce147a0d">
+															<SHORT-NAME>EthCtrlEnableOffloadChecksumIPv6HeaderDestinationOptions</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines that the checksum offloading for protocols encapsulated in IPv6 with Destination Options extension header is enabled.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>false</DEFAULT-VALUE>
+														</ECUC-BOOLEAN-PARAM-DEF>
+														<ECUC-BOOLEAN-PARAM-DEF UUID="6644361e-b71b-451c-b640-80832ada994d">
+															<SHORT-NAME>EthCtrlEnableOffloadChecksumIPv6HeaderHopByHopOptions</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines that the checksum offloading for protocols encapsulated in IPv6 with Hop by Hop Options extension header is enabled.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>false</DEFAULT-VALUE>
+														</ECUC-BOOLEAN-PARAM-DEF>
+														<ECUC-BOOLEAN-PARAM-DEF UUID="64b9409b-abb1-4b8e-aa70-6f556bd49519">
+															<SHORT-NAME>EthCtrlEnableOffloadChecksumUDPv6</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Ctrl Enable Offload Checksum IPv6 encapsulated UDP</L-4>
+															</LONG-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines that the checksum calculation for IPv6 encapsulated UDP is offloaded to the ethernet controller and calculated by hardware.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>false</DEFAULT-VALUE>
+														</ECUC-BOOLEAN-PARAM-DEF>
+													</PARAMETERS>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="476fbe44-62ef-4097-8df0-9925a23d8a77">
+													<SHORT-NAME>EthCtrlPinRouting</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This container contains parameter for pin routing, which is done by ETH_GPCTL register.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:postBuildSelectableChangeable">false</SD>
+																<SD GID="DV:postBuildNotDeletable">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<PARAMETERS>
+														<ECUC-ENUMERATION-PARAM-DEF UUID="1b137d39-9b06-4d64-bfbd-12cee1453836">
+															<SHORT-NAME>Eth_GPCTL_ALT0</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines the value of ALT0 of the ETH_GPCTL register.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>ETH_ALT_1</DEFAULT-VALUE>
+															<LITERALS>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="8b14ff99-1bbd-4a3b-9eb1-dae9d38a9fa8">
+																	<SHORT-NAME>ETH_ALT_0</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="30faf240-de2b-42b5-bcd6-9d7384608595">
+																	<SHORT-NAME>ETH_ALT_1</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="c997f559-85ea-4bc5-82bf-2d7a26ee2783">
+																	<SHORT-NAME>ETH_ALT_2</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="ca12520d-8a64-4a0f-a6c0-8009106f55bf">
+																	<SHORT-NAME>ETH_ALT_3</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+															</LITERALS>
+														</ECUC-ENUMERATION-PARAM-DEF>
+														<ECUC-ENUMERATION-PARAM-DEF UUID="6b69f0bf-c1cf-41c3-a23c-0ffb569b04bb">
+															<SHORT-NAME>Eth_GPCTL_ALT1</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines the value of ALT1 of the ETH_GPCTL register.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>ETH_ALT_0</DEFAULT-VALUE>
+															<LITERALS>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="31c759fa-b07e-4dd8-917e-369874c591a9">
+																	<SHORT-NAME>ETH_ALT_0</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="39913ee9-69c3-4e47-89d5-fa747851bcd3">
+																	<SHORT-NAME>ETH_ALT_1</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="cb08f3ef-2499-470b-b631-c92753759b57">
+																	<SHORT-NAME>ETH_ALT_2</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="952b5d2f-9d31-43cf-a661-1281b472fcca">
+																	<SHORT-NAME>ETH_ALT_3</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+															</LITERALS>
+														</ECUC-ENUMERATION-PARAM-DEF>
+														<ECUC-ENUMERATION-PARAM-DEF UUID="c7cc70c4-50c0-48cd-b0c2-0a05de614400">
+															<SHORT-NAME>Eth_GPCTL_ALT2</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines the value of ALT2 of the ETH_GPCTL register.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>ETH_ALT_0</DEFAULT-VALUE>
+															<LITERALS>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="34ea756e-c1dc-4ace-b823-22ab1e7f1ba6">
+																	<SHORT-NAME>ETH_ALT_0</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="d7110e43-7580-462d-a624-09624ee34133">
+																	<SHORT-NAME>ETH_ALT_1</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="e9ef1697-bdab-49cd-bd62-124b1d9d4ac9">
+																	<SHORT-NAME>ETH_ALT_2</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="55c2b2c4-fdb9-4f76-b758-c1c2c4cc9413">
+																	<SHORT-NAME>ETH_ALT_3</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+															</LITERALS>
+														</ECUC-ENUMERATION-PARAM-DEF>
+														<ECUC-ENUMERATION-PARAM-DEF UUID="8aa10345-5398-4055-8bb1-e8091a05ba0b">
+															<SHORT-NAME>Eth_GPCTL_ALT3</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines the value of ALT3 of the ETH_GPCTL register.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>ETH_ALT_0</DEFAULT-VALUE>
+															<LITERALS>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="0f1460b3-e5c6-4a8f-95d1-3f5247769ccc">
+																	<SHORT-NAME>ETH_ALT_0</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="ed651c6a-4f21-4606-9d28-291f95cbc464">
+																	<SHORT-NAME>ETH_ALT_1</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="e4f493d2-9428-4e7f-a02a-64b3e4f21d4c">
+																	<SHORT-NAME>ETH_ALT_2</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="5e888169-4122-48cf-be7f-9a2e4eeb5f80">
+																	<SHORT-NAME>ETH_ALT_3</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+															</LITERALS>
+														</ECUC-ENUMERATION-PARAM-DEF>
+														<ECUC-ENUMERATION-PARAM-DEF UUID="d2871415-285a-467d-8ae3-d6b63f06f8ee">
+															<SHORT-NAME>Eth_GPCTL_ALT4</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines the value of ALT4 of the ETH_GPCTL register.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>ETH_ALT_0</DEFAULT-VALUE>
+															<LITERALS>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="6d9b6f23-340e-4b31-8d20-5f02566386f7">
+																	<SHORT-NAME>ETH_ALT_0</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="32cee540-fb5f-45e6-a694-81c5bc54974a">
+																	<SHORT-NAME>ETH_ALT_1</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="27a4c741-34f5-4971-83b9-33d73362614d">
+																	<SHORT-NAME>ETH_ALT_2</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="14bfce08-65c6-4fd5-b3fc-fe7ee0152147">
+																	<SHORT-NAME>ETH_ALT_3</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+															</LITERALS>
+														</ECUC-ENUMERATION-PARAM-DEF>
+														<ECUC-ENUMERATION-PARAM-DEF UUID="6e7540a6-58f7-45d1-bb14-d7ab22b3e76f">
+															<SHORT-NAME>Eth_GPCTL_ALT5</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines the value of ALT5 of the ETH_GPCTL register.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>ETH_ALT_0</DEFAULT-VALUE>
+															<LITERALS>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="483bc191-fa41-4e5d-87c7-b8ba5a4cb3ad">
+																	<SHORT-NAME>ETH_ALT_0</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="14a01a90-e6b0-4806-8e9a-145b5710d2dc">
+																	<SHORT-NAME>ETH_ALT_1</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="45d6e446-9d23-4e45-a658-60681b973378">
+																	<SHORT-NAME>ETH_ALT_2</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="5b280bf5-eb78-45dc-9bfa-ead6fcf0d371">
+																	<SHORT-NAME>ETH_ALT_3</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+															</LITERALS>
+														</ECUC-ENUMERATION-PARAM-DEF>
+														<ECUC-ENUMERATION-PARAM-DEF UUID="7c1cef77-00da-4b3d-9bd4-2cc2d1afb933">
+															<SHORT-NAME>Eth_GPCTL_ALT6</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines the value of ALT6 of the ETH_GPCTL register.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>ETH_ALT_0</DEFAULT-VALUE>
+															<LITERALS>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="6b3c6302-c3d8-4c04-9704-03ad2c163f8c">
+																	<SHORT-NAME>ETH_ALT_0</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="af72a816-6151-4976-9ed1-f96089f41821">
+																	<SHORT-NAME>ETH_ALT_1</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="85c0b30f-ec7b-42a1-9e81-764ef7fb39ee">
+																	<SHORT-NAME>ETH_ALT_2</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="4b904ba3-0f1d-410d-a7ba-d0d7207b8188">
+																	<SHORT-NAME>ETH_ALT_3</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+															</LITERALS>
+														</ECUC-ENUMERATION-PARAM-DEF>
+														<ECUC-ENUMERATION-PARAM-DEF UUID="0b6ff404-3575-4201-a5e4-5a18d0ccc1a0">
+															<SHORT-NAME>Eth_GPCTL_ALT7</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines the value of ALT7 of the ETH_GPCTL register.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>ETH_ALT_0</DEFAULT-VALUE>
+															<LITERALS>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="2987bdf4-420d-40de-a4c0-bda539f01538">
+																	<SHORT-NAME>ETH_ALT_0</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="48b08389-6eb5-4c5a-b5b8-42ea7601fd1d">
+																	<SHORT-NAME>ETH_ALT_1</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="cfa18070-af5c-4ce9-9725-b3a4e1c06923">
+																	<SHORT-NAME>ETH_ALT_2</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="72f319ae-eb03-4737-b8eb-a8eff5df619f">
+																	<SHORT-NAME>ETH_ALT_3</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+															</LITERALS>
+														</ECUC-ENUMERATION-PARAM-DEF>
+														<ECUC-ENUMERATION-PARAM-DEF UUID="92e4d130-efea-4b1b-99a3-4f75fca19b59">
+															<SHORT-NAME>Eth_GPCTL_ALT8</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines the value of ALT8 of the ETH_GPCTL register.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>ETH_ALT_0</DEFAULT-VALUE>
+															<LITERALS>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="daa42d6b-883d-4677-a6aa-d1e482a15ef2">
+																	<SHORT-NAME>ETH_ALT_0</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="9c9aa1ab-e3a4-42d1-bef0-5243f8e7e0fb">
+																	<SHORT-NAME>ETH_ALT_1</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="5b100741-fa5f-4bec-8498-4c7a7aec80f0">
+																	<SHORT-NAME>ETH_ALT_2</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="2b78acc1-2687-49e0-8557-ab3f2205e8ea">
+																	<SHORT-NAME>ETH_ALT_3</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+															</LITERALS>
+														</ECUC-ENUMERATION-PARAM-DEF>
+														<ECUC-ENUMERATION-PARAM-DEF UUID="ed32e941-d871-4661-8b4d-bbe3105b1322">
+															<SHORT-NAME>Eth_GPCTL_ALT9</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines the value of ALT9 of the ETH_GPCTL register.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>ETH_ALT_0</DEFAULT-VALUE>
+															<LITERALS>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="bdc627dd-69cf-4ac8-a68e-c51b0e569fce">
+																	<SHORT-NAME>ETH_ALT_0</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="336b98af-3f07-4957-a89a-20b766fc0cf8">
+																	<SHORT-NAME>ETH_ALT_1</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="a4c6dcc2-5170-4a03-a536-73d78c3ccc5d">
+																	<SHORT-NAME>ETH_ALT_2</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="6da85d61-712d-469d-81e3-07fa99686a92">
+																	<SHORT-NAME>ETH_ALT_3</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+															</LITERALS>
+														</ECUC-ENUMERATION-PARAM-DEF>
+														<ECUC-ENUMERATION-PARAM-DEF UUID="b9fd979e-c98b-47a7-be41-de4068b46b71">
+															<SHORT-NAME>Eth_GPCTL_ALT10</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines the value of ALT10 of the ETH_GPCTL register.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<SCOPE>LOCAL</SCOPE>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>ETH_ALT_0</DEFAULT-VALUE>
+															<LITERALS>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="69a931a2-59f9-4219-9575-b567766ce0ac">
+																	<SHORT-NAME>ETH_ALT_0</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="ce2d12ce-2d88-4351-b1ec-b409ffe738ad">
+																	<SHORT-NAME>ETH_ALT_1</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="c4564c64-9be2-4609-a784-ac251f95c5a5">
+																	<SHORT-NAME>ETH_ALT_2</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="4a51db9b-cca9-486a-b3fd-fe6c992d990b">
+																	<SHORT-NAME>ETH_ALT_3</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+															</LITERALS>
+														</ECUC-ENUMERATION-PARAM-DEF>
+													</PARAMETERS>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+												<ECUC-CHOICE-CONTAINER-DEF UUID="92be368a-eb27-418f-bb20-b1fb2a5bdad4">
+													<SHORT-NAME>EthRuntimeEnvironment</SHORT-NAME>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:postBuildSelectableChangeable">false</SD>
+																<SD GID="DV:postBuildNotDeletable">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<CHOICES>
+														<ECUC-PARAM-CONF-CONTAINER-DEF UUID="a0e38888-f831-4351-8fbc-ceb40847d6e7">
+															<SHORT-NAME>EthAutosarOs</SHORT-NAME>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:postBuildSelectableChangeable">false</SD>
+																		<SD GID="DV:postBuildNotDeletable">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<PARAMETERS>
+																<ECUC-INTEGER-PARAM-DEF UUID="b84f228a-117a-4030-8ccd-ad3a67d58833">
+																	<SHORT-NAME>EthRegBaseAddress</SHORT-NAME>
+																	<LONG-NAME>
+																		<L-4 L="EN">Register Base Address</L-4>
+																	</LONG-NAME>
+																	<DESC>
+																		<L-2 L="EN">This parameter defines the register base address for the Ethernet controller used.</L-2>
+																	</DESC>
+																	<ADMIN-DATA>
+																		<SDGS>
+																			<SDG GID="DV:Display">
+																				<SD GID="DV:DefaultFormat">HEX</SD>
+																			</SDG>
+																		</SDGS>
+																	</ADMIN-DATA>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<SCOPE>LOCAL</SCOPE>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<REQUIRES-INDEX>false</REQUIRES-INDEX>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<DEFAULT-VALUE>0</DEFAULT-VALUE>
+																	<MAX>18446744073709551615</MAX>
+																	<MIN>0</MIN>
+																</ECUC-INTEGER-PARAM-DEF>
+															</PARAMETERS>
+														</ECUC-PARAM-CONF-CONTAINER-DEF>
+														<ECUC-PARAM-CONF-CONTAINER-DEF UUID="dd0ddadc-6ce4-462d-91d9-b9cc5d7a30c8">
+															<SHORT-NAME>EthGreenhillsIntegrityOs</SHORT-NAME>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:postBuildSelectableChangeable">false</SD>
+																		<SD GID="DV:postBuildNotDeletable">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<PARAMETERS>
+																<ECUC-LINKER-SYMBOL-DEF UUID="cbdaf38d-697f-4dff-8e8e-cfb0045f7d21">
+																	<SHORT-NAME>EthRegMemRegionIdentifier</SHORT-NAME>
+																	<LONG-NAME>
+																		<L-4 L="EN">Register Memory Region Identifier</L-4>
+																	</LONG-NAME>
+																	<DESC>
+																		<L-2 L="EN">This parameter defines the identifier used to identify the phyiscal Memory Region representing the Ethernet controllers register space.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<SCOPE>LOCAL</SCOPE>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<REQUIRES-INDEX>false</REQUIRES-INDEX>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<ECUC-LINKER-SYMBOL-DEF-VARIANTS>
+																		<ECUC-LINKER-SYMBOL-DEF-CONDITIONAL>
+																			<DEFAULT-VALUE>EthRegisterMemRegion</DEFAULT-VALUE>
+																			<MAX-LENGTH>254</MAX-LENGTH>
+																			<MIN-LENGTH>1</MIN-LENGTH>
+																		</ECUC-LINKER-SYMBOL-DEF-CONDITIONAL>
+																	</ECUC-LINKER-SYMBOL-DEF-VARIANTS>
+																</ECUC-LINKER-SYMBOL-DEF>
+																<ECUC-LINKER-SYMBOL-DEF UUID="f1ee8faf-eed3-4bbe-8aea-747acb6dd1c5">
+																	<SHORT-NAME>EthDeviceIdentifier</SHORT-NAME>
+																	<LONG-NAME>
+																		<L-4 L="EN">Device Identifier</L-4>
+																	</LONG-NAME>
+																	<DESC>
+																		<L-2 L="EN">This parameter defines the identifier used to identify the IO Device object representing the Ethernet controller within INTEGRITY.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<SCOPE>LOCAL</SCOPE>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<REQUIRES-INDEX>false</REQUIRES-INDEX>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<ECUC-LINKER-SYMBOL-DEF-VARIANTS>
+																		<ECUC-LINKER-SYMBOL-DEF-CONDITIONAL>
+																			<DEFAULT-VALUE>EthIODevice</DEFAULT-VALUE>
+																			<MAX-LENGTH>254</MAX-LENGTH>
+																			<MIN-LENGTH>1</MIN-LENGTH>
+																		</ECUC-LINKER-SYMBOL-DEF-CONDITIONAL>
+																	</ECUC-LINKER-SYMBOL-DEF-VARIANTS>
+																</ECUC-LINKER-SYMBOL-DEF>
+																<ECUC-LINKER-SYMBOL-DEF UUID="4a5f742f-f8fd-45ae-9f38-dd635d8cdfe9">
+																	<SHORT-NAME>EthResManagerPassword</SHORT-NAME>
+																	<LONG-NAME>
+																		<L-4 L="EN">Resource Manager Password</L-4>
+																	</LONG-NAME>
+																	<DESC>
+																		<L-2 L="EN">This paramter defines the password used to grant access to the Resource Manager of INTEGRITY.
+
+This password is used within calls to the INTEGRITY Resource Manager (e.g. RequestResource()) to retrieve the needed OS objects for IO Device, register memory region and so on.
+
+If no password is used by the Resource Manager NULL must be provided as value to signal the omit of the password check.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<SCOPE>LOCAL</SCOPE>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<REQUIRES-INDEX>false</REQUIRES-INDEX>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<ECUC-LINKER-SYMBOL-DEF-VARIANTS>
+																		<ECUC-LINKER-SYMBOL-DEF-CONDITIONAL>
+																			<DEFAULT-VALUE>NULL</DEFAULT-VALUE>
+																			<MAX-LENGTH>254</MAX-LENGTH>
+																			<MIN-LENGTH>1</MIN-LENGTH>
+																		</ECUC-LINKER-SYMBOL-DEF-CONDITIONAL>
+																	</ECUC-LINKER-SYMBOL-DEF-VARIANTS>
+																</ECUC-LINKER-SYMBOL-DEF>
+																<ECUC-LINKER-SYMBOL-DEF UUID="73d40591-e340-4486-a621-1cce1e1d67b1">
+																	<SHORT-NAME>EthRegMemRegionPool</SHORT-NAME>
+																	<LONG-NAME>
+																		<L-4 L="EN">Register Memory Region Pool</L-4>
+																	</LONG-NAME>
+																	<DESC>
+																		<L-2 L="EN">This parameter defines the Memory Region Pool where the virtual Memory Region to map the registers into the virtual address space is drawn from.
+
+</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<SCOPE>LOCAL</SCOPE>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<REQUIRES-INDEX>false</REQUIRES-INDEX>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<ECUC-LINKER-SYMBOL-DEF-VARIANTS>
+																		<ECUC-LINKER-SYMBOL-DEF-CONDITIONAL>
+																			<DEFAULT-VALUE>__ghs_VirtualMemoryRegionPool</DEFAULT-VALUE>
+																			<MIN-LENGTH>1</MIN-LENGTH>
+																		</ECUC-LINKER-SYMBOL-DEF-CONDITIONAL>
+																	</ECUC-LINKER-SYMBOL-DEF-VARIANTS>
+																</ECUC-LINKER-SYMBOL-DEF>
+																<ECUC-INTEGER-PARAM-DEF UUID="a46e329c-091d-4b63-a67c-1aefa09c145c">
+																	<SHORT-NAME>EthEventPriority</SHORT-NAME>
+																	<LONG-NAME>
+																		<L-4 L="EN">Event Priority</L-4>
+																	</LONG-NAME>
+																	<DESC>
+																		<L-2 L="EN">This parameter defines the prioirty of the event issued to user space to handle interrupt events issued by the Ethernet controller.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<SCOPE>LOCAL</SCOPE>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<REQUIRES-INDEX>false</REQUIRES-INDEX>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<DEFAULT-VALUE>0</DEFAULT-VALUE>
+																	<MAX>65535</MAX>
+																	<MIN>0</MIN>
+																</ECUC-INTEGER-PARAM-DEF>
+																<ECUC-LINKER-SYMBOL-DEF UUID="6a54bbdb-00e2-410a-b9bb-0851291347d2">
+																	<SHORT-NAME>EthAsrOsWrapperIsrNo</SHORT-NAME>
+																	<LONG-NAME>
+																		<L-4 L="EN">AUTOSAR OS Wrapper ISR Number</L-4>
+																	</LONG-NAME>
+																	<DESC>
+																		<L-2 L="EN">This parameter defines the define generated by the INTEGRITY AUTOSAR OS wrapper for the ISR number related to the Ethernet controller.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<SCOPE>LOCAL</SCOPE>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<REQUIRES-INDEX>false</REQUIRES-INDEX>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<ECUC-LINKER-SYMBOL-DEF-VARIANTS>
+																		<ECUC-LINKER-SYMBOL-DEF-CONDITIONAL>
+																			<DEFAULT-VALUE>EthIsr_0</DEFAULT-VALUE>
+																			<MIN-LENGTH>1</MIN-LENGTH>
+																		</ECUC-LINKER-SYMBOL-DEF-CONDITIONAL>
+																	</ECUC-LINKER-SYMBOL-DEF-VARIANTS>
+																</ECUC-LINKER-SYMBOL-DEF>
+															</PARAMETERS>
+														</ECUC-PARAM-CONF-CONTAINER-DEF>
+													</CHOICES>
+												</ECUC-CHOICE-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+							</CONTAINERS>
+						</ECUC-MODULE-DEF>
+						<BSW-IMPLEMENTATION UUID="730c1fb3-27f3-4b92-887f-c160f6ca849c">
+							<SHORT-NAME>Eth_Impl</SHORT-NAME>
+							<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+							<SW-VERSION>2.05.03</SW-VERSION>
+							<USED-CODE-GENERATOR>DaVinci Configurator</USED-CODE-GENERATOR>
+							<VENDOR-ID>30</VENDOR-ID>
+							<AR-RELEASE-VERSION>4.01.01</AR-RELEASE-VERSION>
+							<BEHAVIOR-REF DEST="BSW-INTERNAL-BEHAVIOR">/MICROSAR/Eth_ib_bswmd/BswModuleDescriptions/Eth/EthBehavior</BEHAVIOR-REF>
+							<PRECONFIGURED-CONFIGURATION-REFS>
+								<PRECONFIGURED-CONFIGURATION-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/MICROSAR/Eth_Tricore/Eth_Pre</PRECONFIGURED-CONFIGURATION-REF>
+							</PRECONFIGURED-CONFIGURATION-REFS>
+							<RECOMMENDED-CONFIGURATION-REFS>
+								<RECOMMENDED-CONFIGURATION-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/MICROSAR/Eth_Tricore/Eth_Rec</RECOMMENDED-CONFIGURATION-REF>
+							</RECOMMENDED-CONFIGURATION-REFS>
+							<VENDOR-API-INFIX>Tricore</VENDOR-API-INFIX>
+							<VENDOR-SPECIFIC-MODULE-DEF-REFS>
+								<VENDOR-SPECIFIC-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/MICROSAR/Eth_Tricore/Eth</VENDOR-SPECIFIC-MODULE-DEF-REF>
+							</VENDOR-SPECIFIC-MODULE-DEF-REFS>
+						</BSW-IMPLEMENTATION>
+						<ECUC-MODULE-CONFIGURATION-VALUES UUID="5f59b6fb-c04e-459b-a618-f8c82324647f">
+							<SHORT-NAME>Eth_Pre</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/Eth_Tricore/Eth</DEFINITION-REF>
+							<CONTAINERS></CONTAINERS>
+						</ECUC-MODULE-CONFIGURATION-VALUES>
+						<ECUC-MODULE-CONFIGURATION-VALUES UUID="c085d1b7-1de7-4317-a235-dd5a09081291">
+							<SHORT-NAME>Eth_Rec</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/Eth_Tricore/Eth</DEFINITION-REF>
+							<CONTAINERS></CONTAINERS>
+						</ECUC-MODULE-CONFIGURATION-VALUES>
+					</ELEMENTS>
+				</AR-PACKAGE>
+			</AR-PACKAGES>
+		</AR-PACKAGE>
+	</AR-PACKAGES>
+</AUTOSAR>

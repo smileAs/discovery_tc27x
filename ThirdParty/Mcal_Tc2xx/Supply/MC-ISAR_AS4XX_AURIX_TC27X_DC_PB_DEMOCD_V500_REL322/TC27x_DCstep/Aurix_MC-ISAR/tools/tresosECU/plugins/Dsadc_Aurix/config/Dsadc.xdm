@@ -1,0 +1,1784 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2014)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**   $FILENAME   : Dsadc.xdm $                                                **
+**                                                                            **
+**   $CC VERSION : \main\34 $                                                 **
+**                                                                            **
+**   $DATE       : 2016-11-23 $                                               **
+**                                                                            **
+**   AUTHOR      : DL-AUTOSAR-Engineering                                     **
+**                                                                            **
+**   VENDOR      : Infineon Technologies                                      **
+**                                                                            **
+**   DESCRIPTION : XML Data Model for Dsadc driver                            **
+**                                                                            **
+**   MAY BE CHANGED BY USER [yes/no]: No                                      **
+**                                                                            **
+*******************************************************************************/
+
+/*******************************************************************************
+**                                                                            **
+**  TRACEABILITY:[cover parentID=]                                            **
+**                                                                            **
+**  XML Data Model for Dsadc driver                                           **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+*******************************************************************************/
+/*  TRACEABILITY: [cover parentID= SAS_NAS_DSADC_PR2838,SAS_NAS_DSADC_PR2839,
+                   SAS_NAS_DSADC_PR2840,SAS_NAS_DSADC_PR2841,SAS_NAS_DSADC_PR2842,
+                   SAS_NAS_DSADC_PR2843,SAS_NAS_DSADC_PR2844,SAS_NAS_DSADC_PR2845,
+                   SAS_NAS_DSADC_PR2846,SAS_NAS_DSADC_PR2847,DS_NAS_HE2_DSADC_PR3017],
+                   SAS_NAS_HE2_DSADC_PR3054_1,SAS_NAS_HE2_DSADC_PR3054_2,
+                   SAS_NAS_HE2_DSADC_PR3054_3,SAS_NAS_HE2_DSADC_PR3054_4 [/cover]*/
+
+-->
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar"  
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd"
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX" type="AR-PACKAGE">
+        <a:a name="UUID" value="DCE:3ae9f400-6b6b-42ec-8312-f89a60000000"/>
+        <d:lst type="ELEMENTS">
+          <d:chc name="DsadcParameterDefinition" type="AR-ELEMENT" 
+                 value="ECU_PARAMETER_DEFINITION">
+            <d:ctr type="AR-ELEMENT">
+              <a:a name="DEF" 
+                   value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+              <a:a name="UUID" value="ECUC:4c30de73-30fc-43b3-a1b3-e74210000000"/>
+            </d:ctr>
+          </d:chc>
+          <d:chc name="Dsadc" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="RELEASE" value="asc:4.0"/>
+              <a:a name="UUID" value="DCE:d9c9a60e-d7b6-4d89-9688-5de760000000"/>
+              <a:a name="DESC" 
+                   value="EN: Configuration of the Dsadc (Delta Sigma Analog Digital Conversion) module."/>
+              <a:a name="LOWER-MULTIPLICITY" value="0"/>
+              <a:a name="UPPER-MULTIPLICITY" value="1"/>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+			  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:da name="DEFAULT" value="VariantPostBuildSelectable"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPostBuildLoadable</a:v>
+                  <a:v>VariantPostBuildSelectable</a:v>
+                </a:da>
+              </v:var>
+              
+              <v:ctr name="DsadcGeneral" type="IDENTIFIABLE">                
+                <a:a name="DESC" 
+                     value="EN: This is the general container that contains the post-build selectable configuration parameters"/>                     
+                <a:a name="UUID" 
+                     value="DCE:dcc39b88-cc2b-4358-ba88-30120722c6ca"/>
+                <v:var name="DsadcDevErrorDetect" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FR: Enables/Disables the Development Error Detection in the Dsadc Driver"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                       value="DCE:a4e850e4-be6b-4d72-b360-c13bb0bff7fa"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="TOOLTIP" value="Enables/Disables the Development Error Detection "/>
+                </v:var>
+                <v:var name="DsadcVersionInfoApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FR: This parameter decides the availability of the API Dsadc_GetVersionInfo in the code"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                       value="DCE:9812df82-892b-4abc-99d9-66bfcc6198a1"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="TOOLTIP" value="Enable or disable version info API call "/>
+                </v:var>
+                <v:var name="DsadcDeInitApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FR: This parameter decides the availability of the API Dsadc_DeInit"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>                       
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                       value="DCE:b8ede77d-3270-4da8-b3b5-3bf169de9af0"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="TOOLTIP" value="Enable or disable Deinit API call "/>
+                </v:var>
+                <v:var name="DsadcPBFixedAddress" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FR: This parameter decides if PB Fixed Address is ON"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>                       
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                       value="DCE:b8ede77d-3270-4da8-b3b5-3bf169de4cc1"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="INVALID" type="XPath">
+                  <a:tst expr="(num:i(count(../../DsadcConfigSet/*))) > 1 and . = 'true'"
+                   true="Wrong Configuration. When DsadcPBFixedAddress is enabled then only 1 Config set is permitted. Remove the other Config sets."/>
+                  </a:da>
+                  <a:da name="TOOLTIP" value="Enable or disable PB fixed address "/>
+                </v:var>
+                <v:var name="DsadcResetSfrAtInit" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FR: To enable/disable resetting SFR to its reset value in the init function "/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                       value="DCE:a5d250e4-be6b-4d72-b360-c13bb0bff7fa"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="TOOLTIP" value="Enable/disable resetting SFR "/>
+                </v:var>
+                <v:var name="DsadcDebugSupport" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FR: This parameter decides if Dsadc variables are available for debug"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>                       
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                       value="DCE:b8ede77d-3270-4da8-b3b5-3bf169de4cc2"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="TOOLTIP" value="Enable or disable usage of debug variables "/>
+                </v:var> 
+                <v:var name="DsadcEnableLimitCheck" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>"FR: Enable / Disable auxiliary filter chain of DSADC.
+                                  true: The Limit checking feature is enabled for Dsadc driver.
+                                  false: The Limit checking feature is disabled for Dsadc driver."</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>                       
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" value="021db8da-97dc-4ad8-a8c3-187626822cc3"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="TOOLTIP" value="Enable or disable usage of auxiliary filter chain "/>
+                </v:var>  
+                <v:var name="DsadcResolverSupport" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FR: This parameter decides if Dsadc support resolver feature - Carrier generation, Rectifier and synchronization"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>                       
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                       value="DCE:b8ede77d-3270-4da8-b3b5-3bf169deccc2"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="TOOLTIP" value="Enable or disable carrier generation "/>
+                </v:var> 
+                <v:var name="DsadcInitialConfigEnable" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="FR: This parameter is used to enable configuring of initial global and channel configuration registers.
+                                  This parameter is applicable for TC27x DA, TC26x BB, TC29x BB devices. 
+                                  User should ensure only these devices are used before enabling this parameter."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>                       
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" 
+                       value="DCE:b8ede77d-3e40-4da8-b3b5-3bf169deccc2"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="WARNING" type="XPath">
+                    <a:tst expr="(. = 'true')" true="The parameter DsadcInitialConfigEnable should be set to true, only for devices TC26xBB,TC26xBA,TC29xBA,TC29xBB TC27xDA"/>
+                  </a:da>
+                  <a:da name="TOOLTIP" value="Enable or disable configuring initial configuration registers."/>
+                </v:var>
+                <v:var name="DsadcRunningInUser0Mode" type="BOOLEAN">
+                <a:a name="TOOLTIP"  value="EN: Pre-processor switch to enable / disable the driver run in User-0 Mode."/>
+                <a:a name="DESC"
+                       value="If this parameter is set to TRUE, then the driver run in User-0 Mode."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="bfef9f3f-cf0f-4f7f-9f1f-6f1f2fcfff1f"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="DsadcUserModeDeInitApiEnable" type="BOOLEAN">
+                  <a:a name="TOOLTIP" value="EN: Pre-processor switch to enable / disable the execution of DeInit API in User-1 Mode."/>                 
+                  <a:a name="DESC" 
+                       value="Pre-processor switch to enable / disable the execution of DeInit API in User-1 Mode."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="bfef9f3f-bf0f-4f7f-9f1f-6f1fbf3fff1f"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="DsadcUserModeInitApiEnable" type="BOOLEAN">
+                  <a:a name="TOOLTIP" value="EN: Pre-processor switch to enable / disable the execution of Init API in User-1 Mode."/>
+                  <a:a name="DESC"
+                       value="Pre-processor switch to enable / disable the execution of Init API in User-1 Mode."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="bfef9f3f-cf0f-4f7f-bf1f-6f1fbfcf4f1f"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="DsadcUserModeRuntimeApiEnable" type="BOOLEAN">
+                  <a:a name="TOOLTIP"
+                       value="EN: Pre-processor switch to enable / disable the execution of all APIs other than Init and DeInit in User-1 Mode."/>
+                  <a:a name="DESC"
+                       value="Pre-processor switch to enable / disable protected register access in all the APIs other than Init/Deinit APIs"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="bfef9f3f-cf0f-4f7f-9f1f-bf1fbfcfff5f"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+              </v:ctr>  
+             
+              <v:lst name="DsadcConfigSet" type="MULTIPLE-CONFIGURATION-CONTAINER">
+                <a:da name="MIN" value="1"/>
+                <v:ctr name="DsadcConfigSet" type="MULTIPLE-CONFIGURATION-CONTAINER">
+                  <a:a name="DESC" 
+                       value="EN: This is the base container that contains Dsadc module Related Parameters"/>
+                  <a:a name="UUID" value="ccda81dc-46cf-4145-858b-7c947884702f"/>
+                  <v:ref name="DsadcSystemClockRef" type="REFERENCE">
+                  <a:a name="DESC">
+                   <a:v>FR: This parameter refers to the system clock configured using the Mcu_InitClock function.
+                           This parameter should refer to a valid McuClockSetting Configuration
+                           (/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint) </a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                      <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" value="9ef075e8-51b4-4d4b-bb53-fc516d8f2b23"/>
+                  <a:da name="REF"
+                        value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint"/>
+                  </v:ref>
+                  <v:var name="DsadcTrimmingValue" type="INTEGER">
+                        <a:a name="DESC" 
+                             value="FR: trimming value for dithering function "/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                         <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                         <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                        </a:a>                       
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="DCE:d6ea9dd9-1d6e-4d4b-b3a3-24e9f55c6ccc"/>
+                        <a:da name="DEFAULT" value="0"/>
+                        <a:da name="ENABLE" type="XPath">
+                         <a:tst expr="../../../DsadcGeneral/DsadcInitialConfigEnable = 'true'"
+                                     true = "true" false = "false"/>
+                        </a:da> 
+                        <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=7"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                        <a:da name="TOOLTIP" value="Define trimming value for dithering function "/>
+                      </v:var> 
+                      
+                      
+                       <v:ctr name="DsadcCMHVoltage" type="IDENTIFIABLE">
+                        <a:a name="DESC" 
+                             value="EN: This container contains parameters to enable and select Vcmh voltage."/>
+                        <a:a name="UUID" value="ccda81dc-46cf-4145-858b-7c9478eccccc"/> 
+                        <a:da name="ENABLE" type="XPath">
+                         <a:tst expr="( (ecu:get('Dsadc.CommonModeHoldVolExits') = 'true')) "/> 
+                        </a:da>
+                        <v:var name="DsadcCMHVoltageEnableAlways" type="BOOLEAN">
+                            <a:a name="DESC"> 
+                            <a:v>"FR: If this value is true - Enable common mode hold voltage all the time
+                                      If this value is false - enable common mode hold voltage when INxPVCy or INxNVCy is set"</a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-86ee9e8ccc31"/>
+                            <a:da name="DEFAULT" value="false"/>
+                            <a:da name="TOOLTIP" value="Enable common mode hold voltage"/>
+                          </v:var>   
+                           <v:var name="DsadcCMHVoltageSelect" type="ENUMERATION">
+                             <a:a name="DESC"> 
+                            <a:v>"FR: Defines the common mode hold voltage for Dsadc Channel
+                                CMHVOLTAGE_A = VDDM div 2.00 (1.65 V for VAREF = 5.0 V)
+                                CMHVOLTAGE_B = VDDM / 2.27 (2.2 V for VAREF = 5.0 V)
+                                CMHVOLTAGE_C = VDDM / 3.03 (2.5 V for VAREF = 5.0 V)"</a:v>   
+                               </a:a>     
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-96ee9e855cc8"/>
+                            <a:da name="DEFAULT" value="CMHVOLTAGE_A"/>
+                            <a:da name="RANGE">
+                            <a:v>CMHVOLTAGE_A</a:v>
+                            <a:v>CMHVOLTAGE_B</a:v>
+                            <a:v>CMHVOLTAGE_C</a:v>
+                            </a:da>         
+                          <a:da name="TOOLTIP" value="Select common mode hold voltage"/>                            
+                          </v:var>
+                          
+                    </v:ctr>
+                          
+                      
+                      
+                      
+                    <v:ctr name="DsadcClockConfiguration" type="IDENTIFIABLE">                      
+                      <a:a name="POSTBUILDCHANGEABLE" value="false"/>
+                      <a:a name="UUID" 
+                           value="DCE:6062ca80-76f1-43eb-8fae-6b10a59e2ccc"/>
+                      <a:a name="DESC" 
+                           value="EN: This is the container that contains Dsadc Clock Reelated Parameters"/>                           
+                       <v:var name="DsadcClockSource" type="ENUMERATION">
+                        <a:a name="DESC" 
+                             value="FR: Dsadc Clock to be used for internal Modulator"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                         <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                         <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                        </a:a>                       
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="DCE:213664d2-5a6b-41ca-af7d-cbfa8215fccc"/>
+                        <a:da name="DEFAULT" value="CLOCK_FDSD"/>
+                        <a:da name="RANGE">
+                          <a:v>CLOCK_OFF</a:v>  
+                          <a:v>CLOCK_FDSD</a:v> 
+                          <a:v>CLOCK_FERAY</a:v>
+                          <a:v>CLOCK_FOSC0</a:v> 
+                        </a:da>
+                        <a:da name="TOOLTIP" value="Select source clock for DSADC"/>
+                      </v:var>
+                       <v:var name="DsadcPowerSupply" type="ENUMERATION">
+                        <a:a name="DESC" 
+                             value="FR: Dsadc Low Power Supply select for internal operation"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                         <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                         <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                        </a:a>                      
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="DCE:213664d2-5a6b-41ca-af7d-cbfa8215fcc1"/>
+                        <a:da name="DEFAULT" value="POWERSUPPLY_5V"/>
+                        <a:da name="RANGE">
+                          <a:v>POWERSUPPLY_5V</a:v>  
+                          <a:v>LOWPOWERSUPPLY_3_3V</a:v> 
+                        </a:da>
+                        <a:da name="TOOLTIP" value="Select power supply "/>
+                      </v:var>                      
+                      <v:var name="DsadcSleepMode" type="ENUMERATION">
+                        <a:a name="DESC" 
+                             value="FR: Enables/Disables the Sleep Mode for the DSADC peripheral"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                         <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                         <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="DCE:d4aec598-5cc7-4487-9530-36ee9e853ccc"/>
+                        <a:da name="DEFAULT" value="SLEEP_ENABLE"/>
+                        <a:da name="RANGE">
+                          <a:v>SLEEP_ENABLE</a:v>
+                          <a:v>SLEEP_DISABLE</a:v>
+                        </a:da>
+                        <a:da name="TOOLTIP" value="Enable or disable sleep mode "/>
+                      </v:var>
+                    </v:ctr>
+                    <v:ctr name="DsadcCarrierGenConfiguration" type="IDENTIFIABLE">                      
+                      <a:a name="POSTBUILDCHANGEABLE" value="false"/>
+                      <a:a name="UUID" value="DCE:6062ca80-76f1-43eb-8fae-6b10a5cccccc"/> 
+                      <a:a name="DESC" 
+                           value="EN: This is the container that contains Carrier Generation related Parameters"/>                      
+                      <v:var name="DsadcCarrierWaveformMode" type="ENUMERATION">
+                        <a:a name="DESC" 
+                             value="FR: DSADC Carrier Waveform generation during initilization"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                         <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                         <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="DCE:d4aec598-5cc7-4487-9530-36ee9e854ccc"/>
+                        <a:da name="DEFAULT" value="STOPPED"/>
+                        <a:da name="RANGE">
+                          <a:v>STOPPED</a:v>
+                          <a:v>WAVEFORMMODE_SQUARE</a:v>
+                          <a:v>WAVEFORMMODE_TRIANGLE</a:v>
+                          <a:v>WAVEFORMMODE_SINE</a:v>
+                        </a:da>
+                        <a:da name="TOOLTIP" value="Select carrier waveform mode "/>
+                      </v:var> 
+                      <v:var name="DsadcBitReversePWM" type="ENUMERATION">
+                        <a:a name="DESC" 
+                             value="FR: Carrier signal-PWM is generated in Bit-Reverse order"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                         <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                         <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="DCE:d4aec598-5cc7-4487-9530-36ee9e854cc1"/>
+                        <a:da name="DEFAULT" value="NORMAL_MODE"/>
+                       <a:da name="RANGE">
+                          <a:v>NORMAL_MODE</a:v>
+                          <a:v>BIT_REVERSE_MODE</a:v>
+                        </a:da>  
+                        <a:da name="TOOLTIP" value="Select carrier signal sign mode "/>                        
+                      </v:var>
+                      <v:var name="DsadcCarrierSignalPolarity" type="ENUMERATION">
+                        <a:a name="DESC" 
+                             value="FR: Carrier signal-PWM is started with +1 or -1"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                         <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                         <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="DCE:d4aec598-5cc7-4487-9530-36ee9e855ccc"/>
+                        <a:da name="DEFAULT" value="NORMAL"/>
+                       <a:da name="RANGE">
+                          <a:v>NORMAL</a:v>
+                          <a:v>INVERTED</a:v>
+                        </a:da> 
+                        <a:da name="TOOLTIP" value="Select carrier signal polarity mode "/>                        
+                      </v:var>
+                      <v:var name="DsadcCGDividerFactor" type="INTEGER">
+                        <a:a name="DESC" 
+                             value="FR: Divider Factor for the PWM Pattern Signal Generator; fCG = fCLK / (DsadcCGDividerFactor +1) * 2"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                         <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                         <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                        </a:a>                       
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="DCE:d6ea9dd7-1d6e-4d4b-b3a3-24e9f55c6ccc"/>
+                        <a:da name="DEFAULT" value="3"/>
+                        <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=15"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                        <a:da name="TOOLTIP" value="Enter divider factor for carrier signal generation "/>
+                      </v:var>                                                                                        
+                    </v:ctr>
+                    
+                    
+
+                    <v:lst name="DsadcChannelConfigSet" type="MAP">
+                      <a:da name="MIN" value="1"/>
+                      <a:da name="MAX" type="XPath" expr="ecu:get('Dsadc.NoOfChannels')"/>
+                      <v:ctr name="DsadcChannelConfigSet" type="IDENTIFIABLE">
+                        <a:a name="DESC" 
+                             value="EN: This container contains the channel configuration (parameters) depending on the hardware capability."/>
+                        <a:a name="UUID" value="ccda81dc-46cf-4145-858b-7c9478cccccc"/> 
+
+                        <v:var name="DsadcChannelID" type="INTEGER">
+                          <a:a name="DESC" 
+                               value="FR: Defines the Dsadc Channel number"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                           <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                          </a:a>                      
+                          <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                          <a:a name="UUID" 
+                               value="DCE:d4aec598-5cc7-4487-9530-36ee9e1ccccc"/>
+                        <a:da name="DEFAULT" type="XPath">
+                        <a:tst expr="text:split(ecu:get('Dsadc.AvailableChannels'), ' ')[position()-1 = ((node:fallback((node:current()/../@index),0))+0)]"/>                        
+                        </a:da>
+                        <a:da name="INVALID" type="Multi">
+                          <mt:xpath expr="contains(ecu:get('Dsadc.AvailableChannels'),.)" false="The Specified Channel is not available in the MC"/>
+                          <mt:range>
+                              <mt:tst expr="&gt;=0"/>
+                              <mt:tst expr="&lt;=9"/>
+                          </mt:range>                          
+                        </a:da>
+                        <a:da name="TOOLTIP" value="Enter DSADC channel number "/>
+                        </v:var>
+                        <v:var name="DsadcDitheringEnable0" type="BOOLEAN">
+                            <a:a name="DESC"> 
+                            <a:v>"FR: This parameter is used to enable dithering functionality of modulator 0 in twin modulator mode"</a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e8ccc31"/>
+                             <a:da name="ENABLE" type="XPath">
+                             <a:tst expr="../../../../../DsadcGeneral/DsadcInitialConfigEnable = 'true'"
+                                     true = "true" false = "false"/>
+                             </a:da>    
+                            <a:da name="DEFAULT" value="false"/>
+                            <a:da name="TOOLTIP" value="Enable or disable dithering functionality of modulator 0 "/>
+                          </v:var> 
+                          
+                          <v:var name="DsadcDitheringEnable1" type="BOOLEAN">
+                            <a:a name="DESC"> 
+                            <a:v>"FR: This parameter is used to enable dithering functionality of modulator 1 in twin modulator mode"</a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cd1-4487-9530-36ee9e8ccc31"/>
+                            <a:da name="ENABLE" type="XPath">
+                             <a:tst expr="../../../../../DsadcGeneral/DsadcInitialConfigEnable = 'true'"
+                                     true = "true" false = "false"/> 
+                             </a:da>     
+                            <a:da name="DEFAULT" value="false"/>
+                            <a:da name="TOOLTIP" value="Enable or disable dithering functionality of modulator 1 "/>
+                          </v:var>
+                          
+                          <v:var name="DsadcIntegratorResetEnable" type="BOOLEAN">
+                            <a:a name="DESC"> 
+                            <a:v>"FR: This parameter is used to enable reset of integrator by DCU counter.
+                            This paramter is no way related with integrator of demodulator "</a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e4f3c31"/>
+                             <a:da name="ENABLE" type="XPath">
+                            <a:tst expr="../../../../../DsadcGeneral/DsadcInitialConfigEnable = 'true'"
+                                     true = "true" false = "false"/>
+                             </a:da>    
+                            <a:da name="DEFAULT" value="false"/>
+                            <a:da name="TOOLTIP" value="Enable or disable integrator reset "/>
+                          </v:var>
+                          
+                        
+                          
+                        <v:ctr name="DsadcModulatorConfiguration" type="IDENTIFIABLE">                      
+                          <a:a name="POSTBUILDCHANGEABLE" value="false"/>
+                          <a:a name="UUID" value="DCE:6062ca80-76f1-43eb-8fae-6b10a5ccccc1"/> 
+                          <a:a name="DESC" 
+                               value="EN: This is the container that contains Dsadc Channel Modulator related Parameters"/>                          
+                          <v:var name="DsadcPositiveInputLine" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Configuration of Positive Input Line of Dsadc Channel"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855cc1"/>
+                            <a:da name="DEFAULT" value="INPUT_PIN"/>
+                            <a:da name="RANGE">
+                            <a:v>INPUT_PIN</a:v>
+                            <a:v>SUPPLY_VOLTAGE</a:v>
+                            <a:v>COMMON_MODE_VOLTAGE</a:v>
+                            <a:v>REFERENCE_GROUND</a:v>
+                            </a:da> 
+                            <a:da name="TOOLTIP" value="Select positive input line "/>                            
+                          </v:var> 
+                          <v:var name="DsadcNegativeInputLine" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Configuration of Negative Input Line of Dsadc Channel"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855cc2"/>
+                            <a:da name="DEFAULT" value="INPUT_PIN"/>
+                            <a:da name="RANGE">
+                            <a:v>INPUT_PIN</a:v>
+                            <a:v>SUPPLY_VOLTAGE</a:v>
+                            <a:v>COMMON_MODE_VOLTAGE</a:v>
+                            <a:v>REFERENCE_GROUND</a:v>
+                            </a:da> 
+                             <a:da name="TOOLTIP" value="Select negative input line "/>                            
+                          </v:var>  
+                          <v:var name="DsadcInputPinSelection" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Defines the initial or permanent setting for the input multiplexer of Dsadc Channel"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855cc3"/>
+                            <a:da name="DEFAULT" value="INPUTPIN_A"/>
+                            <a:da name="RANGE">
+                            <a:v>INPUTPIN_A</a:v>
+                            <a:v>INPUTPIN_B</a:v>
+                            <a:v>INPUTPIN_C</a:v>
+                            <a:v>INPUTPIN_D</a:v>
+                            </a:da>
+                            <a:da name="TOOLTIP" value="Select input of the input multiplexer "/>                            
+                          </v:var>   
+                          
+                          <v:var name="DsadcInputGain" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Gain Select of Analog Input Path of Dsadc Channel"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855cc4"/>
+                            <a:da name="DEFAULT" value="GAIN_FACTOR1"/>
+                            <a:da name="RANGE">
+                            <a:v>GAIN_FACTOR1</a:v>
+                            <a:v>GAIN_FACTOR2</a:v>
+                            <a:v>GAIN_FACTOR4</a:v>
+                            <a:v>GAIN_FACTOR8</a:v>
+                            <a:v>GAIN_FACTOR16</a:v>
+                            </a:da>
+                            <a:da name="TOOLTIP" value="Select input gain "/>                            
+                          </v:var> 
+                          <v:var name="DsadcCommonModeVoltage" type="ENUMERATION">
+                            <a:a name="DESC"> 
+                            <a:v>"FR: Defines the common mode voltage for Dsadc Channel modulator
+COMMONMODEVOLTAGE_A = VAREF / 3.03 (1.65 V for VAREF = 5.0 V)
+COMMONMODEVOLTAGE_B = VAREF / 2.27 (2.2 V for VAREF = 5.0 V)
+COMMONMODEVOLTAGE_C = VAREF / 2.0 (2.5 V for VAREF = 5.0 V)"</a:v>  
+                            </a:a> 
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855cc5"/>
+                            <a:da name="DEFAULT" value="COMMONMODEVOLTAGE_A"/>
+                            <a:da name="RANGE">
+                            <a:v>COMMONMODEVOLTAGE_A</a:v>
+                            <a:v>COMMONMODEVOLTAGE_B</a:v>
+                            <a:v>COMMONMODEVOLTAGE_C</a:v>
+                            </a:da> 
+                            <a:da name="TOOLTIP" value="Select common mode voltage "/>                            
+                          </v:var>
+                          <v:var name="DsadcDividerFactor" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Defines the operation frequency for the modulator 
+                                 derived from the selected internal clock source."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855cc6"/>
+                            <a:da name="DEFAULT" value="CLOCKDIVIDER_DIV2"/>
+                            <a:da name="RANGE">
+                            <a:v>CLOCKDIVIDER_DIV2</a:v>
+                            <a:v>CLOCKDIVIDER_DIV4</a:v>
+                            <a:v>CLOCKDIVIDER_DIV6</a:v>
+                            <a:v>CLOCKDIVIDER_DIV8</a:v>
+                            <a:v>CLOCKDIVIDER_DIV10</a:v>
+                            <a:v>CLOCKDIVIDER_DIV12</a:v>
+                            <a:v>CLOCKDIVIDER_DIV14</a:v>
+                            <a:v>CLOCKDIVIDER_DIV16</a:v>
+                            <a:v>CLOCKDIVIDER_DIV18</a:v>
+                            <a:v>CLOCKDIVIDER_DIV20</a:v>
+                            <a:v>CLOCKDIVIDER_DIV22</a:v>
+                            <a:v>CLOCKDIVIDER_DIV24</a:v>
+                            <a:v>CLOCKDIVIDER_DIV26</a:v>
+                            <a:v>CLOCKDIVIDER_DIV28</a:v>
+                            <a:v>CLOCKDIVIDER_DIV30</a:v>
+                            <a:v>CLOCKDIVIDER_DIV32</a:v>
+                            </a:da> 
+                            <a:da name="TOOLTIP" value="Select clock divider of the modulator clock "/>                            
+                          </v:var>
+                          <v:var name="DsadcInputMuxControlMode" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Defines the condition for a trigger event to control the input multiplexer"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855cc7"/>
+                            <a:da name="DEFAULT" value="SOFTWARE_CONTROL"/>
+                            <a:da name="RANGE">
+                            <a:v>SOFTWARE_CONTROL</a:v>
+                            <a:v>TRIGGER_EVENT_FALLING_EDGE</a:v>
+                            <a:v>TRIGGER_EVENT_RISING_EDGE</a:v>
+                            <a:v>TRIGGER_EVENT_ANY_EDGE</a:v>
+                            </a:da> 
+                            <a:da name="TOOLTIP" value="Select condition for a trigger event to control the input multiplexer "/>                            
+                          </v:var>  
+                          <v:var name="DsadcInputMuxActionMode" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Defines the mechanism by which the input multiplexer is controlled."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855cc8"/>
+                            <a:da name="DEFAULT" value="PRESET_MODE"/>
+                            <a:da name="RANGE">
+                            <a:v>PRESET_MODE</a:v>
+                            <a:v>SINGLE_STEP_MODE</a:v>
+                            </a:da>
+                            <a:da name="TOOLTIP" value="Select the mechanism by which the input multiplexer is controlled "/>                            
+                          </v:var>
+                          <v:var name="DsadcAutomaticPowerControl" type="BOOLEAN">
+                            <a:a name="DESC"> 
+                            <a:v>"FR: Enable Automatic power control option.
+FASLE: Modulator active while its associated bit MxRUN is set.
+TRUE: Modulator active while MxRUN is set and the gate signal (selected trigger) is active"</a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aed598-5cc7-5187-9530-36ee9e8ccc31"/>
+                            <a:da name="DEFAULT" value="false"/>
+                            <a:da name="TOOLTIP" value="Enable or disable automatic power control "/> 
+                          </v:var> 
+                                                 
+                       
+                         <v:ctr name="DsadcCMHVoltageInputSelect" type="IDENTIFIABLE"> 
+                          <a:a name="POSTBUILDCHANGEABLE" value="false"/>
+                          <a:a name="UUID" value="DCE:6062ca80-76f1-43eb-8fae-6b10a5cdccc1"/> 
+                          <a:a name="DESC" 
+                               value="EN: This is the container to enable and select common mode hold voltage for each channel"/>                          
+                          <a:da name="ENABLE" type="XPath">
+                          <a:tst expr="( (ecu:get('Dsadc.CommonModeHoldVolExits') = 'true')) "/> 
+                          </a:da>
+                                             
+                          <v:var name="DsadcVoltageControlPositiveInput" type="BOOLEAN">
+                           <a:a name="DESC"> 
+                            <a:v>"FR: This pin is connected to the common mode hold voltage VCMH while 
+                            it is not selected for conversions"</a:v>
+                            </a:a>
+                             <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36e19e8ccc31"/>
+                            <a:da name="DEFAULT" value="false"/>
+                            <a:da name="TOOLTIP" value="Enable or disable CMH voltage positive input "/>
+                          </v:var> 
+                          <v:var name="DsadcVoltageControlNegativeInput" type="BOOLEAN">
+                          <a:a name="DESC"> 
+                            <a:v>"FR: This pin is connected to the common mode hold voltage VCMH while 
+                            it is not selected for conversions"</a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36e29e8ccc31"/>
+                            <a:da name="DEFAULT" value="false"/>
+                            <a:da name="TOOLTIP" value="Enable or disable CMH voltage negative input "/>
+                          </v:var> 
+                        </v:ctr>
+                      </v:ctr>  
+
+                        <v:ctr name="DsadcDeModulatorConfiguration" type="IDENTIFIABLE">                      
+                          <a:a name="POSTBUILDCHANGEABLE" value="false"/>
+                          <a:a name="UUID" value="DCE:6062ca80-76f1-43eb-8fae-6b10a5cccc11"/> 
+                          <a:a name="DESC" 
+                               value="EN: This is the container that contains Dsadc Channel DeModulator related Parameters"/>                          
+                          <v:var name="DsadcInputDataSourceSelect" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Select Input data source for Dsadc Channel demodulator"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c11"/>
+                            <a:da name="DEFAULT" value="ONCHIPSTANDALONE_3RDORDER"/>
+                            <a:da name="RANGE">
+                            <a:v>ONCHIPSTANDALONE_3RDORDER</a:v>
+                            <a:v>ONCHIPCOMBINED_2NDORDER</a:v>
+                            <a:v>EXTERNAL_DIRECTINPUTA</a:v>
+                            <a:v>EXTERNAL_INVERTEDINPUTA</a:v>
+                            <a:v>EXTERNAL_DIRECTINPUTB</a:v>
+                            <a:v>EXTERNAL_INVERTEDINPUTB</a:v>
+                            <a:v>ONCHIPCOMBINED_4THORDER</a:v>
+                            </a:da>  
+                            <a:da name="TOOLTIP" value="Select modulator output"/>                            
+                          </v:var> 
+                          <v:var name="DsadcTriggerSelect" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Selects an input for the trigger signal (for integrator,
+                                 timestamp, multiplexer control, service request gating)"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c12"/>
+                            <a:da name="DEFAULT" value="TRIGGERINPUT_A"/>
+                            <a:da name="RANGE">
+                            <a:v>TRIGGERINPUT_A</a:v>
+                            <a:v>TRIGGERINPUT_B</a:v>
+                            <a:v>TRIGGERINPUT_C</a:v>
+                            <a:v>TRIGGERINPUT_D</a:v>
+                            <a:v>TRIGGERINPUT_E</a:v>
+                            <a:v>TRIGGERINPUT_F</a:v>
+                            <a:v>TRIGGERINPUT_G</a:v>
+                            <a:v>TRIGGERINPUT_H</a:v>
+                            </a:da> 
+                            <a:da name="TOOLTIP" value="Select trigger signal"/>                            
+                          </v:var>  
+                          <v:var name="DsadcIntegrationTriggerMode" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Select Dsadc channel Integrator trigger mode"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c13"/>
+                            <a:da name="DEFAULT" value="BYPASSED"/>
+                            <a:da name="RANGE">
+                            <a:v>BYPASSED</a:v>
+                            <a:v>FALLINGEDGE</a:v>
+                            <a:v>RISINGEDGE</a:v>
+                            <a:v>ALWAYSACTIVE</a:v>
+                            </a:da>
+                            <a:da name="TOOLTIP" value="Select integration trigger mode "/>                            
+                          </v:var>   
+                          <v:var name="DsadcTimestampTriggerMode" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Select Dsadc channel Timestamp trigger mode"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c14"/>
+                            <a:da name="DEFAULT" value="NOTRIGGER"/>
+                            <a:da name="RANGE">
+                            <a:v>NOTRIGGER</a:v>
+                            <a:v>FALLINGEDGE</a:v>
+                            <a:v>RISINGEDGE</a:v>
+                            <a:v>EACHEDGE</a:v>
+                            </a:da> 
+                            <a:da name="TOOLTIP" value="Select time stamp trigger mode "/>                            
+                          </v:var> 
+                          <v:var name="DsadcSampleClockSourceSelect" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Select Dsadc channel Clock source of input samples"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c15"/>
+                            <a:da name="DEFAULT" value="INTERNAL"/>
+                            <a:da name="RANGE">
+                            <a:v>INTERNAL</a:v>
+                            <a:v>INPUTA</a:v>
+                            <a:v>INPUTB</a:v>
+                            <a:v>INPUTC</a:v> 
+                            </a:da>  
+                            <a:da name="TOOLTIP" value="Select clock for demodulator "/>                            
+                          </v:var>
+                          <v:var name="DsadcDataStrobeGenerationMode" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Select Data Strobe Generation Mode of Dsadc channel"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c16"/>
+                            <a:da name="DEFAULT" value="NODATASTROBE"/>
+                            <a:da name="RANGE">
+                            <a:v>NODATASTROBE</a:v>
+                            <a:v>SAMPLEONRISINGEDGE</a:v>
+                            <a:v>SAMPLEONFALLINGEDGE</a:v>
+                            <a:v>SAMPLEONBOTHEDGES</a:v>
+                            <a:v>SAMPLEONTWORISINGEDGES</a:v>
+                            <a:v>SAMPLEONTWOFALLINGEDGES</a:v>
+                            </a:da>
+                            <a:da name="TOOLTIP" value="Select the edge of the clock on which data sample 
+                                                        is read from modulator to demodulator "/>                            
+                          </v:var>
+                        </v:ctr> 
+                         
+                        <v:ctr name="DsadcMainCICFilterConfiguration" type="IDENTIFIABLE">                      
+                          <a:a name="POSTBUILDCHANGEABLE" value="false"/>
+                          <a:a name="UUID" value="DCE:6062ca80-76f1-43eb-8fae-6b10a5cccc21"/> 
+                          <a:a name="DESC" 
+                               value="EN: This is the container that contains Dsadc Channel's Main Filter chain related Parameters"/>
+                          <v:var name="DsadcMainCombFilterEnable" type="BOOLEAN">
+                            <a:a name="DESC" 
+                                 value="FR: Enables/Disables Main CIC filter for Dsadc channel"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                  
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c21"/>
+                            <a:da name="DEFAULT" value="true"/>
+                            <a:da name="TOOLTIP" value="Enable or disable main filter chain "/>
+                          </v:var>
+                          <v:var name="DsadcMainCombFilterType" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Selects a main CIC filter type for Dsadc Channel"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c22"/>
+                            <a:da name="DEFAULT" value="CIC1"/>
+                            <a:da name="RANGE">
+                            <a:v>CIC1</a:v>
+                            <a:v>CIC2</a:v>
+                            <a:v>CIC3</a:v>
+                            <a:v>CICF</a:v>
+                            </a:da> 
+                            <a:da name="TOOLTIP" value="Select CIC filter "/>                            
+                          </v:var>  
+                          <v:var name="DsadcMainCombFilterShift" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Selects the displacement caused by the data shifter at the main CIC filter output"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c23"/>
+                            <a:da name="DEFAULT" value="NOSHIFT"/>
+                            <a:da name="RANGE">
+                            <a:v>NOSHIFT</a:v>
+                            <a:v>SHIFTBY1</a:v>
+                            <a:v>SHIFTBY2</a:v>
+                            <a:v>SHIFTBY3</a:v>
+                            </a:da> 
+                            <a:da name="TOOLTIP" value="Select data shift at main CIC filter"/>                            
+                          </v:var>   
+                          <v:var name="DsadcServiceRequestMode" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Select Service Request Generation Mode for Main Chain"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c24"/>
+                            <a:da name="DEFAULT" value="NEVER"/>
+                            <a:da name="RANGE">
+                            <a:v>NEVER</a:v>
+                            <a:v>HIGH_GATE_SIGNAL</a:v>
+                            <a:v>LOW_GATES_IGNAL</a:v>
+                            <a:v>EVERY_NEW_RESULT</a:v> 
+                            </a:da>
+                            <a:da name="TOOLTIP" value="Select the mode for main filter chain service request "/>                            
+                          </v:var> 
+                          <v:var name="DsadcDecimationFactor" type="INTEGER">
+                            <a:a name="DESC" 
+                                 value="FR: Select decimation factor for Main CIC filter"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                        
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c25"/>
+                            <a:da name="DEFAULT" value="50"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=128"/>
+                              <a:tst expr="&gt;=4"/>
+                            </a:da>
+                            <a:da name="TOOLTIP" value="Enter decimation factor for CIC filter "/>
+                          </v:var> 
+                          <v:var name="DsadcDecimationStartValue" type="INTEGER">
+                            <a:a name="DESC" 
+                                 value="FR: Select DecimationStartValue to begin decimation counter when started or restarted."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                        
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c26"/>
+                            <a:da name="DEFAULT" value="3"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=127"/>
+                              <a:tst expr="&gt;=3"/>
+                            </a:da>
+                            <a:da name="TOOLTIP" value="Enter start value for decimation factor "/>
+                          </v:var> 
+                        </v:ctr>  
+                        
+                        <v:ctr name="DsadcFIRFilterChainConfiguration" type="IDENTIFIABLE">                      
+                          <a:a name="POSTBUILDCHANGEABLE" value="false"/>
+                          <a:a name="UUID" value="DCE:6062ca80-76f1-43eb-8fae-6b10a5cccc31"/> 
+                          <a:a name="DESC" 
+                               value="EN: This is the container that contains Dsadc Channel's FIR Filter chain related Parameters"/>
+                          <v:var name="DsadcFirFilter0Enabled" type="BOOLEAN">
+                            <a:a name="DESC" 
+                                 value="FR: Enables/Disables FIR Low pass filter-0 for Dsadc channel"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c31"/>
+                            <a:da name="DEFAULT" value="true"/>
+                            <a:da name="TOOLTIP" value="Enable or disable FIR filter 0"/>
+                          </v:var>
+                          <v:var name="DsadcFirInternalShift" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Selects the displacement caused by the data shifter inbetween the FIR filter blocks"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c32"/>
+                            <a:da name="DEFAULT" value="NOSHIFT"/>
+                            <a:da name="RANGE">
+                            <a:v>NOSHIFT</a:v>
+                            <a:v>SHIFTBY1</a:v>
+                            </a:da> 
+                            <a:da name="TOOLTIP" value="Select data shift in between FIR filters  "/>                            
+                          </v:var>                           
+                          <v:var name="DsadcFirFilter1Enabled" type="BOOLEAN">
+                            <a:a name="DESC" 
+                                 value="FR: Enables/Disables FIR Low pass filter-1 for Dsadc channel"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                   
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c33"/>
+                            <a:da name="DEFAULT" value="true"/>
+                            <a:da name="INVALID" type="XPath">
+                            <a:tst expr="(../DsadcFirFilter1Enabled = 'true' and ../DsadcFirFilter0Enabled = 'false') = 'true'"
+                             true="If DsadcFirFilter1Enabled is set to true then DsadcFirFilter0Enabled shall also be set to true."/>
+                          </a:da> 
+                            <a:da name="TOOLTIP" value="Enable or disable FIR filter 1 "/>
+                          </v:var>
+                          <v:var name="DsadcFirDataShift" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Selects the displacement caused by the data shifter at the FIR filter output"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c34"/>
+                            <a:da name="DEFAULT" value="NOSHIFT"/>
+                            <a:da name="RANGE">
+                            <a:v>NOSHIFT</a:v>
+                            <a:v>SHIFTBY1</a:v>
+                            <a:v>SHIFTBY2</a:v>
+                            <a:v>SHIFTBY3</a:v>
+                            </a:da>  
+                            <a:da name="TOOLTIP" value="Select data shift at FIR filter output "/>                            
+                          </v:var>  
+                          <v:var name="DsadcDCOffsetFilterEnabled" type="BOOLEAN">
+                            <a:a name="DESC" 
+                                 value="FR: Enables/Disables offset(DC) compensation filter for Dsadc channel"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                  
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c27"/>
+                            <a:da name="DEFAULT" value="false"/>
+                            <a:da name="TOOLTIP" value="Enable or disable DC offset filter "/>
+                          </v:var>                                                    
+                          <v:var name="DsadcOffsetValue" type="INTEGER">
+                            <a:a name="DESC" 
+                                 value="FR: Enter signed value which is subtracted from each result
+                                        before being written to the corresponding channel result register."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                       
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c35"/>
+                            <a:da name="DEFAULT" value="0"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=32767"/>
+                              <a:tst expr="&gt;=-32768"/>
+                            </a:da>
+                            <a:da name="TOOLTIP" value="Enter offset value "/>
+                          </v:var> 
+                        </v:ctr> 
+
+                        <v:ctr name="DsadcAuxFilterConfiguration" type="IDENTIFIABLE">                      
+                          <a:a name="POSTBUILDCHANGEABLE" value="false"/>
+                          <a:a name="UUID" value="DCE:6062ca80-76f1-43eb-8fae-6b10a5cccc41"/> 
+                          <a:a name="DESC" 
+                               value="EN: This is the container that contains Dsadc Channel's Auxiliary Filter chain related Parameters"/>
+                          <a:da name="ENABLE" type="XPath">
+                          <a:tst expr="../../../../../DsadcGeneral/DsadcEnableLimitCheck = 'true'"
+                                     true = "true" false = "false"/> 
+                           </a:da> 
+                          
+                          <v:var name="DsadcAuxCombFilterType" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Selects a Auxilary CIC filter type for Dsadc Channel"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c41"/>
+                            <a:da name="DEFAULT" value="CIC1"/>
+                            <a:da name="RANGE">
+                            <a:v>CIC1</a:v>
+                            <a:v>CIC2</a:v>
+                            <a:v>CIC3</a:v>
+                            <a:v>CICF</a:v>
+                            </a:da> 
+                            <a:da name="TOOLTIP" value="Select CIC filter of auxiliary filter chain "/>                            
+                          </v:var>  
+                          <v:var name="DsadcAuxCombFilterShift" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Selects the displacement caused by the data shifter at the Auxilary CIC filter output"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c42"/>
+                            <a:da name="DEFAULT" value="NOSHIFT"/>
+                            <a:da name="RANGE">
+                            <a:v>NOSHIFT</a:v>
+                            <a:v>SHIFTBY1</a:v>
+                            <a:v>SHIFTBY2</a:v>
+                            <a:v>SHIFTBY3</a:v>
+                            </a:da>  
+                            <a:da name="TOOLTIP" value="Select data shift at CIC filter "/>                            
+                          </v:var>   
+                          <v:var name="DsadcAuxServiceRequestMode" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Select Service Request Generation Mode for Auxilary filter.
+                                         NEVER - no service request
+                                         AUXILIARY_FILTER - service request generation depends on DsadcAuxEventSelect 
+                                                               and DsadcAuxEventGate.
+                                         ALTERNATE_SOURCE - depends on sign delay capture value"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c43"/>
+                            <a:da name="DEFAULT" value="NEVER"/>
+                            <a:da name="RANGE">
+                            <a:v>NEVER</a:v>
+                            <a:v>AUXILARY_FILTER</a:v>
+                            <a:v>ALTERNATE_SOURCE</a:v>
+                            </a:da>
+                             <a:da name="TOOLTIP" value="Select source for service request generation of auxiliary chain"/>                            
+                          </v:var>
+                          <v:var name="DsadcAuxEventSelect" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Select an event for generating auxiliary service request."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c44"/>
+                            <a:da name="DEFAULT" value="EVERY_NEW_RESULT"/>
+                            <a:da name="RANGE">
+                            <a:v>EVERY_NEW_RESULT</a:v>
+                            <a:v>INSIDE_BOUNDARY</a:v>
+                            <a:v>OUTSIDE_BOUNDARY</a:v>
+                            </a:da>
+                            <a:da name="TOOLTIP" value="Select event for auxiliary service request generation"/>                            
+                            
+                          </v:var> 
+                          <v:var name="DsadcAuxEventGate" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Defines if events for the auxiliary filter are coupled to the integration window.
+                                        DEFINED_BY_EVENT_SELECT -generate events according to DsadcAuxEventSelect.
+                                        COUPLED_TO_INTEGRATOR - generate events only when the integrator is enabled and after discarding 
+                                            DsadcDiscardCount"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c45"/>
+                            <a:da name="DEFAULT" value="DEFINED_BY_EVENT_SELECT"/>
+                            <a:da name="RANGE">
+                            <a:v>DEFINED_BY_EVENT_SELECT</a:v>
+                            <a:v>COUPLED_TO_INTEGRATOR</a:v>   
+                            </a:da>
+                             <a:da name="TOOLTIP" value="Select source of event generation for auxiliary service request"/>                            
+                            
+                          </v:var> 
+                          <v:var name="DsadcAuxDecimationFactor" type="INTEGER">
+                            <a:a name="DESC" 
+                                 value="FR: Select decimation factor for Auxilary CIC filter"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                         
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c46"/>
+                            <a:da name="DEFAULT" value="32"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=32"/>
+                              <a:tst expr="&gt;=4"/>
+                            </a:da>
+                           <a:da name="TOOLTIP" value="Enter decimation factor of CIC filter"/>                            
+
+                          </v:var>
+                          <v:var name="DsadcLowerBoundaryValue" type="INTEGER">
+                            <a:a name="DESC" 
+                                 value="FR: Lower Boundary Value for Limit Checking"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                        
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c47"/>
+                            <a:da name="DEFAULT" value="0"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=32767"/>
+                              <a:tst expr="&gt;=-32768"/>
+                            </a:da>
+                           <a:da name="TOOLTIP" value="Enter lower bound value of result for limit check"/>                            
+
+                          </v:var>
+                           <v:var name="DsadcUpperBoundaryValue" type="INTEGER">
+                            <a:a name="DESC" 
+                                 value="FR: Upper Boundary Value for Limit Checking"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                        
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c48"/>
+                            <a:da name="DEFAULT" value="0"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=32767"/>
+                              <a:tst expr="&gt;=-32768"/>
+                            </a:da>
+                           <a:da name="TOOLTIP" value="Enter upper bound value of result for limit check "/>                            
+
+                          </v:var>
+                        </v:ctr>                         
+
+                        <v:ctr name="DsadcRecificationConfiguration" type="IDENTIFIABLE">                      
+                          <a:a name="POSTBUILDCHANGEABLE" value="false"/>
+                          <a:a name="UUID" value="DCE:6062ca80-76f1-43eb-8fae-6b10a5cccc51"/>
+                          <a:a name="DESC" 
+                               value="EN: This is the container that contains Dsadc Channel's Rectification related Parameters"/>
+                          <v:var name="DsadcRectifierEnabled" type="BOOLEAN">
+                            <a:a name="DESC" 
+                                 value="FR: Enables/Disables Rectifier for Dsadc channel"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                  
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c51"/>
+                            <a:da name="DEFAULT" value="false"/>
+                          <a:da name="TOOLTIP" value="Enable or disable rectifier"/>                            
+
+                          </v:var>                          
+                          <v:var name="DsadcRectifierSignSource" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Selects the sign signal that is to be delayed."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c52"/>
+                            <a:da name="DEFAULT" value="ONCHIPGENERATOR"/>
+                            <a:da name="RANGE">
+                            <a:v>ONCHIPGENERATOR</a:v>
+                            <a:v>NEXTCHANNEL</a:v>
+                            <a:v>EXTERNALA</a:v>
+                            <a:v>EXTERNALB</a:v>
+                            </a:da>                  
+                          <a:da name="TOOLTIP" value="Select sign signal for rectification"/>                            
+                            
+                          </v:var>  
+                          <v:var name="DsadcSyncPosSignDelayValue" type="INTEGER">
+                            <a:a name="DESC" 
+                                 value="FR: Sign Delay Value for Positive Halfwave"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                        
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c53"/>
+                            <a:da name="DEFAULT" value="0"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=255"/>
+                              <a:tst expr="&gt;=0"/>
+                            </a:da>
+                           <a:da name="TOOLTIP" value="Enter positive count delay value"/>                            
+
+                          </v:var>
+                          <v:var name="DsadcSyncNegSignDelayValue" type="INTEGER">
+                            <a:a name="DESC" 
+                                 value="FR: Sign Delay Value for Negative Halfwave"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                        
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c54"/>
+                            <a:da name="DEFAULT" value="0"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=255"/>
+                              <a:tst expr="&gt;=0"/>
+                            </a:da>
+                           <a:da name="TOOLTIP" value="Enter negative count delay value "/>                            
+
+                          </v:var>
+                        </v:ctr>  
+                        
+                        <v:ctr name="DsadcIntegrationConfiguration" type="IDENTIFIABLE">                      
+                          <a:a name="POSTBUILDCHANGEABLE" value="false"/>
+                          <a:a name="UUID" value="DCE:6062ca80-76f1-43eb-8fae-6b10a5cccc61"/>
+                          <a:a name="DESC" 
+                               value="EN: This is the container that contains Dsadc Channel's Integrator related Parameters"/>
+                          <v:var name="DsadcIntegrationWindowSize" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Selects the Integration Window is control by internal / external.
+                                          INTERNAL_CONTROL - integration window ends after completing integration cycles + 1.
+                                          EXTERNAL_CONTROL - integration window ends after disabled (INTEN = 0) by inverse trigger event"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c61"/>
+                            <a:da name="DEFAULT" value="INTERNAL_CONTROL"/>
+                            <a:da name="RANGE">
+                            <a:v>INTERNAL_CONTROL</a:v>
+                            <a:v>EXTERNAL_CONTROL</a:v>
+                            </a:da>
+                            <a:da name="TOOLTIP" value="Select integration window control"/>                            
+                            
+                          </v:var>  
+                          <v:var name="DsadcDiscardCount" type="INTEGER">
+                            <a:a name="DESC" 
+                                 value="FR: Start the integration cycle after this values"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                        
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c62"/>
+                            <a:da name="DEFAULT" value="0"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=63"/>
+                              <a:tst expr="&gt;=0"/>
+                            </a:da>
+                         <a:da name="TOOLTIP" value="Enter number of values to be discarded before integration cycle start"/>                            
+
+                          </v:var>
+                          <v:var name="DsadcIntegrationCount" type="INTEGER">
+                            <a:a name="DESC" 
+                                 value="FR: Number of Values to be Integrated"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                      
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c63"/>
+                            <a:da name="DEFAULT" value="0"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=63"/>
+                              <a:tst expr="&gt;=0"/>
+                            </a:da>
+                           <a:da name="TOOLTIP" value="Enter number of values to be integrated"/>                            
+
+                          </v:var>
+                          <v:var name="DsadcIntegrationCycleCount" type="INTEGER">
+                            <a:a name="DESC" 
+                                 value="FR: Defines the number of integration cycles to be counted if activated"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a>                        
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c64"/>
+                            <a:da name="DEFAULT" value="0"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=15"/>
+                              <a:tst expr="&gt;=0"/>
+                            </a:da>
+                            <a:da name="TOOLTIP" value="Enter number of integration cycles"/>                            
+
+                          </v:var>                          
+                        </v:ctr> 
+
+                        <v:ctr name="DsadcTimeStampConfiguration" type="IDENTIFIABLE">                      
+                          <a:a name="POSTBUILDCHANGEABLE" value="false"/>
+                          <a:a name="UUID" value="DCE:6062ca80-76f1-43eb-8fae-6b10a5cccc71"/> 
+                          <a:a name="DESC" 
+                               value="EN: This is the container that contains Dsadc Channel's Time Stamp related Parameters"/>
+                          <v:var name="DsadcTimestampServiceRequest" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                 value="FR: Generate a service request on SRMx after storing timestamp information."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>                       
+                             <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                            </a:a> 
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="DCE:d4aec598-5cc7-4487-9530-36ee9e855c71"/>
+                            <a:da name="DEFAULT" value="NO_SERVICE_REQUEST"/>
+                            <a:da name="RANGE">
+                            <a:v>NO_SERVICE_REQUEST</a:v>
+                            <a:v>GENERATE_SERVICE_REQUEST</a:v>
+                            </a:da> 
+                           <a:da name="TOOLTIP" value="Select generation of service request on storing time stamp"/>                            
+                            
+                          </v:var>  
+                        </v:ctr>                                                                                                                                                                 
+                      </v:ctr>
+                    </v:lst> 
+                                                                       
+                </v:ctr>
+              </v:lst>
+              <v:ctr name="DsadcPublishedInformation" type="IDENTIFIABLE">
+                <a:a name="DESC"
+                  value="EN: This container contains the published information of the DSADC driver."/>
+                <a:a name="UUID" value="6981f177-fe69-4ba3-3333-5be278141ccb"/>
+              </v:ctr>
+              <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+  <a:a name="DESC" value="EN: Common container, aggregated by all modules. It contains published information about vendor and versions."/>
+  <a:a name="UUID" value="492f8482-3e2c-4bf1-b27f-01fd7ac35cc8"/>
+                  <v:var name="ArMajorVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Major version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1166b258bcca"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+                <v:var name="ArMinorVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Minor version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="73f87c7f-e230-4178-3333-ea2704aaecc6"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+                <v:var name="ArPatchVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Patch level version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="2380135d-6778-417a-3333-e100aad4cc54"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+                <v:var name="SwMajorVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Major version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="fca015e3-5f28-4cbe-3333-8fab87d8cc27"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="2"/>
+                </v:var>
+                <v:var name="SwMinorVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Minor version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="14ab81e0-3d80-43dc-3333-2a7e5a54ccf9"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="2"/>
+                </v:var>
+                <v:var name="SwPatchVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="32e37bfd-18b6-41d1-3333-a81dae0cc4c5"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+                <v:var name="ModuleId" type="INTEGER">
+                  <a:a name="DESC" value="EN: Module ID of this module from Module List"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="3b407478-6902-4f80-3333-f33b08cce638"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="255"/>
+                </v:var>
+                <v:var name="VendorId" type="INTEGER">
+                  <a:a name="DESC" value="EN: Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="7d650b2d-4adb-41f0-3333-5f0c41cc01d1"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="17"/>
+                </v:var>
+                <v:var name="VendorApiInfix" type="STRING">
+                  <a:a name="DESC">
+                    <a:v>EN: In driver modules which can be instantiated several times on a single ECU, BSW00347 requires that the name of APIs is extended by the VendorId and a vendor specific name. 
+This parameter is used to specify the vendor specific name. In total, the implementation specific name is generated as follows:
+&lt;ModuleName&gt;_&gt;VendorId&gt;_&lt;VendorApiInfix&gt;&lt;Api name from SWS&gt;.
+E.g.  assuming that the VendorId of the implementor is 123 and the implementer chose a VendorApiInfix of &quot;v11r456&quot; a api name Can_Write defined in the SWS will translate to Can_123_v11r456Write. 
+This parameter is mandatory for all modules with upper multiplicity &gt; 1. It shall not be used for modules with upper multiplicity =1.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ad363b41-e945-4717-3333-c2f800ef1cce"/>
+                  <a:da name="ENABLE" value="false"/>
+                  <a:da name="DEFAULT" value=""/>
+                </v:var>
+                <v:var name="Release" type="STRING">
+                  <a:a name="DESC" value="EN: Aurix derivative used for thr implementation"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPostBuildLoadable</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuildSelectable</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="3b407478-6902-4f40-3333-f33b0854cc38"/>
+                  <a:da name="DEFAULT" type="XPath" expr="ecu:get('Rel.Derivate')"/>
+                </v:var>
+             </v:ctr>              
+            </v:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+</datamodel>

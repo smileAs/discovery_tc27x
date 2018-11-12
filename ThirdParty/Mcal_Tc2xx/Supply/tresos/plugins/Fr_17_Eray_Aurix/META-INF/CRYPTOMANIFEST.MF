@@ -1,0 +1,36 @@
+
+Name: generate/Fr_17_Eray.m
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594773964416511279430385476534602031667519391216148645
+ 128894626522910802600652062731110981698690621364150926
+SignatureKeyID: Infineon
+
+Name: generate/Fr_17_Eray_Bswmd.arxml
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377421629202763254463842093809681288561719783269492228
+ 9718807358771802990132466004744242081004535181211449
+SignatureKeyID: Infineon
+
+Name: generate/inc/Fr_17_Eray_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377426260293743774223286399164340255555834315254708062
+ 1172598526435595796889102651335714022644071436051166
+SignatureKeyID: Infineon
+
+Name: generate/src/Fr_17_Eray_PBCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377426348301493391014461400564142490348905090676595260
+ 5779835657465124034202383405920696073191259220365282
+SignatureKeyID: Infineon
+
+Name: config/Fr_17_Eray.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377424270011691029205302601349063974624065957662497156
+ 0846004574236604417100986931438205342725797117634834
+SignatureKeyID: Infineon
+

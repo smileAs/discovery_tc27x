@@ -1,0 +1,26 @@
+diff --git a/Discovery_ecu/Appl/Makefile b/Discovery_ecu/Appl/Makefile
+index ada8fa4..cd4f2e0 100644
+--- a/Discovery_ecu/Appl/Makefile
++++ b/Discovery_ecu/Appl/Makefile
+@@ -409,7 +409,7 @@ endif
+ 
+ #Please add any other option below (vector default options)
+ CFLAGS_VECTOR_OPTIONS = -mcpu=$(MCPU_SWITCH_$(DERIVATIVE)) \
+-                        -O                                 \
++                        -O0                                \
+                         -g                                 \
+                         -save-temps                        \
+                         -fno-common                        \
+diff --git a/ThirdParty/Mcal_Tc2xx/Supply/MC-ISAR_AS4XX_AURIX_TC27X_DC_PB_BASE_V500_REL322/TC27x_DCstep/Aurix_MC-ISAR/tricore_general/ssc/inc/Mcal_Compiler.h b/ThirdParty/Mcal_Tc2xx/Supply/MC-ISAR_AS4XX_AURIX_TC27X_DC_PB_BASE_V500_REL322/TC27x_DCstep/Aurix_MC-ISAR/tricore_general/ssc/inc/Mcal_Compiler.h
+index 3e4ed50..52bc06f 100644
+--- a/ThirdParty/Mcal_Tc2xx/Supply/MC-ISAR_AS4XX_AURIX_TC27X_DC_PB_BASE_V500_REL322/TC27x_DCstep/Aurix_MC-ISAR/tricore_general/ssc/inc/Mcal_Compiler.h
++++ b/ThirdParty/Mcal_Tc2xx/Supply/MC-ISAR_AS4XX_AURIX_TC27X_DC_PB_BASE_V500_REL322/TC27x_DCstep/Aurix_MC-ISAR/tricore_general/ssc/inc/Mcal_Compiler.h
+@@ -199,7 +199,7 @@ standard by the upper layers AI00251033 */
+ #ifndef IFX_INLINE
+ /*IFX_MISRA_RULE_19_04_STATUS=IFX_INLINE cannot be expand to a braced
+  initialiser*/
+-#define IFX_INLINE       __inline__
++#define IFX_INLINE       __inline__ __attribute__ ((__always_inline__))
+ #endif
+ /* Start of integration check:This change is made to make Integration between
+  "Mcal and SafeTlib"  work fine */

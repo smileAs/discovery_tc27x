@@ -1,0 +1,343 @@
+
+
+
+<html>
+  <head>
+    <title>ICU Driver Details</title>
+  </head>
+  <body>
+    <style type="text/css">
+table{table-layout: fixed;width: 300px;}
+table.curvedEdges { border:10px solid ;-webkit-border-radius:13px;-moz-border-radius:13px;-ms-border-radius:13px;-o-border-radius:13px;border-radius:13px; }
+table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;overflow: hidden;width: 400px;padding:5px; }
+</style>
+<!-- Be sure to place the above styles (i.e. everything between the <style></style> tags) into the document 'head' (i.e. between the <head></head> tags. Everything below goes inside the <body></body> tags) -->       
+    <p>
+      &nbsp;</p>  
+    <h2>
+      /*****************************************ICU HW-SW MAP*****************************************/</h2>
+    <table border="1" cellpadding="5" cellspacing="0" class="curvedEdges" width="100%">
+      <caption><strong>
+        Table 1: Api Usage and SFR access</strong></caption>
+      <thead>
+        <col width="300">
+        <col width="700">
+        <col width="300"> 
+        <tr>
+          <th scope="col">
+            API Name</th>
+          <th scope="col">
+            SFRs Used</th>
+          <th scope="col">
+            Remarks</th>
+        </tr>
+      </thead>
+
+	  <tr>
+	  <td>Icu_17_GtmCcu6_EnableEdgeDetection </td>
+	  <td>
+       
+		   <p>CCU6</p><li>CCU6x_T12MSEL</li><li>CCU6x_ISR</li>
+		         
+      </td>
+	  <td> 
+        Where x refers to CCU channel number 
+        
+	  </tr>
+	   <tr>
+	  <td> Icu_17_GtmCcu6_DisableEdgeDetection</td>
+	  <td> <li>
+        
+		  <p>CCU6</p><li>CCU6x_T12MSEL</li>
+	     
+		  
+	  <td>
+        Where x refers to CCU channel number 
+      
+	  </tr>
+        
+          
+ 
+ 	   <tr>
+	  <td> Icu_17_GtmCcu6_Init </td>
+	  <td> 
+       		  <p>CCU6</p><li>CCU6x_CLC</li><li>CCU6x_T12</li><li>CCU6x_TCTR0 </li><li>CCU6x_TCTR4 </li><li>CCU6x_T12PR </li><li>CCU6x.SR0 </li>
+		  
+      
+	  <td>
+        Where x refers to CCU channel number 
+            
+	  </tr>
+  	   <tr>
+	  <td> Icu_17_GtmCcu6_SetMode </td>
+	  <td>
+       		   <p>CCU6</p><li>CCU6x_T12MSEL</li><li>CCU6x_T12MSEL</li><li>CCU6x_ISR </li>
+		  
+		   	  <td>
+         Where x refers to CCU channel number  
+                     
+       </td>  
+	  </tr>
+	   <tr>
+	  <td>  Icu_17_GtmCcu6_CheckWakeup</td>
+	  <td> None</td>
+	  <td>None</td>
+	  </tr>
+	   <tr>
+	  <td> Icu_17_GtmCcu6_EnableNotification </td>
+	  <td>
+         None		   
+       
+	  <td>
+        Where x refers to CCU channel number 
+                    
+   </td>       
+	  </tr>
+	   <tr>
+	  <td> Icu_17_GtmCcu6_DisableNotification </td>
+	  <td>
+         None
+		   
+	  <td>
+         Where x refers to CCU channel number 
+                     
+   </td>        
+	  </tr> 
+	  <tr>
+	  <td> Icu_17_GtmCcu6_GetInputState </td>
+	  <td>
+         None
+		   
+	  <td>
+         Where x refers to CCU channel number  
+                     
+         </td>  
+	  </tr>
+	  <tr>
+	  <td> Icu_17_GtmCcu6_SetActivationCondition </td>
+	  <td>       		   <p><p>CCU6</p></p><li>CCU6x_IEN</li>
+		  
+		   
+	  <td>
+         Where x refers to CCU channel number 
+                     
+	  </tr>
+        
+        
+    
+    
+    <tr>
+	  <td> Icu_17_GtmCcu6_Ccu_Isr </td>
+	  <td> CCU6<li>CCU6x_CC60SR</li><li>CCU6x_CC60R</li>   </td>
+	  <td>        Where x refers to CCU channel number  
+                    
+	  </tr>
+
+      <tbody>
+	  </tbody>
+	  </table>
+	  
+	  
+	  
+	  
+	  
+	  <table border="3" cellpadding="5" cellspacing="0" class="curvedEdges">
+      <caption><strong>
+        Table 2: ICU Configured Channels</strong></caption>
+        <thead>
+        <col width="250">
+        <col width="250">
+        <col width="250">
+        <col width="250">
+        
+        <th> ICU Channel </th>
+        <th> Used peripheral </th>
+        <th> Module no </th>        
+        <th> Channel no </th> 
+        
+        </thead>
+        <tbody> 
+
+
+#
+
+        <tr>
+        <td>ICU_Channel_0</td>
+        <td>CCU</td>
+        <td>CCU60</td>
+        <td>Cc61</td>
+        
+        </tr>
+
+
+		<tr>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		</tr>
+		<tr>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		</tr><tr>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		</tr><tr>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		</tr>
+		<tbody>
+		</table>
+		
+		
+		
+		
+		
+		 /******************************************ICU MPU Settings******************************************/</h2>     
+    <table border="3" cellpadding="5" cellspacing="0" class="curvedEdges">
+      <caption><strong>
+        Table 3: Common SFR and Memory Range</strong></caption>
+      <thead>
+        <col width="500">
+        <col width="500">
+        <col width="300">
+        <tr>
+          <th scope="col">
+            Start Address</th>
+          <th scope="col">
+            End Address</th>
+          <th scope="col">
+            Remarks</th>
+        </tr>
+      </thead>
+       <tbody>
+        <tr>
+          <td>
+            GTM_TIMi_CHx_GPR0</td>
+          <td>
+            GTM_TIMi_CHx_IRQ_MODE</td>
+          <td>
+            Refer Table 2 for respective GTM Module, Module number(i) and Channel number(x)</td>
+        </tr>
+        <tr>
+          <td>
+            CCUx_CLC</td>
+          <td>
+            CCUx_IEN</td>
+          <td>
+            Refer Table 2 for respective CCU Module and Channel </td>
+        </tr>
+          <td>
+            SCU_EICR0</td>
+          <td>
+            SCU_DTSLIM</td>
+          <td>
+            Refer Table 2 for respective ERU Channel </td>
+        </tr>  
+               </tr>  
+       
+        <tr>        
+          <td>
+            SRC_CCU6_CCU60_SR0</td>
+          <td>
+            SRC_GPT120CIRQ</td>
+          <td>
+            Service request control registers for CCU </td>
+        </tr> 
+        
+       
+        <tr>
+          <td>
+            ICU_17_GTMCCU6_START_SEC_VAR_32BIT</td>
+          <td>
+            ICU_17_GTMCCU6_STOP_SEC_VAR_32BIT</td>
+          <td>All 32-bit varaibles used in ICU driver</td>
+        </tr>
+        
+        <tr>
+          <td>
+            ICU_17_GTMCCU6_START_SEC_VAR_8BIT</td>
+          <td>
+            ICU_17_GTMCCU6_STOP_SEC_VAR_8BIT</td>
+          <td>All 8-bit varaibles used in ICU driver</td>
+        </tr>
+
+        <tr>
+          <td>
+            ICU_17_GTMCCU6_START_SEC_CONST_32BIT</td>
+          <td>
+            ICU_17_GTMCCU6_STOP_SEC_CONST_32BIT</td>
+          <td>All 32-bit const varaibles used in ICU driver</td>
+        </tr>
+
+        <tr>
+          <td>
+            ICU_17_GTMCCU6_START_SEC_CODE</td>
+          <td>
+            ICU_17_GTMCCU6_STOP_SEC_CODE</td>
+          <td>All text data</td>
+        </tr>
+        
+        <tr>
+          <td>
+            ICU_17_GTMCCU6_START_SEC_POSTBUILDCFG</td>
+          <td>
+            ICU_17_GTMCCU6_STOP_SEC_POSTBUILDCFG</td>
+          <td>All post build configuration data</td>
+        </tr>
+        
+        <tr>
+          <td>
+            ICU_17_GTMCCU6_START_SEC_CALLOUT_CODE</td>
+          <td>
+            ICU_17_GTMCCU6_STOP_SEC_CALLOUT_CODE</td>
+          <td>All ISR section defined in ICU driver </td>
+        </tr>        
+        </tbody>
+    </table>
+    
+     <p>
+      &nbsp;</p>       
+
+ 
+    <p>
+      &nbsp;</p>        
+
+
+
+    <p>
+      &nbsp;</p>    
+     
+        <table border="3" cellpadding="5" cellspacing="0" class="curvedEdges">
+      <caption><strong>
+        Table 6:  QM SFR and Memory Range</strong></caption>
+      <thead>
+        <col width="500">
+        <col width="500">
+        <col width="300">
+        <tr>
+          <th scope="col">
+            Start Address</th>
+          <th scope="col">
+            End Address</th>
+          <th scope="col">
+            Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            ICU_17_GTMCCU6_START_SEC_VAR_UNSPECIFIED</td>
+          <td>
+            ICU_17_GTMCCU6_STOP_SEC_VAR_UNSPECIFIED</td>
+          <td> QM channels variables section</td>
+        </tr>
+
+      </tbody>      
+    </table>

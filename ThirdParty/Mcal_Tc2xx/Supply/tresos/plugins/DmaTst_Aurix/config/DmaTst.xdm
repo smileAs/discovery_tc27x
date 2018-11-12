@@ -1,0 +1,156 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2014)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**   $FILENAME   : DmaTst.xdm $                                               **
+**                                                                            **
+**   $CC VERSION : \main\12 $                                                 **
+**                                                                            **
+**   $DATE       : 2016-04-01 $                                               **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX                                                **
+**                                                                            **
+**  VARIANT   : VariantLinkTime                                               **
+**                                                                            **
+**  AUTHOR    : DL-BLR-ATV-STC                                                **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY:[cover parentID=]                                            **
+**                                                                            **
+**  DESCRIPTION  : XML Data Model for DmaTst driver                           **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : Aurix-HE_SafeTlib_DS_DMA_EDC_BusError_Test.docm,       **
+**                     Ver 0.1                                                **
+**                                                                            **
+**  MAY BE CHANGED BY USER [yes/no]: No                                       **
+**                                                                            **
+*******************************************************************************/
+-->
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX" type="AR-PACKAGE">        
+        <a:a name="UUID" value="93d9a111-9d4c-47b6-98cb-fe5aec24c8b0"/>
+        <d:lst type="ELEMENTS">
+          <d:chc name="DmaTst" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="RELEASE" value="asc:4.0.2"/>
+              <a:a name="UUID" value="03eaa8c5-137e-402e-823d-8d7776c1de4d"/>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:da name="DEFAULT" value="VariantLinkTime"/>
+                <a:da name="RANGE" value="VariantLinkTime"/>
+              </v:var>
+            <v:lst name="DmaTstConfigSet" 
+                     type="MULTIPLE-CONFIGURATION-CONTAINER">
+                <a:da name="MIN" value="1"/>  
+                <v:ctr name="DmaTstConfigSet" 
+                       type="MULTIPLE-CONFIGURATION-CONTAINER">
+                <a:a name="DESC" 
+                     value="EN: This container is the base of Configuration Set which contains the configured Dma Configuration."/>
+                <a:a name="UUID" value="3ea7abca-6ba4-4d14-befd-8bb9350fe86f"/>
+                <v:var name="DmaChTx1" type="INTEGER">
+				  <a:da name="TOOLTIP">
+<a:v>Select Channels as per Processor Variant
+if 'TC21x' then 'DMA channels' =  0-15
+if 'TC22x' then 'DMA channels' =  0-15
+if 'TC23x' then 'DMA channels' =  0-15
+if 'TC26x' then 'DMA channels' =  0-47
+if 'TC27x' then 'DMA channels' =  0-63
+if 'TC29x' then 'DMA channels' =  0-127
+                    </a:v>
+                  </a:da>
+                  <a:da name="DESC">
+<a:v>Select Channels as per Processor Variant
+if 'TC21x' then 'DMA channels' =  0-15
+if 'TC22x' then 'DMA channels' =  0-15
+if 'TC23x' then 'DMA channels' =  0-15
+if 'TC26x' then 'DMA channels' =  0-47
+if 'TC27x' then 'DMA channels' =  0-63
+if 'TC29x' then 'DMA channels' =  0-127
+					</a:v>
+                  </a:da>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" value="98ce928e-6ed1-4968-93b2-21d90b1fa49f"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  
+                 <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;ecu:get('Dma.NoOfChannels')"/>
+                      <a:tst expr="&gt;=0"/>
+                    </a:da>
+                </v:var>
+                <v:var name="DmaChTx2" type="INTEGER">
+		           <a:da name="TOOLTIP">
+<a:v>Select Channels as per Processor Variant
+if 'TC21x' then 'DMA channels' =  0-15
+if 'TC22x' then 'DMA channels' =  0-15
+if 'TC23x' then 'DMA channels' =  0-15
+if 'TC26x' then 'DMA channels' =  0-47
+if 'TC27x' then 'DMA channels' =  0-63
+if 'TC29x' then 'DMA channels' =  0-127
+</a:v>
+                </a:da>
+                  <a:da name="DESC">
+<a:v>Select Channels as per Processor Variant
+if 'TC21x' then 'DMA channels' =  0-15
+if 'TC22x' then 'DMA channels' =  0-15
+if 'TC23x' then 'DMA channels' =  0-15
+if 'TC26x' then 'DMA channels' =  0-47
+if 'TC27x' then 'DMA channels' =  0-63
+if 'TC29x' then 'DMA channels' =  0-127
+</a:v>
+                  </a:da>
+				  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                  <a:a name="UUID" value="d85084e8-9b47-4340-8673-32afcb88502f"/>
+                  <a:da name="DEFAULT" value="1"/>
+                 
+                 <a:da name="INVALID" type="Multi">
+                     <mt:xpath expr="../DmaChTx1 = ../DmaChTx2" true="Wrong configuration, both DmaChTx1 and DmaChTx2 value should not be same.Enter different channel numbers"/>
+                     <mt:range>                       
+                       <a:tst expr="&lt;ecu:get('Dma.NoOfChannels')"/>
+                       <a:tst expr="&gt;=0"/>
+                     </mt:range>
+                 </a:da>
+                     
+                </v:var>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                            
+              </v:ctr>
+           </v:lst> 
+            </v:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

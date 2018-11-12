@@ -1,0 +1,22 @@
+
+Name: config/CpuBusMpuLfmTst.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594773972084256373521709603320763704170155422838228264
+ 739359725914391585875763850053183306107527700510620795
+SignatureKeyID: Infineon
+
+Name: generate/inc/CpuBusMpuLfmTst_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594773964395614282688718382727126886398615659284366743
+ 372116352229017775261932610428741120511559516882850047
+SignatureKeyID: Infineon
+
+Name: generate/src/CpuBusMpuLfmTst_LCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 74155374890372722034863584668714589094654809118008165237139
+ 14975655685977082928337904937449804032952268673633467168
+SignatureKeyID: Infineon
+

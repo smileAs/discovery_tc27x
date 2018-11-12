@@ -1,0 +1,2 @@
+APP_SOURCE_LST += Source\BswInit.c
+APP_SOURCE_LST += Source\DiscoveryEcu.c

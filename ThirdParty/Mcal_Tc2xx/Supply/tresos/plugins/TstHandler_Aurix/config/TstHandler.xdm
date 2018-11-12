@@ -1,0 +1,540 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2014)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**   $FILENAME   : TstHandler.xdm $                                           **
+**                                                                            **
+**   $CC VERSION : \main\35 $                                                 **
+**                                                                            **
+**   $DATE       : 2016-04-19 $                                               **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX                                                **
+**                                                                            **
+**  VARIANT   : VariantPostBuild                                              **
+**                                                                            **
+**  AUTHOR    : DL-BLR-ATV-STC                                                **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  DESCRIPTION  : XML Data Model for TstHandler driver                       **
+**                                                                            **
+**  MAY BE CHANGED BY USER [yes/no]: No                                       **
+**                                                                            **
+*******************************************************************************/
+
+-->
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar"  
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX" type="AR-PACKAGE">        
+        <a:a name="UUID" value="93d9a111-9d4c-47b6-98cb-fe5aec24c8b0"/>
+        <d:lst type="ELEMENTS">
+          <d:chc name="TstHandler" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="RELEASE" value="asc:4.0"/>        
+              <a:a name="UUID" value="03eaa8c5-137e-402e-823d-8d7776c1de4d"/>
+             <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:da name="DEFAULT" value="VariantPostBuildSelectable"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPostBuildLoadable</a:v>
+                  <a:v>VariantPostBuildSelectable</a:v>
+                </a:da>
+              </v:var>
+
+              <v:ctr name="SlGeneral" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: General configuration (parameters) of the Test Handler driver software module."/>
+                <a:a name="UUID" value="3ea7abca-6ba4-4d14-befd-8bb9350fe86f"/>
+                          <v:var name="SlMasterCoreId" type="INTEGER">
+                            <a:da name="TOOLTIP" value="Id of the core that is used as master core."/>
+                            <a:a name="DESC">
+                              <a:v>Id of the core that is used as master core.</a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                      <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                    </a:a>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="6e2cdc5f-16e8-4669-b7d8-531a888e7acc"/>
+                            <a:da name="DEFAULT" value="0"/>
+                            <a:da name="INVALID" type="Range">                              
+                              <a:tst expr="&lt;=ecu:get('TstHandler.MaximumSlMasterCoreId')"/>
+                              <a:tst expr="&gt;=0"/>
+                            </a:da>
+                
+                </v:var>
+              </v:ctr>		  
+              
+              <v:lst name="SlConfigSet" type="MULTIPLE-CONFIGURATION-CONTAINER">
+                <a:da name="MIN" value="1"/>              
+                <v:ctr name="SlConfigSet" type="MULTIPLE-CONFIGURATION-CONTAINER">
+                  <a:a name="DESC" 
+                       value="This is the base container that contains the post-build selectable configuration parameters"/>
+                  <a:a name="UUID" value="ccda81dc-46cf-4171-858b-7c947884702f"/>
+    
+                          <v:var name="SlCoreId" type="INTEGER">
+                            <a:da name="TOOLTIP" value="Core id for which this configuration needs to be used."/>
+                            <a:a name="DESC">
+                              <a:v>Core id for which this configuration needs to be used.</a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                      <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                    </a:a>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="6e2cdc5f-96e8-4669-b7d8-531a888e7acc"/>
+                            <a:da name="DEFAULT" value="0"/>                            
+                          <a:da name="INVALID" type="Range">                              
+                              <a:tst expr="&lt;=ecu:get('TstHandler.MaximumSlMasterCoreId')"/>
+                              <a:tst expr="&gt;=0"/>
+                            </a:da>
+                          </v:var> 
+                          
+                      <v:lst name="SlCPUxTestList" type="MAP">
+                        <a:da name="MAX" value="200"/>
+                        <a:da name="MIN" value="1"/>
+                        <v:ctr name="SlCPUxTestList" type="IDENTIFIABLE">                          
+                   <a:a name="DESC" 
+                       value="This container contains the information about Test index, Test name and parameter set index "/>                          
+                          <a:a name="UUID" 
+                               value="97e6fd09-f2da-4844-b2e0-ecc3dc70e5a3"/>
+                          <v:var name="SlTestIndex" type="INTEGER">
+                            <a:da name="TOOLTIP" value="MTL Test identifier"/>
+                            <a:a name="DESC">
+                              <a:v>This parameter defines the test identifier which indicates combination of MTL Test and Parameter Set Index.
+                              </a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                      <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                    </a:a>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="6e2cdc5f-16e8-4669-b7d9-531a888e7acc"/>
+                            <a:da name="DEFAULT" type="XPath" expr="num:i((node:fallback((node:current()/../@index),0))+0)"/>                            
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=255"/>
+                              <a:tst expr="&gt;=0"/>
+                            </a:da>
+                            <a:da name="RANGE" type="XPath">
+                              <a:tst expr="(.&gt;= 0 ) and (.&lt; num:i(count(node:current()/../../*)))"
+                               false="Value out of range: must be in range 0 to N-1 (N is number of configured tests)."/>
+                              <a:tst expr="text:uniq(../../*/SlTestIndex,.)"  false="Duplicated value, TestId must be unique across all the tests."/>
+                            </a:da>
+                          </v:var>
+
+                      <v:var name="SlTestName" type="ENUMERATION">
+                        <a:da name="TOOLTIP" value="MTL test name"/>
+                        <a:a name="DESC">
+                          <a:v>EN: This parameter defines the name of MTl test.</a:v>
+                        </a:a>
+                         <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                      <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                    </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="abdb45c9-db94-4d8b-9921-a360a38f90b1"/>
+                        <a:da name="DEFAULT" value="SfrTst_SfrCmpTst"/>
+                        <a:da name="RANGE" type="XPath" expr="ecu:list('TstHandler.TestList')"/>
+                      </v:var>                          
+                          
+                          <v:var name="SlParamSetIndex" type="INTEGER">
+                            <a:da name="TOOLTIP" value="Index to identify a parameter set to use for a test"/>
+                            <a:a name="DESC">
+                              <a:v>This parameter defines the parameter set index of the chosen MTL test Set Index.
+                              </a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                      <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                    </a:a>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="6e2cdc5f-16e8-4669-b7d8-531a888eaacc"/>
+                            <a:da name="DEFAULT" value="0"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=255"/>
+                              <a:tst expr="&gt;=0"/>
+                            </a:da>
+                          </v:var>
+                          
+                          <v:var name="SlSmuAlarm" type="INTEGER">
+                            <a:da name="TOOLTIP" value="SMU alarm index within the alarm group 5 (ALM5)"/>
+                            <a:a name="DESC">
+                              <a:v>This parameter defines the alarm index within the alarm group 5 (ALM5). This parameter is only used
+only by Runtime Test and elsewhere is ignored.
+                              </a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                      <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                    </a:a>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                                 value="6e2cdc5f-16e8-4669-b7d8-631a888e7acc"/>
+                            <a:da name="DEFAULT" value="0"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=3"/>
+                              <a:tst expr="&gt;=0"/>
+                            </a:da>
+                          </v:var>                          
+                        </v:ctr>
+                      </v:lst> 
+    
+<!--
+Early pre-run test configuration
+-->                   
+                    <v:ctr name="SlEarlyPrerun" type="IDENTIFIABLE">                      
+                   <a:a name="DESC" 
+                       value="This is the SlEarlyPrerun container information."/>                      
+                      <a:a name="UUID" 
+                           value="97e6fd09-f2da-4844-b2e0-ecc3dc70e5a1"/>
+
+                  <v:lst name="SlTestGroupEarlyPrerun" type="MAP">
+                    <a:da name="MAX" value="100"/>
+                    <a:da name="MIN" value="0"/>
+                    
+                    <v:ctr name="SlTestGroupEarlyPrerun" type="IDENTIFIABLE">                      
+                    <a:a name="DESC" 
+                       value="This container contains SlTestGroupEarlyPrerun SlTestGroupIndex and  SlTestEntry list"/>                      
+                      <a:a name="UUID" 
+                           value="97e6fd09-f2da-4864-b2e0-ecc3dc70e5a8"/>
+                           
+                      <v:var name="SlTestGroupIndex" type="INTEGER">
+                        <a:da name="TOOLTIP" value="Index to identify a group of tests to run during early pre-run phase"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter defines the early pre-run test group index.
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                      <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                    </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="7e2cdc5f-16e8-4669-b7d8-631a888e7acc"/>
+                             
+                            <a:da name="DEFAULT" type="XPath" expr="num:i((node:fallback((node:current()/../@index),0))+0)"/>                                                        
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=99"/>
+                              <a:tst expr="&gt;=0"/>
+                            </a:da>
+                            <a:da name="RANGE" type="XPath">
+                              <a:tst expr="(.&gt;= 0 ) and (.&lt; num:i(count(node:current()/../../*)))"
+                               false="Value out of range: must be in range 0 to N-1 (N is number of configured groups)."/>
+                              <a:tst expr="text:uniq(../../*/SlTestGroupIndex,.)"  false="Duplicated value, SlTestGroupIndex must be unique across all the tests."/>
+                            </a:da>
+
+                      </v:var>
+                      <v:lst name="SlTestEntry" type="MAP">
+                        <a:da name="MAX" type="XPath" expr="ecu:get('TstHandler.MaxTestsEarlyPreRunGrp')"/>
+                        <a:da name="MIN" value="0"/>
+                        <v:ctr name="SlTestEntry" type="IDENTIFIABLE">                          
+                           <a:a name="DESC" 
+                       value="This container contains references to tests from SlCPUxTestList."/>
+                          <a:a name="UUID" 
+                               value="97e6fd08-f2da-4844-b2e0-ecc3dc70e5a0"/>
+                          <v:ref name="Test" type="REFERENCE">
+                            <a:a name="DESC" value="EN: Parameter set to be used for the chosen test."/>
+                             <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                      <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                    </a:a>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                              value="4e8f054e-d56f-4410-b256-6dc3e70169d6"/>
+                            <a:da name="REF" value="ASPathDataOfSchema:/AURIX/TstHandler/SlConfigSet/SlCPUxTestList"/>                            
+                          </v:ref>                                 
+                        </v:ctr>
+                      </v:lst>                      
+                      
+                      
+                    </v:ctr>
+                  </v:lst>                  
+                    </v:ctr>
+
+<!--
+Pre-run test configuration
+-->                   
+                    <v:ctr name="SlPrerun" type="IDENTIFIABLE">                      
+               <a:a name="DESC" 
+                       value="This  container contains the information about SlPrerun SlTestGroupPrerun, SlTestGroupIndex and SlTestEntry"/>                      
+                      <a:a name="UUID" 
+                           value="97e6fd09-f2da-4844-b2e0-ecc3dc70e5a9"/>
+
+                          <v:ref name="SlSmuConfigPrerunRef" type="CHOICE-REFERENCE">
+                            <a:a name="DESC" value="EN: Reference to TestLib function."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                      <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                    </a:a>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                              value="4e8f054e-d56f-4410-b256-6dc3e70169d9"/>
+                            <a:da name="REF">
+                              <a:v>ASPathDataOfSchema:/AURIX/Smu/SmuConfigSet</a:v>
+                            </a:da>
+                            <a:da name="ENABLE" type="XPath" expr="num:i(../../SlCoreId) = num:i(../../../../SlGeneral/SlMasterCoreId)"/>
+                            <a:da name="EDITABLE" type="XPath" expr="num:i(../../SlCoreId) = num:i(../../../../SlGeneral/SlMasterCoreId)"/>
+                          </v:ref>   
+                          
+                  <v:lst name="SlTestGroupPrerun" type="MAP">
+                    <a:da name="MAX" value="100"/>
+                    <a:da name="MIN" value="0"/>
+                    
+                    <v:ctr name="SlTestGroupPrerun" type="IDENTIFIABLE">                      
+                   <a:a name="DESC" 
+                       value="This container containes the information about SlTestGroupIndex, Index to identify a group of tests to run during pre-run phase."/>                      
+                      <a:a name="UUID" 
+                           value="97e6fd09-f2da-4844-b2e0-ecc3dc70e5a6"/>
+                           
+                      <v:var name="SlTestGroupIndex" type="INTEGER">
+                        <a:da name="TOOLTIP" value="Index to identify a group of tests to run during pre-run phase"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter defines the pre-run test group index.
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                      <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                    </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="9e2cdc5f-16e8-4669-b7d8-531a808e7acc"/>
+                          <a:da name="DEFAULT" type="XPath" expr="num:i((node:fallback((node:current()/../@index),0))+0)"/>    
+                        <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=99"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                      </v:var>
+                      
+                      <v:lst name="SlTestEntry" type="MAP">
+                        <a:da name="MAX" type="XPath" expr="ecu:get('TstHandler.MaxTestsPreRunGrp')"/>
+                        <a:da name="MIN" value="0"/>
+                        <v:ctr name="SlTestEntry" type="IDENTIFIABLE">                          
+                   <a:a name="DESC" 
+                       value="This container contains references to tests from SlCPUxTestList."/>                          
+                          <a:a name="UUID" 
+                               value="91e6fd09-f2da-4841-b2e0-ecc3dc70e9a3"/>
+                          <v:ref name="Test" type="REFERENCE">
+                            <a:a name="DESC" value="EN: Parameter set to be used for the chosen test."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                      <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                    </a:a>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                              value="4e8f054e-d56f-4410-b256-6dc3e70169d0"/>
+                            <a:da name="REF" value="ASPathDataOfSchema:/AURIX/TstHandler/SlConfigSet/SlCPUxTestList"/>                            
+                          </v:ref>                                 
+                        </v:ctr>
+                      </v:lst>                      
+
+                      
+                    </v:ctr>
+                  </v:lst>                  
+                    </v:ctr>
+
+<!--
+Run Time Configuration
+-->           
+                    <v:ctr name="SlRuntime" type="IDENTIFIABLE">                      
+                    <a:a name="DESC" 
+                       value="This container contains the information about SlRuntime information"/>                        
+                      <a:a name="UUID" 
+                           value="97e6fd09-f2da-4844-b2e0-ecc3dc70e5a4"/>
+                           
+                          <v:ref name="SlSmuConfigRuntimeRef" type="CHOICE-REFERENCE">
+                            <a:a name="DESC" value="EN: Reference to TestLib function."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                      <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                    </a:a>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                              value="4e8f054e-d56f-4410-b256-6dc3e80169d6"/>
+                            <a:da name="REF">
+                              <a:v>ASPathDataOfSchema:/AURIX/Smu/SmuConfigSet</a:v>
+                            </a:da>
+                            <a:da name="ENABLE" type="XPath" expr="num:i(../../SlCoreId) = num:i(../../../../SlGeneral/SlMasterCoreId)"/>
+                            <a:da name="EDITABLE" type="XPath" expr="num:i(../../SlCoreId) = num:i(../../../../SlGeneral/SlMasterCoreId)"/>                            
+                          </v:ref>   
+                           
+                  <v:lst name="SlTestGroupRuntime" type="MAP">
+                    <a:da name="MAX" value="100"/>
+                    <a:da name="MIN" value="0"/>                    
+                           
+                    <v:ctr name="SlTestGroupRuntime" type="IDENTIFIABLE">                      
+          <a:a name="DESC" 
+                       value="This container contains the information about SlTestGroupRuntime information"/>                      
+                      <a:a name="UUID" 
+                           value="99e6fd09-f2da-4844-b2e0-ecc3dc70e5a3"/>
+                           
+                      <v:var name="SlTestGroupIndex" type="INTEGER">
+                        <a:da name="TOOLTIP" value="Index to identify a group of tests to run during run-time phase"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter defines the run-time test group index.
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                      <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                    </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="6e2cdc5f-26e8-4669-b7d8-531a888e7acc"/>
+                        <a:da name="DEFAULT" type="XPath" expr="num:i((node:fallback((node:current()/../@index),0))+0)"/>     
+                        <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=99"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                      </v:var>
+                      
+                      <v:lst name="SlTestEntry" type="MAP">
+                        <a:da name="MAX" type="XPath" expr="ecu:get('TstHandler.MaxTestsRunTimeGrp')"/>
+                        <a:da name="MIN" value="0"/>
+                        <v:ctr name="SlTestEntry" type="IDENTIFIABLE">                          
+                         <a:a name="DESC">
+                              <a:v>This container contains references to tests from SlCPUxTestList.</a:v>
+                            </a:a>                          
+                          <a:a name="UUID" 
+                               value="97e6fd07-f2da-4844-b2e0-ecc3dc70e5a9"/>
+                          <v:ref name="Test" type="REFERENCE">
+                            <a:a name="DESC" value="EN: Parameter set to be used for the chosen test."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                      <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                    </a:a>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                              value="4e8f054e-d56f-4410-b256-6dc3e70169d8"/>
+                            <a:da name="REF" value="ASPathDataOfSchema:/AURIX/TstHandler/SlConfigSet/SlCPUxTestList"/>                            
+                          </v:ref>                                 
+                        </v:ctr>
+                      </v:lst>                      
+                      
+                    
+                    </v:ctr>
+                  </v:lst>                  
+                    </v:ctr>
+
+<!--
+Post Run Test Configuration
+-->                   
+        
+                    <v:ctr name="SlPostrun" type="IDENTIFIABLE">                      
+                      <a:a name="DESC" 
+                       value="This container contains the information about SlTestGroupPostrun."/>
+                      <a:a name="UUID" 
+                           value="97e6fd09-f2da-4844-b2e0-ecc3dc70e5a8"/>
+                           
+                  <v:lst name="SlTestGroupPostrun" type="MAP">
+                    <a:da name="MAX" value="100"/>
+                    <a:da name="MIN" value="0"/>
+                    
+                    <v:ctr name="SlTestGroupPostrun" type="IDENTIFIABLE">                      
+                   <a:a name="DESC" 
+                       value="This container contains the information about SlTestGroupPostrun "/>                      
+                      <a:a name="UUID" 
+                           value="97e6fd09-f2da-4844-b2e0-ecc3dc70e5a5"/>
+                           
+                      <v:var name="SlTestGroupIndex" type="INTEGER">
+                        <a:da name="TOOLTIP" value="Index to identify a group of tests to run during post-run phase"/>
+                        <a:a name="DESC">
+                          <a:v>This parameter defines the post-run test group index.
+                          </a:v>
+                        </a:a>
+                       <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                      <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                    </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="6e2cdc5f-16e8-4669-b7d8-521a888e7acc"/>
+                             <a:da name="DEFAULT" type="XPath" expr="num:i((node:fallback((node:current()/../@index),0))+0)"/>
+                        <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=99"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                      </v:var>
+                      
+                      <v:lst name="SlTestEntry" type="MAP">
+                        <a:da name="MAX" type="XPath" expr="ecu:get('TstHandler.MaxTestsPostRunGrp')"/>
+                        <a:da name="MIN" value="0"/>
+                        <v:ctr name="SlTestEntry" type="IDENTIFIABLE">                          
+                   <a:a name="DESC">
+                    <a:v>This container contains references to tests from SlCPUxTestList.</a:v>
+                  </a:a>                          
+                          <a:a name="UUID" 
+                               value="97e6fd09-f2da-4844-b2e0-ecc3dc70e8a6"/>
+                          <v:ref name="Test" type="REFERENCE">
+                            <a:a name="DESC" value="EN: Parameter set to be used for the chosen test."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+                      <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>
+                    </a:a>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                            <a:a name="UUID" 
+                              value="4e8f054e-d56f-4410-b256-6dc3e70169d7"/>
+                            <a:da name="REF" value="ASPathDataOfSchema:/AURIX/TstHandler/SlConfigSet/SlCPUxTestList"/>                            
+                          </v:ref>                                 
+                        </v:ctr>
+                      </v:lst>                      
+                      
+                    </v:ctr>
+                  </v:lst>                  
+                    </v:ctr>
+
+<!--
+-->                   
+
+                  
+                </v:ctr>
+              </v:lst>
+              
+              
+            </v:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+</datamodel>

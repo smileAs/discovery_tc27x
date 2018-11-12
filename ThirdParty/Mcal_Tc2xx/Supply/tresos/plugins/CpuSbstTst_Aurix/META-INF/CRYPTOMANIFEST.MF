@@ -1,0 +1,15 @@
+
+Name: config/CpuSbstTst.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377424742397389614984507039012201438452209599583579992
+ 3348319442642206214751599762041945171356875534690296
+SignatureKeyID: Infineon
+
+Name: generate/inc/CpuSbstTst_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377426237755483397832991610063396273733988479504400955
+ 4227542537390976902146594634268495328247401958526141
+SignatureKeyID: Infineon
+

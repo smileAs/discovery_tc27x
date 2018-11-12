@@ -1,0 +1,95 @@
+
+LIN_description_file;
+LIN_protocol_version = "2.0";
+LIN_language_version = "2.0";
+LIN_speed = 19.2 kbps;
+
+Nodes {
+  Master: P2P, 5 ms, 0 ms ;
+  Slaves: SRU3, LRU1 ;
+}
+
+Signals {
+  Status_SRU3: 8, 0, SRU3, P2P ;
+  Width_LRU1: 8, 0, LRU1, P2P ;
+  Sig_Init_SRU3: 16, 0, P2P, SRU3 ;
+  TOF_SRU3: 16, 0, SRU3, P2P ;
+  Sin_Init_LRU1: 8, 0, P2P, LRU1 ;
+  Status_LRU1: 8, 0, LRU1, P2P ;
+  TOF_LRU1: 16, 0, LRU1, P2P ;
+  Peak_LRU1: 8, 0, LRU1, P2P ;
+}
+
+
+
+
+Frames {
+  Init_SRU3: 0x80, P2P, 2 {
+    Sig_Init_SRU3, 0 ;
+  }
+  Read_SRU3: 0xD, SRU3, 3 {
+    TOF_SRU3, 0 ;
+    Status_SRU3, 16 ;
+  }
+  Init_LRU1: 0xC1, P2P, 1 {
+    Sin_Init_LRU1, 0 ;
+  }
+  Read_LRU1: 0x1F, LRU1, 8 {
+    TOF_LRU1, 0 ;
+    Peak_LRU1, 16 ;
+    Width_LRU1, 24 ;
+	Status_LRU1, 48 ;
+  }
+}
+
+
+
+
+Node_attributes {
+  SRU3{
+    LIN_protocol = "2.0" ;
+    configured_NAD = 0x1 ;
+    product_id = 0x30, 0x3, 1 ;
+    P2_min = 0 ms ;
+    ST_min = 0 ms ;
+  }
+  LRU1{
+    LIN_protocol = "2.0" ;
+    configured_NAD = 0x3 ;
+    product_id = 0x30, 0x2, 1 ;
+    P2_min = 0 ms ;
+    ST_min = 0 ms ;
+  }
+}
+
+Schedule_tables {
+ Normal {
+    Init_SRU3 delay 5 ms ;
+	Init_LRU1 delay 50 ms ;
+    Read_SRU3 delay 20 ms ;	
+    Read_LRU1 delay 50 ms ;
+  }
+}
+
+
+Signal_encoding_types {
+  Enc_Status_SRU3 {
+    physical_value, 0, 1, 1, 0 ;
+  }
+  Enc_Width_LRU1 {
+    physical_value, 0, 1, 1, 0 ;
+  }
+  Enc_Sig_Init_SRU3 {
+    physical_value, 0, 255, 1, 0 ;
+  }
+  Enc_TOF_SRU3 {
+    physical_value, 0, 127, 1, 0 ;
+  }
+}
+
+Signal_representation {
+  Enc_Status_SRU3: Status_SRU3 ;
+  Enc_Width_LRU1: Width_LRU1 ;
+  Enc_Sig_Init_SRU3: Sig_Init_SRU3 ;
+  Enc_TOF_SRU3: TOF_SRU3 ;
+}

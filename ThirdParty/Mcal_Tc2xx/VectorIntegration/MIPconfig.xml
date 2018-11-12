@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+============================================================================
+
+Copyright (c) 2017 by Vector Informatik GmbH. All rights reserved.
+
+This software is copyright protected and proprietary to Vector Informatik GmbH.
+Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+All other rights remain with Vector Informatik GmbH.
+
+============================================================================
+
+This file is needed for internal use.
+Please do not modify this file, otherwise the software may behave in
+unexpected way.
+
+============================================================================
+
+============================================================================
+                P R O J E C T
+============================================================================
+Module
+=======================
+Mcal_Tc2xxInf01Asr4Sub
+============================================================================
+                A U T H O R   I D E N T I T Y
+============================================================================
+Initials	Name						Company
+=====	===============	=======================================================
+virrsu	Roland Suess			Vector Informatik GmbH
+virgaj		Andrej Gazvoda			Vector Informatik GmbH
+=============================================================================
+                R E V I S I O N   H I S T O R Y
+=============================================================================
+Date				Version		Author		Description
+========= 	======	=======	=================================================
+2017-02-06	1.00.00		virgaj			Infineon Tc2xx SuperSet - Initial revision
+													MC-ISAR_AS4XX_AURIX_TC22X_AB_PB_BASE_V300_TASKING_V4_GNU
+													MC-ISAR_AS4XX_AURIX_TC22X_AB_PB_MEM_V300_TASKING_V4_GNU
+													MC-ISAR_AS4XX_AURIX_TC23X_AB_PB_BASE_V400
+													MC-ISAR_AS4XX_AURIX_TC23X_AB_PB_MEM_V400
+													MC-ISAR_SHEPlus_AS4XX_AURIX_TC23X_AB_PC_TC_V303
+													MC-ISAR_AS4XX_AURIX_TC26X_BB_PB_BASE_V400
+													MC-ISAR_AS4XX_AURIX_TC26X_BB_PB_MEM_V400
+													PRO-SIL_AURIX_SAFETLIB_EXTENDED_TC26XBB_AS403_MR2_Rel532
+2017-03-23  	1.01.00		virgaj			Infineon Tc2xx SuperSet - Expansion
+													MC-ISAR_AS4XX_AURIX_TC27X_CA_PB_BASE_V500_REL318
+													MC-ISAR_AS4XX_AURIX_TC27X_CA_PB_MEM_V500_REL318
+													MC-ISAR_AS4XX_AURIX_TC27X_DB_PB_BASE_V500_REL320
+													MC-ISAR_AS4XX_AURIX_TC27X_DB_PB_MEM_V500_REL320
+													MC-ISAR_AS4XX_AURIX_TC29X_BB_PB_BASE_V500_REL314
+													MC-ISAR_AS4XX_AURIX_TC29X_BB_PB_MEM_V500_REL314
+													MC-ISAR_AS4XX_AURIX_TC27X_DC_PB_BASE_V500_REL322
+													MC-ISAR_AS4XX_AURIX_TC27X_DC_PB_MEM_V500_REL322
+													MC-ISAR_AS4XX_AURIX_TC29X_BC_PB_BASE_V500_REL326
+													MC-ISAR_AS4XX_AURIX_TC29X_BC_PB_MEM_V500_REL326
+													PRO-SIL_AURIX_SafeTlib_Extended_TC27X_TC29x_TC26x_MR3_Rel533
+													MC-ISAR_SHEPlus_AURIX_TC23X_AB_PC_Src_V305
+													MC-ISAR_SHEPlus_AURIX_TC27X_CA_PC_Src_V703
+													MC-ISAR_SHEPlus_AURIX_TC27X_DB_PC_Src_V703
+													MC-ISAR_SHEPlus_AURIX_TC27X_DC_PC_Src_V705
+													MC-ISAR_SHEPlus_AURIX_TC29X_BB_PC_Src_V903
+2017-04-03					virrsu		Enable SafeTlib package for several packages
+2017-04-21	1.02.00		virrsu		MC-ISAR_AS4XX_AURIX_TC26X_BC_PB_BASE_V200_REL328
+													MC-ISAR_AS4XX_AURIX_TC26X_BC_PB_MEM_V200_REL328
+**************************************************************************************************************************
+-->
+<MipConfig xmlns="http://www.vector.com/MIPv2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vector.com/MIPv2 MIP2.0.6.xsd">
+	<!--
+  =====================================================================================================
+  Generic Informations
+  =====================================================================================================
+  This is the configuration file for the 3rdParty McalIntegartionHelper.
+  Please note: This file has been created and tested for a specific and agreed MCAL version.
+               As typically pattern based specificatons and actions are used this configuration
+               will be valid for other MCAL versions in most cases but this cannot be guaranteed.
+  All steps processed by the tool are logged during execution and can be retraced later on.
+  -->
+	<GeneralInformation>
+		<!-- Editing hint: No modifications should be necessary here. -->
+		<!-- Path to SIP base path relative to the location of this file. SIP base path is the \external 
+         folder 
+         ATTENTION: All other paths within this configuraton file are relative to the SIP Base path! -->
+		<SipBase_RelPath>..\\..\\..\\</SipBase_RelPath>
+		<!-- Path to the MCAL supply folder relative to the SIP Base path -->
+		<McalSupply_RelPath>ThirdParty\\Mcal_.*\\Supply</McalSupply_RelPath>
+	</GeneralInformation>
+	<!--
+  =====================================================================================================
+  Package definitions
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  Attributes:
+    - Summary:      Freetext to describe the package content in short
+    - Id:           Unique number to identify the package. This Id will be used by following commands.
+  Elements:
+    - NameExpected: This is the folder name of the package as specified by MCAL supplier.
+                    Typically this folder name contains informations about version and supported 
+                    controllers or families
+    - Description:  Free text to describe the contents of this package in detail
+    - Mandatory:    'true' if this package is mandatory, 'false' otherwise
+  =====================================================================================================
+  -->
+	<!--Tc22x-->
+	<Packages Summary="Tc22x AB-Step V300 for Tasking V4 and GNU">
+		<!-- Editing hint: Adapt these settings to the packages used -->
+		<Package Summary="MCAL/Base package" Id="1">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC22X_AB_PB_BASE_V300_TASKING_V4_GNU</NameExpected>
+			<Description>Base package containing the complete MCAL</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="Tresos tool" Id="2">
+			<NameExpected>Tresos</NameExpected>
+			<Description>Contains the 3rd party configuration and generation tool chain.</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="MEM package" Id="3">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC22X_AB_PB_MEM_V300_TASKING_V4_GNU</NameExpected>
+			<Description>Memory package including Fls and Fee.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+		<Package Summary="SafeTLib package" Id="4">
+			<NameExpected>PRO-SIL_AURIX_SAFETLIB_EXTENDED_TC22X_AS403_MR2_Rel632</NameExpected>
+			<Description>SafeTlib package.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+	</Packages>
+	<!--Tc23x-->
+	<Packages Summary="Tc23x AB-Step V400">
+		<!-- Editing hint: Adapt these settings to the packages used -->
+		<Package Summary="MCAL/Base package" Id="1">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC23X_AB_PB_BASE_V400</NameExpected>
+			<Description>Base package containing the complete MCAL</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="Tresos tool" Id="2">
+			<NameExpected>Tresos</NameExpected>
+			<Description>Contains the 3rd party configuration and generation tool chain.</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="MEM package" Id="3">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC23X_AB_PB_MEM_V400</NameExpected>
+			<Description>Memory package including Fls and Fee.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+		<Package Summary="SafeTLib package" Id="4">
+			<NameExpected>PRO-SIL_AURIX_SAFETLIB_EXTENDED_TC23X_AS403_MR2_Rel632</NameExpected>
+			<Description>SafeTlib package.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+		<Package Summary="SHE package" Id="5">
+			<NameExpected>MC-ISAR_SHEPlus_AS4XX_AURIX_TC23X_AB_PC_TC_V305</NameExpected>
+			<Description>SHE package.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+	</Packages>
+	<!--Tc26x-->
+	<Packages Summary="Tc26x BB-Step V400">
+		<!-- Editing hint: Adapt these settings to the packages used -->
+		<Package Summary="MCAL/Base package" Id="1">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC26X_BB_PB_BASE_V400</NameExpected>
+			<Description>Base package containing the complete MCAL</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="Tresos tool" Id="2">
+			<NameExpected>Tresos</NameExpected>
+			<Description>Contains the 3rd party configuration and generation tool chain.</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="MEM package" Id="3">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC26X_BB_PB_MEM_V400</NameExpected>
+			<Description>Memory package including Fls and Fee.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+		<Package Summary="SafeTLib package" Id="4">
+			<NameExpected>PRO-SIL_AURIX_SAFETLIB_EXTENDED_TC26XBB_AS403_MR3_REL533</NameExpected>
+			<Description>SafeTlib package.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+	</Packages>
+	<Packages Summary="Tc26x BC-Step V200">
+		<!-- Editing hint: Adapt these settings to the packages used -->
+		<Package Summary="MCAL/Base package" Id="1">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC26X_BC_PB_BASE_V200_REL328</NameExpected>
+			<Description>Base package containing the complete MCAL</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="Tresos tool" Id="2">
+			<NameExpected>Tresos</NameExpected>
+			<Description>Contains the 3rd party configuration and generation tool chain.</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="MEM package" Id="3">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC26X_BC_PB_MEM_V200_REL328</NameExpected>
+			<Description>Memory package including Fls and Fee.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+		<Package Summary="SafeTLib package" Id="4">
+			<NameExpected>PRO-SIL_AURIX_SAFETLIB_EXTENDED_TC26XBC_CANFD_AS403_MR3_REL533</NameExpected>
+			<Description>SafeTlib package.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+	</Packages>
+	<!--Tc27x-->
+	<Packages Summary="Tc27x CA-Step V500">
+		<!-- Editing hint: Adapt these settings to the packages used -->
+		<Package Summary="MCAL/Base package" Id="1">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC27X_CA_PB_BASE_V500_REL318</NameExpected>
+			<Description>Base package containing the complete MCAL</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="Tresos tool" Id="2">
+			<NameExpected>Tresos</NameExpected>
+			<Description>Contains the 3rd party configuration and generation tool chain.</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="MEM package" Id="3">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC27X_CA_PB_MEM_V500_REL318</NameExpected>
+			<Description>Memory package including Fls and Fee.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+		<Package Summary="SafeTLib package" Id="4">
+			<NameExpected>PRO-SIL_AURIX_SAFETLIB_EXTENDED_TC27XCA_AS403_MR3_REL533</NameExpected>
+			<Description>SafeTlib package.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+		<Package Summary="SHEPlus package" Id="5">
+			<NameExpected>MC-ISAR_SHEPlus_AS4XX_AURIX_TC27X_CA_PC_TC_V703</NameExpected>
+			<Description>SHEPlus package.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+	</Packages>
+	<Packages Summary="Tc27x DB-Step V500">
+		<!-- Editing hint: Adapt these settings to the packages used -->
+		<Package Summary="MCAL/Base package" Id="1">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC27X_DB_PB_BASE_V500_REL320</NameExpected>
+			<Description>Base package containing the complete MCAL</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="Tresos tool" Id="2">
+			<NameExpected>Tresos</NameExpected>
+			<Description>Contains the 3rd party configuration and generation tool chain.</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="MEM package" Id="3">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC27X_DB_PB_MEM_V500_REL320</NameExpected>
+			<Description>Memory package including Fls and Fee.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+		<Package Summary="SafeTLib package" Id="4">
+			<NameExpected>PRO-SIL_AURIX_SAFETLIB_EXTENDED_TC27XDB_AS403_MR3_REL533</NameExpected>
+			<Description>SafeTlib package.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+		<Package Summary="SHEPlus package" Id="5">
+			<NameExpected>MC-ISAR_SHEPlus_AS4XX_AURIX_TC27X_DB_PC_TC_V703</NameExpected>
+			<Description>SHEPlus package.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+	</Packages>
+	<Packages Summary="Tc27x DC-Step V500">
+		<!-- Editing hint: Adapt these settings to the packages used -->
+		<Package Summary="MCAL/Base package" Id="1">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC27X_DC_PB_BASE_V500_REL322</NameExpected>
+			<Description>Base package containing the complete MCAL</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="Tresos tool" Id="2">
+			<NameExpected>Tresos</NameExpected>
+			<Description>Contains the 3rd party configuration and generation tool chain.</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="MEM package" Id="3">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC27X_DC_PB_MEM_V500_REL322</NameExpected>
+			<Description>Memory package including Fls and Fee.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+		<Package Summary="SafeTLib package" Id="4">
+			<NameExpected>PRO-SIL_AURIX_SAFETLIB_EXTENDED_TC27XDC_CANFD_AS403_MR3_REL533</NameExpected>
+			<Description>SafeTlib package.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+		<Package Summary="SHEPlus package" Id="5">
+			<NameExpected>MC-ISAR_SHEPlus_AS4XX_AURIX_TC27X_DC_PC_TC_V705</NameExpected>
+			<Description>SHEPlus package.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+		<Package Summary="Complex Driver package" Id="6">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC27X_DC_PB_CD_V500_REL322</NameExpected>
+			<Description>Complex Driver package containing the complete MCAL</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+		<Package Summary="Demo Complex Driver package" Id="7">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC27X_DC_PB_DEMOCD_V500_REL322</NameExpected>
+			<Description>Demo Complex Driver package containing the complete MCAL</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+		<Package Summary="Lib package" Id="8">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC27X_DC_PC_LIB_V500_REL322</NameExpected>
+			<Description>Lib package containing the complete MCAL</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+	</Packages>
+	<!--Tc29x-->
+	<Packages Summary="Tc29x BB-Step V500">
+		<!-- Editing hint: Adapt these settings to the packages used -->
+		<Package Summary="MCAL/Base package" Id="1">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC29X_BB_PB_BASE_V500_REL314</NameExpected>
+			<Description>Base package containing the complete MCAL</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="Tresos tool" Id="2">
+			<NameExpected>Tresos</NameExpected>
+			<Description>Contains the 3rd party configuration and generation tool chain.</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="MEM package" Id="3">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC29X_BB_PB_MEM_V500_REL314</NameExpected>
+			<Description>Memory package including Fls and Fee.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+		<Package Summary="SafeTLib package" Id="4">
+			<NameExpected>PRO-SIL_AURIX_SAFETLIB_EXTENDED_TC29XBB_AS403_MR3_REL533</NameExpected>
+			<Description>SafeTlib package.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+		<Package Summary="SHEPlus package" Id="5">
+			<NameExpected>MC-ISAR_SHEPlus_AS4XX_AURIX_TC29X_BB_PC_TC_V903</NameExpected>
+			<Description>SHEPlus package.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+	</Packages>
+	<Packages Summary="Tc29x BC-Step V500">
+		<!-- Editing hint: Adapt these settings to the packages used -->
+		<Package Summary="MCAL/Base package" Id="1">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC29X_BC_PB_BASE_V500_REL326</NameExpected>
+			<Description>Base package containing the complete MCAL</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="Tresos tool" Id="2">
+			<NameExpected>Tresos</NameExpected>
+			<Description>Contains the 3rd party configuration and generation tool chain.</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="MEM package" Id="3">
+			<NameExpected>MC-ISAR_AS4XX_AURIX_TC29X_BC_PB_MEM_V500_REL326</NameExpected>
+			<Description>Memory package including Fls and Fee.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+		<Package Summary="SafeTLib package" Id="4">
+			<NameExpected>PRO-SIL_AURIX_SAFETLIB_EXTENDED_TC29XBC_CANFD_AS403_MR3_REL533</NameExpected>
+			<Description>SafeTlib package.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+	</Packages>
+	<!--
+  =====================================================================================================
+  Below all actions are described which are needed in order to install or remove the MCAL packages.
+  They are devided in the sections.
+  - Install:     With this step the MCAL is installed/copied into the SIP structure thus commonly only
+                 one action for each package is necessary namely copy the package.
+                 If package is already available in SIP (e.ghad been included in SIP) these steps will 
+                 be skipped.
+  - Prepare:     During this step some necessary operation within the MCAL packages and within the 
+                 Vector SIP are executed.
+  - UndoPrepare: With this actions the actions described within the Prepare section will be undone.
+  - Remove:      The actions described here will remove the MCAL packages!
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  For all 4 sections all available actions can be executed as often as needed.
+  Order of action in this file is equal to the order of execution.
+  =====================================================================================================
+  -->
+	<Install>
+		<!-- Editing hint: Adapt these settings to the number of used packages -->
+		<ActionCopyPackage Summary="Copy package" RelatedPackage="1"/>
+		<ActionCopyPackage Summary="Copy package" RelatedPackage="2"/>
+		<ActionCopyPackage Summary="Copy package" RelatedPackage="3"/>
+		<ActionCopyPackage Summary="Copy package" RelatedPackage="4"/>
+		<ActionCopyPackage Summary="Copy package" RelatedPackage="5"/>
+		<ActionCopyPackage Summary="Copy package" RelatedPackage="6"/>
+		<ActionCopyPackage Summary="Copy package" RelatedPackage="7"/>
+		<ActionCopyPackage Summary="Copy package" RelatedPackage="8"/>
+	</Install>
+	<Prepare>
+		<!-- Look for folder containing source files -->
+		<!-- Editing hint: No modifications should be necessary here -->
+		<ActionDefVar Summary="Define temporary variable 'Aurix_Step'" RelatedPackage="1" ExecuteAlways="true">
+			<Name>Aurix_Step</Name>
+			<!-- Look for folder name e.g. TC26x_BBstep -->
+			<LookForPathPattern>?CONST.Package_PathRel_Id1?\\(TC2.*)</LookForPathPattern>
+			<ValueBOP>$1</ValueBOP>
+		</ActionDefVar>
+		<!-- Look for common include folder -->
+		<!-- Editing hint: No modifications should be necessary here -->
+		<ActionDefVar Summary="Define temporary variable 'Aurix_Step_Inc'" RelatedPackage="1" ExecuteAlways="true">
+			<Name>Aurix_Step_Inc</Name>
+			<!-- Look for folder name e.g. TC26x -->
+			<LookForPathPattern>?CONST.Package_PathRel_Id1?\\TC2.*\\Aurix_MC-ISAR\\general\\tricore\\inc\\(TC2.*)</LookForPathPattern>
+			<ValueBOP>$1</ValueBOP>
+		</ActionDefVar>
+		<!-- Write path to MCAL package to *_rules.mak file -->
+		<ActionPatchFile Summary="Set path to MCAL package in make file" RelatedPackage="1" ExecuteAlways="true">
+			<PathRel>BSW\\Mcal_.*\\mak\\Mcal_.*_rules.mak</PathRel>
+			<Pattern>(MCAL_PATH_BASE.*=)(.*)</Pattern>
+			<ReplaceBOP>$1 ..\\?CONST.Package_PathRel_Id1?</ReplaceBOP>
+			<SkipPattern/>
+		</ActionPatchFile>
+		<!-- Write path to MEM package to *_rules.mak file -->
+		<ActionPatchFile Summary="Set path to MEM package in make file" RelatedPackage="3" ExecuteAlways="true">
+			<PathRel>BSW\\Mcal_.*\\mak\\Mcal_.*_rules.mak</PathRel>
+			<Pattern>(MCAL_PATH_MEM.*=)(.*)</Pattern>
+			<ReplaceBOP>$1 ..\\?CONST.Package_PathRel_Id3?</ReplaceBOP>
+			<SkipPattern/>
+		</ActionPatchFile>
+		<!-- Write path to SafeTLib package to *_rules.mak file -->
+		<ActionPatchFile Summary="Set path to SafeTLib package in make file" RelatedPackage="4" ExecuteAlways="true">
+			<PathRel>BSW\\Mcal_.*\\mak\\Mcal_.*_rules.mak</PathRel>
+			<Pattern>(SAFETLIB_BASE_PATH.*=)(.*)</Pattern>
+			<ReplaceBOP>$1 ..\\?CONST.Package_PathRel_Id4?</ReplaceBOP>
+			<SkipPattern/>
+		</ActionPatchFile>
+		<!-- Write path to SHE+ package into *_rules.mak file -->
+		<ActionPatchFile Summary="Set path to SHE+ package in make file" RelatedPackage="5" ExecuteAlways="true">
+			<PathRel>BSW\\Mcal_.*\\mak\\Mcal_.*_rules.mak</PathRel>
+			<Pattern>(SHEPLUS_BASE_PATH.*=)(.*)</Pattern>
+			<ReplaceBOP>$1 ..\\?CONST.Package_PathRel_Id5?</ReplaceBOP>
+			<SkipPattern/>
+		</ActionPatchFile>
+		<!-- Write path to MCAL package to *_rules.mak file -->
+		<ActionPatchFile Summary="Set path to MCAL CD package in make file" RelatedPackage="6" ExecuteAlways="true">
+			<PathRel>BSW\\Mcal_.*\\mak\\Mcal_.*_rules.mak</PathRel>
+			<Pattern>(MCAL_PATH_CD.*=)(.*)</Pattern>
+			<ReplaceBOP>$1 ..\\?CONST.Package_PathRel_Id6?</ReplaceBOP>
+			<SkipPattern/>
+		</ActionPatchFile>
+		<!-- Write path to MCAL package to *_rules.mak file -->
+		<ActionPatchFile Summary="Set path to MCAL Demo CD package in make file" RelatedPackage="7" ExecuteAlways="true">
+			<PathRel>BSW\\Mcal_.*\\mak\\Mcal_.*_rules.mak</PathRel>
+			<Pattern>(MCAL_PATH_DEMO_CD.*=)(.*)</Pattern>
+			<ReplaceBOP>$1 ..\\?CONST.Package_PathRel_Id7?</ReplaceBOP>
+			<SkipPattern/>
+		</ActionPatchFile>
+		<!-- Write path to MCAL package to *_rules.mak file -->
+		<ActionPatchFile Summary="Set path to MCAL Lib package in make file" RelatedPackage="8" ExecuteAlways="true">
+			<PathRel>BSW\\Mcal_.*\\mak\\Mcal_.*_rules.mak</PathRel>
+			<Pattern>(MCAL_PATH_LIB.*=)(.*)</Pattern>
+			<ReplaceBOP>$1 ..\\?CONST.Package_PathRel_Id8?</ReplaceBOP>
+			<SkipPattern/>
+		</ActionPatchFile>
+		<!-- Write path to folder containing source files to *_rules.mak file -->
+		<ActionPatchFile Summary="Set variable AURIX_STEP in make file" RelatedPackage="1" ExecuteAlways="true">
+			<PathRel>BSW\\Mcal_.*\\mak\\Mcal_.*_rules.mak</PathRel>
+			<Pattern>(AURIX_STEP\s*=)(.*)</Pattern>
+			<ReplaceBOP>$1 ?VAR.Aurix_Step?</ReplaceBOP>
+			<SkipPattern/>
+		</ActionPatchFile>
+		<!-- Write path to common include folder to *_rules.mak file -->
+		<ActionPatchFile Summary="Set variable AURIX_STEP_INC in make file" RelatedPackage="1" ExecuteAlways="true">
+			<PathRel>BSW\\Mcal_.*\\mak\\Mcal_.*_rules.mak</PathRel>
+			<Pattern>(AURIX_STEP_INC\s*=)(.*)</Pattern>
+			<ReplaceBOP>$1 ?VAR.Aurix_Step_Inc?</ReplaceBOP>
+			<SkipPattern/>
+			<!-- Patch Settings_Tresos.xml file -->
+			<!-- Editing hint: No modifications should be necessary-->
+		</ActionPatchFile>
+		<ActionPatchFile Summary="Set path to 3rd party tool in DaVinciConfigurator configuration file" RelatedPackage="2" ExecuteAlways="true">
+			<PathRel>DaVinciConfigurator\\Generators\\Mcal_.*\\Settings_Tresos.xml</PathRel>
+			<Pattern><![CDATA[(.*<Setting Name="TresosFolder" Value=")(.*)(".*/>)]]></Pattern>
+			<ReplaceBOP><![CDATA[$1$(SipRootPath)\\?CONST.Package_PathRel_Id2?$3]]></ReplaceBOP>
+			<SkipPattern/>
+		</ActionPatchFile>
+		<!-- Copy/Install MCAL plugins to Tresos -->
+		<!-- Editing hint: Adapt family name, e.g. Aurix, if necessary -->
+		<ActionCopyPattern Summary="Copy/Install MCAL plugins to Tresos" RelatedPackage="1" ExecuteAlways="true" ActionId="10">
+			<SourceRootRel>?CONST.Package_PathRel_Id1?\\TC2.*\\Aurix_MC-ISAR\\tools\\tresosECU\\plugins</SourceRootRel>
+			<TargetRootRel>?CONST.Package_PathRel_Id2?\\plugins</TargetRootRel>
+			<SourcePattern>(.*_Aurix)</SourcePattern>
+			<TargetBOP>$1</TargetBOP>
+			<ExcludePattern/>
+		</ActionCopyPattern>
+		<!-- Copy/Install MEM plugins to Tresos -->
+		<!-- Editing hint: Adapt family name, e.g. Aurix, if necessary -->
+		<ActionCopyPattern Summary="Copy/Install MEM plugins to Tresos" RelatedPackage="3" ExecuteAlways="true" ActionId="11">
+			<SourceRootRel>?CONST.Package_PathRel_Id3?\\TC2.*\\Aurix_MC-ISAR\\tools\\tresosECU\\plugins</SourceRootRel>
+			<TargetRootRel>?CONST.Package_PathRel_Id2?\\plugins</TargetRootRel>
+			<SourcePattern>(.*_Aurix)</SourcePattern>
+			<TargetBOP>$1</TargetBOP>
+			<ExcludePattern/>
+		</ActionCopyPattern>
+		<!-- Copy/Install SafetTLib plugins to Tresos -->
+		<!-- Editing hint: Adapt family name, e.g. Aurix, if necessary -->
+		<ActionCopyPattern Summary="Copy/Install SafeTLib plugins to Tresos" RelatedPackage="4" ExecuteAlways="true" ActionId="12">
+			<SourceRootRel>?CONST.Package_PathRel_Id4?\\TC2.*\\01_SafeTlib\\tools\\plugins</SourceRootRel>
+			<TargetRootRel>?CONST.Package_PathRel_Id2?\\plugins</TargetRootRel>
+			<SourcePattern>(.*_Aurix)</SourcePattern>
+			<TargetBOP>$1</TargetBOP>
+			<ExcludePattern>Resource_Aurix</ExcludePattern>
+		</ActionCopyPattern>
+		<!-- Copy/Install SHE+ plugins to Tresos -->
+		<!-- Editing hint: Adapt family name, e.g. Aurix, if necessary -->
+		<ActionCopyPattern Summary="Copy/Install SHE+ plugins to Tresos" RelatedPackage="5" ExecuteAlways="true" ActionId="13">
+			<SourceRootRel>?CONST.Package_PathRel_Id5?\\TC2.*\\Aurix_MC-ISAR\\tools\\tresosECU\\plugins</SourceRootRel>
+			<TargetRootRel>?CONST.Package_PathRel_Id2?\\plugins</TargetRootRel>
+			<SourcePattern>(.*_Aurix)</SourcePattern>
+			<TargetBOP>$1</TargetBOP>
+			<ExcludePattern>EcuM.*</ExcludePattern>
+		</ActionCopyPattern>
+		<!-- Copy/Install MCAL plugins to Tresos -->
+		<!-- Editing hint: Adapt family name, e.g. Aurix, if necessary -->
+		<ActionCopyPattern Summary="Copy/Install MCAL plugins to Tresos" RelatedPackage="6" ExecuteAlways="true" ActionId="14">
+			<SourceRootRel>?CONST.Package_PathRel_Id6?\\TC2.*\\Aurix_MC-ISAR\\tools\\tresosECU\\plugins</SourceRootRel>
+			<TargetRootRel>?CONST.Package_PathRel_Id2?\\plugins</TargetRootRel>
+			<SourcePattern>(.*_Aurix)</SourcePattern>
+			<TargetBOP>$1</TargetBOP>
+			<ExcludePattern/>
+		</ActionCopyPattern>
+		<!-- Copy/Install MCAL plugins to Tresos -->
+		<!-- Editing hint: Adapt family name, e.g. Aurix, if necessary -->
+		<ActionCopyPattern Summary="Copy/Install MCAL plugins to Tresos" RelatedPackage="7" ExecuteAlways="true" ActionId="15">
+			<SourceRootRel>?CONST.Package_PathRel_Id7?\\TC2.*\\Aurix_MC-ISAR\\tools\\tresosECU\\plugins</SourceRootRel>
+			<TargetRootRel>?CONST.Package_PathRel_Id2?\\plugins</TargetRootRel>
+			<SourcePattern>(.*_Aurix)</SourcePattern>
+			<TargetBOP>$1</TargetBOP>
+			<ExcludePattern/>
+		</ActionCopyPattern>
+		<!-- Copy/Install MCAL plugins to Tresos -->
+		<!-- Editing hint: Adapt family name, e.g. Aurix, if necessary -->
+		<ActionCopyPattern Summary="Copy/Install MCAL plugins to Tresos" RelatedPackage="8" ExecuteAlways="true" ActionId="16">
+			<SourceRootRel>?CONST.Package_PathRel_Id8?\\TC2.*\\Aurix_MC-ISAR\\tools\\tresosECU\\plugins</SourceRootRel>
+			<TargetRootRel>?CONST.Package_PathRel_Id2?\\plugins</TargetRootRel>
+			<SourcePattern>(.*_Aurix)</SourcePattern>
+			<TargetBOP>$1</TargetBOP>
+			<ExcludePattern/>
+		</ActionCopyPattern>
+		<!-- Rename MCAL header files to avoid redefinitions -->
+		<!-- Editing hint: File paths may need to be adapted. Add or remove files if necessary -->
+		<ActionRenameFile Summary="Rename files in folder 'integration_general' to avoid redefinitions" ExecuteAlways="true" RelatedPackage="1" ActionId="20" MultiFile="true">
+			<PathRel><![CDATA[?CONST.Package_PathRel_Id1?\\TC2.*\\Aurix_MC-ISAR\\integration_general\\inc\\(?'name'[^_]\w*)(?'extension'\.\w*)]]></PathRel>
+			<NewName>_${name}${extension}</NewName>
+			<ExcludePattern>^_.*|SchM_17_McalCfg.h|McalOsConfig.h</ExcludePattern>
+		</ActionRenameFile>
+		<ActionRenameFile Summary="Rename files in folder 'compiler' to avoid redefinitions" ExecuteAlways="true" RelatedPackage="1" ActionId="21" MultiFile="true">
+			<PathRel><![CDATA[?CONST.Package_PathRel_Id1?\\TC2.*\\Aurix_MC-ISAR\\general\\tricore\\compiler\\(?'name'[^_]\w*)(?'extension'\.\w*)]]></PathRel>
+			<NewName>_${name}${extension}</NewName>
+			<ExcludePattern/>
+		</ActionRenameFile>
+		<ActionRenameFile Summary="Rename files in folder 'inc' to avoid redefinitions" ExecuteAlways="true" RelatedPackage="1" ActionId="22" MultiFile="true">
+			<PathRel><![CDATA[?CONST.Package_PathRel_Id1?\\TC2.*\\Aurix_MC-ISAR\\general\\inc\\(?'name'[^_]\w*)(?'extension'\.\w*)]]></PathRel>
+			<NewName>_${name}${extension}</NewName>
+			<ExcludePattern/>
+		</ActionRenameFile>
+		<!--Rename SAFETLIB header files to avoid redefinitions-->
+		<ActionRenameFile Summary="Rename files in SafeTLib folder 'common' to avoid redefinitions" ExecuteAlways="true" RelatedPackage="4" ActionId="23" MultiFile="true">
+			<PathRel><![CDATA[?CONST.Package_PathRel_Id4?\\TC2.*\\01_SafeTlib\\Common\\(?'name'[^_]\w*)(?'extension'\.\w*)]]></PathRel>
+			<NewName>_${name}${extension}</NewName>
+			<ExcludePattern>^_.*|ChipId.h|Ifx_MemMap.h|Sl_ErrorCodes.h|Sl_Ipc.h|Sl_Timeout.h|Sl_FlsErrPtrn.c|Sl_FlsErrPtrn.h|Sl_Ipc.c</ExcludePattern>
+		</ActionRenameFile>		
+	</Prepare>
+	<!-- Define actions to be undone when executing UndPrepare -->
+	<!-- Editing hint: Adapt the undo settings to the action settings above -->
+	<UndoPrepare>
+		<Undo ActionId="10" Summary="Remove Base plugins from Tresos"/>
+		<Undo ActionId="11" Summary="Remove Mem plugins from Tresos"/>
+		<Undo ActionId="12" Summary="Remove SafeTLib plugins from Tresos"/>
+		<Undo ActionId="13" Summary="Remove SafeTLib plugins from Tresos"/>
+		<!-- Rename MCAL header files to avoid redefinitions -->
+		<!-- Editing hint: File paths may need to be adapted. Add or remove files if necessary -->
+		<ActionRenameFile Summary="Undo the renaming actions in folder 'integration_general'" RelatedPackage="1" ActionId="24" MultiFile="true">
+			<PathRel><![CDATA[?CONST.Package_PathRel_Id1?\\TC2.*\\Aurix_MC-ISAR\\integration_general\\inc\\_(?'name'[^_]\w*)(?'extension'\.\w*)]]></PathRel>
+			<NewName>${name}${extension}</NewName>
+			<ExcludePattern/>
+		</ActionRenameFile>
+
+		<ActionRenameFile Summary=" Undo 'Rename files in folder 'compiler' to avoid redefinitions'" RelatedPackage="1" ActionId="25" MultiFile="true">
+			<PathRel><![CDATA[?CONST.Package_PathRel_Id1?\\TC2.*\\Aurix_MC-ISAR\\general\\tricore\\compiler\\_(?'name'[^_]\w*)(?'extension'\.\w*)]]></PathRel>
+			<NewName>${name}${extension}</NewName>
+			<ExcludePattern/>
+		</ActionRenameFile>
+		<ActionRenameFile Summary="Undo 'Rename files in folder 'inc' to avoid redefinitions'" RelatedPackage="1" ActionId="26" MultiFile="true">
+			<PathRel><![CDATA[?CONST.Package_PathRel_Id1?\\TC2.*\\Aurix_MC-ISAR\\general\\inc\\_(?'name'[^_]\w*)(?'extension'\.\w*)]]></PathRel>
+			<NewName>${name}${extension}</NewName>
+			<ExcludePattern/>
+		</ActionRenameFile>
+		<!--Rename SAFETLIB header files to avoid redefinitions-->
+		<ActionRenameFile Summary="Undo 'Rename files in SAFETLIB folder 'common' to avoid redefinitions'" RelatedPackage="4" ActionId="27" MultiFile="true">
+			<PathRel><![CDATA[?CONST.Package_PathRel_Id4?\\TC2.*\\01_SafeTlib\\Common\\_(?'name'[^_]\w*)(?'extension'\.\w*)]]></PathRel>
+			<NewName>${name}${extension}</NewName>
+			<ExcludePattern/>
+		</ActionRenameFile>
+				
+		
+	</UndoPrepare>
+	<!-- Define actions to be undone when executing Remove -->
+	<!-- Editing hint: Adapt the remove settings to the install settings above -->
+	<Remove>
+		<ActionRemove Summary="Remove 3rd party packages" RelatedPackage="-1" MultiFile="true">
+			<!-- action removes supply folder, but only if all installed packages are removed at once (RelatedPackage="-1") -->
+			<PathRel>?CONST.Supply_PathRel?</PathRel>
+		</ActionRemove>
+	</Remove>
+	<!--
+  =====================================================================================================
+  As the last step the BSWMD files have to be copied from the MCAL packages to a SIP internal location.
+  Therefore the supported derivatives must be determined and a derivative must be choosen by customer.
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  In order to specify the supported derivates there are two possibilties:
+  1. Specify them explicitly
+     <Derivatives>
+       <Derivative DisplayName="R7F701002" IdentifyingFileFragment="02" />
+       <Derivative DisplayName="R7F701003" IdentifyingFileFragment="03" />
+       ...
+     </Derivatives>
+     The Attribute DisplayName specifies the name of the derivative which shall be shown within the tool.
+     The Attribute IdentifyingFileFragment defines the fragment of the filename which signalizes the 
+     compatibility to the derivative.
+  
+  2. Using a pattern to look for supported derivatives within the MCAL packages
+     <Derivatives>
+       <Pattern><![CDATA[?CONST.Package_PathRel_Id1?\\TC2.*\\Aurix_.*\\tools\\tresosECU\\bmd\\(?<derivative>TC.*)]]></Pattern>
+       <DisplayNameBOP>Aurix ${derivative}</DisplayNameBOP>
+       <IdentifyingFileFragmentBOP>${derivative}</IdentifyingFileFragmentBOP>
+     </Derivatives>
+     
+     The <Pattern> element is used to scan for derivatives. 
+     The <DisplayNameBOP> defines the name of the derivative to be displayed.
+     The <IdentifyingFileFragmentBOP> defines the fragment of the filename which signalizes the 
+     compatibility to the derivative.
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  After defining the derivatives as a second step the copy actions for each MCAL package have to be 
+  defined.
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  The action ActionDefVar may be defined in advance in order to set variables which may be used within 
+  the copy actions.
+  =====================================================================================================
+  -->
+	<Bswmd>
+		<ActionDefVar Summary="Define temporary variable" RelatedPackage="1" ExecuteAlways="true">
+			<Name>BswmdMcalFolder</Name>
+			<LookForPathPattern>BSWMD\\(Mcal_\w*)</LookForPathPattern>
+			<ValueBOP>$1</ValueBOP>
+		</ActionDefVar>
+		<!-- Identify available derivatives and packages subfolders in \tools\tresosECU\bmd -->
+		<!-- Editing hint: path to \tools\tresosECU\bmd may need to be adapted -->
+		<DerivativeScan>
+			<Pattern><![CDATA[?CONST.Package_PathRel_Id1?\\TC2.*\\Aurix_.*\\tools\\tresosECU\\bmd\\AS4.0.3\\TC2.*\\(?<derivative>TC.*)]]></Pattern>
+			<DisplayNameBOP>${derivative}</DisplayNameBOP>
+			<!--Results in e.g.: TC275TC_64F200N, ..-->
+			<IdentifyingFileFragmentBOP>${derivative}</IdentifyingFileFragmentBOP>
+		</DerivativeScan>
+		<ActionDefVar Summary="Define temporary variable" RelatedPackage="1" ExecuteAlways="true">
+			<Name>IdentifyingFileFragment_short</Name>
+			<BaseValue>?USR.IdentifyingFileFragment?</BaseValue>
+			<BasePattern>(TC...).*</BasePattern>
+			<ValueBOP>$1</ValueBOP>
+		</ActionDefVar>
+		<!-- Copy BSWMDs of selected derivative to BSWMD forlder -->
+		<!-- Editing hint: Packages and plugin names may need to be adapted -->
+		<Copy RelatedPackage="1">
+			<Pattern><![CDATA[?CONST.Package_PathRel_Id1?\\TC2.*\\Aurix_.*\\tools\\tresosECU\\bmd\\AS4.0.3*\\TC2.*\\?USR.IdentifyingFileFragment?\\(?<name>\w*)(?<extension>\.\w*)]]></Pattern>
+			<TargetBOP>Bswmd\\?VAR.BswmdMcalFolder?\\Copy_${name}.arxml</TargetBOP>
+			<ExcludePattern>.*Dem.bmd|.*EcuM.bmd</ExcludePattern>
+			<RemovePattern>Bswmd\\?VAR.BswmdMcalFolder?\\Copy_</RemovePattern>
+		</Copy>
+		<Copy RelatedPackage="3">
+			<Pattern><![CDATA[?CONST.Package_PathRel_Id3?\\TC2.*\\Aurix_.*\\tools\\tresosECU\\bmd\\AS4.0.3*\\TC2.*\\?USR.IdentifyingFileFragment?\\(?<name>\w*)(?<extension>\.\w*)]]></Pattern>
+			<TargetBOP>Bswmd\\?VAR.BswmdMcalFolder?\\Copy_${name}.arxml</TargetBOP>
+			<ExcludePattern/>
+			<RemovePattern>Bswmd\\?VAR.BswmdMcalFolder?\\Copy_</RemovePattern>
+		</Copy>
+		<Copy RelatedPackage="4">
+			<Pattern><![CDATA[?CONST.Package_PathRel_Id4?\\TC2.*\\01_SafeTlib\\tools\\bmd\\AS403\\TC2.*\\?VAR.IdentifyingFileFragment_short?\\?USR.IdentifyingFileFragment?\\(?<name>\w*)(?<extension>\.\w*)]]></Pattern>
+			<TargetBOP>Bswmd\\?VAR.BswmdMcalFolder?\\Copy_${name}.arxml</TargetBOP>
+			<ExcludePattern/>
+			<RemovePattern>Bswmd\\?VAR.BswmdMcalFolder?\\Copy_</RemovePattern>
+		</Copy>
+		<Copy RelatedPackage="5">
+			<Pattern><![CDATA[?CONST.Package_PathRel_Id5?\\TC2.*\\Aurix_MC-ISAR\\tools\\tresosECU\\bmd\\AS4.0.3*\\TC2.*\\?VAR.IdentifyingFileFragment_short?\\(?<name>\w*)(?<extension>\.\w*)]]></Pattern>
+			<TargetBOP>Bswmd\\?VAR.BswmdMcalFolder?\\Copy_${name}.arxml</TargetBOP>
+			<ExcludePattern/>
+			<RemovePattern>Bswmd\\?VAR.BswmdMcalFolder?\\Copy_</RemovePattern>
+		</Copy>
+		<Copy RelatedPackage="6">
+			<Pattern><![CDATA[?CONST.Package_PathRel_Id6?\\TC2.*\\Aurix_.*\\tools\\tresosECU\\bmd\\AS4.0.3*\\TC2.*\\?USR.IdentifyingFileFragment?\\(?<name>\w*)(?<extension>\.\w*)]]></Pattern>
+			<TargetBOP>Bswmd\\?VAR.BswmdMcalFolder?\\Copy_${name}.arxml</TargetBOP>
+			<ExcludePattern>.*Dem.bmd|.*EcuM.bmd</ExcludePattern>
+			<RemovePattern>Bswmd\\?VAR.BswmdMcalFolder?\\Copy_</RemovePattern>
+		</Copy>
+		<Copy RelatedPackage="7">
+			<Pattern><![CDATA[?CONST.Package_PathRel_Id7?\\TC2.*\\Aurix_.*\\tools\\tresosECU\\bmd\\AS4.0.3*\\TC2.*\\?USR.IdentifyingFileFragment?\\(?<name>\w*)(?<extension>\.\w*)]]></Pattern>
+			<TargetBOP>Bswmd\\?VAR.BswmdMcalFolder?\\Copy_${name}.arxml</TargetBOP>
+			<ExcludePattern>.*Dem.bmd|.*EcuM.bmd</ExcludePattern>
+			<RemovePattern>Bswmd\\?VAR.BswmdMcalFolder?\\Copy_</RemovePattern>
+		</Copy>
+		<Copy RelatedPackage="8">
+			<Pattern><![CDATA[?CONST.Package_PathRel_Id8?\\TC2.*\\Aurix_.*\\tools\\tresosECU\\bmd\\AS4.0.3*\\TC2.*\\?USR.IdentifyingFileFragment?\\(?<name>\w*)(?<extension>\.\w*)]]></Pattern>
+			<TargetBOP>Bswmd\\?VAR.BswmdMcalFolder?\\Copy_${name}.arxml</TargetBOP>
+			<ExcludePattern>.*Dem.bmd|.*EcuM.bmd</ExcludePattern>
+			<RemovePattern>Bswmd\\?VAR.BswmdMcalFolder?\\Copy_</RemovePattern>
+		</Copy>
+	</Bswmd>
+	<Finalize>
+		<!-- Patch all other xml setting files due to derivate entry -->
+		<ActionPatchFile Summary="Patch settings xml files and set derivative name" RelatedPackage="1" ExecuteAlways="true" MultiFile="true">
+			<PathRel>DaVinciConfigurator\\Generators\\Mcal_.*\\Settings_.*</PathRel>
+			<Pattern><![CDATA[(?<start>.*<Setting.*Name="Derivate".*Value=").*(?<end>".*)]]></Pattern>
+			<ReplaceBOP><![CDATA[${start}?VAR.IdentifyingFileFragment_short?${end}]]></ReplaceBOP>
+			<SkipPattern/>
+		</ActionPatchFile>
+	</Finalize>
+</MipConfig>

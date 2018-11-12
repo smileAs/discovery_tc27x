@@ -1,0 +1,22 @@
+
+Name: config/SafeWdgExtTlf.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594751248886908315901961888274318098965604885777921389
+ 335945519295589159853331738573760007362666974858931830
+SignatureKeyID: Infineon
+
+Name: generate/inc/SafeWdgExtTlf_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 74155374890373130645248686979803819819396702589423268088090
+ 55982695849780722407830914766296967718392550618016000983
+SignatureKeyID: Infineon
+
+Name: generate/src/SafeWdgExtTlf_PBCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594773970196143205221002133189769939590755587973762705
+ 147587170728909488029749970334772235715572379111651459
+SignatureKeyID: Infineon
+

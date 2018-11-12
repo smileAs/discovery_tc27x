@@ -1,0 +1,679 @@
+#######################################################################################################################
+# File Name  : Makefile.AURIX.GNU.ALL.LinkerScriptDefault                                                             #
+# Description: Linker/Symbol Preprocessor command file generation                                                     #
+# Project    : Vector Basic Runtime System                                                                            #
+# Module     : BrsHw for Platform Infineon Aurix                                                                      #
+#              and Compiler Hightec GNU                                                                               #
+#                                                                                                                     #
+#---------------------------------------------------------------------------------------------------------------------#
+# COPYRIGHT                                                                                                           #
+#---------------------------------------------------------------------------------------------------------------------#
+# Copyright (c) 2016 by Vector Informatik GmbH.                                                  All rights reserved. #
+#                                                                                                                     #
+#---------------------------------------------------------------------------------------------------------------------#
+# AUTHOR IDENTITY                                                                                                     #
+#---------------------------------------------------------------------------------------------------------------------#
+# Name                          Initials      Company                                                                 #
+# ----------------------------  ------------  ------------------------------------------------------------------------#
+# Benjamin Walter               visbwa        Vector Informatik GmbH                                                  #
+#---------------------------------------------------------------------------------------------------------------------#
+# REVISION HISTORY                                                                                                    #
+#---------------------------------------------------------------------------------------------------------------------#
+# Version   Date        Author  Description                                                                           #
+# --------  ----------  ------  --------------------------------------------------------------------------------------#
+# 02.00.00  2014-11-24  visbwa  Adoptions for new Aurix-only BrsHw                                                    #
+# 02.00.01  2015-11-26  visbwa  Changed platform name to AURIX                                                        #
+# 02.01.00  2016-06-23  visbwa  Reworked file header structure to fit with Brs_Template 2.00.01                       #
+# 02.02.00  2016-08-25  visbwa  Renamed file to separate from OsGen7 UseCase                                          #
+#######################################################################################################################
+
+define LINK_LOCATE_RULE_TC2XX
+  $(ECHO) "  "                                                                                                                        > $@; \
+  $(ECHO) " /* "                                                                                                                      >> $@; \
+  $(ECHO) "  * Name: iROM.ld  "                                                                                                       >> $@; \
+  $(ECHO) "  *  "                                                                                                                     >> $@; \
+  $(ECHO) "  * Generated Linker Description File "                                                                                    >> $@; \
+  $(ECHO) "  * Copyright (C) 2010 HighTec EDV-Systeme GmbH.  "                                                                        >> $@; \
+  $(ECHO) "  * (!Do not edit outsite of the protection areas!) "                                                                      >> $@; \
+  $(ECHO) "  * "                                                                                                                      >> $@; \
+  $(ECHO) "  * Description:  "                                                                                                        >> $@; \
+  $(ECHO) "  * internal flash configuration "                                                                                         >> $@; \
+  $(ECHO) "  */ "                                                                                                                     >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) " /* "                                                                                                                      >> $@; \
+  $(ECHO) "  * Define Entrypoint of Executable "                                                                                      >> $@; \
+  $(ECHO) "  */ "                                                                                                                     >> $@; \
+  $(ECHO) " ENTRY(_start) "                                                                                                           >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) " /* "                                                                                                                      >> $@; \
+  $(ECHO) "  * Global "                                                                                                               >> $@; \
+  $(ECHO) "  */ "                                                                                                                     >> $@; \
+  $(ECHO) " /*Program Flash Memory (PFLASH0)*/  "                                                                                     >> $@; \
+  $(ECHO) " __PMU_PFLASH0_BEGIN = 0xA0000000; "                                                                                       >> $@; \
+  $(ECHO) " __PMU_PFLASH0_SIZE = 2M; "                                                                                                >> $@; \
+  $(ECHO) " /*Program Flash Memory (PFLASH1)*/  "                                                                                     >> $@; \
+  $(ECHO) " __PMU_PFLASH1_BEGIN = 0xA0200000; "                                                                                       >> $@; \
+  $(ECHO) " __PMU_PFLASH1_SIZE = 2M; "                                                                                                >> $@; \
+  $(ECHO) " /*Data Flash Memory (DFLASH0)*/  "                                                                                        >> $@; \
+  $(ECHO) " __PMU_DFLASH0_BEGIN = 0xAF000000; "                                                                                       >> $@; \
+  $(ECHO) " __PMU_DFLASH0_SIZE = 1M; "                                                                                                >> $@; \
+  $(ECHO) " /*Data Flash Memory (DFLASH0_1)*/  "                                                                                      >> $@; \
+  $(ECHO) " __PMU_DFLASH0_1_BEGIN = 0xAF100000; "                                                                                     >> $@; \
+  $(ECHO) " __PMU_DFLASH0_1_SIZE = 16K; "                                                                                             >> $@; \
+  $(ECHO) " /*Data Flash Memory (DFLASH1)*/  "                                                                                        >> $@; \
+  $(ECHO) " __PMU_DFLASH1_BEGIN = 0xAF110000; "                                                                                       >> $@; \
+  $(ECHO) " __PMU_DFLASH1_SIZE = 64K; "                                                                                               >> $@; \
+  $(ECHO) " /*Boot ROM (BROM)*/  "                                                                                                    >> $@; \
+  $(ECHO) " __BROM_BEGIN = 0x8FFF8000; "                                                                                              >> $@; \
+  $(ECHO) " __BROM_SIZE = 32K; "                                                                                                      >> $@; \
+  $(ECHO) " /*Scratch-Pad RAM (PSPR)*/  "                                                                                             >> $@; \
+  $(ECHO) " __PMI_PSPR_BEGIN = 0xC0000000; "                                                                                          >> $@; \
+  $(ECHO) " __PMI_PSPR_SIZE = 24K; "                                                                                                  >> $@; \
+  $(ECHO) " /*Local Data RAM (DSPR)*/  "                                                                                              >> $@; \
+  $(ECHO) " __DMI_DSPR_BEGIN = 0xD0000000; "                                                                                          >> $@; \
+  $(ECHO) " __DMI_DSPR_SIZE = 112K; "                                                                                                 >> $@; \
+  $(ECHO) " /*Local Data RAM (DSPR)*/  "                                                                                              >> $@; \
+  $(ECHO) " __LMU_SRAM_BEGIN = 0x90000000; "                                                                                          >> $@; \
+  $(ECHO) " __LMU_SRAM_SIZE = 32K; "                                                                                                  >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) " __USTACK_SIZE = DEFINED (__USTACK_SIZE) ? __USTACK_SIZE : 1K;  /* Section for ustack*/  "                                 >> $@; \
+  $(ECHO) " __ISTACK_SIZE = DEFINED (__ISTACK_SIZE) ? __ISTACK_SIZE : 256;  /* Section for istack*/  "                                >> $@; \
+  $(ECHO) " __HEAP_SIZE = DEFINED (__HEAP_SIZE) ? __HEAP_SIZE : 4K;  /* Section for heap*/  "                                         >> $@; \
+  $(ECHO) " __CSA_SIZE = DEFINED (__CSA_SIZE) ? __CSA_SIZE : 16K;  /* Section for CSA*/  "                                            >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) " /** "                                                                                                                     >> $@; \
+  $(ECHO) "  * User defined global region "                                                                                           >> $@; \
+  $(ECHO) "  */ "                                                                                                                     >> $@; \
+  $(ECHO) " /*PROTECTED REGION ID(Protection:iROM-Global) ENABLED START*/ "                                                           >> $@; \
+  $(ECHO) " /*Protection-Area for your own LDF-Code*/ "                                                                               >> $@; \
+  $(ECHO) " /*PROTECTED REGION END*/ "                                                                                                >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) " /* "                                                                                                                      >> $@; \
+  $(ECHO) "  * internal flash configuration "                                                                                         >> $@; \
+  $(ECHO) "  */ "                                                                                                                     >> $@; \
+  $(ECHO) " MEMORY "                                                                                                                  >> $@; \
+  $(ECHO) " { "                                                                                                                       >> $@; \
+  $(ECHO) "  PMU_PFLASH0 (rx!p): org = 0x80080000, len = 1M  /*Program Flash Memory (PFLASH0)*/  "                                    >> $@; \
+  $(ECHO) "  PMU_PFLASH1 (rx!p): org = 0x80200000, len = 2M  /*Program Flash Memory (PFLASH1)*/  "                                    >> $@; \
+  $(ECHO) "  PMU_DFLASH0 (r!xp): org = 0xAF000000, len = 1M  /*Data Flash Memory (DFLASH0)*/  "                                       >> $@; \
+  $(ECHO) "  PMU_DFLASH0_1 (r!xp): org = 0xAF100000, len = 16K  /*Data Flash Memory (DFLASH0_1)*/  "                                  >> $@; \
+  $(ECHO) "  PMU_DFLASH1 (r!xp): org = 0xAF110000, len = 64K  /*Data Flash Memory (DFLASH1)*/  "                                      >> $@; \
+  $(ECHO) "  BROM (rx!p): org = 0x8FFF8000, len = 32K  /*Boot ROM (BROM)*/  "                                                         >> $@; \
+  $(ECHO) "  PMI_PSPR (wx!p): org = 0xC0000000, len = 24K  /*Scratch-Pad RAM (PSPR)*/  "                                              >> $@; \
+  $(ECHO) "  DMI_DSPR (w!xp): org = 0xD0000000, len = 112K  /*Local Data RAM (DSPR)*/  "                                              >> $@; \
+  $(ECHO) "  LMU_SRAM (w!xp): org = 0x90000000, len = 32K  /*Local Data RAM (DSPR)*/  "                                               >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) " } "                                                                                                                       >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) " SECTIONS "                                                                                                                >> $@; \
+  $(ECHO) " { "                                                                                                                       >> $@; \
+  $(ECHO) "  /*Code-Sections*/ "                                                                                                      >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Startup code for AURIX "                                                                                              >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .startup_code  : "                                                                                                       >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__startup_code_start = .); "                                                                                    >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .startup_code.begin) ENABLED START*/ "                                           >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   *(.startup_code) /*Startup code for AURIX*/  "                                                                          >> $@; \
+  $(ECHO) "   *(.startup_code*) "                                                                                                     >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .startup_code) ENABLED START*/ "                                                 >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__startup_code_end = .); "                                                                                      >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "  } > PMU_PFLASH0 /* PMU_PFLASH0: Program Flash Memory (PFLASH0) */  "                                                     >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Code section "                                                                                                        >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .text  : "                                                                                                               >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__text_start = .); "                                                                                            >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .text.begin) ENABLED START*/ "                                                   >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   *(.text) /*Code section*/  "                                                                                            >> $@; \
+  $(ECHO) "   *(.text*) "                                                                                                             >> $@; \
+  $(ECHO) "   *(.gnu.linkonce.t.*) "                                                                                                  >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .text) ENABLED START*/ "                                                         >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__text_end = .); "                                                                                              >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "  } > PMU_PFLASH0 /* PMU_PFLASH0: Program Flash Memory (PFLASH0) */  "                                                     >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Code executed before calling main "                                                                                   >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .init  : "                                                                                                               >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__init_start = .); "                                                                                            >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .init.begin) ENABLED START*/ "                                                   >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   KEEP(*(.init)) /*Code executed before calling main*/  "                                                                 >> $@; \
+  $(ECHO) "   KEEP(*(.init*)) "                                                                                                       >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .init) ENABLED START*/ "                                                         >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__init_end = .); "                                                                                              >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "  } > PMU_PFLASH0 /* PMU_PFLASH0: Program Flash Memory (PFLASH0) */  "                                                     >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Code executed before exiting program "                                                                                >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .fini  : "                                                                                                               >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__fini_start = .); "                                                                                            >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .fini.begin) ENABLED START*/ "                                                   >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   KEEP(*(.fini)) /*Code executed before exiting program*/  "                                                              >> $@; \
+  $(ECHO) "   KEEP(*(.fini*)) "                                                                                                       >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .fini) ENABLED START*/ "                                                         >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__fini_end = .); "                                                                                              >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "  } > PMU_PFLASH0 /* PMU_PFLASH0: Program Flash Memory (PFLASH0) */  "                                                     >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Section for trap table "                                                                                              >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .traptab  : "                                                                                                            >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__traptab_start = .); "                                                                                         >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .traptab.begin) ENABLED START*/ "                                                >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   *(.traptab) /*Section for trap table*/  "                                                                               >> $@; \
+  $(ECHO) "   *(.traptab*) "                                                                                                          >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .traptab) ENABLED START*/ "                                                      >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__traptab_end = .); "                                                                                           >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "  } > PMU_PFLASH0 /* PMU_PFLASH0: Program Flash Memory (PFLASH0) */  "                                                     >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Section for interrupt table "                                                                                         >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .inttab  : "                                                                                                             >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__inttab_start = .); "                                                                                          >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .inttab.begin) ENABLED START*/ "                                                 >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   *(.inttab) /*Section for interrupt table*/  "                                                                           >> $@; \
+  $(ECHO) "   *(.inttab*) "                                                                                                           >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .inttab) ENABLED START*/ "                                                       >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__inttab_end = .); "                                                                                            >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "  } > PMU_PFLASH0 /* PMU_PFLASH0: Program Flash Memory (PFLASH0) */  "                                                     >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Exception handling frame for C++ exceptions "                                                                         >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .eh_frame  : "                                                                                                           >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__eh_frame_start = .); "                                                                                        >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .eh_frame.begin) ENABLED START*/ "                                               >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   *(.eh_frame) /*Exception handling frame for C++ exceptions*/  "                                                         >> $@; \
+  $(ECHO) "   *(.eh_frame*) "                                                                                                         >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .eh_frame) ENABLED START*/ "                                                     >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__eh_frame_end = .); "                                                                                          >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "  } > PMU_PFLASH0 /* PMU_PFLASH0: Program Flash Memory (PFLASH0) */  "                                                     >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) "  /*Absolute Data-Sections*/ "                                                                                             >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Initialised data addressed as absolute "                                                                              >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .zdata  : "                                                                                                              >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__zdata_start = .); "                                                                                           >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .zdata.begin) ENABLED START*/ "                                                  >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   *(.zdata) /*Initialised data addressed as absolute*/  "                                                                 >> $@; \
+  $(ECHO) "   *(.zdata*) "                                                                                                            >> $@; \
+  $(ECHO) "   *(.gnu.linkonce.z.*) "                                                                                                  >> $@; \
+  $(ECHO) "   *(.gnu.linkonce.zr.*) "                                                                                                 >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .zdata) ENABLED START*/ "                                                        >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) "   PROVIDE(__zdata_end = .); "                                                                                             >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "  } > DMI_DSPR AT > PMU_PFLASH0 /* DMI_DSPR: Local Data RAM (DSPR) */ /* PMU_PFLASH0: Program Flash Memory (PFLASH0) */  " >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Not initialised data addressed as absolute "                                                                          >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .zbss (NOLOAD) : "                                                                                                       >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__zbss_start = .); "                                                                                            >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .zbss.begin) ENABLED START*/ "                                                   >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   *(.zbss) /*Not Initialised data addressed as absolute*/  "                                                              >> $@; \
+  $(ECHO) "   *(.zbss*) "                                                                                                             >> $@; \
+  $(ECHO) "   *(.gnu.linkonce.zb.*) "                                                                                                 >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .zbss) ENABLED START*/ "                                                         >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) "   PROVIDE(__zbss_end = .); "                                                                                              >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "  } > DMI_DSPR /* DMI_DSPR: Local Data RAM (DSPR) */  "                                                                    >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Not initialised bit data "                                                                                            >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .bbss (NOLOAD) : "                                                                                                       >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__bbss_start = .); "                                                                                            >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .bbss.begin) ENABLED START*/ "                                                   >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   *(.bbss) /*Not initialised bit data*/  "                                                                                >> $@; \
+  $(ECHO) "   *(.bbss*) "                                                                                                             >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .bbss) ENABLED START*/ "                                                         >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) "   PROVIDE(__bbss_end = .); "                                                                                              >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "  } > DMI_DSPR /* DMI_DSPR: Local Data RAM (DSPR) */  "                                                                    >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Bit variables "                                                                                                       >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .bdata  : "                                                                                                              >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__bdata_start = .); "                                                                                           >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .bdata.begin) ENABLED START*/ "                                                  >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   *(.bdata) /*Bit variables*/  "                                                                                          >> $@; \
+  $(ECHO) "   *(.bdata*) "                                                                                                            >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .bdata) ENABLED START*/ "                                                        >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) "   PROVIDE(__bdata_end = .); "                                                                                             >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "  } > DMI_DSPR AT > PMU_PFLASH0 /* DMI_DSPR: Local Data RAM (DSPR) */ /* PMU_PFLASH0: Program Flash Memory (PFLASH0) */  " >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) "  /*Small Data-Sections*/ "                                                                                                >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Storage of write-protected data addressed as small "                                                                  >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .sdata2  : FLAGS(arsl)"                                                                                                  >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__sdata2_start = .); "                                                                                          >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .sdata2.begin) ENABLED START*/ "                                                 >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   *(.srodata*)  "                                                                                                         >> $@; \
+  $(ECHO) "   *(.sdata.rodata) /*Storage of write-protected data addressed as small*/  "                                              >> $@; \
+  $(ECHO) "   *(.sdata.rodata*) "                                                                                                     >> $@; \
+  $(ECHO) "   *(.sdata2) /*Input section*/  "                                                                                         >> $@; \
+  $(ECHO) "   *(.sdata2*) "                                                                                                           >> $@; \
+  $(ECHO) "   *(.gnu.linkonce.sr.*) "                                                                                                 >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .sdata2) ENABLED START*/ "                                                       >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__sdata2_end = .); "                                                                                            >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "  } > PMU_PFLASH0 /* PMU_PFLASH0: Program Flash Memory (PFLASH0) */  "                                                     >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Section stores initialised data which is addressable by small data area pointer (%a0) "                               >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .sdata  : FLAGS(awsl)"                                                                                                   >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__sdata_start = .); "                                                                                           >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .sdata.begin) ENABLED START*/ "                                                  >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   *(.sdata) /*Section stores initialised data which is addressable by small data area pointer (%a0)*/  "                  >> $@; \
+  $(ECHO) "   *(.sdata*) "                                                                                                            >> $@; \
+  $(ECHO) "   *(.gnu.linkonce.s.*) "                                                                                                  >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .sdata) ENABLED START*/ "                                                        >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__sdata_end = .); "                                                                                             >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "  } > DMI_DSPR AT > PMU_PFLASH0 /* DMI_DSPR: Local Data RAM (DSPR) */ /* PMU_PFLASH0: Program Flash Memory (PFLASH0) */  " >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Not initialised data in section ’.sbss’, addressable by small data area pointer (%a0) "                               >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .sbss (NOLOAD) : FLAGS(aws)"                                                                                             >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__sbss_start = .); "                                                                                            >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .sbss.begin) ENABLED START*/ "                                                   >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   *(.sbss) /*Not initialised data in section ’.sbss’, addressable by small data area pointer (%a0)*/  "                   >> $@; \
+  $(ECHO) "   *(.sbss*) "                                                                                                             >> $@; \
+  $(ECHO) "   *(.gnu.linkonce.sb.*) "                                                                                                 >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .sbss) ENABLED START*/ "                                                         >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__sbss_end = .); "                                                                                              >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "  } > DMI_DSPR /* DMI_DSPR: Local Data RAM (DSPR) */  "                                                                    >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) "  /*Normal Data-Sections*/ "                                                                                               >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Storage of write-protected data "                                                                                     >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .rodata  : "                                                                                                             >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__rodata_start = .); "                                                                                          >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .rodata.begin) ENABLED START*/ "                                                 >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   *(.rodata) /*Storage of write-protected data*/  "                                                                       >> $@; \
+  $(ECHO) "   *(.rodata*) "                                                                                                           >> $@; \
+  $(ECHO) "   *(.gnu.linkonce.r.*) "                                                                                                  >> $@; \
+  $(ECHO) "   *(.jcr.*) "                                                                                                             >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .rodata) ENABLED START*/ "                                                       >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__rodata_end = .); "                                                                                            >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "  } > PMU_PFLASH0 /* PMU_PFLASH0: Program Flash Memory (PFLASH0) */  "                                                     >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Initialised data "                                                                                                    >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .data  : "                                                                                                               >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__data_start = .); "                                                                                            >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .data.begin) ENABLED START*/ "                                                   >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   *(.data) /*Initialised data*/  "                                                                                        >> $@; \
+  $(ECHO) "   *(.data*) "                                                                                                             >> $@; \
+  $(ECHO) "   *(.gnu.linkonce.d.*) "                                                                                                  >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .data) ENABLED START*/ "                                                         >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__data_end = .); "                                                                                              >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "  } > DMI_DSPR AT > PMU_PFLASH0 /* DMI_DSPR: Local Data RAM (DSPR) */ /* PMU_PFLASH0: Program Flash Memory (PFLASH0) */  " >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Not Initialised data "                                                                                                >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .bss (NOLOAD) : "                                                                                                        >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__bss_start = .); "                                                                                             >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .bss.begin) ENABLED START*/ "                                                    >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   *(.bss) /*Not Initialised data*/  "                                                                                     >> $@; \
+  $(ECHO) "   *(.bss*) "                                                                                                              >> $@; \
+  $(ECHO) "   *(.gnu.linkonce.b.*) "                                                                                                  >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM .bss) ENABLED START*/ "                                                          >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   PROVIDE(__bss_end = .); "                                                                                               >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "  } > DMI_DSPR /* DMI_DSPR: Local Data RAM (DSPR) */  "                                                                    >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Section for constructors "                                                                                            >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .ctors          : FLAGS(al)"                                                                                             >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   __CTOR_LIST__ = . ; "                                                                                                   >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROMconstructor.begin) ENABLED START*/ "                                              >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "   LONG((__CTOR_END__ - __CTOR_LIST__) / 4 - 2); "                                                                         >> $@; \
+  $(ECHO) "   KEEP (*crtbegin.o(.ctors)) "                                                                                            >> $@; \
+  $(ECHO) "   KEEP (*(EXCLUDE_FILE (*crtend.o ) .ctors)) "                                                                            >> $@; \
+  $(ECHO) "   KEEP (*(SORT(.ctors.*))) "                                                                                              >> $@; \
+  $(ECHO) "   KEEP (*(.ctors)) "                                                                                                      >> $@; \
+  $(ECHO) "   LONG(0) ; "                                                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROMconstructor) ENABLED START*/ "                                                    >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "   __CTOR_END__ = . ; "                                                                                                    >> $@; \
+  $(ECHO) "    . = ALIGN(8); "                                                                                                        >> $@; \
+  $(ECHO) "  }  > PMU_PFLASH0 "                                                                                                       >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Section for destructors "                                                                                             >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .dtors          : "                                                                                                      >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   __DTOR_LIST__ = . ; "                                                                                                   >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM destructor.begin) ENABLED START*/ "                                              >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "   LONG((__DTOR_END__ - __DTOR_LIST__) / 4 - 2); "                                                                         >> $@; \
+  $(ECHO) "   KEEP (*crtbegin.o(.dtors)) "                                                                                            >> $@; \
+  $(ECHO) "   KEEP (*(EXCLUDE_FILE (*crtend.o ) .dtors)) "                                                                            >> $@; \
+  $(ECHO) "   KEEP (*(SORT(.dtors.*))) "                                                                                              >> $@; \
+  $(ECHO) "   KEEP (*(.dtors)) "                                                                                                      >> $@; \
+  $(ECHO) "   LONG(0) ; "                                                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION ID(Protection: iROM destructor) ENABLED START*/ "                                                    >> $@; \
+  $(ECHO) "   /*Protection-Area for your own LDF-Code*/ "                                                                             >> $@; \
+  $(ECHO) "   /*PROTECTED REGION END*/ "                                                                                              >> $@; \
+  $(ECHO) "   __DTOR_END__ = . ; "                                                                                                    >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "  } > PMU_PFLASH0 "                                                                                                        >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Section for clear table "                                                                                             >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .clear_sec : "                                                                                                           >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "   PROVIDE(__clear_table = .) ; "                                                                                          >> $@; \
+  $(ECHO) "    LONG(0 + ADDR(.bss));  LONG(SIZEOF(.bss)); "                                                                           >> $@; \
+  $(ECHO) "    LONG(0 + ADDR(.sbss)); LONG(SIZEOF(.sbss)); "                                                                          >> $@; \
+  $(ECHO) "    LONG(0 + ADDR(.zbss)); LONG(SIZEOF(.zbss)); "                                                                          >> $@; \
+  $(ECHO) "    LONG(0 + ADDR(.bbss)); LONG(SIZEOF(.bbss)); "                                                                          >> $@; \
+  $(ECHO) "    /*PROTECTED REGION ID(Protection: iROM clear section) ENABLED START*/ "                                                >> $@; \
+  $(ECHO) "    /*Protection-Area for your own LDF-Code*/ "                                                                            >> $@; \
+  $(ECHO) "    /*PROTECTED REGION END*/ "                                                                                             >> $@; \
+  $(ECHO) "    LONG(-1);                 LONG(-1); "                                                                                  >> $@; \
+  $(ECHO) "  } > PMU_PFLASH0 "                                                                                                        >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "  * Section for copy table "                                                                                               >> $@; \
+  $(ECHO) "  */ "                                                                                                                     >> $@; \
+  $(ECHO) "  .copy_sec : "                                                                                                            >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "   PROVIDE(__copy_table = .) ; "                                                                                           >> $@; \
+  $(ECHO) "    LONG(LOADADDR(.data));  LONG(0 + ADDR(.data));  LONG(SIZEOF(.data)); "                                                 >> $@; \
+  $(ECHO) "    LONG(LOADADDR(.sdata)); LONG(0 + ADDR(.sdata)); LONG(SIZEOF(.sdata)); "                                                >> $@; \
+  $(ECHO) "    LONG(LOADADDR(.zdata)); LONG(0 + ADDR(.zdata)); LONG(SIZEOF(.zdata)); "                                                >> $@; \
+  $(ECHO) "    LONG(LOADADDR(.bdata)); LONG(0 + ADDR(.bdata)); LONG(SIZEOF(.bdata)); "                                                >> $@; \
+  $(ECHO) "    /*PROTECTED REGION ID(Protection: iROM copy section) ENABLED START*/ "                                                 >> $@; \
+  $(ECHO) "    /*Protection-Area for your own LDF-Code*/ "                                                                            >> $@; \
+  $(ECHO) "    /*PROTECTED REGION END*/ "                                                                                             >> $@; \
+  $(ECHO) "    LONG(-1);                 LONG(-1);                  LONG(-1); "                                                       >> $@; \
+  $(ECHO) "  } > PMU_PFLASH0  "                                                                                                       >> $@; \
+  $(ECHO) "    "                                                                                                                      >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Section for ustack "                                                                                                  >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .ustack : "                                                                                                              >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    __USTACK_BEGIN = . ; "                                                                                                 >> $@; \
+  $(ECHO) "   . += __USTACK_SIZE ; "                                                                                                  >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    __USTACK = . ; "                                                                                                       >> $@; \
+  $(ECHO) "    __USTACK_END = . ; "                                                                                                   >> $@; \
+  $(ECHO) "  } > DMI_DSPR "                                                                                                           >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Section for istack "                                                                                                  >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .istack : "                                                                                                              >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    __ISTACK_BEGIN = . ; "                                                                                                 >> $@; \
+  $(ECHO) "   . += __ISTACK_SIZE ; "                                                                                                  >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    __ISTACK = . ; "                                                                                                       >> $@; \
+  $(ECHO) "    __ISTACK_END = . ; "                                                                                                   >> $@; \
+  $(ECHO) "  } > DMI_DSPR "                                                                                                           >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Section for heap "                                                                                                    >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .heap : "                                                                                                                >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    __HEAP_BEGIN = . ; "                                                                                                   >> $@; \
+  $(ECHO) "    __HEAP = . ; "                                                                                                         >> $@; \
+  $(ECHO) "   . += __HEAP_SIZE ; "                                                                                                    >> $@; \
+  $(ECHO) "   . = ALIGN(8); "                                                                                                         >> $@; \
+  $(ECHO) "    __HEAP_END = . ; "                                                                                                     >> $@; \
+  $(ECHO) "  } > DMI_DSPR "                                                                                                           >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /* "                                                                                                                     >> $@; \
+  $(ECHO) "   * Section for CSA "                                                                                                     >> $@; \
+  $(ECHO) "   */ "                                                                                                                    >> $@; \
+  $(ECHO) "  .csa : "                                                                                                                 >> $@; \
+  $(ECHO) "  { "                                                                                                                      >> $@; \
+  $(ECHO) "   . = ALIGN(64); "                                                                                                        >> $@; \
+  $(ECHO) "    __CSA_BEGIN = . ; "                                                                                                    >> $@; \
+  $(ECHO) "    __CSA = . ; "                                                                                                          >> $@; \
+  $(ECHO) "   . += __CSA_SIZE ; "                                                                                                     >> $@; \
+  $(ECHO) "   . = ALIGN(64); "                                                                                                        >> $@; \
+  $(ECHO) "    __CSA_END = . ; "                                                                                                      >> $@; \
+  $(ECHO) "  } > DMI_DSPR "                                                                                                           >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) "  /*PROTECTED REGION ID(Protection:iROM-User-Sections) ENABLED START*/ "                                                   >> $@; \
+  $(ECHO) "  /*Protection-Area for your own LDF-Code*/ "                                                                              >> $@; \
+  $(ECHO) "  /*PROTECTED REGION END*/ "                                                                                               >> $@; \
+  $(ECHO) "   "                                                                                                                       >> $@; \
+  $(ECHO) " } "                                                                                                                       >> $@; \
+  $(ECHO) "  "                                                                                                                        >> $@; 
+endef
+
+# end of Makefile.AURIX.GNU.ALL.LinkerScriptDefault

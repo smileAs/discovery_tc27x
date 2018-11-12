@@ -1,0 +1,36 @@
+
+Name: config/I2c.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377420964975357212919428274518415671599546431430222200
+ 0717501024696653701800997580726075622200830555373953
+SignatureKeyID: Infineon
+
+Name: generate/I2c_Bswmd.arxml
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377423579613525495633985986500908417778359823157012677
+ 9498522479653948445768164577955912925143613962497874
+SignatureKeyID: Infineon
+
+Name: generate/src/I2c_PBCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377422181612747815645925762324434355154185049934517702
+ 4029117561082850269966314291649892257742905898268536
+SignatureKeyID: Infineon
+
+Name: generate/inc/I2c_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377426850013827702401179607437059245704477552188198811
+ 2440184780555549484792994505672724343877662037314937
+SignatureKeyID: Infineon
+
+Name: generate/src/I2c_LCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594746244836651422579771174752800310645753913509927591
+ 136704812263284795747798865600321916768992151743184460
+SignatureKeyID: Infineon
+

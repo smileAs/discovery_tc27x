@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2014)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**   $FILENAME   : plugin.xml $                                               **
+**                                                                            **
+**   $CC VERSION : \main\8 $                                                  **
+**                                                                            **
+**   $DATE       : 2014-07-03 $                                               **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  DESCRIPTION  : This file contains                                         **
+**                 - tresosECU plug-in description for LmuBusMpuLfmTst driver **
+**                                                                            **
+**  MAY BE CHANGED BY USER [Yes/No]: Yes                                      **
+**                                                                            **
+*******************************************************************************/
+
+/*******************************************************************************
+**                      Author(s) Identity                                    **
+********************************************************************************
+**                                                                            **
+** Initials     Name                                                          **
+********************************************************************************
+** BM           Basheer Mohaideen                                             **
+*******************************************************************************/
+
+
+/******************************************************************************
+**                      Revision Control History                              *
+******************************************************************************/
+/*
+ * V0.0.4: 2014-01-17, BM      : Removed TC26x support as there is no LMU in TC26x
+ * V0.0.3: 2013-10-31, BM      : Added TC29x family controller.
+ * V0.0.2: 2013-10-15, BM      : Added TC26x family controller.
+ * V0.0.1: 2013-07-20, BM      : Initial version.
+*******************************************************************************/
+-->
+<plugin>
+
+  <!--
+    ** brief LmuBusMpuLfmTst_Aurix plugin
+    ** project AUTOSAR Complex driver
+    **
+    ** All rights exclusively reserved for Elektrobit Automotive GmbH,
+    ** unless expressly agreed to otherwise.
+  -->
+
+
+
+ <extension point="dreisoft.tresos.launcher2.plugin.module"
+	       id="LmuBusMpuLfmTst_AurixAS403_ModuleExt"
+	       name="LmuBusMpuLfmTst Driver PlugIn with a TemplateGenerator">
+
+          <module id="LmuBusMpuLfmTst_AurixAS403"
+            label="%ModuleLabel"
+            mandatory="false"
+            allowMultiple="true"
+            description="%ModuleDesc"
+            copyright="(c) 2014 Infineon Technologies"
+            swVersionMajor="0"
+            swVersionMinor="0"
+            swVersionPatch="1"
+            swVersionSuffix=""
+            specVersionMajor="0"
+            specVersionMinor="0"
+            specVersionPatch="0"
+            specVersionSuffix="0000"
+            relVersionMajor="4"
+            relVersionMinor="0"
+            relVersionPatch="3"
+            relVersionSuffix=""
+            categoryType="LmuBusMpuLfmTst"
+            categoryLayer="SafeTlib"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <ecuType target="AURIX" derivate="TC275"/>
+      <ecuType target="AURIX" derivate="TC277"/>
+    
+    
+    </module>
+  </extension>
+
+    <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+              id="LmuBusMpuLfmTst_AurixAS403_ConfigExt"
+              name="LmuBusMpuLfmTst Driver Parameter Definition Extension">
+    <configuration moduleId="LmuBusMpuLfmTst_AurixAS403">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/LmuBusMpuLfmTst.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/AURIX/LmuBusMpuLfmTst"/>
+      </data>
+
+           <editor id="LmuBusMpuLfmTst_AurixAS403_Edit" 
+              label="%ModuleName"
+              tooltip="%ModuleDesc">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/AURIX/LmuBusMpuLfmTst"/>
+          <parameter name="title" value="LmuBusMpuLfmTst"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="LmuBusMpuLfmTst_AurixAS403_GenExt"
+	      name="LmuBusMpuLfmTst driver TemplateGenerator">
+    <generator moduleId="LmuBusMpuLfmTst_AurixAS403"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+
+      <!-- common template path parameters -->
+      <parameter name="templates"
+                 mode="generate,verify" value="generate"/>
+
+      <!-- swcd modes and template path parameters -->
+      <parameter name="mode_type"
+                 mode="generate_swcd" value="generate"/>
+
+      <parameter name="mode_type"
+                 mode="verify_swcd" value="verify"/>
+
+      <parameter name="templates"
+                 mode="generate_swcd,verify_swcd" value="generate_swcd"/>
+
+    </generator>
+  </extension>
+
+
+</plugin>

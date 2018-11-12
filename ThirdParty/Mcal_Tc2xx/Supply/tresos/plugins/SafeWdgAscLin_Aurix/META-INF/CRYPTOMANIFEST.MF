@@ -1,0 +1,22 @@
+
+Name: config/SafeWdgAscLin.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377423359610530480557266559535398912152887787081929894
+ 0744631198845069260177494375895259544623710625791870
+SignatureKeyID: Infineon
+
+Name: generate/src/SafeWdgAscLin_PBCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594755932406700969638252048576804686041068401862999453
+ 287444391020440799348845408508698501659104555705305764
+SignatureKeyID: Infineon
+
+Name: generate/inc/SafeWdgAscLin_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377425580308731986273510518030322663804736885084726837
+ 7425451236769329742915094761449142225861299122121617
+SignatureKeyID: Infineon
+

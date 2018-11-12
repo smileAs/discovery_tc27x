@@ -1,0 +1,29 @@
+
+Name: config/Fee.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377421002522690383065075294521524911277125968542501024
+ 1278476727283171139390963007059482942269705832598245
+SignatureKeyID: Infineon
+
+Name: generate/inc/Fee_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594755558152746973617287674011294040793546765619889539
+ 629305672642130149752125725829503227498778609910307404
+SignatureKeyID: Infineon
+
+Name: generate/src/Fee_PBCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377421217055939319716046129410269638334432090362650763
+ 4304723811615255345643096490354323124067633991791169
+SignatureKeyID: Infineon
+
+Name: generate/Fee_Bswmd.arxml
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594773970053914829387147801377120553257119921109449910
+ 826019848619829073071275927222944064763679921613525946
+SignatureKeyID: Infineon
+

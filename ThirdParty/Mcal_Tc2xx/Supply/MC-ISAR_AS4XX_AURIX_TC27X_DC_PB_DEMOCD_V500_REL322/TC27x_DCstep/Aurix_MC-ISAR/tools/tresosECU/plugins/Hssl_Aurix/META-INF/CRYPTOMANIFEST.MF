@@ -1,0 +1,22 @@
+
+Name: config/Hssl.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377423352358262200286922965970166107424797829393477754
+ 7254351976657211860243458259591196134325673811725139
+SignatureKeyID: Infineon
+
+Name: generate/Hssl_Bswmd.arxml
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594739512027238533595498861351210362702941682811112695
+ 905122567768581810620579659924564940526469296567049816
+SignatureKeyID: Infineon
+
+Name: generate/inc/Hssl_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377421179183292798746429865969720848314435591184118234
+ 0149584679451762174513271483963544626070563301289303
+SignatureKeyID: Infineon
+

@@ -1,0 +1,22 @@
+
+Name: config/SpbTst.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377420163231669646881300542808318289652181734472695220
+ 7039901850989849889600893784875402521730870090147033
+SignatureKeyID: Infineon
+
+Name: generate/src/SpbTst_LCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377420428244949330026392837426188277083644409128158933
+ 5227996783714904521865878954670488336910872360895758
+SignatureKeyID: Infineon
+
+Name: generate/inc/SpbTst_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377420212901776309457580781652154598742839219659604512
+ 9668025317763430989646909915492044779911115764579331
+SignatureKeyID: Infineon
+

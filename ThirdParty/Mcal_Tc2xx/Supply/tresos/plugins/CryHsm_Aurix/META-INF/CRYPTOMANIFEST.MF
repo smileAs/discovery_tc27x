@@ -1,0 +1,22 @@
+
+Name: generate/Cry_Hsm.m
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594742885271183785411297402888157614792313309201590672
+ 017447624467578651725891796537906819444674439749009958
+SignatureKeyID: CryHsm_Aurix
+
+Name: generate/inc/Cry_Hsm_cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377426413908504721932147000294454324627150841355624925
+ 2693444526369970801495808231585592622909886323064409
+SignatureKeyID: CryHsm_Aurix
+
+Name: config/CryHsm.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377426585400541829121627537967363455043932165644522530
+ 5637205992534035694101547066978705930273216381594814
+SignatureKeyID: CryHsm_Aurix
+

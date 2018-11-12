@@ -1,0 +1,78 @@
+
+Name: generate/src/Mcu_PBCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377421102938905199557312639794691274498697410696832972
+ 2320872471434006616563226827775832584645539995255929
+SignatureKeyID: Infineon
+
+Name: generate/Mcu_Bswmd.arxml
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594773971027375355073329502131070707100416379381997349
+ 106349631877969591876257825379461361149807197707138901
+SignatureKeyID: Infineon
+
+Name: generate/src/Gtm_LCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377426465795556739580542859131738158289801866062456391
+ 4128756902780921660944849071909266097550799713279982
+SignatureKeyID: Infineon
+
+Name: generate/Gtm.m
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377425695878541435190897342176814604745071315880686539
+ 1883546820958298924963348231583464587071599443784883
+SignatureKeyID: Infineon
+
+Name: generate/Mcu_ConfigDoc.html
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 44189296957137357743040153720935964127467311490281109759650
+ 7846513978444730313503052493111055389337756744266
+SignatureKeyID: Infineon
+
+Name: config/McuPreConfiguration.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594740799121833889909540713234835030131884190971437721
+ 496151536186686597167547571790735440264615371708618529
+SignatureKeyID: Infineon
+
+Name: config/Mcu.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377425778232061116571235878130845846529984997854969578
+ 4443240022894566178625564751297112917639909583159426
+SignatureKeyID: Infineon
+
+Name: generate/inc/Mcu_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377422896897857007820301634638245863952159037151928003
+ 0392707479442264171297428911785454848043982877684342
+SignatureKeyID: Infineon
+
+Name: generate/mak/infineon_mcu_cfg.mak
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377422320011894115514665266022932124569144856766493089
+ 2883057231589297632457478411081930190110199299372473
+SignatureKeyID: Infineon
+
+Name: generate/inc/Gtm_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377423367633039346819487358425500875827185979026309867
+ 2348448629259618157571299677544940361165080565672147
+SignatureKeyID: Infineon
+
+Name: generate/src/Gtm_PBCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377422231379689523118659995398674408361253468288294100
+ 2862534899583141023354639659580288775035623653123584
+SignatureKeyID: Infineon
+

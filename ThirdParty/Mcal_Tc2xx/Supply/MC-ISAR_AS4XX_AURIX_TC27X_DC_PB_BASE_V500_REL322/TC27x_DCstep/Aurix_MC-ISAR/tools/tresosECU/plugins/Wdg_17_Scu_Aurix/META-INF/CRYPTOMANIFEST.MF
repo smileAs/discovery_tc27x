@@ -1,0 +1,50 @@
+
+Name: generate/Wdg_17_Scu.m
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594740920558265932115998843496936044336117799511063742
+ 067358011271442124718231997642989947850300359826941227
+SignatureKeyID: Infineon
+
+Name: generate/Wdg_17_Scu_Bswmd.arxml
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377421026371154187385415971117959162327509599722936149
+ 9210382657875544600811416534164146437648970746480024
+SignatureKeyID: Infineon
+
+Name: generate/inc/Wdg_17_Scu_Cfg.h
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377420453605216771008262627897037891850350554210166459
+ 7237349112194835782041827488449176903631327110406145
+SignatureKeyID: Infineon
+
+Name: generate/mak/infineon_wdg_17_scu_cfg.mak
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377423068095301205084638786645288274397228669732157228
+ 9956419836807826072891577838928724607111185020192037
+SignatureKeyID: Infineon
+
+Name: config/Wdg_17_Scu.xdm
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377422718652353633309439070593548991187861288414356612
+ 9717303978735900087614481473317562635030726641645898
+SignatureKeyID: Infineon
+
+Name: generate/src/Wdg_17_Scu_PBCfg.c
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 11313377425094570769566878488211147423131098592465996457928
+ 5433786307420909992818120537252842434643566912526236
+SignatureKeyID: Infineon
+
+Name: generate/Wdg_ConfigDoc.html
+SignatureAlgorithmID: DSA
+SignatureKeyProviderID: plugin.launcher2.licenseFileKeyProvider
+Signature: 28964594773971509404455304059861725204113169284805049565586
+ 127897661164692523842849092081623011739748362569410328
+SignatureKeyID: Infineon
+

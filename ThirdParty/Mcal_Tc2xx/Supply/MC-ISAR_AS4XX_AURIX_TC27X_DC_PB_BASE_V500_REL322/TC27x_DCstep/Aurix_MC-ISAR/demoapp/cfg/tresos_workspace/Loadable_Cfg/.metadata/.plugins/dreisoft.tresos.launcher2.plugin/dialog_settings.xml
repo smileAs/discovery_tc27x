@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ModuleRegistry">
+		<item value="1" key="Id_colOrderDir"/>
+		<item value="1" key="Release_colOrderDir"/>
+		<item value="1" key="Icon_colOrderDir"/>
+		<item value="Icon" key="orderCol"/>
+		<item value="1" key="Contributor_colOrderDir"/>
+		<item value="1" key="Layer_colOrderDir"/>
+		<item value="1" key="Label_colOrderDir"/>
+		<item value="1" key="Component_colOrderDir"/>
+		<item value="1" key="Type_colOrderDir"/>
+		<item value="1" key="SoftwareVer_colOrderDir"/>
+		<item value="1" key="ECUTypes_colOrderDir"/>
+		<item value="1" key="Path_colOrderDir"/>
+		<item value="1" key="SpecVer_colOrderDir"/>
+		<item value="1" key="DefaultConfig_colOrderDir"/>
+		<item value="1" key="Description_colOrderDir"/>
+		<item value="1" key="Category_colOrderDir"/>
+		<item value="1" key="Copyright_colOrderDir"/>
+	</section>
+	<section name="BundleRegistry">
+		<item value="1" key="State_colOrderDir"/>
+		<item value="1" key="Bundle-Name_colOrderDir"/>
+		<item value="1" key="Bundle-Description_colOrderDir"/>
+		<item value="1" key="SymbolicName_colOrderDir"/>
+		<item value="State" key="orderCol"/>
+		<item value="1" key="Bundle-Version_colOrderDir"/>
+		<item value="1" key="Bundle-Vendor_colOrderDir"/>
+	</section>
+</section>

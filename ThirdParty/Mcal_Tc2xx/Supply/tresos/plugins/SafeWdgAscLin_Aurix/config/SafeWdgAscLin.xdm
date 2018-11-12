@@ -1,0 +1,381 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2014)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**   $FILENAME   : SafeWdgAscLin.xdm $                                        **
+**                                                                            **
+**   $CC VERSION : \main\34 $                                                 **
+**                                                                            **
+**   $DATE       : 2016-03-29 $                                               **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX                                                **
+**                                                                            **
+**  VARIANT   : VariantPostBuild                                               **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY:[cover parentID=]                                            **
+**                                                                            **
+**  DESCRIPTION  : XML Data Model for SafeWdgAscLin driver                    **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) :                                                        **
+**                                                                            **
+**  MAY BE CHANGED BY USER [yes/no]: No                                       **
+**                                                                            **
+*******************************************************************************/
+-->
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar"  
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX" type="AR-PACKAGE">        
+        <a:a name="UUID" value="93d9a111-9d4c-47b6-98cb-fe5aec24c8b0"/>
+        <d:lst type="ELEMENTS">
+          <d:chc name="SafeWdgAscLin" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="RELEASE" value="asc:4.0"/>        
+              <a:a name="UUID" value="03eaa8c5-137e-402e-823d-8d7776c1de4d"/>
+             <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="LABEL" value="Config Variant"/>
+                  <a:da name="DEFAULT" value="VariantPostBuildSelectable"/>
+                  <a:da name="RANGE">
+                  <a:v>VariantPostBuildLoadable</a:v>
+                  <a:v>VariantPostBuildSelectable</a:v>
+                </a:da>
+              </v:var>   
+			  <v:lst name="SafeWdgAscLinConfigSet" type="MULTIPLE-CONFIGURATION-CONTAINER">
+                <a:da name="MIN" value="1"/>
+                <v:ctr name="SafeWdgAscLinConfigSet" type="MULTIPLE-CONFIGURATION-CONTAINER">
+                  <a:a name="DESC" 
+                       value="This is the base container that contains the link time configuration parameters"/>
+                  <a:a name="UUID" value="ccda81dc-46cf-4171-858b-7c947884702f"/>
+                  
+			                <v:var name="SafeWdgAscLinAscLinModule" type="INTEGER">                       
+                        <a:a name="DESC">
+                          <a:v>Specifies the used ASCLIN module for this driver 
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+						   <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>  
+                        </a:a>                                                   
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="98ce928e-6ed1-5968-93b2-34d30b1aa49f"/>
+                             <a:da name="DEFAULT" type="XPath" expr="ecu:get('SafeWdgAsclinDefaultValue')"/>
+                       <a:da name="INVALID" type="Range">
+                           <a:tst expr="&lt;ecu:get('AscLin.MaxNoOfAscLinModules')"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+						<a:da name="TOOLTIP" value="Specifies the used ASCLIN module for this driver"/>
+                      </v:var>                                                
+                        <v:var name="SafeWdgAscLinDmaTxChannel" type="INTEGER">                       
+                        <a:a name="DESC">
+                          <a:v>Specifies the DMA channel, DM channel to be used for transmit
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+						   <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>  
+                        </a:a>                                                   
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="98ce928e-6ed1-5978-93b2-34d30b1aa50f"/>
+                             <a:da name="DEFAULT" value="14"/>
+                        <a:da name="INVALID" type="Range">
+                           <a:tst expr="&lt;ecu:get('Dma.NoOfChannels')"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+						<a:da name="TOOLTIP" value="Specifies the DMA channel, DM channel to be used for transmit"/>
+                      </v:var>    
+                      <v:var name="SafeWdgAscLinBConOversample" type="INTEGER">                       
+                        <a:a name="DESC">
+                          <a:v>Oversampling factor for baudrate
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+						   <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>  
+                        </a:a>                                                   
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="98ce828e-6ed1-5978-93b3-34d30b1aa51f"/>
+                             <a:da name="DEFAULT" value="7"/>
+                       <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=16"/>
+                          <a:tst expr="&gt;=4"/>
+                        </a:da>
+						<a:da name="TOOLTIP" value="Oversampling factor for baudrate"/>
+                      </v:var>  
+                       <v:var name="SafeWdgAscLinBConSamplePoint" type="INTEGER">                       
+                        <a:a name="DESC">
+                          <a:v>Bit sampling point within oversampling range
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+						   <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>  
+                        </a:a>                                                   
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="98ce828e-6ed1-5978-93b3-44d30b1aa52f"/>
+                             <a:da name="DEFAULT" value="4"/>
+                       <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=15"/>
+                          <a:tst expr="&gt;=1"/>
+                        </a:da>
+						<a:da name="TOOLTIP" value="Bit sampling point within oversampling range"/>
+                      </v:var>    
+                       <v:var name="SafeWdgAscLinBConPreScaler" type="INTEGER">                       
+                        <a:a name="DESC">
+                          <a:v>Baudrate PreScaler
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+						   <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>  
+                        </a:a>                                                   
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="98ce827e-6ed1-5978-93b3-44d30b1aa53f"/>
+                             <a:da name="DEFAULT" value="1"/>
+                       <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=4096"/>
+                          <a:tst expr="&gt;=1"/>
+                        </a:da>
+						<a:da name="TOOLTIP" value="Baudrate PreScaler"/>
+                      </v:var>    
+                      <v:var name="SafeWdgAscLinBrgDenominator" type="INTEGER">                       
+                        <a:a name="DESC">
+                          <a:v>Baudrate Denominator
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+						   <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>  
+                        </a:a>                                                   
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="98ce827e-6ed1-5958-93b3-44d30b1aa54f"/>
+                             <a:da name="DEFAULT" value="49"/>
+                       <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=4095"/>
+                          <a:tst expr="&gt;=1"/>
+                        </a:da>
+						<a:da name="TOOLTIP" value="Baudrate Denominator"/>
+                      </v:var>    
+                       <v:var name="SafeWdgAscLinBrgNumerator" type="INTEGER">                       
+                        <a:a name="DESC">
+                          <a:v>Baudrate Numerator
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+						   <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>  
+                        </a:a>                                                   
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="92ce827e-6ed1-5978-93b3-44d30b1aa55f"/>                            
+						             <a:da name="DEFAULT" value="8"/>
+                       <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=4095"/>
+                          <a:tst expr="&gt;=1"/>
+                        </a:da>
+						<a:da name="TOOLTIP" value="Baudrate Numerator"/>
+                      </v:var> 
+                       <v:var name="SafeWdgAscLinFConIdleCnt" type="INTEGER">                       
+                        <a:a name="DESC">
+                          <a:v>Idle cycles between two transmissions
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+						   <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>  
+                        </a:a>                                                   
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="42ce827e-6ed1-5978-93b3-44d30b1aa56f"/>
+                             <a:da name="DEFAULT" value="7"/>
+                       <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=7"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+						<a:da name="TOOLTIP" value="Idle cycles between two transmissions"/>
+                      </v:var> 
+                       <v:var name="SafeWdgAscLinFConTrailCnt" type="INTEGER">                       
+                        <a:a name="DESC">
+                          <a:v>Trail cycles after transmissions
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+						   <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>  
+                        </a:a>                                                   
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="40ce827e-6ed1-5978-93b3-44d30b1aa57f"/>
+                             <a:da name="DEFAULT" value="1"/>
+                       <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=7"/>
+                          <a:tst expr="&gt;=0"/>						   
+                        </a:da>
+						<a:da name="TOOLTIP" value="Trail cycles after transmissions"/>
+                      </v:var> 
+                       <v:var name="SafeWdgAscLinFConLeadCnt" type="INTEGER">                       
+                        <a:a name="DESC">
+                          <a:v>Defines the leading delay before transmission
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+						   <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>  
+                        </a:a>                                                   
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="42ce827e-6ed1-5878-93b3-44d30b1aa58f"/>
+                             <a:da name="DEFAULT" value="3"/>
+                       <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=7"/>
+                          <a:tst expr="&gt;=0"/>						  
+                        </a:da>
+						<a:da name="TOOLTIP" value="Defines the leading delay before transmission"/>
+                      </v:var> 
+                       <v:var name="SafeWdgAscLinFConMsb" type="INTEGER">                       
+                        <a:a name="DESC">
+                          <a:v>MSB first - 0: no, 1: yes
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+						   <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>  
+                        </a:a>                                                   
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="42ce827e-6ed0-5978-93b3-44d30b1aa59f"/>
+                             <a:da name="DEFAULT" value="0"/>
+                       <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=1"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+						<a:da name="TOOLTIP" value="MSB first - 0: no, 1: yes"/>
+                      </v:var> 
+                        <v:var name="SafeWdgAscLinCsPolarity" type="INTEGER">                       
+                        <a:a name="DESC">
+                          <a:v>slave CS polarity - 0: high active, 1: low active
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+						   <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>  
+                        </a:a>                                                   
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="42ce827e-6ec0-5978-93b3-44d30b1aa60f"/>
+                             <a:da name="DEFAULT" value="1"/>
+                       <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=1"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+						<a:da name="TOOLTIP" value="slave CS polarity - 0: high active, 1: low active"/>
+                      </v:var>
+                       <v:var name="SafeWdgAscLinRxInputSelect" type="INTEGER">                       
+                        <a:a name="DESC">
+                          <a:v>receiver port input selector
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+						   <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>  
+                        </a:a>                                                   
+                        <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                        <a:a name="UUID" 
+                             value="42ce827e-6ec0-5978-93b2-44d30b1aa61f"/>
+                             <a:da name="DEFAULT" value="4"/>
+						 <a:da name="TOOLTIP" value="receiver port input selector"/>		 
+                       <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=7"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                      </v:var>
+		      
+		      		  <v:var name="SafeWdgAscLinEnIfmDlayTmrFunc" type="FUNCTION-NAME">
+                    
+                    <a:a name="DESC">
+                      <a:v>This parameter represents the function, which can be used to enable configured GTM TOM channel. It is used by this driver to enable data transfer to external CIC watchdog
+                      </a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+						   <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>  
+                    </a:a>                          
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="98ce928e-7ed1-4368-95b2-21d30b1fa62f"/>
+                    <a:da name="DEFAULT" value="SafeWdgExtCic_Helper_EnableTOMChOSM"/>
+                      <a:da name="TOOLTIP" value="This parameter represents the function, which can be used to enable configured GTM TOM channel. It is used by this driver to enable data transfer to external CIC watchdog"/>	
+                                                                
+                  </v:var> 				  	 
+							  				  
+						<v:var name="SafeWdgAscLinDisIfmDlayTmrFunc" type="FUNCTION-NAME">
+                    
+                    <a:a name="DESC">
+                      <a:v>This parameter represents the function, which can be used by this driver to disable configured GTM TOM channel. It is used when data transfer to external CIC watchdog is complete.
+                      </a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v class="PostBuild">VariantPostBuildLoadable</icc:v>
+						   <icc:v class="PostBuild">VariantPostBuildSelectable</icc:v>  
+                    </a:a>                          
+                    <a:a name="ORIGIN" value="INFINEON_AURIX"/>
+                    <a:a name="UUID" 
+                         value="98ce928e-7ed1-4368-95b2-21d30b1fa63f"/>
+                    <a:da name="DEFAULT" value="SafeWdgExtCic_Helper_DisableTOMChOSM"/>
+                      <a:da name="TOOLTIP" value="This parameter represents the function, which can be used by this driver to disable configured GTM TOM channel. It is used when data transfer to external CIC watchdog is complete."/>	
+                                                                
+                  </v:var>					   
+							  
+				  </v:ctr>                  
+              </v:lst>
+		
+              </v:ctr>         
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+</datamodel>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-1.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="4a1f5e4e-1b37-4ab3-9756-524419074e03">
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="cad820d5-f1a3-4fa6-a1b5-27eef2cee8a6">
+          <SHORT-NAME>Csm_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="f24864c0-24c3-4ce8-b4b2-89323ac7d7cb">
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="8b048cff-4f73-4ce0-a6de-786a4e8d34a8">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="39f7e9c7-61e8-45f8-8bb2-8297ad2f326a">
+                  <SHORT-NAME>DataConstrs</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="53ffac41-9e44-42b7-b124-125e2c7b9822">
+              <SHORT-NAME>ComponentTypes</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
