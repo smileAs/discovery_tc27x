@@ -9,7 +9,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  TSC_Os_OsCore_Core0_swc.c
- *        Config:  discovery_ecu.dpa
+ *        Config:  discovery_ecu.dpa"
  *   ECU-Project:  P2P
  *
  *     Generator:  MICROSAR RTE Generator Version 4.14.0

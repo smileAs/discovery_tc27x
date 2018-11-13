@@ -9,7 +9,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  Rte.c
- *        Config:  discovery_ecu.dpa
+ *        Config:  discovery_ecu.dpa"
  *   ECU-Project:  P2P
  *
  *     Generator:  MICROSAR RTE Generator Version 4.14.0
@@ -37,6 +37,7 @@
 #include "Rte_Os_OsCore_Core0_swc.h"
 #include "Rte_Os_OsCore_Core1_swc.h"
 #include "Rte_Os_OsCore_Core2_swc.h"
+#include "Rte_cycle_task.h"
 #include "Rte_disc_ecu.h"
 #include "SchM_BswM.h"
 #include "SchM_Can.h"
@@ -172,6 +173,7 @@
 #define RTE_CONST_MSEC_SystemTimer_Core0_0 (0UL)
 #define RTE_CONST_MSEC_SystemTimer_Core1_0 (0UL)
 #define RTE_CONST_MSEC_SystemTimer_Core2_0 (0UL)
+#define RTE_CONST_MSEC_SystemTimer_Core0_1 (80000UL)
 #define RTE_CONST_MSEC_SystemTimer_Core0_10 (800000UL)
 #define RTE_CONST_MSEC_SystemTimer_Core1_10 (400000UL)
 #define RTE_CONST_MSEC_SystemTimer_Core2_10 (400000UL)
@@ -229,6 +231,7 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Start(void) /* PRQA S 0850 */ /* MD_MSR_19.8 
   if (id == OS_CORE_ID_0)
   {
     /* activate the alarms used for TimingEvents */
+    (void)SetRelAlarm(Rte_Al_TE_Cycle_Task_1ms_Core0_Task_1ms, RTE_MSEC_SystemTimer_Core0(0) + (TickType)1, RTE_MSEC_SystemTimer_Core0(1)); /* PRQA S 3417 */ /* MD_Rte_Os */
     (void)SetRelAlarm(Rte_Al_TE_disc_ecu_Core0_Task_20ms, RTE_MSEC_SystemTimer_Core0(0) + (TickType)1, RTE_MSEC_SystemTimer_Core0(20)); /* PRQA S 3417 */ /* MD_Rte_Os */
     (void)SetRelAlarm(Rte_Al_TE_disc_ecu_Core0_Task_10ms, RTE_MSEC_SystemTimer_Core0(0) + (TickType)1, RTE_MSEC_SystemTimer_Core0(10)); /* PRQA S 3417 */ /* MD_Rte_Os */
     (void)SetRelAlarm(Rte_Al_TE_disc_ecu_Core0_Task_50ms, RTE_MSEC_SystemTimer_Core0(0) + (TickType)1, RTE_MSEC_SystemTimer_Core0(50)); /* PRQA S 3417 */ /* MD_Rte_Os */
@@ -244,6 +247,7 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Stop(void) /* PRQA S 0850 */ /* MD_MSR_19.8 *
   if (id == OS_CORE_ID_0)
   {
     /* deactivate alarms */
+    (void)CancelAlarm(Rte_Al_TE_Cycle_Task_1ms_Core0_Task_1ms); /* PRQA S 3417 */ /* MD_Rte_Os */
     (void)CancelAlarm(Rte_Al_TE_disc_ecu_Core0_Task_100ms); /* PRQA S 3417 */ /* MD_Rte_Os */
     (void)CancelAlarm(Rte_Al_TE_disc_ecu_Core0_Task_10ms); /* PRQA S 3417 */ /* MD_Rte_Os */
     (void)CancelAlarm(Rte_Al_TE_disc_ecu_Core0_Task_20ms); /* PRQA S 3417 */ /* MD_Rte_Os */

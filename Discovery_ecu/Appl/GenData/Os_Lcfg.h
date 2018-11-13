@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Lcfg.h
- *   Generation Time: 2018-09-29 15:39:31
+ *   Generation Time: 2018-11-11 09:44:57
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -116,6 +116,18 @@
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION PROTOTYPES
  *********************************************************************************************************************/
+
+# define OS_START_SEC_Core0_OsTask_1ms_CODE
+# include "MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+/**********************************************************************************************************************
+ *  Core0_OsTask_1ms()
+ *********************************************************************************************************************/
+extern FUNC(void, OS_CORE0_OSTASK_1MS_CODE) Os_Task_Core0_OsTask_1ms(void);
+
+# define OS_STOP_SEC_Core0_OsTask_1ms_CODE
+# include "MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
 
 # define OS_START_SEC_Default_BSW_Async_Task_Core0_CODE
 # include "MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */

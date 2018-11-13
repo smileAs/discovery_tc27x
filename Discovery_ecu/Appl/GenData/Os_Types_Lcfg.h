@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Types_Lcfg.h
- *   Generation Time: 2018-09-29 15:39:32
+ *   Generation Time: 2018-11-11 09:44:58
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -132,16 +132,17 @@ typedef enum
 /*! Task identifier. */
 typedef enum
 {
-  Default_BSW_Async_Task_Core0 = 0,
-  Default_BSW_Async_Task_Core1 = 1,
-  Default_BSW_Async_Task_Core2 = 2,
-  Default_Init_Task_Core0 = 3,
-  Default_Init_Task_Core1 = 4,
-  Default_Init_Task_Core2 = 5,
-  IdleTask_OsCore_Core0 = 6,
-  IdleTask_OsCore_Core1 = 7,
-  IdleTask_OsCore_Core2 = 8,
-  OS_TASKID_COUNT = 9,
+  Core0_OsTask_1ms = 0,
+  Default_BSW_Async_Task_Core0 = 1,
+  Default_BSW_Async_Task_Core1 = 2,
+  Default_BSW_Async_Task_Core2 = 3,
+  Default_Init_Task_Core0 = 4,
+  Default_Init_Task_Core1 = 5,
+  Default_Init_Task_Core2 = 6,
+  IdleTask_OsCore_Core0 = 7,
+  IdleTask_OsCore_Core1 = 8,
+  IdleTask_OsCore_Core2 = 9,
+  OS_TASKID_COUNT = 10,
   INVALID_TASK = OS_TASKID_COUNT
 } TaskType;
 
@@ -176,12 +177,13 @@ typedef enum
   Rte_Al_TE2_Default_BSW_Async_Task_Core0_10ms = 2,
   Rte_Al_TE2_EcuM_EcuM_MainFunction = 3,
   Rte_Al_TE3_EcuM_EcuM_MainFunction = 4,
-  Rte_Al_TE_LinIf_LinIf_MainFunction = 5,
-  Rte_Al_TE_disc_ecu_Core0_Task_100ms = 6,
-  Rte_Al_TE_disc_ecu_Core0_Task_10ms = 7,
-  Rte_Al_TE_disc_ecu_Core0_Task_20ms = 8,
-  Rte_Al_TE_disc_ecu_Core0_Task_50ms = 9,
-  OS_ALARMID_COUNT = 10
+  Rte_Al_TE_Cycle_Task_1ms_Core0_Task_1ms = 5,
+  Rte_Al_TE_LinIf_LinIf_MainFunction = 6,
+  Rte_Al_TE_disc_ecu_Core0_Task_100ms = 7,
+  Rte_Al_TE_disc_ecu_Core0_Task_10ms = 8,
+  Rte_Al_TE_disc_ecu_Core0_Task_20ms = 9,
+  Rte_Al_TE_disc_ecu_Core0_Task_50ms = 10,
+  OS_ALARMID_COUNT = 11
 } AlarmType;
 
 /*! Counter identifier. */

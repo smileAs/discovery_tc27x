@@ -1,7 +1,7 @@
 {
    "description" : "RTE Analyzer used templates",
    "version" : "1.14.0",
-   "RTEOutputDirectory" : "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Discovery_ecu/Appl/GenData/",
+   "RTEOutputDirectory" : "C:/backup/discovery_tc27x - daohang/Discovery_ecu/Appl/GenData/",
    "Templates" : {
       "Components/Rte_BswM.h" : {
          "Rte_InitValue_Request_ESH_PostRunRequest_0_requestedMode" : {
@@ -396,6 +396,28 @@
             "8ffb905c8707df82f047182377a2e483" : {},
             "9e4e1b2789008e1ef255809033315f7c" : {},
             "ee70797868c7e79d637957a01d59154c" : {}
+         },
+         "TASK(Core0_OsTask_1ms)" : {
+            "001a3efbfe49b7d5be906b5d15d108f6" : {},
+            "1026845bd8a0ab7b7ec248db1e4b63f8" : {},
+            "2aac5d65e80a96bea6e19fb64873b3e0" : {},
+            "3414df247e45b319f4ae35b1cef1c004" : {},
+            "34af92b1c9c2153872a9ef4790eebd0a" : {},
+            "3b7ee8908c44bcdcb5144f833a5ab5ab" : {},
+            "4ee294fa49463811fffa265644cfd97f" : {},
+            "6769cbc9af67d0a837e5d0b429c68907" : {},
+            "6d706ac1540a908c81fd20b9fadf7b21" : {},
+            "7b46780790d0ea770b24f4f8fdbabf17" : {},
+            "7c2459f385738818710b91822e44068f" : {},
+            "7e7562d0543f3db67e72a761aba526ba" : {},
+            "8439aff64d10d719dc4c67c405a95bcc" : {},
+            "86e2f9c7837c9bf7ce55b5a05a4c0543" : {},
+            "8c453ec6cd76b04c7cb0a87436e3871f" : {},
+            "8e387529d41dabbed1fa4fafff8678d4" : {},
+            "99613e7531feb4b3317632643e798815" : {},
+            "9bbe16e5f7debca9c9711cda4389a721" : {},
+            "a894c7656c240f56962d8c99ed997011" : {},
+            "bfdc05ffce13466b4ba700c7c225287c" : {}
          },
          "TASK(Default_BSW_Async_Task_Core0)" : {
             "001a3efbfe49b7d5be906b5d15d108f6" : {},

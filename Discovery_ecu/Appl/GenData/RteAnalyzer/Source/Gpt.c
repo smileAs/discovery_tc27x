@@ -2,7 +2,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  Gpt.c
- *        Config:  discovery_ecu.dpa
+ *        Config:  discovery_ecu.dpa"
  *    BSW Module:  Gpt
  *
  *     Generator:  MICROSAR RTE Generator Version 4.14.0

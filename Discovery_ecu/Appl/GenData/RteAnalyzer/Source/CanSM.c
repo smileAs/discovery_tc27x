@@ -2,7 +2,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  CanSM.c
- *        Config:  discovery_ecu.dpa
+ *        Config:  discovery_ecu.dpa"
  *    BSW Module:  CanSM
  *
  *     Generator:  MICROSAR RTE Generator Version 4.14.0

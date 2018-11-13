@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Link_Core0.ld
- *   Generation Time: 2018-09-27 17:21:16
+ *   Generation Time: 2018-11-11 09:44:57
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -108,6 +108,12 @@ _OS_CanIsr_2_CODE_START = ABSOLUTE(.);
 *(*.OS_CanIsr_2_CODE)
 . = ALIGN(8);
 _OS_CanIsr_2_CODE_END = ABSOLUTE(.);
+. += 16;
+. = ALIGN(8);
+_OS_Core0_OsTask_1ms_CODE_START = ABSOLUTE(.);
+*(*.OS_Core0_OsTask_1ms_CODE)
+. = ALIGN(8);
+_OS_Core0_OsTask_1ms_CODE_END = ABSOLUTE(.);
 . += 16;
 . = ALIGN(8);
 _OS_Default_BSW_Async_Task_Core0_CODE_START = ABSOLUTE(.);
@@ -261,6 +267,38 @@ _OS_Untrusted_BSW_Core0_CONST_FAST_END = ABSOLUTE(.);
 
 #ifdef OS_LINK_CONST_APP_UNTRUSTED_BSW_CORE0_NEAR
 # undef OS_LINK_CONST_APP_UNTRUSTED_BSW_CORE0_NEAR
+#endif
+
+
+
+#if defined ( OS_LINK_CONST ) || defined ( OS_LINK_CONST_TASK ) || defined ( OS_LINK_CONST_TASK_CORE0_OSTASK_1MS ) || defined ( OS_LINK_CONST_TASK_CORE0_OSTASK_1MS_FAR )
+. = ALIGN(8);
+_OS_Core0_OsTask_1ms_CONST_START = ABSOLUTE(.);
+*(*.OS_Core0_OsTask_1ms_CONST)
+. = ALIGN(8);
+_OS_Core0_OsTask_1ms_CONST_END = ABSOLUTE(.);
+. += 16;
+#endif
+
+#if defined ( OS_LINK_CONST ) || defined ( OS_LINK_CONST_TASK ) || defined ( OS_LINK_CONST_TASK_CORE0_OSTASK_1MS ) || defined ( OS_LINK_CONST_TASK_CORE0_OSTASK_1MS_NEAR )
+. = ALIGN(8);
+_OS_Core0_OsTask_1ms_CONST_FAST_START = ABSOLUTE(.);
+*(*.OS_Core0_OsTask_1ms_CONST_FAST)
+. = ALIGN(8);
+_OS_Core0_OsTask_1ms_CONST_FAST_END = ABSOLUTE(.);
+. += 16;
+#endif
+
+#ifdef OS_LINK_CONST_TASK_CORE0_OSTASK_1MS
+# undef OS_LINK_CONST_TASK_CORE0_OSTASK_1MS
+#endif
+
+#ifdef OS_LINK_CONST_TASK_CORE0_OSTASK_1MS_FAR
+# undef OS_LINK_CONST_TASK_CORE0_OSTASK_1MS_FAR
+#endif
+
+#ifdef OS_LINK_CONST_TASK_CORE0_OSTASK_1MS_NEAR
+# undef OS_LINK_CONST_TASK_CORE0_OSTASK_1MS_NEAR
 #endif
 
 
@@ -1264,6 +1302,103 @@ _OS_Untrusted_BSW_Core0_VAR_ALL_END = ABSOLUTE(.);
 
 #ifdef OS_LINK_VAR_APP_UNTRUSTED_BSW_CORE0_NEAR_NOCACHE_ZERO_INIT
 # undef OS_LINK_VAR_APP_UNTRUSTED_BSW_CORE0_NEAR_NOCACHE_ZERO_INIT
+#endif
+
+
+
+
+#if defined ( OS_LINK_VAR ) || defined ( OS_LINK_VAR_TASK ) || defined ( OS_LINK_VAR_TASK_CORE0_OSTASK_1MS ) || defined ( OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_FAR ) || defined ( OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_FAR_INIT )
+. = ALIGN(8);
+_OS_Core0_OsTask_1ms_VAR_START = ABSOLUTE(.);
+*(*.OS_Core0_OsTask_1ms_VAR)
+. = ALIGN(8);
+_OS_Core0_OsTask_1ms_VAR_END = ABSOLUTE(.);
+. += 16;
+#endif
+
+#if defined ( OS_LINK_VAR ) || defined ( OS_LINK_VAR_TASK ) || defined ( OS_LINK_VAR_TASK_CORE0_OSTASK_1MS ) || defined ( OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_FAR ) || defined ( OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_FAR_NOINIT )
+. = ALIGN(8);
+_OS_Core0_OsTask_1ms_VAR_NOINIT_START = ABSOLUTE(.);
+*(*.OS_Core0_OsTask_1ms_VAR_NOINIT)
+. = ALIGN(8);
+_OS_Core0_OsTask_1ms_VAR_NOINIT_END = ABSOLUTE(.);
+. += 16;
+#endif
+
+#if defined ( OS_LINK_VAR ) || defined ( OS_LINK_VAR_TASK ) || defined ( OS_LINK_VAR_TASK_CORE0_OSTASK_1MS ) || defined ( OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_FAR ) || defined ( OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_FAR_ZERO_INIT )
+. = ALIGN(8);
+_OS_Core0_OsTask_1ms_VAR_ZERO_INIT_START = ABSOLUTE(.);
+*(*.OS_Core0_OsTask_1ms_VAR_ZERO_INIT)
+. = ALIGN(8);
+_OS_Core0_OsTask_1ms_VAR_ZERO_INIT_END = ABSOLUTE(.);
+. += 16;
+#endif
+
+#if defined ( OS_LINK_VAR ) || defined ( OS_LINK_VAR_TASK ) || defined ( OS_LINK_VAR_TASK_CORE0_OSTASK_1MS ) || defined ( OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_NEAR ) || defined ( OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_NEAR_INIT )
+. = ALIGN(8);
+_OS_Core0_OsTask_1ms_VAR_FAST_START = ABSOLUTE(.);
+*(*.OS_Core0_OsTask_1ms_VAR_FAST)
+. = ALIGN(8);
+_OS_Core0_OsTask_1ms_VAR_FAST_END = ABSOLUTE(.);
+. += 16;
+#endif
+
+#if defined ( OS_LINK_VAR ) || defined ( OS_LINK_VAR_TASK ) || defined ( OS_LINK_VAR_TASK_CORE0_OSTASK_1MS ) || defined ( OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_NEAR ) || defined ( OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_NEAR_NOINIT )
+. = ALIGN(8);
+_OS_Core0_OsTask_1ms_VAR_FAST_NOINIT_START = ABSOLUTE(.);
+*(*.OS_Core0_OsTask_1ms_VAR_FAST_NOINIT)
+. = ALIGN(8);
+_OS_Core0_OsTask_1ms_VAR_FAST_NOINIT_END = ABSOLUTE(.);
+. += 16;
+#endif
+
+#if defined ( OS_LINK_VAR ) || defined ( OS_LINK_VAR_TASK ) || defined ( OS_LINK_VAR_TASK_CORE0_OSTASK_1MS ) || defined ( OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_NEAR ) || defined ( OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_NEAR_ZERO_INIT )
+. = ALIGN(8);
+_OS_Core0_OsTask_1ms_VAR_FAST_ZERO_INIT_START = ABSOLUTE(.);
+*(*.OS_Core0_OsTask_1ms_VAR_FAST_ZERO_INIT)
+. = ALIGN(8);
+_OS_Core0_OsTask_1ms_VAR_FAST_ZERO_INIT_END = ABSOLUTE(.);
+. += 16;
+#endif
+
+#ifdef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS
+# undef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS
+#endif
+
+#ifdef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_FAR
+# undef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_FAR
+#endif
+
+#ifdef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_FAR_INIT
+# undef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_FAR_INIT
+#endif
+
+#ifdef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_FAR_NOINIT
+# undef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_FAR_NOINIT
+#endif
+
+#ifdef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_FAR_ZERO_INIT
+# undef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_FAR_ZERO_INIT
+#endif
+
+#ifdef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS
+# undef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS
+#endif
+
+#ifdef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_NEAR
+# undef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_NEAR
+#endif
+
+#ifdef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_NEAR_INIT
+# undef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_NEAR_INIT
+#endif
+
+#ifdef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_NEAR_NOINIT
+# undef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_NEAR_NOINIT
+#endif
+
+#ifdef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_NEAR_ZERO_INIT
+# undef OS_LINK_VAR_TASK_CORE0_OSTASK_1MS_NEAR_ZERO_INIT
 #endif
 
 

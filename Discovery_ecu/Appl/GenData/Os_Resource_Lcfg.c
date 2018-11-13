@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Resource_Lcfg.c
- *   Generation Time: 2018-08-04 14:15:27
+ *   Generation Time: 2018-11-11 09:44:57
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -161,7 +161,7 @@ CONST(Os_ResourceConfigType, OS_CONST) OsCfg_Resource_OsResource =
   },
   /* .Core            = */ &OsCfg_Core_OsCore_Core0,
   /* .ResourceId      = */ OsResource,
-  /* .CeilingPriority = */ 0
+  /* .CeilingPriority = */ 1
 };
 
 #define OS_STOP_SEC_CORE0_CONST_UNSPECIFIED

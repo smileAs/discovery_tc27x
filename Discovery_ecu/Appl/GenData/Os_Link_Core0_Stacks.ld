@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Link_Core0_Stacks.ld
- *   Generation Time: 2018-08-04 14:15:27
+ *   Generation Time: 2018-11-11 09:44:57
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -133,20 +133,28 @@ _OS_STACK_OSCORE_CORE0_STARTUP_VAR_NOINIT_START = ABSOLUTE(.);
 _OS_STACK_OSCORE_CORE0_STARTUP_VAR_NOINIT_END = ABSOLUTE(.);
 . += 16;
 
-/* Stack: OsCore_Core0_Task_Prio5 (1024 Byte) */
+/* Stack: OsCore_Core0_Task_Prio0 (1024 Byte) */
 . = ALIGN(8);
-_OS_STACK_OSCORE_CORE0_TASK_PRIO5_VAR_NOINIT_START = ABSOLUTE(.);
-*(*.OS_STACK_OSCORE_CORE0_TASK_PRIO5_VAR_NOINIT)
+_OS_STACK_OSCORE_CORE0_TASK_PRIO0_VAR_NOINIT_START = ABSOLUTE(.);
+*(*.OS_STACK_OSCORE_CORE0_TASK_PRIO0_VAR_NOINIT)
 . = ALIGN(8);
-_OS_STACK_OSCORE_CORE0_TASK_PRIO5_VAR_NOINIT_END = ABSOLUTE(.);
+_OS_STACK_OSCORE_CORE0_TASK_PRIO0_VAR_NOINIT_END = ABSOLUTE(.);
 . += 16;
 
-/* Stack: OsCore_Core0_Task_Prio6 (2048 Byte) */
+/* Stack: OsCore_Core0_Task_Prio6 (1024 Byte) */
 . = ALIGN(8);
 _OS_STACK_OSCORE_CORE0_TASK_PRIO6_VAR_NOINIT_START = ABSOLUTE(.);
 *(*.OS_STACK_OSCORE_CORE0_TASK_PRIO6_VAR_NOINIT)
 . = ALIGN(8);
 _OS_STACK_OSCORE_CORE0_TASK_PRIO6_VAR_NOINIT_END = ABSOLUTE(.);
+. += 16;
+
+/* Stack: OsCore_Core0_Task_Prio7 (2048 Byte) */
+. = ALIGN(8);
+_OS_STACK_OSCORE_CORE0_TASK_PRIO7_VAR_NOINIT_START = ABSOLUTE(.);
+*(*.OS_STACK_OSCORE_CORE0_TASK_PRIO7_VAR_NOINIT)
+. = ALIGN(8);
+_OS_STACK_OSCORE_CORE0_TASK_PRIO7_VAR_NOINIT_END = ABSOLUTE(.);
 . += 16;
 
 _OS_CORE0_STACKS_END = ABSOLUTE(.);

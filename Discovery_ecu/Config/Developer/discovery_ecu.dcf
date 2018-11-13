@@ -29,13 +29,23 @@
 		<EXTSSWCSUPPORT VALUE="true"></EXTSSWCSUPPORT>
 	</SETTINGS>
 	<FILEREF>
-		<ARXML ROOTITEM="DATATYPE" TYPE="">DataTypes.arxml</ARXML>
-		<GENATTR>DataTypes_gen_attr.xml</GENATTR>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\cycle_task.arxml</ARXML>
+		<DCB>ComponentTypes\cycle_task.dcb</DCB>
+		<GENATTR>ComponentTypes\cycle_task_gen_attr.xml</GENATTR>
 	</FILEREF>
 	<FILEREF>
 		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\disc_ecu.arxml</ARXML>
 		<DCB>ComponentTypes\disc_ecu.dcb</DCB>
 		<GENATTR>ComponentTypes\disc_ecu_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="DATATYPE" TYPE="">DataTypes.arxml</ARXML>
+		<GENATTR>DataTypes_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML TYPE="LOCAL" ROOTITEM="ECUPROJECT">ECUProjects\discovery_ecu.arxml</ARXML>
+		<DCB>ECUProjects\discovery_ecu.dcb</DCB>
+		<GENATTR>ECUProjects\discovery_ecu_gen_attr.xml</GENATTR>
 	</FILEREF>
 	<FILEREF>
 		<ARXML ROOTITEM="PACKAGE" TYPE="">Packages.arxml</ARXML>
@@ -44,10 +54,5 @@
 	<FILEREF>
 		<ARXML ROOTITEM="PORTINTERFACE" TYPE="">PortInterfaces.arxml</ARXML>
 		<GENATTR>PortInterfaces_gen_attr.xml</GENATTR>
-	</FILEREF>
-	<FILEREF>
-		<ARXML TYPE="LOCAL" ROOTITEM="ECUPROJECT">ECUProjects\discovery_ecu.arxml</ARXML>
-		<DCB>ECUProjects\discovery_ecu.dcb</DCB>
-		<GENATTR>ECUProjects\discovery_ecu_gen_attr.xml</GENATTR>
 	</FILEREF>
 </DCF>

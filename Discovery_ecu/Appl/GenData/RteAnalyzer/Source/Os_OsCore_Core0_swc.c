@@ -2,7 +2,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  Os_OsCore_Core0_swc.c
- *        Config:  discovery_ecu.dpa
+ *        Config:  discovery_ecu.dpa"
  *     SW-C Type:  Os_OsCore_Core0_swc
  *
  *     Generator:  MICROSAR RTE Generator Version 4.14.0

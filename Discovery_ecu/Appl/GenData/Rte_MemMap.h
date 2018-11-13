@@ -9,7 +9,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  Rte_MemMap.h
- *        Config:  discovery_ecu.dpa
+ *        Config:  discovery_ecu.dpa"
  *   ECU-Project:  P2P
  *
  *     Generator:  MICROSAR RTE Generator Version 4.14.0
@@ -460,6 +460,19 @@
  *********************************************************************************************************************/
 /**********************************************************************************************************************
  * DO NOT CHANGE THIS COMMENT!         << Start of memory mapping implementation >>         DO NOT CHANGE THIS COMMENT!
+ * Symbol: RTE_START_SEC_CYCLE_TASK_APPL_CODE
+ *********************************************************************************************************************/
+
+#ifdef RTE_START_SEC_CYCLE_TASK_APPL_CODE
+# undef RTE_START_SEC_CYCLE_TASK_APPL_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CODE
+#endif
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!          << End of memory mapping implementation >>          DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!         << Start of memory mapping implementation >>         DO NOT CHANGE THIS COMMENT!
  * Symbol: RTE_START_SEC_DISC_ECU_APPL_CODE
  *********************************************************************************************************************/
 
@@ -558,6 +571,19 @@
 
 #ifdef RTE_STOP_SEC_OS_OSCORE_CORE2_SWC_APPL_CODE
 # undef RTE_STOP_SEC_OS_OSCORE_CORE2_SWC_APPL_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CODE
+#endif
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!          << End of memory mapping implementation >>          DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!         << Start of memory mapping implementation >>         DO NOT CHANGE THIS COMMENT!
+ * Symbol: RTE_STOP_SEC_CYCLE_TASK_APPL_CODE
+ *********************************************************************************************************************/
+
+#ifdef RTE_STOP_SEC_CYCLE_TASK_APPL_CODE
+# undef RTE_STOP_SEC_CYCLE_TASK_APPL_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
 # define STOP_SEC_CODE
 #endif
 

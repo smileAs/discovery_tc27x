@@ -2,7 +2,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  CanTp.c
- *        Config:  discovery_ecu.dpa
+ *        Config:  discovery_ecu.dpa"
  *    BSW Module:  CanTp
  *
  *     Generator:  MICROSAR RTE Generator Version 4.14.0

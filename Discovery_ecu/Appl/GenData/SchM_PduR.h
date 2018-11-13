@@ -9,7 +9,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  SchM_PduR.h
- *        Config:  discovery_ecu.dpa
+ *        Config:  discovery_ecu.dpa"
  *   ECU-Project:  P2P
  *
  *     Generator:  MICROSAR RTE Generator Version 4.14.0

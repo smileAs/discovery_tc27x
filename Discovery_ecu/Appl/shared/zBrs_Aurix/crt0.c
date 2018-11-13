@@ -388,6 +388,16 @@ void cstart(const CoreInit_t *core)
   
   /* set PLL */
   system_set_pll(&g_PllInitValue_100_50);
+  
+  WDT_ClearEndinit(&SCU_WDTSCON0.U);
+
+  *(volatile unsigned long*)(0xF0000000+0xE8) = (unsigned long)0x12000000;
+ 
+  *(volatile unsigned long*)(0xF0000100+0xE8) = (unsigned long)0x12000000;
+ 
+  *(volatile unsigned long*)(0xF0000200+0xE8) = (unsigned long)0x12000000;
+  WDT_SetEndinit(&SCU_WDTSCON0.U);
+
 
   /* pass coreID to main */
   /* core->ustack[-2] = _mfcr(CPU_CORE_ID) & IFX_CPU_CORE_ID_CORE_ID_MSK; */

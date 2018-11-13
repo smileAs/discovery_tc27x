@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Alarm_Lcfg.c
- *   Generation Time: 2018-08-10 15:06:43
+ *   Generation Time: 2018-11-11 09:44:57
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -124,6 +124,9 @@ OS_LOCAL VAR(Os_AlarmType, OS_VAR_NOINIT) OsCfg_Alarm_Rte_Al_TE2_Default_BSW_Asy
 
 /*! Dynamic alarm data: Rte_Al_TE2_Default_BSW_Async_Task_Core0_10ms */
 OS_LOCAL VAR(Os_AlarmType, OS_VAR_NOINIT) OsCfg_Alarm_Rte_Al_TE2_Default_BSW_Async_Task_Core0_10ms_Dyn;
+
+/*! Dynamic alarm data: Rte_Al_TE_Cycle_Task_1ms_Core0_Task_1ms */
+OS_LOCAL VAR(Os_AlarmType, OS_VAR_NOINIT) OsCfg_Alarm_Rte_Al_TE_Cycle_Task_1ms_Core0_Task_1ms_Dyn;
 
 /*! Dynamic alarm data: Rte_Al_TE_LinIf_LinIf_MainFunction */
 OS_LOCAL VAR(Os_AlarmType, OS_VAR_NOINIT) OsCfg_Alarm_Rte_Al_TE_LinIf_LinIf_MainFunction_Dyn;
@@ -263,6 +266,35 @@ CONST(Os_AlarmSetEventConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE2_Default_BSW_A
   },
   /* .Task  = */ &OsCfg_Task_Default_BSW_Async_Task_Core0,
   /* .Mask  = */ Rte_Ev_Cyclic2_Default_BSW_Async_Task_Core0_10ms
+};
+
+/*! Alarm configuration data: Rte_Al_TE_Cycle_Task_1ms_Core0_Task_1ms */
+CONST(Os_AlarmActivateTaskConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE_Cycle_Task_1ms_Core0_Task_1ms =
+{
+  /* .Alarm = */
+  {
+    /* .Job                   = */
+    {
+      /* .Dyn      = */ OS_ALARM_CASTDYN_ALARM_2_JOB(OsCfg_Alarm_Rte_Al_TE_Cycle_Task_1ms_Core0_Task_1ms_Dyn),
+      /* .Counter  = */ OS_COUNTER_CASTCONFIG_TIMERHRT_2_COUNTER(OsCfg_Counter_SystemTimer_Core0),
+      /* .Callback = */ Os_AlarmActionActivateTask
+    },
+    /* .Autostart             = */
+    {
+      /* .AlarmTime        = */ 0UL, /* 0.0 sec */
+      /* .Cycle            = */ 0UL, /* 0.0 sec */
+      /* .ApplicationModes = */ OS_APPMODE_NONE,
+      /* .AlarmMode        = */ OS_ALARMMODE_ABSOLUTE
+    },
+    /* .AccessingApplications = */ (OS_APPID2MASK(SystemApplication_OsCore_Core0)
+        | OS_APPID2MASK(SystemApplication_OsCore_Core1)
+        | OS_APPID2MASK(SystemApplication_OsCore_Core2)
+        | OS_APPID2MASK(Untrusted_BSW_Core0)
+        | OS_APPID2MASK(Untrusted_BSW_Core1)
+        | OS_APPID2MASK(Untrusted_BSW_Core2)),
+    /* .OwnerApplication      = */ &OsCfg_App_Untrusted_BSW_Core0
+  },
+  /* .Task  = */ &OsCfg_Task_Core0_OsTask_1ms
 };
 
 /*! Alarm configuration data: Rte_Al_TE_LinIf_LinIf_MainFunction */
@@ -502,6 +534,7 @@ CONSTP2CONST(Os_AlarmConfigType, OS_CONST, OS_CONST) OsCfg_AlarmRefs[OS_ALARMID_
   OS_ALARM_CASTCONFIG_ALARMSETEVENT_2_ALARM(OsCfg_Alarm_Rte_Al_TE2_Default_BSW_Async_Task_Core0_10ms),
   OS_ALARM_CASTCONFIG_ALARMACTIVATETASK_2_ALARM(OsCfg_Alarm_Rte_Al_TE2_EcuM_EcuM_MainFunction),
   OS_ALARM_CASTCONFIG_ALARMACTIVATETASK_2_ALARM(OsCfg_Alarm_Rte_Al_TE3_EcuM_EcuM_MainFunction),
+  OS_ALARM_CASTCONFIG_ALARMACTIVATETASK_2_ALARM(OsCfg_Alarm_Rte_Al_TE_Cycle_Task_1ms_Core0_Task_1ms),
   OS_ALARM_CASTCONFIG_ALARMSETEVENT_2_ALARM(OsCfg_Alarm_Rte_Al_TE_LinIf_LinIf_MainFunction),
   OS_ALARM_CASTCONFIG_ALARMSETEVENT_2_ALARM(OsCfg_Alarm_Rte_Al_TE_disc_ecu_Core0_Task_100ms),
   OS_ALARM_CASTCONFIG_ALARMSETEVENT_2_ALARM(OsCfg_Alarm_Rte_Al_TE_disc_ecu_Core0_Task_10ms),

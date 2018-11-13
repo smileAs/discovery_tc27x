@@ -2,7 +2,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  BswM.c
- *        Config:  discovery_ecu.dpa
+ *        Config:  discovery_ecu.dpa"
  *     SW-C Type:  BswM
  *
  *     Generator:  MICROSAR RTE Generator Version 4.14.0

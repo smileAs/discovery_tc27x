@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: EcuM_PrivateCfg.h
- *   Generation Time: 2018-09-27 17:21:15
+ *   Generation Time: 2018-11-06 14:01:58
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -89,15 +89,15 @@
 #define EcuM_GetDefaultShutdownModeOfPCConfig()                       0U  /**< Default Shutdown Mode - Depending on target it its either a Sleep Mode or Reset Mode. */
 #define EcuM_GetDefaultShutdownTargetOfPCConfig()                     ECUM_STATE_OFF  /**< Default Shutdown Target */
 #define EcuM_GetDriverInitOneOfPCConfig()                             EcuM_DriverInitOne  /**< the pointer to EcuM_DriverInitOne */
-#define EcuM_GetEcuM_CRCHash_LowerOfPCConfig()                        0x952E0B4BUL
-#define EcuM_GetEcuM_CRCHash_UpperOfPCConfig()                        0x1829B974UL
+#define EcuM_GetEcuM_CRCHash_LowerOfPCConfig()                        0x51678009UL
+#define EcuM_GetEcuM_CRCHash_UpperOfPCConfig()                        0x7A6DDB22UL
 #define EcuM_GetGeneratorCompatibilityVersionOfPCConfig()             2048U
-#define EcuM_GetMaxWakeupSourceCountOfPCConfig()                      8U  /**< Max Wakeup source count. */
+#define EcuM_GetMaxWakeupSourceCountOfPCConfig()                      9U  /**< Max Wakeup source count. */
 #define EcuM_GetModuleStateOfPCConfig()                               EcuM_ModuleState  /**< the pointer to EcuM_ModuleState */
 #define EcuM_GetNormalMcuModeOfPCConfig()                             0UL  /**< EcuMNormalMcuModeRef id of the Mcu module */
 #define EcuM_GetSizeOfCoreStatusOfPCConfig()                          3U  /**< the number of accomplishable value elements in EcuM_CoreStatus */
 #define EcuM_GetSizeOfDriverInitOneOfPCConfig()                       1U  /**< the number of accomplishable value elements in EcuM_DriverInitOne */
-#define EcuM_GetSizeOfWakeupSourceListOfPCConfig()                    8U  /**< the number of accomplishable value elements in EcuM_WakeupSourceList */
+#define EcuM_GetSizeOfWakeupSourceListOfPCConfig()                    9U  /**< the number of accomplishable value elements in EcuM_WakeupSourceList */
 #define EcuM_GetWakeupSourceListOfPCConfig()                          EcuM_WakeupSourceList  /**< the pointer to EcuM_WakeupSourceList */
 /** 
   \}

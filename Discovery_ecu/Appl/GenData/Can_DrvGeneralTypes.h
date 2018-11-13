@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Can_DrvGeneralTypes.h
- *   Generation Time: 2018-07-20 17:26:40
+ *   Generation Time: 2018-11-06 14:01:59
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -38,6 +38,16 @@
  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 **********************************************************************************************************************/
 
+/**********************************************************************************************************************
+ * WARNING: This code has been generated with reduced-severity errors. 
+ * The created output files contain errors that have been ignored. Usage of the created files can lead to unpredictable behavior of the embedded code.
+ * Usage of the created files happens at own risk!
+ * 
+ * [Warning] CAN02002 - An invalid value is configured 
+ * - [Reduced Severity due to User-Defined Parameter] Invalid ID type for referred filters ( /ActiveEcuC/Can/CanConfigSet/CanHardware_CN_CAN01_Rx_Std_Extended[0:CanIdType](value=EXTENDED)).
+ * Erroneous configuration elements:
+ * /ActiveEcuC/Can/CanConfigSet/CanHardware_CN_CAN01_Rx_Std_Extended[0:CanIdType](value=EXTENDED) (DefRef: /MICROSAR/Can_TricoreMultican/Can/CanConfigSet/CanHardwareObject/CanIdType)
+ *********************************************************************************************************************/
 #if !defined(CAN_DRVGENERALTYPES_H)
 #define CAN_DRVGENERALTYPES_H
 
@@ -46,7 +56,7 @@
  ----------------------------------------------------------------------------- */
 
 /* CAN416, CAN065_Conf */
-typedef VAR(uint16, TYPEDEF) Can_IdType;             /* PRQA S 0850 */ /* MD_MSR_19.8 */
+typedef VAR(uint32, TYPEDEF) Can_IdType;             /* PRQA S 0850 */ /* MD_MSR_19.8 */
 
 /* CAN429 */
 typedef VAR(uint8, TYPEDEF) Can_HwHandleType;                 /* PRQA S 0850 */ /* MD_MSR_19.8 */

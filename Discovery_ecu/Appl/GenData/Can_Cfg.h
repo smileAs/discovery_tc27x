@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Can_Cfg.h
- *   Generation Time: 2018-08-04 13:37:35
+ *   Generation Time: 2018-11-06 14:01:58
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -38,6 +38,16 @@
  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 **********************************************************************************************************************/
 
+/**********************************************************************************************************************
+ * WARNING: This code has been generated with reduced-severity errors. 
+ * The created output files contain errors that have been ignored. Usage of the created files can lead to unpredictable behavior of the embedded code.
+ * Usage of the created files happens at own risk!
+ * 
+ * [Warning] CAN02002 - An invalid value is configured 
+ * - [Reduced Severity due to User-Defined Parameter] Invalid ID type for referred filters ( /ActiveEcuC/Can/CanConfigSet/CanHardware_CN_CAN01_Rx_Std_Extended[0:CanIdType](value=EXTENDED)).
+ * Erroneous configuration elements:
+ * /ActiveEcuC/Can/CanConfigSet/CanHardware_CN_CAN01_Rx_Std_Extended[0:CanIdType](value=EXTENDED) (DefRef: /MICROSAR/Can_TricoreMultican/Can/CanConfigSet/CanHardwareObject/CanIdType)
+ *********************************************************************************************************************/
 /* -----------------------------------------------------------------------------
     Generator Info
  ----------------------------------------------------------------------------- 
@@ -296,7 +306,7 @@
 #define CAN_MULTIPLE_BASICCAN_TX             STD_OFF
 
 /* Rx Handling */
-#define CAN_MULTIPLE_BASICCAN                STD_OFF
+#define CAN_MULTIPLE_BASICCAN                STD_ON
 #define CAN_RX_QUEUE                         STD_OFF
 #define CAN_OVERRUN_NOTIFICATION             CAN_NONE
 
@@ -322,8 +332,8 @@
 #define CAN_RX_FULLCAN_OBJECTS               STD_OFF
 #define CAN_TX_FULLCAN_OBJECTS               STD_OFF
 #define CAN_RX_BASICCAN_OBJECTS              STD_ON
-#define CAN_EXTENDED_ID                      STD_OFF
-#define CAN_MIXED_ID                         STD_OFF
+#define CAN_EXTENDED_ID                      STD_ON
+#define CAN_MIXED_ID                         STD_ON
 #define CAN_ONE_CONTROLLER_OPTIMIZATION      STD_OFF
 #define CAN_DYNAMIC_FULLCAN_ID               STD_ON
 #define CAN_SECURE_TEMP_BUFFER               STD_OFF
@@ -388,8 +398,9 @@
 #define CanConf_CN_CAN00_388e5969_Tx_Std 0U
 #define CanConf_CN_CAN01_388e5969_Rx_Std 3U
 #define CanConf_CN_CAN01_388e5969_Tx_Std 2U
-#define CanConf_CN_CAN02_388e5969_Rx_Std 5U
-#define CanConf_CN_CAN02_388e5969_Tx_Std 4U
+#define CanConf_CN_CAN02_388e5969_Rx_Std 6U
+#define CanConf_CN_CAN02_388e5969_Tx_Std 5U
+#define CanConf_CanHardware_CN_CAN01_Rx_Std_Extended 4U
 
 #define CanConf_ControllerBaudrateConfig_CT_CAN00_388e5969_CanControllerBaudrateConfig 0u
 #define CanConf_ControllerBaudrateConfig_CT_CAN01_388e5969_CanControllerBaudrateConfig 0u
@@ -1113,10 +1124,10 @@ typedef VAR(Can_ExternalTickType, TYPEDEF) Can_LoopTimeout_dim_type[CAN_LOOP_MAX
 #define Can_GetSizeOfGlobalInterruptPendingMaskOfPCConfig()           24U  /**< the number of accomplishable value elements in Can_GlobalInterruptPendingMask */
 #define Can_GetSizeOfHaltOfPCConfig()                                 3U  /**< the number of accomplishable value elements in Can_Halt */
 #define Can_GetSizeOfInitBTOfPCConfig()                               3U  /**< the number of accomplishable value elements in Can_InitBT */
-#define Can_GetSizeOfInitCodeHOfPCConfig()                            3U  /**< the number of accomplishable value elements in Can_InitCodeH */
-#define Can_GetSizeOfInitCodeLOfPCConfig()                            3U  /**< the number of accomplishable value elements in Can_InitCodeL */
-#define Can_GetSizeOfInitMaskHOfPCConfig()                            3U  /**< the number of accomplishable value elements in Can_InitMaskH */
-#define Can_GetSizeOfInitMaskLOfPCConfig()                            3U  /**< the number of accomplishable value elements in Can_InitMaskL */
+#define Can_GetSizeOfInitCodeHOfPCConfig()                            6U  /**< the number of accomplishable value elements in Can_InitCodeH */
+#define Can_GetSizeOfInitCodeLOfPCConfig()                            6U  /**< the number of accomplishable value elements in Can_InitCodeL */
+#define Can_GetSizeOfInitMaskHOfPCConfig()                            6U  /**< the number of accomplishable value elements in Can_InitMaskH */
+#define Can_GetSizeOfInitMaskLOfPCConfig()                            6U  /**< the number of accomplishable value elements in Can_InitMaskL */
 #define Can_GetSizeOfInitObjectBaudrateOfPCConfig()                   3U  /**< the number of accomplishable value elements in Can_InitObjectBaudrate */
 #define Can_GetSizeOfInitObjectStartIndexOfPCConfig()                 4U  /**< the number of accomplishable value elements in Can_InitObjectStartIndex */
 #define Can_GetSizeOfInitPortSelOfPCConfig()                          3U  /**< the number of accomplishable value elements in Can_InitPortSel */
@@ -1126,7 +1137,7 @@ typedef VAR(Can_ExternalTickType, TYPEDEF) Can_LoopTimeout_dim_type[CAN_LOOP_MAX
 #define Can_GetSizeOfLastInitObjectOfPCConfig()                       3U  /**< the number of accomplishable value elements in Can_LastInitObject */
 #define Can_GetSizeOfLogStatusOfPCConfig()                            3U  /**< the number of accomplishable value elements in Can_LogStatus */
 #define Can_GetSizeOfLoopTimeoutOfPCConfig()                          3U  /**< the number of accomplishable value elements in Can_LoopTimeout */
-#define Can_GetSizeOfMailboxOfPCConfig()                              9U  /**< the number of accomplishable value elements in Can_Mailbox */
+#define Can_GetSizeOfMailboxOfPCConfig()                              10U  /**< the number of accomplishable value elements in Can_Mailbox */
 #define Can_GetSizeOfNodeAdrOfPCConfig()                              3U  /**< the number of accomplishable value elements in Can_NodeAdr */
 #define Can_GetSizeOfNodeNumOfPCConfig()                              3U  /**< the number of accomplishable value elements in Can_NodeNum */
 #define Can_GetSizeOfPhysPrioOfPCConfig()                             8U  /**< the number of accomplishable value elements in Can_PhysPrio */
@@ -1830,7 +1841,7 @@ typedef uint8 Can_DLC_FIFOOfMailboxType;
 typedef uint8 Can_HwHandleOfMailboxType;
 
 /**   \brief  value based type definition for Can_IDValueOfMailbox */
-typedef uint16 Can_IDValueOfMailboxType;
+typedef uint32 Can_IDValueOfMailboxType;
 
 /**   \brief  value based type definition for Can_MailboxTypeOfMailbox */
 typedef uint8 Can_MailboxTypeOfMailboxType;
@@ -2171,7 +2182,7 @@ extern CONST(Can_InitBTType, CAN_CONST) Can_InitBT[3];
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-extern CONST(Can_InitCodeHType, CAN_CONST) Can_InitCodeH[3];
+extern CONST(Can_InitCodeHType, CAN_CONST) Can_InitCodeH[6];
 #define CAN_STOP_SEC_CONST_16BIT
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
@@ -2188,7 +2199,7 @@ extern CONST(Can_InitCodeHType, CAN_CONST) Can_InitCodeH[3];
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-extern CONST(Can_InitCodeLType, CAN_CONST) Can_InitCodeL[3];
+extern CONST(Can_InitCodeLType, CAN_CONST) Can_InitCodeL[6];
 #define CAN_STOP_SEC_CONST_16BIT
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
@@ -2205,7 +2216,7 @@ extern CONST(Can_InitCodeLType, CAN_CONST) Can_InitCodeL[3];
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-extern CONST(Can_InitMaskHType, CAN_CONST) Can_InitMaskH[3];
+extern CONST(Can_InitMaskHType, CAN_CONST) Can_InitMaskH[6];
 #define CAN_STOP_SEC_CONST_16BIT
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
@@ -2222,7 +2233,7 @@ extern CONST(Can_InitMaskHType, CAN_CONST) Can_InitMaskH[3];
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-extern CONST(Can_InitMaskLType, CAN_CONST) Can_InitMaskL[3];
+extern CONST(Can_InitMaskLType, CAN_CONST) Can_InitMaskL[6];
 #define CAN_STOP_SEC_CONST_16BIT
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
@@ -2315,7 +2326,7 @@ extern CONST(Can_IsrOsIdType, CAN_CONST) Can_IsrOsId[3];
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-extern CONST(Can_MailboxType, CAN_CONST) Can_Mailbox[9];
+extern CONST(Can_MailboxType, CAN_CONST) Can_Mailbox[10];
 #define CAN_STOP_SEC_CONST_UNSPECIFIED
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */

@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Counter_Cfg.h
- *   Generation Time: 2018-08-10 15:06:43
+ *   Generation Time: 2018-11-11 09:44:57
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -86,7 +86,7 @@
  *********************************************************************************************************************/
 
 /*! Number of counter jobs: SystemTimer_Core0 */
-# define OS_CFG_NUM_COUNTER_SYSTEMTIMER_CORE0_JOBS     (8UL)
+# define OS_CFG_NUM_COUNTER_SYSTEMTIMER_CORE0_JOBS     (9UL)
 
 /*! Number of counter jobs: SystemTimer_Core1 */
 # define OS_CFG_NUM_COUNTER_SYSTEMTIMER_CORE1_JOBS     (1UL)

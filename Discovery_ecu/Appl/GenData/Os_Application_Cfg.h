@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Application_Cfg.h
- *   Generation Time: 2018-09-29 15:39:31
+ *   Generation Time: 2018-11-11 09:44:57
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -116,13 +116,13 @@
 # define OS_CFG_NUM_APP_SYSTEMAPPLICATION_OSCORE_CORE2_SERVICES           (0UL)
 
 /* Number of application objects: Untrusted_BSW_Core0 */
-# define OS_CFG_NUM_APP_UNTRUSTED_BSW_CORE0_ALARMS             (8UL)
+# define OS_CFG_NUM_APP_UNTRUSTED_BSW_CORE0_ALARMS             (9UL)
 # define OS_CFG_NUM_APP_UNTRUSTED_BSW_CORE0_COUNTERS           (1UL)
 # define OS_CFG_NUM_APP_UNTRUSTED_BSW_CORE0_HOOKS              (0UL)
 # define OS_CFG_NUM_APP_UNTRUSTED_BSW_CORE0_ISRS               (3UL)
 # define OS_CFG_NUM_APP_UNTRUSTED_BSW_CORE0_CAT1ISRS           (0UL)
 # define OS_CFG_NUM_APP_UNTRUSTED_BSW_CORE0_SCHTS              (0UL)
-# define OS_CFG_NUM_APP_UNTRUSTED_BSW_CORE0_TASKS              (2UL)
+# define OS_CFG_NUM_APP_UNTRUSTED_BSW_CORE0_TASKS              (3UL)
 # define OS_CFG_NUM_APP_UNTRUSTED_BSW_CORE0_SERVICES           (0UL)
 
 /* Number of application objects: Untrusted_BSW_Core1 */

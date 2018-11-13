@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Compiler_Cfg.h
- *   Generation Time: 2018-09-29 15:39:31
+ *   Generation Time: 2018-11-11 09:44:57
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -80,6 +80,7 @@
 # define OS_CANISR_0_CODE
 # define OS_CANISR_1_CODE
 # define OS_CANISR_2_CODE
+# define OS_CORE0_OSTASK_1MS_CODE
 # define OS_DEFAULT_BSW_ASYNC_TASK_CORE0_CODE
 # define OS_DEFAULT_BSW_ASYNC_TASK_CORE1_CODE
 # define OS_DEFAULT_BSW_ASYNC_TASK_CORE2_CODE

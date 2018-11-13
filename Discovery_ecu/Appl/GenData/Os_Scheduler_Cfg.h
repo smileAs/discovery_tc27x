@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Scheduler_Cfg.h
- *   Generation Time: 2018-08-04 14:15:27
+ *   Generation Time: 2018-11-11 09:44:57
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -86,34 +86,37 @@
  *********************************************************************************************************************/
 
 /*! Defines the number of all task queues. */
-# define OS_CFG_NUM_TASKQUEUES                   (7UL)
+# define OS_CFG_NUM_TASKQUEUES                   (8UL)
 
 /* Number of task queue activation slots: OsCore_Core0 */
-# define OS_CFG_NUM_TASKQUEUE0_OSCORE_CORE0_SLOTS     (4UL)
-# define OS_CFG_NUM_TASKQUEUE1_OSCORE_CORE0_SLOTS     (1UL)
+# define OS_CFG_NUM_TASKQUEUE0_OSCORE_CORE0_SLOTS     (3UL)
+# define OS_CFG_NUM_TASKQUEUE1_OSCORE_CORE0_SLOTS     (3UL)
 # define OS_CFG_NUM_TASKQUEUE2_OSCORE_CORE0_SLOTS     (1UL)
 # define OS_CFG_NUM_TASKQUEUE3_OSCORE_CORE0_SLOTS     (1UL)
 # define OS_CFG_NUM_TASKQUEUE4_OSCORE_CORE0_SLOTS     (1UL)
-# define OS_CFG_NUM_TASKQUEUE5_OSCORE_CORE0_SLOTS     (2UL)
+# define OS_CFG_NUM_TASKQUEUE5_OSCORE_CORE0_SLOTS     (1UL)
 # define OS_CFG_NUM_TASKQUEUE6_OSCORE_CORE0_SLOTS     (2UL)
+# define OS_CFG_NUM_TASKQUEUE7_OSCORE_CORE0_SLOTS     (2UL)
 
 /* Number of task queue activation slots: OsCore_Core1 */
 # define OS_CFG_NUM_TASKQUEUE0_OSCORE_CORE1_SLOTS     (2UL)
-# define OS_CFG_NUM_TASKQUEUE1_OSCORE_CORE1_SLOTS     (2UL)
-# define OS_CFG_NUM_TASKQUEUE2_OSCORE_CORE1_SLOTS     (1UL)
+# define OS_CFG_NUM_TASKQUEUE1_OSCORE_CORE1_SLOTS     (1UL)
+# define OS_CFG_NUM_TASKQUEUE2_OSCORE_CORE1_SLOTS     (2UL)
 # define OS_CFG_NUM_TASKQUEUE3_OSCORE_CORE1_SLOTS     (1UL)
-# define OS_CFG_NUM_TASKQUEUE4_OSCORE_CORE1_SLOTS     (2UL)
-# define OS_CFG_NUM_TASKQUEUE5_OSCORE_CORE1_SLOTS     (1UL)
-# define OS_CFG_NUM_TASKQUEUE6_OSCORE_CORE1_SLOTS     (2UL)
+# define OS_CFG_NUM_TASKQUEUE4_OSCORE_CORE1_SLOTS     (1UL)
+# define OS_CFG_NUM_TASKQUEUE5_OSCORE_CORE1_SLOTS     (2UL)
+# define OS_CFG_NUM_TASKQUEUE6_OSCORE_CORE1_SLOTS     (1UL)
+# define OS_CFG_NUM_TASKQUEUE7_OSCORE_CORE1_SLOTS     (2UL)
 
 /* Number of task queue activation slots: OsCore_Core2 */
 # define OS_CFG_NUM_TASKQUEUE0_OSCORE_CORE2_SLOTS     (2UL)
 # define OS_CFG_NUM_TASKQUEUE1_OSCORE_CORE2_SLOTS     (1UL)
-# define OS_CFG_NUM_TASKQUEUE2_OSCORE_CORE2_SLOTS     (2UL)
+# define OS_CFG_NUM_TASKQUEUE2_OSCORE_CORE2_SLOTS     (1UL)
 # define OS_CFG_NUM_TASKQUEUE3_OSCORE_CORE2_SLOTS     (2UL)
-# define OS_CFG_NUM_TASKQUEUE4_OSCORE_CORE2_SLOTS     (1UL)
+# define OS_CFG_NUM_TASKQUEUE4_OSCORE_CORE2_SLOTS     (2UL)
 # define OS_CFG_NUM_TASKQUEUE5_OSCORE_CORE2_SLOTS     (1UL)
-# define OS_CFG_NUM_TASKQUEUE6_OSCORE_CORE2_SLOTS     (2UL)
+# define OS_CFG_NUM_TASKQUEUE6_OSCORE_CORE2_SLOTS     (1UL)
+# define OS_CFG_NUM_TASKQUEUE7_OSCORE_CORE2_SLOTS     (2UL)
 
 
 /**********************************************************************************************************************

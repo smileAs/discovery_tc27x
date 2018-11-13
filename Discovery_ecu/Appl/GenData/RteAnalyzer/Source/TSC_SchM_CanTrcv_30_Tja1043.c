@@ -9,7 +9,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  TSC_SchM_CanTrcv_30_Tja1043.c
- *        Config:  discovery_ecu.dpa
+ *        Config:  discovery_ecu.dpa"
  *   ECU-Project:  P2P
  *
  *     Generator:  MICROSAR RTE Generator Version 4.14.0

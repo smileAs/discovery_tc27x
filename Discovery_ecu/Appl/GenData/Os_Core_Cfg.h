@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Core_Cfg.h
- *   Generation Time: 2018-08-10 10:33:28
+ *   Generation Time: 2018-11-11 09:44:57
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -102,7 +102,7 @@
 # define OS_CFG_NUM_CORE_OSCORE_CORE0_HOOKS            (4UL)
 # define OS_CFG_NUM_CORE_OSCORE_CORE0_IOCS             (1UL)
 # define OS_CFG_NUM_CORE_OSCORE_CORE0_RESOURCES        (1UL)
-# define OS_CFG_NUM_CORE_OSCORE_CORE0_STACKS           (9UL)
+# define OS_CFG_NUM_CORE_OSCORE_CORE0_STACKS           (10UL)
 
 /* Number of core objects: OsCore_Core1 */
 # define OS_CFG_NUM_CORE_OSCORE_CORE1_APPS             (1UL)

@@ -9,7 +9,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  Rte.oil
- *        Config:  discovery_ecu.dpa
+ *        Config:  discovery_ecu.dpa"
  *   ECU-Project:  P2P
  *
  *     Generator:  MICROSAR RTE Generator Version 4.14.0
@@ -25,6 +25,27 @@
  * The attributes in this file must not be changed. Missing mandatory attributes must be set in the including file.
  * They are presented as a comment in the corresponding object definition containing a list of all legal values.
  *********************************************************************************************************************/
+
+   TASK Core0_OsTask_1ms {
+      ACTIVATION = 1:"@RO@";
+      PRIORITY = 50:"@RO@";
+      SCHEDULE = NON:"@RO@";
+// TIMING_PROTECTION = FALSE|TRUE; (AUTOSAR OS only)
+      AUTOSTART = FALSE:"@RO@";
+      ACCESSING_APPLICATION = Untrusted_BSW_Core1;
+      ACCESSING_APPLICATION = Untrusted_BSW_Core2;
+   }:"@RO@@NR@";
+
+   ALARM Rte_Al_TE_Cycle_Task_1ms_Core0_Task_1ms {
+      COUNTER = SystemTimer_Core0;
+      ACTION = ACTIVATETASK
+      {
+         TASK = Core0_OsTask_1ms;
+      }:"@ROC@";
+      AUTOSTART = FALSE:"@RO@";
+      ACCESSING_APPLICATION = Untrusted_BSW_Core1;
+      ACCESSING_APPLICATION = Untrusted_BSW_Core2;
+   }:"@RO@@NR@";
 
    TASK Default_BSW_Async_Task_Core0 {
       ACTIVATION = 1:"@RO@";
@@ -206,6 +227,8 @@
 //      SHUTDOWNHOOK = FALSE;
 //      ERRORHOOK = FALSE;
 //      HAS_RESTARTTASK = FALSE;
+      TASK = Core0_OsTask_1ms;
+      ALARM = Rte_Al_TE_Cycle_Task_1ms_Core0_Task_1ms;
       TASK = Default_BSW_Async_Task_Core0;
       ALARM = Rte_Al_TE2_Default_BSW_Async_Task_Core0_0_10ms;
       ALARM = Rte_Al_TE2_Default_BSW_Async_Task_Core0_0_20ms;

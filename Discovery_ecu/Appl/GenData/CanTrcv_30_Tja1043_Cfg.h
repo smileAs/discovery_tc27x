@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: CanTrcv_30_Tja1043_Cfg.h
- *   Generation Time: 2018-08-21 08:49:55
+ *   Generation Time: 2018-11-06 14:01:58
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1

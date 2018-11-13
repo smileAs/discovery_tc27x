@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Alarm_Lcfg.h
- *   Generation Time: 2018-08-10 15:06:43
+ *   Generation Time: 2018-11-11 09:44:57
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -120,6 +120,9 @@ extern CONST(Os_AlarmSetEventConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE2_Defaul
 
 /*! Alarm configuration data: Rte_Al_TE2_Default_BSW_Async_Task_Core0_10ms */
 extern CONST(Os_AlarmSetEventConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE2_Default_BSW_Async_Task_Core0_10ms;
+
+/*! Alarm configuration data: Rte_Al_TE_Cycle_Task_1ms_Core0_Task_1ms */
+extern CONST(Os_AlarmActivateTaskConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE_Cycle_Task_1ms_Core0_Task_1ms;
 
 /*! Alarm configuration data: Rte_Al_TE_LinIf_LinIf_MainFunction */
 extern CONST(Os_AlarmSetEventConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE_LinIf_LinIf_MainFunction;

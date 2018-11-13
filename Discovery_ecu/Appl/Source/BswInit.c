@@ -179,6 +179,7 @@ TASK(Default_Init_Task_Core0)
  *********************************************************************************************************************/
 
   EcuM_StartupTwo();
+  *(uint32 *)(0xF0018000+0x1018+9*0x20)= 0xA0000000;
 
   ComM_RequestComMode((ComM_UserHandleType)ComMConf_ComMUser_USR_CHNL_f276589c, COMM_FULL_COMMUNICATION);
   ComM_RequestComMode((ComM_UserHandleType)ComMConf_ComMUser_USR_CHNL_8571680a, COMM_FULL_COMMUNICATION);

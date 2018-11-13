@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: PduR_Lcfg.c
- *   Generation Time: 2018-09-27 17:21:15
+ *   Generation Time: 2018-11-06 14:01:59
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -47,10 +47,10 @@
  * - [Reduced Severity due to User-Defined Parameter] Communication type of PduRRoutingPath /ActiveEcuC/PduR/PduRRoutingTables/PduRRoutingTable/Can_diag_Functional_request cannot be determined. The communication types of the PduRSrcPdu and PduRDestPdu must be unique. Routing paths between different communication types are not possible.
  * 
  * Multiple communication types found:
- * TRANSPORT_PROTOCOL, COMMUNICATION_INTERFACE
+ * COMMUNICATION_INTERFACE, TRANSPORT_PROTOCOL
  * 
  * Parameters influencing the communication type:
- * /ActiveEcuC/CanTp/CanTpConfig/CanTpChannel_Func/CanTpRxNSdu[0:CanTpRxNSduRef](value=/ActiveEcuC/EcuC/EcucPduCollection/PT_DIAG_FuncReq_HSC2_PP_DIAG_FuncReq_HSC2_Rx_0fb271d2_c07658fd), /ActiveEcuC/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslConnection/DcmDslMainConnection/DcmDslProtocolRx_Functional_Address[0:DcmDslProtocolRxPduRef](value=/ActiveEcuC/EcuC/EcucPduCollection/diag_PUDR_Functional_request), /ActiveEcuC/Com/ComConfig/DIAG_FuncReq_HSC2_oCAN00_3abd61be[0:ComIPduType](value=NORMAL)
+ * /ActiveEcuC/Com/ComConfig/DIAG_FuncReq_HSC2_oCAN00_3abd61be[0:ComIPduType](value=NORMAL), /ActiveEcuC/CanTp/CanTpConfig/CanTpChannel_Func/CanTpRxNSdu[0:CanTpRxNSduRef](value=/ActiveEcuC/EcuC/EcucPduCollection/PT_DIAG_FuncReq_HSC2_PP_DIAG_FuncReq_HSC2_Rx_0fb271d2_c07658fd), /ActiveEcuC/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslConnection/DcmDslMainConnection/DcmDslProtocolRx_Functional_Address[0:DcmDslProtocolRxPduRef](value=/ActiveEcuC/EcuC/EcucPduCollection/diag_PUDR_Functional_request)
  * Erroneous configuration elements:
  * /ActiveEcuC/PduR/PduRRoutingTables/PduRRoutingTable/Can_diag_Functional_request/PduRDestPdu[0:PduRDestPduRef](value=/ActiveEcuC/EcuC/EcucPduCollection/diag_PUDR_Functional_request) (DefRef: /MICROSAR/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef)
  * /ActiveEcuC/PduR/PduRRoutingTables/PduRRoutingTable/Can_diag_Functional_request/PduRSrcPdu[0:PduRSrcPduRef](value=/ActiveEcuC/EcuC/EcucPduCollection/PT_DIAG_FuncReq_HSC2_PP_DIAG_FuncReq_HSC2_Rx_0fb271d2_c07658fd) (DefRef: /MICROSAR/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef)
@@ -60,10 +60,10 @@
  * - [Reduced Severity due to User-Defined Parameter] Communication type of PduRRoutingPath /ActiveEcuC/PduR/PduRRoutingTables/PduRRoutingTable/Can_diag_physical_request cannot be determined. The communication types of the PduRSrcPdu and PduRDestPdu must be unique. Routing paths between different communication types are not possible.
  * 
  * Multiple communication types found:
- * TRANSPORT_PROTOCOL, COMMUNICATION_INTERFACE
+ * COMMUNICATION_INTERFACE, TRANSPORT_PROTOCOL
  * 
  * Parameters influencing the communication type:
- * /ActiveEcuC/CanTp/CanTpConfig/CanTpChannel_physical/CanTpRxNSdu_002[0:CanTpRxNSduRef](value=/ActiveEcuC/EcuC/EcucPduCollection/PT_DIAG_PhysReq_P2P_PP_DIAG_PhysReq_P2P_Rx_0fb271d2_c07658fd), /ActiveEcuC/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslConnection/DcmDslMainConnection/DcmDslProtocolRx_Physical_Address[0:DcmDslProtocolRxPduRef](value=/ActiveEcuC/EcuC/EcucPduCollection/diag_PUDR_Physical_request), /ActiveEcuC/Com/ComConfig/DIAG_PhysReq_P2P_oCAN00_3abd61be[0:ComIPduType](value=NORMAL)
+ * /ActiveEcuC/Com/ComConfig/DIAG_PhysReq_P2P_oCAN00_3abd61be[0:ComIPduType](value=NORMAL), /ActiveEcuC/CanTp/CanTpConfig/CanTpChannel_physical/CanTpRxNSdu_002[0:CanTpRxNSduRef](value=/ActiveEcuC/EcuC/EcucPduCollection/PT_DIAG_PhysReq_P2P_PP_DIAG_PhysReq_P2P_Rx_0fb271d2_c07658fd), /ActiveEcuC/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslConnection/DcmDslMainConnection/DcmDslProtocolRx_Physical_Address[0:DcmDslProtocolRxPduRef](value=/ActiveEcuC/EcuC/EcucPduCollection/diag_PUDR_Physical_request)
  * Erroneous configuration elements:
  * /ActiveEcuC/PduR/PduRRoutingTables/PduRRoutingTable/Can_diag_physical_request/PduRDestPdu_1[0:PduRDestPduRef](value=/ActiveEcuC/EcuC/EcucPduCollection/diag_PUDR_Physical_request) (DefRef: /MICROSAR/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef)
  * /ActiveEcuC/PduR/PduRRoutingTables/PduRRoutingTable/Can_diag_physical_request/PduRSrcPdu_1[0:PduRSrcPduRef](value=/ActiveEcuC/EcuC/EcucPduCollection/PT_DIAG_PhysReq_P2P_PP_DIAG_PhysReq_P2P_Rx_0fb271d2_c07658fd) (DefRef: /MICROSAR/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef)
@@ -259,7 +259,7 @@ CONST(PduR_TriggerTransmitFctPtrType, PDUR_CONST) PduR_IfTriggerTransmitFctPtr[1
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-CONST(PduR_RxIf2DestType, PDUR_CONST) PduR_RxIf2Dest[64] = {
+CONST(PduR_RxIf2DestType, PDUR_CONST) PduR_RxIf2Dest[67] = {
     /* Index    DestHnd                                                IfRxIndicationFctPtrIdx        Referable Keys */
   { /*     0 */       ComConf_ComIPdu_APA_SecCH_FrP00_oCAN02_3abd61be,                     0UL },  /* [/ActiveEcuC/PduR/PduRRoutingTables/PduRRoutingTable/Can_PT_APA_SecCH_FrP00_427ad0d9/SRC_Can_PT_APA_SecCH_FrP00_427ad0d9] */
   { /*     1 */       ComConf_ComIPdu_APA_SecCH_FrP01_oCAN02_3abd61be,                     0UL },  /* [/ActiveEcuC/PduR/PduRRoutingTables/PduRRoutingTable/Can_PT_APA_SecCH_FrP01_427ad0d9/SRC_Can_PT_APA_SecCH_FrP01_427ad0d9] */
@@ -325,7 +325,10 @@ CONST(PduR_RxIf2DestType, PDUR_CONST) PduR_RxIf2Dest[64] = {
   { /*    60 */ ComConf_ComIPdu_Tester_HSC2_ECM_FrP00_oCAN00_3abd61be,                     0UL },  /* [/ActiveEcuC/PduR/PduRRoutingTables/PduRRoutingTable/Can_PT_Tester_HSC2_ECM_FrP00_0fb271d2/SRC_Can_PT_Tester_HSC2_ECM_FrP00_0fb271d2] */
   { /*    61 */  ComConf_ComIPdu_Tester_HSC2_GW_FrP14_oCAN00_3abd61be,                     0UL },  /* [/ActiveEcuC/PduR/PduRRoutingTables/PduRRoutingTable/Can_PT_Tester_HSC2_GW_FrP14_0fb271d2/SRC_Can_PT_Tester_HSC2_GW_FrP14_0fb271d2] */
   { /*    62 */             ComConf_ComIPdu_Read_LRU1_oLIN00_3abd61be,                     0UL },  /* [/ActiveEcuC/PduR/PduRRoutingTables/PduRRoutingTable/Lin_PT_Read_LRU1_45618847/SRC_Lin_PT_Read_LRU1_45618847] */
-  { /*    63 */             ComConf_ComIPdu_Read_SRU3_oLIN00_3abd61be,                     0UL }   /* [/ActiveEcuC/PduR/PduRRoutingTables/PduRRoutingTable/Lin_PT_Read_SRU3_45618847/SRC_Lin_PT_Read_SRU3_45618847] */
+  { /*    63 */             ComConf_ComIPdu_Read_SRU3_oLIN00_3abd61be,                     0UL },  /* [/ActiveEcuC/PduR/PduRRoutingTables/PduRRoutingTable/Lin_PT_Read_SRU3_45618847/SRC_Lin_PT_Read_SRU3_45618847] */
+  { /*    64 */                 ComConf_ComIPdu_ComIPdu_Aceinna_Accel,                     0UL },  /* [/ActiveEcuC/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath_Acceinna_Accel/PduRSrcPdu_3] */
+  { /*    65 */             ComConf_ComIPdu_ComIPdu_Aceinna_AngleRate,                     0UL },  /* [/ActiveEcuC/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath_Aceinna_AngleRate/PduRSrcPdu_4] */
+  { /*    66 */                ComConf_ComIPdu_ComIPdu_Aceinna_Angles,                     0UL }   /* [/ActiveEcuC/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath_Aceinna_Angles/PduRSrcPdu_5] */
 };
 #define PDUR_STOP_SEC_CONST_UNSPECIFIED
 /*lint -save -esym(961, 19.1) */

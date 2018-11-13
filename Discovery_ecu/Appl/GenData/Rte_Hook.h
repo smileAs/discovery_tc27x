@@ -9,7 +9,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  Rte_Hook.h
- *        Config:  discovery_ecu.dpa
+ *        Config:  discovery_ecu.dpa"
  *   ECU-Project:  P2P
  *
  *     Generator:  MICROSAR RTE Generator Version 4.14.0
@@ -106,6 +106,8 @@
  *  Rte_Runnable_Os_OsCore_Core2_swc_GetCounterValue_Start
  *  Rte_Runnable_Os_OsCore_Core2_swc_GetElapsedValue_Return
  *  Rte_Runnable_Os_OsCore_Core2_swc_GetElapsedValue_Start
+ *  Rte_Runnable_cycle_task_Core0_Task_1ms_Return
+ *  Rte_Runnable_cycle_task_Core0_Task_1ms_Start
  *  Rte_Runnable_disc_ecu_Core0_Task_100ms_Return
  *  Rte_Runnable_disc_ecu_Core0_Task_100ms_Start
  *  Rte_Runnable_disc_ecu_Core0_Task_10ms_Return

@@ -14,7 +14,7 @@
 **                                                                            **
 **  $CC VERSION : \main\4 $                                                  **
 **                                                                            **
-**  DATE, TIME: 2018-08-21, 08:48:03                                      **
+**  DATE, TIME: 2018-11-06, 14:00:09                                      **
 **                                                                            **
 **  GENERATOR : Build b141014-0350                                          **
 **                                                                            **
@@ -58,8 +58,8 @@
 *******************************************************************************/
 #define I2C_START_SEC_POSTBUILDCFG
 #include "MemMap.h"
-/* IFX_MISRA_RULE_08_10_STATUS=Variable
-   I2c_NotifFunctionPtrType is declared as extern in I2c.h,
+/* IFX_MISRA_RULE_08_10_STATUS=Variable 
+   I2c_NotifFunctionPtrType is declared as extern in I2c.h, 
    which will be included application for debugging */
 
 const I2c_NotifFunctionPtrType I2c_NotifFunctionPtrArray[6] =
@@ -70,7 +70,6 @@ const I2c_NotifFunctionPtrType I2c_NotifFunctionPtrArray[6] =
   NULL_PTR,
   NULL_PTR,
   NULL_PTR,
-
 };
 
 #define I2C_STOP_SEC_POSTBUILDCFG

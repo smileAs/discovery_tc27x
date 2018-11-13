@@ -14,7 +14,7 @@
 **                                                                            **
 **  $CC VERSION : \main\88 $                                                 **
 **                                                                            **
-**  DATE, TIME: 2018-09-26, 17:47:09                                         **
+**  DATE, TIME: 2018-11-06, 14:01:42                                         **
 **                                                                            **
 **  GENERATOR : Build b141014-0350                                            **
 **                                                                            **
@@ -424,6 +424,7 @@ static const Spi_SequenceConfigType Spi_kSequenceConfig0[] =
     /* This holds the total number of jobs linked to this sequence */
     1U,
   },
+    
   /* Sequence: SpiSequenceSD Configuration */
   {
     /* Spi_SeqEndNotification */

@@ -39,6 +39,8 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;over
        
 		   <p>CCU6</p><li>CCU6x_T12MSEL</li><li>CCU6x_ISR</li>
 		         
+		  <p>ERU</p><li>SCU.FMR</li><li>SCU.EICR,SCU.EIFR</li> 
+		  
       </td>
 	  <td> 
         Where x refers to CCU channel number 
@@ -50,6 +52,8 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;over
         
 		  <p>CCU6</p><li>CCU6x_T12MSEL</li>
 	     
+		  
+		  <p>ERU</p><li>SCU.FMR</li>
 		  
 	  <td>
         Where x refers to CCU channel number 
@@ -63,7 +67,8 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;over
 	  <td> 
        		  <p>CCU6</p><li>CCU6x_CLC</li><li>CCU6x_T12</li><li>CCU6x_TCTR0 </li><li>CCU6x_TCTR4 </li><li>CCU6x_T12PR </li><li>CCU6x.SR0 </li>
 		  
-      
+      		  <p>ERU</p><li>SCU.SCU.ERU[0]</li>
+		  
 	  <td>
         Where x refers to CCU channel number 
             
@@ -73,7 +78,8 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;over
 	  <td>
        		   <p>CCU6</p><li>CCU6x_T12MSEL</li><li>CCU6x_T12MSEL</li><li>CCU6x_ISR </li>
 		  
-		   	  <td>
+		   		   <p>ERU</p> <li>SCU.EICR</li> <li>SCU.FMR</li>
+       	  <td>
          Where x refers to CCU channel number  
                      
        </td>  
@@ -117,7 +123,7 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;over
 	  <td> Icu_17_GtmCcu6_SetActivationCondition </td>
 	  <td>       		   <p><p>CCU6</p></p><li>CCU6x_IEN</li>
 		  
-		   
+		   		   <p>ERU</p> <li>SCU.FMR</li>
 	  <td>
          Where x refers to CCU channel number 
                      
@@ -133,7 +139,13 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;over
                     
 	  </tr>
 
-      <tbody>
+
+	  <tr>
+	  <td>Icu_17_GtmCcu6_Eru_Isr  </td>
+	  <td>ERU<li>SCU.EIFR</li><li>FMR</li></td>
+	  <td>-- </td>  
+	  </tr> 
+          <tbody>
 	  </tbody>
 	  </table>
 	  
@@ -166,6 +178,15 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;over
         <td>CCU</td>
         <td>CCU60</td>
         <td>Cc61</td>
+        
+        </tr>
+
+
+        <tr>
+        <td>ICU_Channel_1</td>
+        <td>ERU</td>
+        <td>ERU</td>
+        <td>5</td>
         
         </tr>
 
@@ -252,6 +273,15 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;over
         </tr> 
         
        
+        <tr>        
+          <td>
+            SRC_SCU_SCU_ERU0</td>
+          <td>
+            SRC_SMU_SMU0_SR0</td>
+          <td>
+            Service request control registers for ERU </td>
+        </tr> 
+        
         <tr>
           <td>
             ICU_17_GTMCCU6_START_SEC_VAR_32BIT</td>

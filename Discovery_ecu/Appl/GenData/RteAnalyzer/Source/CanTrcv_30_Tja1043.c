@@ -2,7 +2,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  CanTrcv_30_Tja1043.c
- *        Config:  discovery_ecu.dpa
+ *        Config:  discovery_ecu.dpa"
  *    BSW Module:  CanTrcv_30_Tja1043
  *
  *     Generator:  MICROSAR RTE Generator Version 4.14.0

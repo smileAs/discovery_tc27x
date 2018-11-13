@@ -9,7 +9,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  Rte_Untrusted_BSW_Core0.c
- *        Config:  discovery_ecu.dpa
+ *        Config:  discovery_ecu.dpa"
  *   ECU-Project:  P2P
  *
  *     Generator:  MICROSAR RTE Generator Version 4.14.0
@@ -37,6 +37,7 @@
 #include "Rte_Os_OsCore_Core0_swc.h"
 #include "Rte_Os_OsCore_Core1_swc.h"
 #include "Rte_Os_OsCore_Core2_swc.h"
+#include "Rte_cycle_task.h"
 #include "Rte_disc_ecu.h"
 #include "SchM_BswM.h"
 #include "SchM_Can.h"
@@ -192,6 +193,7 @@ VAR(BswM_ESH_Mode, RTE_VAR_INIT) Rte_ModeMachine_BswM_Switch_ESH_ModeSwitch_BswM
 #define RTE_CONST_MSEC_SystemTimer_Core0_0 (0UL)
 #define RTE_CONST_MSEC_SystemTimer_Core1_0 (0UL)
 #define RTE_CONST_MSEC_SystemTimer_Core2_0 (0UL)
+#define RTE_CONST_MSEC_SystemTimer_Core0_1 (80000UL)
 #define RTE_CONST_MSEC_SystemTimer_Core0_10 (800000UL)
 #define RTE_CONST_MSEC_SystemTimer_Core1_10 (400000UL)
 #define RTE_CONST_MSEC_SystemTimer_Core2_10 (400000UL)
@@ -325,6 +327,21 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Switch_Dcm_DcmDiagnosticSessionControl_DcmDia
 /**********************************************************************************************************************
  * Task bodies for RTE controlled tasks
  *********************************************************************************************************************/
+
+/**********************************************************************************************************************
+ * Task:     Core0_OsTask_1ms
+ * Priority: 50
+ * Schedule: NON
+ * Alarm:    Cycle Time 0.001 s Alarm Offset 0 s
+ *********************************************************************************************************************/
+TASK(Core0_OsTask_1ms) /* PRQA S 3408, 1503 */ /* MD_Rte_3408, MD_MSR_14.1 */
+{
+
+  /* call runnable */
+  Core0_Task_1ms();
+
+  (void)TerminateTask(); /* PRQA S 3417 */ /* MD_Rte_Os */
+} /* PRQA S 6010, 6030, 6050, 6080 */ /* MD_MSR_STPTH, MD_MSR_STCYC, MD_MSR_STCAL, MD_MSR_STMIF */
 
 /**********************************************************************************************************************
  * Task:     Default_BSW_Async_Task_Core0

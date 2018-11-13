@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Can_Lcfg.c
- *   Generation Time: 2018-08-21 08:49:56
+ *   Generation Time: 2018-11-06 14:01:59
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -38,6 +38,16 @@
  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 **********************************************************************************************************************/
 
+/**********************************************************************************************************************
+ * WARNING: This code has been generated with reduced-severity errors. 
+ * The created output files contain errors that have been ignored. Usage of the created files can lead to unpredictable behavior of the embedded code.
+ * Usage of the created files happens at own risk!
+ * 
+ * [Warning] CAN02002 - An invalid value is configured 
+ * - [Reduced Severity due to User-Defined Parameter] Invalid ID type for referred filters ( /ActiveEcuC/Can/CanConfigSet/CanHardware_CN_CAN01_Rx_Std_Extended[0:CanIdType](value=EXTENDED)).
+ * Erroneous configuration elements:
+ * /ActiveEcuC/Can/CanConfigSet/CanHardware_CN_CAN01_Rx_Std_Extended[0:CanIdType](value=EXTENDED) (DefRef: /MICROSAR/Can_TricoreMultican/Can/CanConfigSet/CanHardwareObject/CanIdType)
+ *********************************************************************************************************************/
 
 #define CAN_LCFG_SOURCE
 
@@ -157,9 +167,9 @@ CONST(Can_CanIfChannelIdType, CAN_CONST) Can_CanIfChannelId[3] = {
 /*lint -restore */
 CONST(Can_ControllerConfigType, CAN_CONST) Can_ControllerConfig[3] = {
     /* Index    CanControllerDefaultBaudrate  RxBasicHandleMax  RxBasicHandleStart  RxBasicHandleStop  RxBasicHwStart  RxBasicHwStop  RxFullHandleMax  RxFullHandleStart  RxFullHandleStop  RxFullHwStart  RxFullHwStop  TxBasicHandleMax  TxBasicHandleStart  TxBasicHandleStop  TxBasicHwStart  TxBasicHwStop  TxFullHandleMax  TxFullHandleStart  TxFullHandleStop  TxFullHwStart  TxFullHwStop  UnusedHandleMax  UnusedHandleStart  UnusedHandleStop  UnusedHwStart  UnusedHwStop        Comment */
-  { /*     0 */                         500U,               1U,                 1U,                2U,             1U,            3U,              0U,                1U,               1U,            1U,           1U,               1U,                 0U,                1U,             0U,            1U,              0U,                0U,               0U,            0U,           0U,              1U,                6U,               7U,            3U,           7U },  /* [CT_CAN00_388e5969] */
-  { /*     1 */                         500U,               1U,                 3U,                4U,             8U,            9U,              0U,                3U,               3U,            8U,           8U,               1U,                 2U,                3U,             7U,            8U,              0U,                0U,               0U,            7U,           7U,              1U,                7U,               8U,            9U,          14U },  /* [CT_CAN01_388e5969] */
-  { /*     2 */                         500U,               1U,                 5U,                6U,            15U,           16U,              0U,                5U,               5U,           15U,          15U,               1U,                 4U,                5U,            14U,           15U,              0U,                0U,               0U,           14U,          14U,              1U,                8U,               9U,           16U,          21U }   /* [CT_CAN02_388e5969] */
+  { /*     0 */                         500U,               1U,                 1U,                2U,             1U,            3U,              0U,                1U,               1U,            1U,           1U,               1U,                 0U,                1U,             0U,            1U,              0U,                0U,               0U,            0U,           0U,              1U,                7U,               8U,            3U,           7U },  /* [CT_CAN00_388e5969] */
+  { /*     1 */                         500U,               2U,                 3U,                5U,             8U,           10U,              0U,                3U,               3U,            8U,           8U,               1U,                 2U,                3U,             7U,            8U,              0U,                0U,               0U,            7U,           7U,              1U,                8U,               9U,           10U,          14U },  /* [CT_CAN01_388e5969] */
+  { /*     2 */                         500U,               1U,                 6U,                7U,            15U,           16U,              0U,                6U,               6U,           15U,          15U,               1U,                 5U,                6U,            14U,           15U,              0U,                0U,               0U,           14U,          14U,              1U,                9U,              10U,           16U,          21U }   /* [CT_CAN02_388e5969] */
 };
 #define CAN_STOP_SEC_CONST_UNSPECIFIED
 /*lint -save -esym(961, 19.1) */
@@ -187,7 +197,7 @@ CONST(Can_GlobalInterruptPendingMaskType, CAN_CONST) Can_GlobalInterruptPendingM
   /*     5 */               0x00000000UL,  /* [CT_CAN00_388e5969, Mailbox 160-191] */
   /*     6 */               0x00000000UL,  /* [CT_CAN00_388e5969, Mailbox 192-223] */
   /*     7 */               0x00000000UL,  /* [CT_CAN00_388e5969, Mailbox 224-255] */
-  /*     8 */               0x00000180UL,  /* [CT_CAN01_388e5969, Mailbox 0-31] */
+  /*     8 */               0x00000380UL,  /* [CT_CAN01_388e5969, Mailbox 0-31] */
   /*     9 */               0x00000000UL,  /* [CT_CAN01_388e5969, Mailbox 32-63] */
   /*    10 */               0x00000000UL,  /* [CT_CAN01_388e5969, Mailbox 64-95] */
   /*    11 */               0x00000000UL,  /* [CT_CAN01_388e5969, Mailbox 96-127] */
@@ -242,11 +252,14 @@ CONST(Can_InitBTType, CAN_CONST) Can_InitBT[3] = {
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-CONST(Can_InitCodeHType, CAN_CONST) Can_InitCodeH[3] = {
+CONST(Can_InitCodeHType, CAN_CONST) Can_InitCodeH[6] = {
   /* Index    InitCodeH      Comment */
   /*     0 */   0x0000U,  /* [CT_CAN00_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
-  /*     1 */   0x0000U,  /* [CT_CAN01_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
-  /*     2 */   0x0000U   /* [CT_CAN02_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
+  /*     1 */   0x0000U,  /* [CT_CAN00_388e5969 - CanControllerBaudrateConfig, dummy entry] */
+  /*     2 */   0x0000U,  /* [CT_CAN01_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
+  /*     3 */   0x0000U,  /* [CT_CAN01_388e5969 - CanControllerBaudrateConfig, CanFilterMask_001] */
+  /*     4 */   0x0000U,  /* [CT_CAN02_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
+  /*     5 */   0x0000U   /* [CT_CAN02_388e5969 - CanControllerBaudrateConfig, dummy entry] */
 };
 #define CAN_STOP_SEC_CONST_16BIT
 /*lint -save -esym(961, 19.1) */
@@ -264,11 +277,14 @@ CONST(Can_InitCodeHType, CAN_CONST) Can_InitCodeH[3] = {
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-CONST(Can_InitCodeLType, CAN_CONST) Can_InitCodeL[3] = {
+CONST(Can_InitCodeLType, CAN_CONST) Can_InitCodeL[6] = {
   /* Index    InitCodeL      Comment */
   /*     0 */   0x0000U,  /* [CT_CAN00_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
-  /*     1 */   0x0000U,  /* [CT_CAN01_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
-  /*     2 */   0x0000U   /* [CT_CAN02_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
+  /*     1 */   0x0000U,  /* [CT_CAN00_388e5969 - CanControllerBaudrateConfig, dummy entry] */
+  /*     2 */   0x0000U,  /* [CT_CAN01_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
+  /*     3 */   0x0000U,  /* [CT_CAN01_388e5969 - CanControllerBaudrateConfig, CanFilterMask_001] */
+  /*     4 */   0x0000U,  /* [CT_CAN02_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
+  /*     5 */   0x0000U   /* [CT_CAN02_388e5969 - CanControllerBaudrateConfig, dummy entry] */
 };
 #define CAN_STOP_SEC_CONST_16BIT
 /*lint -save -esym(961, 19.1) */
@@ -286,11 +302,14 @@ CONST(Can_InitCodeLType, CAN_CONST) Can_InitCodeL[3] = {
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-CONST(Can_InitMaskHType, CAN_CONST) Can_InitMaskH[3] = {
+CONST(Can_InitMaskHType, CAN_CONST) Can_InitMaskH[6] = {
   /* Index    InitMaskH      Comment */
   /*     0 */   0x2000U,  /* [CT_CAN00_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
-  /*     1 */   0x2000U,  /* [CT_CAN01_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
-  /*     2 */   0x2000U   /* [CT_CAN02_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
+  /*     1 */   0x0000U,  /* [CT_CAN00_388e5969 - CanControllerBaudrateConfig, dummy entry] */
+  /*     2 */   0x2000U,  /* [CT_CAN01_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
+  /*     3 */   0x2000U,  /* [CT_CAN01_388e5969 - CanControllerBaudrateConfig, CanFilterMask_001] */
+  /*     4 */   0x2000U,  /* [CT_CAN02_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
+  /*     5 */   0x0000U   /* [CT_CAN02_388e5969 - CanControllerBaudrateConfig, dummy entry] */
 };
 #define CAN_STOP_SEC_CONST_16BIT
 /*lint -save -esym(961, 19.1) */
@@ -308,11 +327,14 @@ CONST(Can_InitMaskHType, CAN_CONST) Can_InitMaskH[3] = {
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-CONST(Can_InitMaskLType, CAN_CONST) Can_InitMaskL[3] = {
+CONST(Can_InitMaskLType, CAN_CONST) Can_InitMaskL[6] = {
   /* Index    InitMaskL      Comment */
   /*     0 */   0x0000U,  /* [CT_CAN00_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
-  /*     1 */   0x0000U,  /* [CT_CAN01_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
-  /*     2 */   0x0000U   /* [CT_CAN02_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
+  /*     1 */   0x0000U,  /* [CT_CAN00_388e5969 - CanControllerBaudrateConfig, dummy entry] */
+  /*     2 */   0x0000U,  /* [CT_CAN01_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
+  /*     3 */   0x0000U,  /* [CT_CAN01_388e5969 - CanControllerBaudrateConfig, CanFilterMask_001] */
+  /*     4 */   0x0000U,  /* [CT_CAN02_388e5969 - CanControllerBaudrateConfig, CanFilterMask] */
+  /*     5 */   0x0000U   /* [CT_CAN02_388e5969 - CanControllerBaudrateConfig, dummy entry] */
 };
 #define CAN_STOP_SEC_CONST_16BIT
 /*lint -save -esym(961, 19.1) */
@@ -427,17 +449,18 @@ CONST(Can_IsrOsIdType, CAN_CONST) Can_IsrOsId[3] = {
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-CONST(Can_MailboxType, CAN_CONST) Can_Mailbox[9] = {
-    /* Index    IDValue  DLC_FIFO  HwHandle  MailboxType                                MaxDataLen  MsgController        Comment */
-  { /*     0 */ 0x0000U,       1U,       0U, CAN_TX_BASICCAN_TYPE_MAILBOXTYPEOFMAILBOX,         8U,            0U },  /* [CN_CAN00_388e5969_Tx_Std] */
-  { /*     1 */ 0x0000U,       2U,       1U, CAN_RX_BASICCAN_TYPE_MAILBOXTYPEOFMAILBOX,         8U,            0U },  /* [CN_CAN00_388e5969_Rx_Std] */
-  { /*     2 */ 0x0000U,       1U,       7U, CAN_TX_BASICCAN_TYPE_MAILBOXTYPEOFMAILBOX,         8U,            1U },  /* [CN_CAN01_388e5969_Tx_Std] */
-  { /*     3 */ 0x0000U,       1U,       8U, CAN_RX_BASICCAN_TYPE_MAILBOXTYPEOFMAILBOX,         8U,            1U },  /* [CN_CAN01_388e5969_Rx_Std] */
-  { /*     4 */ 0x0000U,       1U,      14U, CAN_TX_BASICCAN_TYPE_MAILBOXTYPEOFMAILBOX,         8U,            2U },  /* [CN_CAN02_388e5969_Tx_Std] */
-  { /*     5 */ 0x0000U,       1U,      15U, CAN_RX_BASICCAN_TYPE_MAILBOXTYPEOFMAILBOX,         8U,            2U },  /* [CN_CAN02_388e5969_Rx_Std] */
-  { /*     6 */ 0x0000U,       4U,       3U,  CAN_UNUSED_CAN_TYPE_MAILBOXTYPEOFMAILBOX,         0U,            0U },  /* [] */
-  { /*     7 */ 0x0000U,       5U,       9U,  CAN_UNUSED_CAN_TYPE_MAILBOXTYPEOFMAILBOX,         0U,            1U },  /* [] */
-  { /*     8 */ 0x0000U,       5U,      16U,  CAN_UNUSED_CAN_TYPE_MAILBOXTYPEOFMAILBOX,         0U,            2U }   /* [] */
+CONST(Can_MailboxType, CAN_CONST) Can_Mailbox[10] = {
+    /* Index    IDValue       DLC_FIFO  HwHandle  MailboxType                                MaxDataLen  MsgController        Comment */
+  { /*     0 */ 0x00000000UL,       1U,       0U, CAN_TX_BASICCAN_TYPE_MAILBOXTYPEOFMAILBOX,         8U,            0U },  /* [CN_CAN00_388e5969_Tx_Std] */
+  { /*     1 */ 0x00000000UL,       2U,       1U, CAN_RX_BASICCAN_TYPE_MAILBOXTYPEOFMAILBOX,         8U,            0U },  /* [CN_CAN00_388e5969_Rx_Std] */
+  { /*     2 */ 0x00000000UL,       1U,       7U, CAN_TX_BASICCAN_TYPE_MAILBOXTYPEOFMAILBOX,         8U,            1U },  /* [CN_CAN01_388e5969_Tx_Std] */
+  { /*     3 */ 0x00000000UL,       1U,       8U, CAN_RX_BASICCAN_TYPE_MAILBOXTYPEOFMAILBOX,         8U,            1U },  /* [CN_CAN01_388e5969_Rx_Std] */
+  { /*     4 */ 0x00000000UL,       1U,       9U, CAN_RX_BASICCAN_TYPE_MAILBOXTYPEOFMAILBOX,         8U,            1U },  /* [CanHardware_CN_CAN01_Rx_Std_Extended] */
+  { /*     5 */ 0x00000000UL,       1U,      14U, CAN_TX_BASICCAN_TYPE_MAILBOXTYPEOFMAILBOX,         8U,            2U },  /* [CN_CAN02_388e5969_Tx_Std] */
+  { /*     6 */ 0x00000000UL,       1U,      15U, CAN_RX_BASICCAN_TYPE_MAILBOXTYPEOFMAILBOX,         8U,            2U },  /* [CN_CAN02_388e5969_Rx_Std] */
+  { /*     7 */ 0x00000000UL,       4U,       3U,  CAN_UNUSED_CAN_TYPE_MAILBOXTYPEOFMAILBOX,         0U,            0U },  /* [] */
+  { /*     8 */ 0x00000000UL,       4U,      10U,  CAN_UNUSED_CAN_TYPE_MAILBOXTYPEOFMAILBOX,         0U,            1U },  /* [] */
+  { /*     9 */ 0x00000000UL,       5U,      16U,  CAN_UNUSED_CAN_TYPE_MAILBOXTYPEOFMAILBOX,         0U,            2U }   /* [] */
 };
 #define CAN_STOP_SEC_CONST_UNSPECIFIED
 /*lint -save -esym(961, 19.1) */
@@ -536,7 +559,7 @@ CONST(Can_RxBasicInterruptPendingMaskType, CAN_CONST) Can_RxBasicInterruptPendin
   /*     5 */                0x00000000UL,  /* [CT_CAN00_388e5969, Mailbox 160-191] */
   /*     6 */                0x00000000UL,  /* [CT_CAN00_388e5969, Mailbox 192-223] */
   /*     7 */                0x00000000UL,  /* [CT_CAN00_388e5969, Mailbox 224-255] */
-  /*     8 */                0x00000100UL,  /* [CT_CAN01_388e5969, Mailbox 0-31] */
+  /*     8 */                0x00000300UL,  /* [CT_CAN01_388e5969, Mailbox 0-31] */
   /*     9 */                0x00000000UL,  /* [CT_CAN01_388e5969, Mailbox 32-63] */
   /*    10 */                0x00000000UL,  /* [CT_CAN01_388e5969, Mailbox 64-95] */
   /*    11 */                0x00000000UL,  /* [CT_CAN01_388e5969, Mailbox 96-127] */

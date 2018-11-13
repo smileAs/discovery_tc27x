@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Scheduler_Lcfg.c
- *   Generation Time: 2018-08-04 14:15:27
+ *   Generation Time: 2018-11-11 09:44:57
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -140,6 +140,9 @@ OS_LOCAL VAR(Os_FifoPtrNodeType, OS_VAR_NOINIT)
 OS_LOCAL VAR(Os_DequeType, OS_VAR_NOINIT) OsCfg_TaskQueue6_OsCore_Core0_Dyn;
 OS_LOCAL VAR(Os_FifoPtrNodeType, OS_VAR_NOINIT)
   OsCfg_TaskQueueNodes6_OsCore_Core0_Dyn[OS_CFG_NUM_TASKQUEUE6_OSCORE_CORE0_SLOTS];
+OS_LOCAL VAR(Os_DequeType, OS_VAR_NOINIT) OsCfg_TaskQueue7_OsCore_Core0_Dyn;
+OS_LOCAL VAR(Os_FifoPtrNodeType, OS_VAR_NOINIT)
+  OsCfg_TaskQueueNodes7_OsCore_Core0_Dyn[OS_CFG_NUM_TASKQUEUE7_OSCORE_CORE0_SLOTS];
 
 #define OS_STOP_SEC_CORE0_VAR_NOINIT_UNSPECIFIED
 #include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
@@ -175,6 +178,9 @@ OS_LOCAL VAR(Os_FifoPtrNodeType, OS_VAR_NOINIT)
 OS_LOCAL VAR(Os_DequeType, OS_VAR_NOINIT) OsCfg_TaskQueue6_OsCore_Core1_Dyn;
 OS_LOCAL VAR(Os_FifoPtrNodeType, OS_VAR_NOINIT)
   OsCfg_TaskQueueNodes6_OsCore_Core1_Dyn[OS_CFG_NUM_TASKQUEUE6_OSCORE_CORE1_SLOTS];
+OS_LOCAL VAR(Os_DequeType, OS_VAR_NOINIT) OsCfg_TaskQueue7_OsCore_Core1_Dyn;
+OS_LOCAL VAR(Os_FifoPtrNodeType, OS_VAR_NOINIT)
+  OsCfg_TaskQueueNodes7_OsCore_Core1_Dyn[OS_CFG_NUM_TASKQUEUE7_OSCORE_CORE1_SLOTS];
 
 #define OS_STOP_SEC_CORE1_VAR_NOINIT_UNSPECIFIED
 #include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
@@ -210,6 +216,9 @@ OS_LOCAL VAR(Os_FifoPtrNodeType, OS_VAR_NOINIT)
 OS_LOCAL VAR(Os_DequeType, OS_VAR_NOINIT) OsCfg_TaskQueue6_OsCore_Core2_Dyn;
 OS_LOCAL VAR(Os_FifoPtrNodeType, OS_VAR_NOINIT)
   OsCfg_TaskQueueNodes6_OsCore_Core2_Dyn[OS_CFG_NUM_TASKQUEUE6_OSCORE_CORE2_SLOTS];
+OS_LOCAL VAR(Os_DequeType, OS_VAR_NOINIT) OsCfg_TaskQueue7_OsCore_Core2_Dyn;
+OS_LOCAL VAR(Os_FifoPtrNodeType, OS_VAR_NOINIT)
+  OsCfg_TaskQueueNodes7_OsCore_Core2_Dyn[OS_CFG_NUM_TASKQUEUE7_OSCORE_CORE2_SLOTS];
 
 #define OS_STOP_SEC_CORE2_VAR_NOINIT_UNSPECIFIED
 #include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
@@ -347,6 +356,23 @@ OS_LOCAL CONST(Os_DequeConfigType, OS_CONST) OsCfg_Scheduler_OsCore_Core0_TaskQu
       /* .Read = */ OS_DEQUE_CASTDYN_DEQUE_2_FIFOPTRREAD(OsCfg_TaskQueue6_OsCore_Core0_Dyn),
       /* .Data = */ OsCfg_TaskQueueNodes6_OsCore_Core0_Dyn,
       /* .Size = */ OS_CFG_NUM_TASKQUEUE6_OSCORE_CORE0_SLOTS
+    }
+  },
+  /* [7] = */
+  {
+    /* .FifoRead  = */
+    {
+      /* .Dyn   = */ OS_DEQUE_CASTDYN_DEQUE_2_FIFOPTRREAD(OsCfg_TaskQueue7_OsCore_Core0_Dyn),
+      /* .Write = */ OS_DEQUE_CASTDYN_DEQUE_2_FIFOPTRWRITE(OsCfg_TaskQueue7_OsCore_Core0_Dyn),
+      /* .Data  = */ OsCfg_TaskQueueNodes7_OsCore_Core0_Dyn,
+      /* .Size  = */ OS_CFG_NUM_TASKQUEUE7_OSCORE_CORE0_SLOTS
+    },
+    /* .FifoWrite = */
+    {
+      /* .Dyn  = */ OS_DEQUE_CASTDYN_DEQUE_2_FIFOPTRWRITE(OsCfg_TaskQueue7_OsCore_Core0_Dyn),
+      /* .Read = */ OS_DEQUE_CASTDYN_DEQUE_2_FIFOPTRREAD(OsCfg_TaskQueue7_OsCore_Core0_Dyn),
+      /* .Data = */ OsCfg_TaskQueueNodes7_OsCore_Core0_Dyn,
+      /* .Size = */ OS_CFG_NUM_TASKQUEUE7_OSCORE_CORE0_SLOTS
     }
   }
 };
@@ -495,6 +521,23 @@ OS_LOCAL CONST(Os_DequeConfigType, OS_CONST) OsCfg_Scheduler_OsCore_Core1_TaskQu
       /* .Data = */ OsCfg_TaskQueueNodes6_OsCore_Core1_Dyn,
       /* .Size = */ OS_CFG_NUM_TASKQUEUE6_OSCORE_CORE1_SLOTS
     }
+  },
+  /* [7] = */
+  {
+    /* .FifoRead  = */
+    {
+      /* .Dyn   = */ OS_DEQUE_CASTDYN_DEQUE_2_FIFOPTRREAD(OsCfg_TaskQueue7_OsCore_Core1_Dyn),
+      /* .Write = */ OS_DEQUE_CASTDYN_DEQUE_2_FIFOPTRWRITE(OsCfg_TaskQueue7_OsCore_Core1_Dyn),
+      /* .Data  = */ OsCfg_TaskQueueNodes7_OsCore_Core1_Dyn,
+      /* .Size  = */ OS_CFG_NUM_TASKQUEUE7_OSCORE_CORE1_SLOTS
+    },
+    /* .FifoWrite = */
+    {
+      /* .Dyn  = */ OS_DEQUE_CASTDYN_DEQUE_2_FIFOPTRWRITE(OsCfg_TaskQueue7_OsCore_Core1_Dyn),
+      /* .Read = */ OS_DEQUE_CASTDYN_DEQUE_2_FIFOPTRREAD(OsCfg_TaskQueue7_OsCore_Core1_Dyn),
+      /* .Data = */ OsCfg_TaskQueueNodes7_OsCore_Core1_Dyn,
+      /* .Size = */ OS_CFG_NUM_TASKQUEUE7_OSCORE_CORE1_SLOTS
+    }
   }
 };
 
@@ -641,6 +684,23 @@ OS_LOCAL CONST(Os_DequeConfigType, OS_CONST) OsCfg_Scheduler_OsCore_Core2_TaskQu
       /* .Read = */ OS_DEQUE_CASTDYN_DEQUE_2_FIFOPTRREAD(OsCfg_TaskQueue6_OsCore_Core2_Dyn),
       /* .Data = */ OsCfg_TaskQueueNodes6_OsCore_Core2_Dyn,
       /* .Size = */ OS_CFG_NUM_TASKQUEUE6_OSCORE_CORE2_SLOTS
+    }
+  },
+  /* [7] = */
+  {
+    /* .FifoRead  = */
+    {
+      /* .Dyn   = */ OS_DEQUE_CASTDYN_DEQUE_2_FIFOPTRREAD(OsCfg_TaskQueue7_OsCore_Core2_Dyn),
+      /* .Write = */ OS_DEQUE_CASTDYN_DEQUE_2_FIFOPTRWRITE(OsCfg_TaskQueue7_OsCore_Core2_Dyn),
+      /* .Data  = */ OsCfg_TaskQueueNodes7_OsCore_Core2_Dyn,
+      /* .Size  = */ OS_CFG_NUM_TASKQUEUE7_OSCORE_CORE2_SLOTS
+    },
+    /* .FifoWrite = */
+    {
+      /* .Dyn  = */ OS_DEQUE_CASTDYN_DEQUE_2_FIFOPTRWRITE(OsCfg_TaskQueue7_OsCore_Core2_Dyn),
+      /* .Read = */ OS_DEQUE_CASTDYN_DEQUE_2_FIFOPTRREAD(OsCfg_TaskQueue7_OsCore_Core2_Dyn),
+      /* .Data = */ OsCfg_TaskQueueNodes7_OsCore_Core2_Dyn,
+      /* .Size = */ OS_CFG_NUM_TASKQUEUE7_OSCORE_CORE2_SLOTS
     }
   }
 };

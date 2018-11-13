@@ -133,10 +133,26 @@ uint8 GaaByteArray[] = { 0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF, 0x11, 0x22,
                          0x33, 0x44, 0x44, 0x66, 0x77, 0x88, 0x99, 0xAA};
 uint8 CanRX_msg1[8];
 uint8 CanRX_msg0[8];
+uint32 get_tick;
 /**********************************************************************************************************************
  * DO NOT CHANGE THIS COMMENT!           << End of documentation area >>                    DO NOT CHANGE THIS COMMENT!
  *********************************************************************************************************************/
 const uint8 test_string[] = "abcd\r\n";
+
+FUNC(void, cycle_task_CODE) Core0_Task_1ms(void) /* PRQA S 0850 */ /* MD_MSR_19.8 */
+{
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << Start of runnable implementation >>             DO NOT CHANGE THIS COMMENT!
+ * Symbol: Core0_Task_1ms
+ *********************************************************************************************************************/
+    get_tick++;
+
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << End of runnable implementation >>               DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+}
+
 FUNC(void, disc_ecu_CODE) Core0_Task_10ms(void) /* PRQA S 0850 */ /* MD_MSR_19.8 */
 {
 /**********************************************************************************************************************
@@ -232,20 +248,7 @@ FUNC(boolean, COM_APPL_CODE) MessageRX_GW_HSC2_FrP13(PduIdType PduId, P2CONST(Pd
 	CanRX_msg0[7] = *(rxptr+7);
 	return TRUE;
 }
-FUNC(boolean, COM_APPL_CODE) MessageRX_SCS_HSC2_FrP05(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr)
-{
-	uint8 *rxptr;
-	rxptr=PduInfoPtr->SduDataPtr;
-	CanRX_msg1[0] = *rxptr;
-	CanRX_msg1[1] = *(rxptr+1);
-	CanRX_msg1[2] = *(rxptr+2);
-	CanRX_msg1[3] = *(rxptr+3);
-	CanRX_msg1[4] = *(rxptr+4);
-	CanRX_msg1[5] = *(rxptr+5);
-	CanRX_msg1[6] = *(rxptr+6);
-	CanRX_msg1[7] = *(rxptr+7);
-	return TRUE;
-}
+
 FUNC(boolean, COM_APPL_CODE) MessageRX_GW_HSC2_HCU_FrP13(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr)
 {
 	uint8 *rxptr;
@@ -265,6 +268,134 @@ FUNC(boolean, COM_APPL_CODE) MessageRX_GW_HSC2_HCU_FrP13(PduIdType PduId, P2CONS
 /**********************************************************************************************************************
  * DO NOT CHANGE THIS COMMENT!           << End of function definition area >>              DO NOT CHANGE THIS COMMENT!
  *********************************************************************************************************************/
+FUNC(boolean, COM_APPL_CODE) MessageRX_0x194_HSC2_ECM_FrP04(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr)
+{
+    uint8 *rxptr;
+    rxptr=PduInfoPtr->SduDataPtr;
+    CanRX_msg1[0] = *rxptr;
+    CanRX_msg1[1] = *(rxptr+1);
+    CanRX_msg1[2] = *(rxptr+2);
+    CanRX_msg1[3] = *(rxptr+3);
+    CanRX_msg1[4] = *(rxptr+4);
+    CanRX_msg1[5] = *(rxptr+5);
+    CanRX_msg1[6] = *(rxptr+6);
+    CanRX_msg1[7] = *(rxptr+7);
+    return TRUE;
+}
+FUNC(boolean, COM_APPL_CODE) MessageRX_0x1E5_SAS_HSC2_FrP00(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr)
+{
+    uint8 *rxptr;
+    rxptr=PduInfoPtr->SduDataPtr;
+    CanRX_msg1[0] = *rxptr;
+    CanRX_msg1[1] = *(rxptr+1);
+    CanRX_msg1[2] = *(rxptr+2);
+    CanRX_msg1[3] = *(rxptr+3);
+    CanRX_msg1[4] = *(rxptr+4);
+    CanRX_msg1[5] = *(rxptr+5);
+    CanRX_msg1[6] = *(rxptr+6);
+    CanRX_msg1[7] = *(rxptr+7);
+    return TRUE;
+}
+FUNC(boolean, COM_APPL_CODE) MessageRX_0x1E9_SCS_HSC2_FrP05(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr)
+{
+    uint8 *rxptr;
+    rxptr=PduInfoPtr->SduDataPtr;
+    CanRX_msg1[0] = *rxptr;
+    CanRX_msg1[1] = *(rxptr+1);
+    CanRX_msg1[2] = *(rxptr+2);
+    CanRX_msg1[3] = *(rxptr+3);
+    CanRX_msg1[4] = *(rxptr+4);
+    CanRX_msg1[5] = *(rxptr+5);
+    CanRX_msg1[6] = *(rxptr+6);
+    CanRX_msg1[7] = *(rxptr+7);
+    return TRUE;
+}
+
+FUNC(boolean, COM_APPL_CODE) MessageRx_0x185_SCS_HSC2_FrP02(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr)
+{
+    uint8 *rxptr;
+    rxptr=PduInfoPtr->SduDataPtr;
+    CanRX_msg1[0] = *rxptr;
+    CanRX_msg1[1] = *(rxptr+1);
+    CanRX_msg1[2] = *(rxptr+2);
+    CanRX_msg1[3] = *(rxptr+3);
+    CanRX_msg1[4] = *(rxptr+4);
+    CanRX_msg1[5] = *(rxptr+5);
+    CanRX_msg1[6] = *(rxptr+6);
+    CanRX_msg1[7] = *(rxptr+7);
+    return TRUE;
+}
+FUNC(boolean, COM_APPL_CODE) MessageRx_0x348_SCS_HSC2_FrP11(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr)
+{
+    uint8 *rxptr;
+    rxptr=PduInfoPtr->SduDataPtr;
+    CanRX_msg1[0] = *rxptr;
+    CanRX_msg1[1] = *(rxptr+1);
+    CanRX_msg1[2] = *(rxptr+2);
+    CanRX_msg1[3] = *(rxptr+3);
+    CanRX_msg1[4] = *(rxptr+4);
+    CanRX_msg1[5] = *(rxptr+5);
+    CanRX_msg1[6] = *(rxptr+6);
+    CanRX_msg1[7] = *(rxptr+7);
+    return TRUE;
+}
+FUNC(boolean, COM_APPL_CODE) MessageRx_0x34A_SCS_HSC2_FrP12(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr)
+{
+    uint8 *rxptr;
+    rxptr=PduInfoPtr->SduDataPtr;
+    CanRX_msg1[0] = *rxptr;
+    CanRX_msg1[1] = *(rxptr+1);
+    CanRX_msg1[2] = *(rxptr+2);
+    CanRX_msg1[3] = *(rxptr+3);
+    CanRX_msg1[4] = *(rxptr+4);
+    CanRX_msg1[5] = *(rxptr+5);
+    CanRX_msg1[6] = *(rxptr+6);
+    CanRX_msg1[7] = *(rxptr+7);
+    return TRUE;
+}
+
+FUNC(boolean, COM_APPL_CODE) MessageRX_Aceinna_Accel_0x08F02D80(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr)
+{
+    uint8 *rxptr;
+    rxptr=PduInfoPtr->SduDataPtr;
+    CanRX_msg1[0] = *rxptr;
+    CanRX_msg1[1] = *(rxptr+1);
+    CanRX_msg1[2] = *(rxptr+2);
+    CanRX_msg1[3] = *(rxptr+3);
+    CanRX_msg1[4] = *(rxptr+4);
+    CanRX_msg1[5] = *(rxptr+5);
+    CanRX_msg1[6] = *(rxptr+6);
+    CanRX_msg1[7] = *(rxptr+7);
+    return TRUE;
+}
+FUNC(boolean, COM_APPL_CODE) MessageRx_Aceinna_AngleRate_0x0CF02A80(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr)
+{
+    uint8 *rxptr;
+    rxptr=PduInfoPtr->SduDataPtr;
+    CanRX_msg1[0] = *rxptr;
+    CanRX_msg1[1] = *(rxptr+1);
+    CanRX_msg1[2] = *(rxptr+2);
+    CanRX_msg1[3] = *(rxptr+3);
+    CanRX_msg1[4] = *(rxptr+4);
+    CanRX_msg1[5] = *(rxptr+5);
+    CanRX_msg1[6] = *(rxptr+6);
+    CanRX_msg1[7] = *(rxptr+7);
+    return TRUE;
+}
+FUNC(boolean, COM_APPL_CODE) MessageRx_Aceinna_Angles_0x0CF02980(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr)
+{
+    uint8 *rxptr;
+    rxptr=PduInfoPtr->SduDataPtr;
+    CanRX_msg1[0] = *rxptr;
+    CanRX_msg1[1] = *(rxptr+1);
+    CanRX_msg1[2] = *(rxptr+2);
+    CanRX_msg1[3] = *(rxptr+3);
+    CanRX_msg1[4] = *(rxptr+4);
+    CanRX_msg1[5] = *(rxptr+5);
+    CanRX_msg1[6] = *(rxptr+6);
+    CanRX_msg1[7] = *(rxptr+7);
+    return TRUE;
+}
 
 
 /**********************************************************************************************************************

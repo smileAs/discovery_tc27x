@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Application_Lcfg.c
- *   Generation Time: 2018-09-29 15:39:31
+ *   Generation Time: 2018-11-11 09:44:57
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -265,6 +265,7 @@ OS_LOCAL CONST(Os_AlarmConfigRefType, OS_CONST) OsCfg_App_Untrusted_BSW_Core0_Al
   OS_ALARM_CASTCONFIG_ALARMSETEVENT_2_ALARM(OsCfg_Alarm_Rte_Al_TE2_Default_BSW_Async_Task_Core0_0_10ms),
   OS_ALARM_CASTCONFIG_ALARMSETEVENT_2_ALARM(OsCfg_Alarm_Rte_Al_TE2_Default_BSW_Async_Task_Core0_0_20ms),
   OS_ALARM_CASTCONFIG_ALARMSETEVENT_2_ALARM(OsCfg_Alarm_Rte_Al_TE2_Default_BSW_Async_Task_Core0_10ms),
+  OS_ALARM_CASTCONFIG_ALARMACTIVATETASK_2_ALARM(OsCfg_Alarm_Rte_Al_TE_Cycle_Task_1ms_Core0_Task_1ms),
   OS_ALARM_CASTCONFIG_ALARMSETEVENT_2_ALARM(OsCfg_Alarm_Rte_Al_TE_LinIf_LinIf_MainFunction),
   OS_ALARM_CASTCONFIG_ALARMSETEVENT_2_ALARM(OsCfg_Alarm_Rte_Al_TE_disc_ecu_Core0_Task_100ms),
   OS_ALARM_CASTCONFIG_ALARMSETEVENT_2_ALARM(OsCfg_Alarm_Rte_Al_TE_disc_ecu_Core0_Task_10ms),
@@ -310,6 +311,7 @@ OS_LOCAL CONST(Os_SchTConfigRefType, OS_CONST) OsCfg_App_Untrusted_BSW_Core0_Sch
 /*! Object reference table for application tasks: Untrusted_BSW_Core0 */
 OS_LOCAL CONST(Os_TaskConfigRefType, OS_CONST) OsCfg_App_Untrusted_BSW_Core0_TaskRefs[OS_CFG_NUM_APP_UNTRUSTED_BSW_CORE0_TASKS + 1] =
 {
+  OS_TASK_CASTCONFIG_TASK_2_TASK(OsCfg_Task_Core0_OsTask_1ms),
   OS_TASK_CASTCONFIG_TASK_2_TASK(OsCfg_Task_Default_BSW_Async_Task_Core0),
   OS_TASK_CASTCONFIG_TASK_2_TASK(OsCfg_Task_Default_Init_Task_Core0),
   NULL_PTR

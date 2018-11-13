@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: CanIf_Cfg.h
- *   Generation Time: 2018-08-04 13:37:36
+ *   Generation Time: 2018-11-06 14:01:59
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -93,7 +93,7 @@
 #define CANIF_TRCV_HANDLING                                STD_ON
 #define CANIF_TRCV_MAPPING                                 STD_OFF
 #define CANIF_PN_TRCV_HANDLING                             STD_OFF
-#define CANIF_EXTENDEDID_SUPPORT                           STD_OFF
+#define CANIF_EXTENDEDID_SUPPORT                           STD_ON
 #define CANIF_ONE_CONTROLLER_OPTIMIZATION                  STD_OFF
 #define CANIF_SETDYNAMICTXID_API                           STD_OFF
 #define CANIF_PN_WU_TX_PDU_FILTER                          STD_OFF
@@ -348,26 +348,29 @@ typedef uint8 CanIf_TxBufferSizeType;
 #define CanIfRxPduHnd_FICM_HSC4_FrP18_oCAN01_Rx_3abd61be                                            39U
 #define CanIfRxPduHnd_FICM_HSC4_FrP02_oCAN01_Rx_3abd61be                                            40U
 #define CanIfRxPduHnd_GW_HSC4_TBOX_FrP01_oCAN01_Rx_3abd61be                                         41U
-#define CanIfRxPduHnd_FICM_HSC4_FrP33_oCAN01_Rx_3abd61be                                            42U
-#define CanIfRxPduHnd_FICM_HSC4_FrP08_oCAN01_Rx_3abd61be                                            43U
-#define CanIfRxPduHnd_FICM_HSC4_FrP13_oCAN01_Rx_3abd61be                                            44U
-#define CanIfRxPduHnd_GW_HSC4_BMS_FrP07_oCAN01_Rx_3abd61be                                          45U
-#define CanIfRxPduHnd_GW_HSC4_PEPS_FrP02_oCAN01_Rx_3abd61be                                         46U
-#define CanIfRxPduHnd_RDA_HSC4_P02_oCAN01_Rx_3abd61be                                               47U
-#define CanIfRxPduHnd_GW_HSC4_TBOX_FrP05_oCAN01_Rx_3abd61be                                         48U
-#define CanIfRxPduHnd_GW_HSC4_PEPS_FrP01_oCAN01_Rx_3abd61be                                         49U
-#define CanIfRxPduHnd_GW_HSC4_TC_FrP01_oCAN01_Rx_3abd61be                                           50U
-#define CanIfRxPduHnd_FICM_HSC4_FrP32_oCAN01_Rx_3abd61be                                            51U
-#define CanIfRxPduHnd_GW_HSC4_BCM_FrS10_oCAN01_Rx_3abd61be                                          52U
-#define CanIfRxPduHnd_GW_HSC4_BCM_FrS09_oCAN01_Rx_3abd61be                                          53U
-#define CanIfRxPduHnd_DIAG_DTCInfo_APA_oCAN02_Rx_3abd61be                                           54U
-#define CanIfRxPduHnd_APA_SecCH_FrP02_oCAN02_Rx_3abd61be                                            55U
-#define CanIfRxPduHnd_APA_SecCH_FrP04_oCAN02_Rx_3abd61be                                            56U
-#define CanIfRxPduHnd_APA_SecCH_FrP03_oCAN02_Rx_3abd61be                                            57U
-#define CanIfRxPduHnd_PDC_SecCH_FrP00_oCAN02_Rx_3abd61be                                            58U
-#define CanIfRxPduHnd_PDC_SecCH_FrP01_oCAN02_Rx_3abd61be                                            59U
-#define CanIfRxPduHnd_APA_SecCH_FrP01_oCAN02_Rx_3abd61be                                            60U
-#define CanIfRxPduHnd_APA_SecCH_FrP00_oCAN02_Rx_3abd61be                                            61U
+#define CanIfRxPduHnd_CanIfRxPduCfg_Aceinna_AngleRate                                               42U
+#define CanIfRxPduHnd_CanIfRxPduCfg_Aceinna_Angles                                                  43U
+#define CanIfRxPduHnd_FICM_HSC4_FrP33_oCAN01_Rx_3abd61be                                            44U
+#define CanIfRxPduHnd_FICM_HSC4_FrP08_oCAN01_Rx_3abd61be                                            45U
+#define CanIfRxPduHnd_FICM_HSC4_FrP13_oCAN01_Rx_3abd61be                                            46U
+#define CanIfRxPduHnd_GW_HSC4_BMS_FrP07_oCAN01_Rx_3abd61be                                          47U
+#define CanIfRxPduHnd_CanIfRxPduCfg_Aceinna_Accel                                                   48U
+#define CanIfRxPduHnd_GW_HSC4_PEPS_FrP02_oCAN01_Rx_3abd61be                                         49U
+#define CanIfRxPduHnd_RDA_HSC4_P02_oCAN01_Rx_3abd61be                                               50U
+#define CanIfRxPduHnd_GW_HSC4_TBOX_FrP05_oCAN01_Rx_3abd61be                                         51U
+#define CanIfRxPduHnd_GW_HSC4_PEPS_FrP01_oCAN01_Rx_3abd61be                                         52U
+#define CanIfRxPduHnd_GW_HSC4_TC_FrP01_oCAN01_Rx_3abd61be                                           53U
+#define CanIfRxPduHnd_FICM_HSC4_FrP32_oCAN01_Rx_3abd61be                                            54U
+#define CanIfRxPduHnd_GW_HSC4_BCM_FrS10_oCAN01_Rx_3abd61be                                          55U
+#define CanIfRxPduHnd_GW_HSC4_BCM_FrS09_oCAN01_Rx_3abd61be                                          56U
+#define CanIfRxPduHnd_DIAG_DTCInfo_APA_oCAN02_Rx_3abd61be                                           57U
+#define CanIfRxPduHnd_APA_SecCH_FrP02_oCAN02_Rx_3abd61be                                            58U
+#define CanIfRxPduHnd_APA_SecCH_FrP04_oCAN02_Rx_3abd61be                                            59U
+#define CanIfRxPduHnd_APA_SecCH_FrP03_oCAN02_Rx_3abd61be                                            60U
+#define CanIfRxPduHnd_PDC_SecCH_FrP00_oCAN02_Rx_3abd61be                                            61U
+#define CanIfRxPduHnd_PDC_SecCH_FrP01_oCAN02_Rx_3abd61be                                            62U
+#define CanIfRxPduHnd_APA_SecCH_FrP01_oCAN02_Rx_3abd61be                                            63U
+#define CanIfRxPduHnd_APA_SecCH_FrP00_oCAN02_Rx_3abd61be                                            64U
 
 
 
@@ -472,26 +475,29 @@ typedef uint8 CanIf_TxBufferSizeType;
 #define CanIfConf_CanIfRxPduCfg_FICM_HSC4_FrP18_oCAN01_Rx_3abd61be                                  41U
 #define CanIfConf_CanIfRxPduCfg_FICM_HSC4_FrP02_oCAN01_Rx_3abd61be                                  42U
 #define CanIfConf_CanIfRxPduCfg_GW_HSC4_TBOX_FrP01_oCAN01_Rx_3abd61be                               43U
-#define CanIfConf_CanIfRxPduCfg_FICM_HSC4_FrP33_oCAN01_Rx_3abd61be                                  44U
-#define CanIfConf_CanIfRxPduCfg_FICM_HSC4_FrP08_oCAN01_Rx_3abd61be                                  45U
-#define CanIfConf_CanIfRxPduCfg_FICM_HSC4_FrP13_oCAN01_Rx_3abd61be                                  46U
-#define CanIfConf_CanIfRxPduCfg_GW_HSC4_BMS_FrP07_oCAN01_Rx_3abd61be                                47U
-#define CanIfConf_CanIfRxPduCfg_GW_HSC4_PEPS_FrP02_oCAN01_Rx_3abd61be                               48U
-#define CanIfConf_CanIfRxPduCfg_RDA_HSC4_P02_oCAN01_Rx_3abd61be                                     49U
-#define CanIfConf_CanIfRxPduCfg_GW_HSC4_TBOX_FrP05_oCAN01_Rx_3abd61be                               50U
-#define CanIfConf_CanIfRxPduCfg_GW_HSC4_PEPS_FrP01_oCAN01_Rx_3abd61be                               51U
-#define CanIfConf_CanIfRxPduCfg_GW_HSC4_TC_FrP01_oCAN01_Rx_3abd61be                                 52U
-#define CanIfConf_CanIfRxPduCfg_FICM_HSC4_FrP32_oCAN01_Rx_3abd61be                                  53U
-#define CanIfConf_CanIfRxPduCfg_GW_HSC4_BCM_FrS10_oCAN01_Rx_3abd61be                                54U
-#define CanIfConf_CanIfRxPduCfg_GW_HSC4_BCM_FrS09_oCAN01_Rx_3abd61be                                55U
-#define CanIfConf_CanIfRxPduCfg_DIAG_DTCInfo_APA_oCAN02_Rx_3abd61be                                 56U
-#define CanIfConf_CanIfRxPduCfg_APA_SecCH_FrP02_oCAN02_Rx_3abd61be                                  57U
-#define CanIfConf_CanIfRxPduCfg_APA_SecCH_FrP04_oCAN02_Rx_3abd61be                                  58U
-#define CanIfConf_CanIfRxPduCfg_APA_SecCH_FrP03_oCAN02_Rx_3abd61be                                  59U
-#define CanIfConf_CanIfRxPduCfg_PDC_SecCH_FrP00_oCAN02_Rx_3abd61be                                  60U
-#define CanIfConf_CanIfRxPduCfg_PDC_SecCH_FrP01_oCAN02_Rx_3abd61be                                  61U
-#define CanIfConf_CanIfRxPduCfg_APA_SecCH_FrP01_oCAN02_Rx_3abd61be                                  62U
-#define CanIfConf_CanIfRxPduCfg_APA_SecCH_FrP00_oCAN02_Rx_3abd61be                                  63U
+#define CanIfConf_CanIfRxPduCfg_CanIfRxPduCfg_Aceinna_AngleRate                                     44U
+#define CanIfConf_CanIfRxPduCfg_CanIfRxPduCfg_Aceinna_Angles                                        45U
+#define CanIfConf_CanIfRxPduCfg_FICM_HSC4_FrP33_oCAN01_Rx_3abd61be                                  46U
+#define CanIfConf_CanIfRxPduCfg_FICM_HSC4_FrP08_oCAN01_Rx_3abd61be                                  47U
+#define CanIfConf_CanIfRxPduCfg_FICM_HSC4_FrP13_oCAN01_Rx_3abd61be                                  48U
+#define CanIfConf_CanIfRxPduCfg_GW_HSC4_BMS_FrP07_oCAN01_Rx_3abd61be                                49U
+#define CanIfConf_CanIfRxPduCfg_CanIfRxPduCfg_Aceinna_Accel                                         50U
+#define CanIfConf_CanIfRxPduCfg_GW_HSC4_PEPS_FrP02_oCAN01_Rx_3abd61be                               51U
+#define CanIfConf_CanIfRxPduCfg_RDA_HSC4_P02_oCAN01_Rx_3abd61be                                     52U
+#define CanIfConf_CanIfRxPduCfg_GW_HSC4_TBOX_FrP05_oCAN01_Rx_3abd61be                               53U
+#define CanIfConf_CanIfRxPduCfg_GW_HSC4_PEPS_FrP01_oCAN01_Rx_3abd61be                               54U
+#define CanIfConf_CanIfRxPduCfg_GW_HSC4_TC_FrP01_oCAN01_Rx_3abd61be                                 55U
+#define CanIfConf_CanIfRxPduCfg_FICM_HSC4_FrP32_oCAN01_Rx_3abd61be                                  56U
+#define CanIfConf_CanIfRxPduCfg_GW_HSC4_BCM_FrS10_oCAN01_Rx_3abd61be                                57U
+#define CanIfConf_CanIfRxPduCfg_GW_HSC4_BCM_FrS09_oCAN01_Rx_3abd61be                                58U
+#define CanIfConf_CanIfRxPduCfg_DIAG_DTCInfo_APA_oCAN02_Rx_3abd61be                                 59U
+#define CanIfConf_CanIfRxPduCfg_APA_SecCH_FrP02_oCAN02_Rx_3abd61be                                  60U
+#define CanIfConf_CanIfRxPduCfg_APA_SecCH_FrP04_oCAN02_Rx_3abd61be                                  61U
+#define CanIfConf_CanIfRxPduCfg_APA_SecCH_FrP03_oCAN02_Rx_3abd61be                                  62U
+#define CanIfConf_CanIfRxPduCfg_PDC_SecCH_FrP00_oCAN02_Rx_3abd61be                                  63U
+#define CanIfConf_CanIfRxPduCfg_PDC_SecCH_FrP01_oCAN02_Rx_3abd61be                                  64U
+#define CanIfConf_CanIfRxPduCfg_APA_SecCH_FrP01_oCAN02_Rx_3abd61be                                  65U
+#define CanIfConf_CanIfRxPduCfg_APA_SecCH_FrP00_oCAN02_Rx_3abd61be                                  66U
 
 
 
@@ -924,10 +930,10 @@ typedef uint8 CanIf_TxBufferSizeType;
 #define CanIf_GetRxPduConfigOfPCConfig()                              CanIf_RxPduConfig  /**< the pointer to CanIf_RxPduConfig */
 #define CanIf_GetSizeOfCanIfCtrlId2MappedTxBuffersConfigOfPCConfig()  3UL  /**< the number of accomplishable value elements in CanIf_CanIfCtrlId2MappedTxBuffersConfig */
 #define CanIf_GetSizeOfCtrlStatesOfPCConfig()                         3UL  /**< the number of accomplishable value elements in CanIf_CtrlStates */
-#define CanIf_GetSizeOfMailBoxConfigOfPCConfig()                      6UL  /**< the number of accomplishable value elements in CanIf_MailBoxConfig */
+#define CanIf_GetSizeOfMailBoxConfigOfPCConfig()                      7UL  /**< the number of accomplishable value elements in CanIf_MailBoxConfig */
 #define CanIf_GetSizeOfMappedTxBuffersConfigOfPCConfig()              1UL  /**< the number of accomplishable value elements in CanIf_MappedTxBuffersConfig */
 #define CanIf_GetSizeOfRxIndicationFctListOfPCConfig()                3UL  /**< the number of accomplishable value elements in CanIf_RxIndicationFctList */
-#define CanIf_GetSizeOfRxPduConfigOfPCConfig()                        64UL  /**< the number of accomplishable value elements in CanIf_RxPduConfig */
+#define CanIf_GetSizeOfRxPduConfigOfPCConfig()                        67UL  /**< the number of accomplishable value elements in CanIf_RxPduConfig */
 #define CanIf_GetSizeOfTrcvToCtrlMapOfPCConfig()                      1UL  /**< the number of accomplishable value elements in CanIf_TrcvToCtrlMap */
 #define CanIf_GetSizeOfTxBufferPrioByCanIdBaseOfPCConfig()            1UL  /**< the number of accomplishable value elements in CanIf_TxBufferPrioByCanIdBase */
 #define CanIf_GetSizeOfTxBufferPrioByCanIdByteQueueConfigOfPCConfig() 1UL  /**< the number of accomplishable value elements in CanIf_TxBufferPrioByCanIdByteQueueConfig */
@@ -1329,10 +1335,10 @@ typedef uint8 CanIf_DlcOfRxPduConfigType;
 typedef uint8 CanIf_RxIndicationFctListIdxOfRxPduConfigType;
 
 /**   \brief  value based type definition for CanIf_RxPduCanIdOfRxPduConfig */
-typedef uint16 CanIf_RxPduCanIdOfRxPduConfigType;
+typedef uint32 CanIf_RxPduCanIdOfRxPduConfigType;
 
 /**   \brief  value based type definition for CanIf_RxPduMaskOfRxPduConfig */
-typedef uint16 CanIf_RxPduMaskOfRxPduConfigType;
+typedef uint32 CanIf_RxPduMaskOfRxPduConfigType;
 
 /**   \brief  value based type definition for CanIf_UpperPduIdOfRxPduConfig */
 typedef PduIdType CanIf_UpperPduIdOfRxPduConfigType;
@@ -1695,7 +1701,7 @@ extern CONST(CanIf_CtrlModeIndicationFctType, CANIF_CONST) CanIf_CtrlModeIndicat
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-extern CONST(CanIf_MailBoxConfigType, CANIF_CONST) CanIf_MailBoxConfig[6];
+extern CONST(CanIf_MailBoxConfigType, CANIF_CONST) CanIf_MailBoxConfig[7];
 #define CANIF_STOP_SEC_CONST_UNSPECIFIED
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
@@ -1760,7 +1766,7 @@ extern CONST(CanIf_RxIndicationFctListType, CANIF_CONST) CanIf_RxIndicationFctLi
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-extern CONST(CanIf_RxPduConfigType, CANIF_CONST) CanIf_RxPduConfig[64];
+extern CONST(CanIf_RxPduConfigType, CANIF_CONST) CanIf_RxPduConfig[67];
 #define CANIF_STOP_SEC_CONST_UNSPECIFIED
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */

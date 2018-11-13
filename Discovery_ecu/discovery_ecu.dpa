@@ -389,5 +389,7 @@
     <SwctGeneration generationMode="CP_HEADER_ONLY">
         <Component Name="dis_test" GenerationEnabled="true"/>
         <Component Name="disc_ecu" GenerationEnabled="true"/>
+        <Component Name="Cycle_Task_1ms" GenerationEnabled="true"/>
+        <Component Name="cycle_task" GenerationEnabled="true"/>
     </SwctGeneration>
 </ProjectAssistant>

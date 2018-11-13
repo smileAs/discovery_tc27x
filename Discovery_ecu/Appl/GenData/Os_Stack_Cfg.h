@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Stack_Cfg.h
- *   Generation Time: 2018-08-04 14:15:27
+ *   Generation Time: 2018-11-11 09:44:58
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -91,7 +91,7 @@
 /*! Defines whether stack measurement is active (STD_ON) or not (STD_OFF). */
 # define OS_CFG_STACKMEASUREMENT                 (STD_OFF)
 
-/* Configured stack sizes (Total: 41728 Byte) */
+/* Configured stack sizes (Total: 42752 Byte) */
 # define OS_CFG_SIZE_DEFAULT_BSW_ASYNC_TASK_CORE0_STACK     (16384UL)
 # define OS_CFG_SIZE_OSCORE_CORE0_ERROR_STACK     (256UL)
 # define OS_CFG_SIZE_OSCORE_CORE0_INIT_STACK     (1024UL)
@@ -99,26 +99,27 @@
 # define OS_CFG_SIZE_OSCORE_CORE0_KERNEL_STACK     (2048UL)
 # define OS_CFG_SIZE_OSCORE_CORE0_SHUTDOWN_STACK     (256UL)
 # define OS_CFG_SIZE_OSCORE_CORE0_STARTUP_STACK     (256UL)
-# define OS_CFG_SIZE_OSCORE_CORE0_TASK_PRIO5_STACK     (1024UL)
-# define OS_CFG_SIZE_OSCORE_CORE0_TASK_PRIO6_STACK     (2048UL)
+# define OS_CFG_SIZE_OSCORE_CORE0_TASK_PRIO0_STACK     (1024UL)
+# define OS_CFG_SIZE_OSCORE_CORE0_TASK_PRIO6_STACK     (1024UL)
+# define OS_CFG_SIZE_OSCORE_CORE0_TASK_PRIO7_STACK     (2048UL)
 # define OS_CFG_SIZE_OSCORE_CORE1_ERROR_STACK     (256UL)
 # define OS_CFG_SIZE_OSCORE_CORE1_INIT_STACK     (1024UL)
 # define OS_CFG_SIZE_OSCORE_CORE1_ISR_CORE_STACK     (2048UL)
 # define OS_CFG_SIZE_OSCORE_CORE1_KERNEL_STACK     (256UL)
 # define OS_CFG_SIZE_OSCORE_CORE1_SHUTDOWN_STACK     (256UL)
 # define OS_CFG_SIZE_OSCORE_CORE1_STARTUP_STACK     (256UL)
-# define OS_CFG_SIZE_OSCORE_CORE1_TASK_PRIO1_STACK     (1024UL)
-# define OS_CFG_SIZE_OSCORE_CORE1_TASK_PRIO4_STACK     (1024UL)
-# define OS_CFG_SIZE_OSCORE_CORE1_TASK_PRIO6_STACK     (2048UL)
+# define OS_CFG_SIZE_OSCORE_CORE1_TASK_PRIO2_STACK     (1024UL)
+# define OS_CFG_SIZE_OSCORE_CORE1_TASK_PRIO5_STACK     (1024UL)
+# define OS_CFG_SIZE_OSCORE_CORE1_TASK_PRIO7_STACK     (2048UL)
 # define OS_CFG_SIZE_OSCORE_CORE2_ERROR_STACK     (256UL)
 # define OS_CFG_SIZE_OSCORE_CORE2_INIT_STACK     (1024UL)
 # define OS_CFG_SIZE_OSCORE_CORE2_ISR_CORE_STACK     (2048UL)
 # define OS_CFG_SIZE_OSCORE_CORE2_KERNEL_STACK     (256UL)
 # define OS_CFG_SIZE_OSCORE_CORE2_SHUTDOWN_STACK     (256UL)
 # define OS_CFG_SIZE_OSCORE_CORE2_STARTUP_STACK     (256UL)
-# define OS_CFG_SIZE_OSCORE_CORE2_TASK_PRIO2_STACK     (1024UL)
 # define OS_CFG_SIZE_OSCORE_CORE2_TASK_PRIO3_STACK     (1024UL)
-# define OS_CFG_SIZE_OSCORE_CORE2_TASK_PRIO6_STACK     (2048UL)
+# define OS_CFG_SIZE_OSCORE_CORE2_TASK_PRIO4_STACK     (1024UL)
+# define OS_CFG_SIZE_OSCORE_CORE2_TASK_PRIO7_STACK     (2048UL)
 
 
 /**********************************************************************************************************************

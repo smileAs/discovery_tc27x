@@ -9,7 +9,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  Os_Cfg.h
- *        Config:  discovery_ecu.dpa
+ *        Config:  discovery_ecu.dpa"
  *   ECU-Project:  P2P
  *
  *     Generator:  MICROSAR RTE Generator Version 4.14.0
@@ -25,26 +25,28 @@
 /* Os definitions */
 
 /* Tasks */
-# define Default_BSW_Async_Task_Core0 (0U)
-# define Default_BSW_Async_Task_Core1 (1U)
-# define Default_BSW_Async_Task_Core2 (2U)
+# define Core0_OsTask_1ms (0U)
+# define Default_BSW_Async_Task_Core0 (1U)
+# define Default_BSW_Async_Task_Core1 (2U)
+# define Default_BSW_Async_Task_Core2 (3U)
 
 /* Alarms */
-# define Rte_Al_TE2_Default_BSW_Async_Task_Core0_0_10ms (0U)
-# define Rte_Al_TE2_Default_BSW_Async_Task_Core0_0_20ms (1U)
-# define Rte_Al_TE_LinIf_LinIf_MainFunction (2U)
-# define Rte_Al_TE_disc_ecu_Core0_Task_100ms (3U)
-# define Rte_Al_TE_disc_ecu_Core0_Task_10ms (4U)
-# define Rte_Al_TE_disc_ecu_Core0_Task_20ms (5U)
-# define Rte_Al_TE_disc_ecu_Core0_Task_50ms (6U)
-# define Rte_Al_TE2_EcuM_EcuM_MainFunction (7U)
-# define Rte_Al_TE3_EcuM_EcuM_MainFunction (8U)
+# define Rte_Al_TE_Cycle_Task_1ms_Core0_Task_1ms (0U)
+# define Rte_Al_TE2_Default_BSW_Async_Task_Core0_0_10ms (1U)
+# define Rte_Al_TE2_Default_BSW_Async_Task_Core0_0_20ms (2U)
+# define Rte_Al_TE_LinIf_LinIf_MainFunction (3U)
+# define Rte_Al_TE_disc_ecu_Core0_Task_100ms (4U)
+# define Rte_Al_TE_disc_ecu_Core0_Task_10ms (5U)
+# define Rte_Al_TE_disc_ecu_Core0_Task_20ms (6U)
+# define Rte_Al_TE_disc_ecu_Core0_Task_50ms (7U)
+# define Rte_Al_TE2_EcuM_EcuM_MainFunction (8U)
+# define Rte_Al_TE3_EcuM_EcuM_MainFunction (9U)
 
 /* Events */
 # define Rte_Ev_Cyclic2_Default_BSW_Async_Task_Core0_0_10ms (0x01)
-# define Rte_Ev_Cyclic2_Default_BSW_Async_Task_Core0_0_20ms (0x04)
+# define Rte_Ev_Cyclic2_Default_BSW_Async_Task_Core0_0_20ms (0x02)
 # define Rte_Ev_Run_LinIf_LinIf_MainFunction (0x40)
-# define Rte_Ev_Run_disc_ecu_Core0_Task_100ms (0x02)
+# define Rte_Ev_Run_disc_ecu_Core0_Task_100ms (0x04)
 # define Rte_Ev_Run_disc_ecu_Core0_Task_10ms (0x20)
 # define Rte_Ev_Run_disc_ecu_Core0_Task_20ms (0x10)
 # define Rte_Ev_Run_disc_ecu_Core0_Task_50ms (0x08)

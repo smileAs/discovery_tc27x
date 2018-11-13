@@ -2,7 +2,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  Icu_17_GtmCcu6.c
- *        Config:  discovery_ecu.dpa
+ *        Config:  discovery_ecu.dpa"
  *    BSW Module:  Icu_17_GtmCcu6
  *
  *     Generator:  MICROSAR RTE Generator Version 4.14.0

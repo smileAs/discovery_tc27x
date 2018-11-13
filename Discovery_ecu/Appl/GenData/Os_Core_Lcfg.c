@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Core_Lcfg.c
- *   Generation Time: 2018-08-07 08:44:58
+ *   Generation Time: 2018-11-11 09:44:57
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -259,8 +259,9 @@ OS_LOCAL CONST(Os_StackConfigRefType, OS_CONST) OsCfg_Core_OsCore_Core0_StackRef
   (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core0_Kernel,
   (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core0_Shutdown,
   (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core0_Startup,
-  (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core0_Task_Prio5,
+  (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core0_Task_Prio0,
   (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core0_Task_Prio6,
+  (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core0_Task_Prio7,
   NULL_PTR
 };
 
@@ -365,9 +366,9 @@ OS_LOCAL CONST(Os_StackConfigRefType, OS_CONST) OsCfg_Core_OsCore_Core1_StackRef
   (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core1_Kernel,
   (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core1_Shutdown,
   (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core1_Startup,
-  (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core1_Task_Prio1,
-  (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core1_Task_Prio4,
-  (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core1_Task_Prio6,
+  (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core1_Task_Prio2,
+  (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core1_Task_Prio5,
+  (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core1_Task_Prio7,
   NULL_PTR
 };
 
@@ -471,9 +472,9 @@ OS_LOCAL CONST(Os_StackConfigRefType, OS_CONST) OsCfg_Core_OsCore_Core2_StackRef
   (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core2_Kernel,
   (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core2_Shutdown,
   (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core2_Startup,
-  (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core2_Task_Prio2,
   (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core2_Task_Prio3,
-  (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core2_Task_Prio6,
+  (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core2_Task_Prio4,
+  (Os_StackConfigRefType) &OsCfg_Stack_OsCore_Core2_Task_Prio7,
   NULL_PTR
 };
 

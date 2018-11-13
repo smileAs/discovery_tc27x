@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Com_Cfg.h
- *   Generation Time: 2018-09-27 17:21:14
+ *   Generation Time: 2018-11-06 14:11:47
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -1720,235 +1720,243 @@
 #define ComConf_ComSignal_CalendarMonthHSC4_80f6c9a0                  51
 #define ComConf_ComSignal_CalendarYearHSC2_c30fb534                   52
 #define ComConf_ComSignal_CalendarYearHSC4_80f6c9a0                   53
-#define ComConf_ComSignal_DTCInfomationAPA_SecCAN2_3e47bb85           54
-#define ComConf_ComSignal_DayTimeRunningLampOnHSC2_34092009           55
-#define ComConf_ComSignal_DiagnosticFuncAddrReq_h2_a8412cb3           56
-#define ComConf_ComSignal_DiagnosticReqP2P_h2_2483449d                57
-#define ComConf_ComSignal_DipdBeamLghtOnHSC2_762c2774                 58
-#define ComConf_ComSignal_DircnIndLampSwStsHSC2_762c2774              59
-#define ComConf_ComSignal_DistRCAvgDrvnHSC2_49997ba7                  60
-#define ComConf_ComSignal_DistRCAvgDrvnRstOcdHSC2_49997ba7            61
-#define ComConf_ComSignal_DistRCAvgDrvnSrcHSC2_49997ba7               62
-#define ComConf_ComSignal_DistRCAvgDrvnVHSC2_49997ba7                 63
-#define ComConf_ComSignal_DrvrDoorOpenStsHSC2_762c2774                64
-#define ComConf_ComSignal_DrvrSbltAtcHSC2_2128899b                    65
-#define ComConf_ComSignal_DrvrSbltAtcVHSC2_2128899b                   66
-#define ComConf_ComSignal_DrvrSelAPAParkngMdHSC2_d7b82a4e             67
-#define ComConf_ComSignal_DrvrSelAPAParkngMdHSC4_7f07551a             68
-#define ComConf_ComSignal_DrvrSelAPASlotBearngHSC2_d7b82a4e           69
-#define ComConf_ComSignal_DrvrSelAPASlotBearngHSC4_7f07551a           70
-#define ComConf_ComSignal_ECMAvlbly_h2HSC2_ab4ba2ce                   71
-#define ComConf_ComSignal_EPBAppcnStsHSC2_ecbe2b89                    72
-#define ComConf_ComSignal_EPBAppcnStsPVHSC2_ecbe2b89                  73
-#define ComConf_ComSignal_EPBAvlblyStsHSC2_ecbe2b89                   74
-#define ComConf_ComSignal_EPBAvlblyStsPVHSC2_ecbe2b89                 75
-#define ComConf_ComSignal_EPBSwStsHSC2_20142b17                       76
-#define ComConf_ComSignal_EPBSwStsVHSC2_20142b17                      77
-#define ComConf_ComSignal_EPSAPAAlvRCHSC2_a6919738                    78
-#define ComConf_ComSignal_EPSAPAChksmHSC2_a6919738                    79
-#define ComConf_ComSignal_EPSAPAInhHSC2_a6919738                      80
-#define ComConf_ComSignal_EPSAPAStsHSC2_a6919738                      81
-#define ComConf_ComSignal_EPTAccelActuPosHSC2_533eb1f8                82
-#define ComConf_ComSignal_EPTAccelActuPosVHSC2_533eb1f8               83
-#define ComConf_ComSignal_EPTBrkPdlDscrtInptStsHSC2_533eb1f8          84
-#define ComConf_ComSignal_EPTBrkPdlDscrtInptStsVHSC2_533eb1f8         85
-#define ComConf_ComSignal_EPTRdy_h1HSC2_9f94b166                      86
-#define ComConf_ComSignal_EPTStCmdOn_h1HSC2_533eb1f8                  87
-#define ComConf_ComSignal_EnRunAHSC2_235f8f9b                         88
-#define ComConf_ComSignal_FICMAvlbly_h2HSC2_ab4ba2ce                  89
-#define ComConf_ComSignal_FICMP2PQuitReqHSC4_0c9b61ca                 90
-#define ComConf_ComSignal_FICMPLCRtCoverSwReqHSC4_0c9b61ca            91
-#define ComConf_ComSignal_FICMPLCRtEndSwReqHSC4_0c9b61ca              92
-#define ComConf_ComSignal_FICMPLCSwReqHSC4_0c9b61ca                   93
-#define ComConf_ComSignal_FICMRouteChangeCheckHSC4_0c9b61ca           94
-#define ComConf_ComSignal_FICMRouteReqHSC4_0c9b61ca                   95
-#define ComConf_ComSignal_FICMSilentSearchCheckHSC4_0c9b61ca          96
-#define ComConf_ComSignal_FICMSilentSearchReqHSC4_0c9b61ca            97
-#define ComConf_ComSignal_FLDoorHadlSwAHSC4_5c9d774f                  98
-#define ComConf_ComSignal_FLObsDist_sech2_SecCAN2_84546eef            99
-#define ComConf_ComSignal_FLObsRng_sech2_SecCAN2_27d72756             100
-#define ComConf_ComSignal_FLSideObsDist_sech2_SecCAN2_eb7d27c8        101
-#define ComConf_ComSignal_FLTirePrsHSC4_fa528d8c                      102
-#define ComConf_ComSignal_FLTirePrsVHSC4_fa528d8c                     103
-#define ComConf_ComSignal_FRDoorHadlSwAHSC4_5c9d774f                  104
-#define ComConf_ComSignal_FRObsDist_sech2_SecCAN2_84546eef            105
-#define ComConf_ComSignal_FRObsRng_sech2_SecCAN2_27d72756             106
-#define ComConf_ComSignal_FRSideObsDist_sech2_SecCAN2_eb7d27c8        107
-#define ComConf_ComSignal_FRTirePrsHSC4_fa528d8c                      108
-#define ComConf_ComSignal_FRTirePrsVHSC4_fa528d8c                     109
-#define ComConf_ComSignal_FrtFogLghtOnHSC2_762c2774                   110
-#define ComConf_ComSignal_FrtMidLObsDist_sech2_SecCAN2_8e9167f6       111
-#define ComConf_ComSignal_FrtMidLObsRng_sech2_SecCAN2_27d72756        112
-#define ComConf_ComSignal_FrtMidRObsDist_sech2_SecCAN2_8e9167f6       113
-#define ComConf_ComSignal_FrtMidRObsRng_sech2_SecCAN2_27d72756        114
-#define ComConf_ComSignal_FrtObsDist_sech2_SecCAN2_27d72756           115
-#define ComConf_ComSignal_FrtPDCAudWrnng_sech2_SecCAN2_27d72756       116
-#define ComConf_ComSignal_FrtPsngDoorOpenStsHSC2_762c2774             117
-#define ComConf_ComSignal_HCUAvlbly_h2HSC2_ab4ba2ce                   118
-#define ComConf_ComSignal_HourOfDayHSC2_c30fb534                      119
-#define ComConf_ComSignal_HourOfDayHSC4_80f6c9a0                      120
-#define ComConf_ComSignal_HydBstrCmpstnReqHSC2_70a619c8               121
-#define ComConf_ComSignal_IPCAvlbly_h2HSC2_ab4ba2ce                   122
-#define ComConf_ComSignal_LDircnIOHSC2_762c2774                       123
-#define ComConf_ComSignal_LDrvnWhlRotlDistPlsCtrHSC2_16026180         124
-#define ComConf_ComSignal_LDrvnWhlRotlDistTRCHSC2_16026180            125
-#define ComConf_ComSignal_LDrvnWhlRotlDistTmspHSC2_16026180           126
-#define ComConf_ComSignal_LDrvnWhlRotlDistVHSC2_16026180              127
-#define ComConf_ComSignal_LDrvnWhlRotlRstOcdHSC2_16026180             128
-#define ComConf_ComSignal_LDrvnWhlRotlSeqNumHSC2_16026180             129
-#define ComConf_ComSignal_LNonDrvnWhlRotlDircnHSC2_988d6663           130
-#define ComConf_ComSignal_LNonDrvnWhlRotlDistPCHSC2_daa8611e          131
-#define ComConf_ComSignal_LNonDrvnWhlRotlDistTHSC2_daa8611e           132
-#define ComConf_ComSignal_LNonDrvnWhlRotlDistTRCHSC2_daa8611e         133
-#define ComConf_ComSignal_LNonDrvnWhlRotlDistVHSC2_daa8611e           134
-#define ComConf_ComSignal_LNonDrvnWhlRotlRstOcdHSC2_daa8611e          135
-#define ComConf_ComSignal_LNonDrvnWhlRotlSeqNumHSC2_daa8611e          136
-#define ComConf_ComSignal_LRCTAWrnngHSC4_693ba2af                     137
-#define ComConf_ComSignal_LdspcOpenStsHSC2_762c2774                   138
-#define ComConf_ComSignal_MainBeamLghtOnHSC2_762c2774                 139
-#define ComConf_ComSignal_MinuteOfHourHSC2_c30fb534                   140
-#define ComConf_ComSignal_MinuteOfHourHSC4_80f6c9a0                   141
-#define ComConf_ComSignal_NRCDAlvRCHSC2_6ae5c0ff                      142
-#define ComConf_ComSignal_NRCDFHSC2_6ae5c0ff                          143
-#define ComConf_ComSignal_NRCDMstrChlg_h2HSC2_407c19cd                144
-#define ComConf_ComSignal_NRCDSts_h2HSC2_32bfb16e                     145
-#define ComConf_ComSignal_OtsdAirTemCrValMsk_h2HSC2_bc30b68d          146
-#define ComConf_ComSignal_OtsdAirTemCrValV_h2HSC2_bc30b68d            147
-#define ComConf_ComSignal_OtsdAirTemCrVal_h2HSC2_bc30b68d             148
-#define ComConf_ComSignal_P2PExeAvlblHSC4_09f4c130                    149
-#define ComConf_ComSignal_P2PExeAvlblVHSC4_09f4c130                   150
-#define ComConf_ComSignal_P2PSwReqHSC4_8dbecfca                       151
-#define ComConf_ComSignal_PDCCofignSts_sech2_SecCAN2_27d72756         152
-#define ComConf_ComSignal_PDCSwReqHSC2_46783686                       153
-#define ComConf_ComSignal_PDCSwReqHSC4_687c4159                       154
-#define ComConf_ComSignal_PDCSysSts_sech2_SecCAN2_27d72756            155
-#define ComConf_ComSignal_PEPSSSBAHSC4_5c9d774f                       156
-#define ComConf_ComSignal_PEPSSSBAVHSC4_5c9d774f                      157
-#define ComConf_ComSignal_PEPSSSBFltStsHSC4_d21270ac                  158
-#define ComConf_ComSignal_Peak_LRU1_18ef6e8d                          159
-#define ComConf_ComSignal_PwrMdAutoCtrlAvlblHSC2_f8a32097             160
-#define ComConf_ComSignal_PwrMdMstrAccryA_h2HSC2_67e1a250             161
-#define ComConf_ComSignal_PwrMdMstrRunCrkA_h2HSC2_67e1a250            162
-#define ComConf_ComSignal_RDircnIOHSC2_762c2774                       163
-#define ComConf_ComSignal_RDrvnWhlRotlDistPlsCtrHSC2_16026180         164
-#define ComConf_ComSignal_RDrvnWhlRotlDistTRCHSC2_16026180            165
-#define ComConf_ComSignal_RDrvnWhlRotlDistTmspHSC2_16026180           166
-#define ComConf_ComSignal_RDrvnWhlRotlDistVHSC2_16026180              167
-#define ComConf_ComSignal_RDrvnWhlRotlRstOcdHSC2_16026180             168
-#define ComConf_ComSignal_RDrvnWhlRotlSeqNumHSC2_16026180             169
-#define ComConf_ComSignal_RLDoorOpenStsHSC2_762c2774                  170
-#define ComConf_ComSignal_RLObsDist_sech2_SecCAN2_84546eef            171
-#define ComConf_ComSignal_RLObsRng_sech2_SecCAN2_27d72756             172
-#define ComConf_ComSignal_RLSideObsDist_sech2_SecCAN2_eb7d27c8        173
-#define ComConf_ComSignal_RLTirePrsHSC4_fa528d8c                      174
-#define ComConf_ComSignal_RLTirePrsVHSC4_fa528d8c                     175
-#define ComConf_ComSignal_RNonDrvnWhlRotlDircnHSC2_988d6663           176
-#define ComConf_ComSignal_RNonDrvnWhlRotlDistPCHSC2_daa8611e          177
-#define ComConf_ComSignal_RNonDrvnWhlRotlDistTHSC2_daa8611e           178
-#define ComConf_ComSignal_RNonDrvnWhlRotlDistTRCHSC2_daa8611e         179
-#define ComConf_ComSignal_RNonDrvnWhlRotlDistVHSC2_daa8611e           180
-#define ComConf_ComSignal_RNonDrvnWhlRotlRstOcdHSC2_daa8611e          181
-#define ComConf_ComSignal_RNonDrvnWhlRotlSeqNumHSC2_daa8611e          182
-#define ComConf_ComSignal_RRCTAWrnngHSC4_693ba2af                     183
-#define ComConf_ComSignal_RRDoorOpenStsHSC2_762c2774                  184
-#define ComConf_ComSignal_RRObsDist_sech2_SecCAN2_84546eef            185
-#define ComConf_ComSignal_RRObsRng_sech2_SecCAN2_27d72756             186
-#define ComConf_ComSignal_RRSideObsDist_sech2_SecCAN2_eb7d27c8        187
-#define ComConf_ComSignal_RRTirePrsHSC4_fa528d8c                      188
-#define ComConf_ComSignal_RRTirePrsVHSC4_fa528d8c                     189
-#define ComConf_ComSignal_RrFogLghtOnHSC2_762c2774                    190
-#define ComConf_ComSignal_RrMidLObsDist_sech2_SecCAN2_8e9167f6        191
-#define ComConf_ComSignal_RrMidLObsRng_sech2_SecCAN2_27d72756         192
-#define ComConf_ComSignal_RrMidRObsDist_sech2_SecCAN2_8e9167f6        193
-#define ComConf_ComSignal_RrMidRObsRng_sech2_SecCAN2_27d72756         194
-#define ComConf_ComSignal_RrObsDist_sech2_SecCAN2_27d72756            195
-#define ComConf_ComSignal_RrPDCAudWrnng_sech2_SecCAN2_27d72756        196
-#define ComConf_ComSignal_RstrFctryDeftsReqHSC2_d7b82a4e              197
-#define ComConf_ComSignal_RstrFctryDeftsReqHSC4_f9bc5d91              198
-#define ComConf_ComSignal_SCREEN_COORD_AXHSC4_c0316154                199
-#define ComConf_ComSignal_SCREEN_COORD_AYHSC4_c0316154                200
-#define ComConf_ComSignal_SCREEN_COORD_BXHSC4_c0316154                201
-#define ComConf_ComSignal_SCREEN_COORD_BYHSC4_c0316154                202
-#define ComConf_ComSignal_SCSAPAAcclAHSC2_988d6663                    203
-#define ComConf_ComSignal_SCSAPAAlvRCHSC2_988d6663                    204
-#define ComConf_ComSignal_SCSAPAAvlblHSC2_988d6663                    205
-#define ComConf_ComSignal_SCSNRCDAvlblHSC2_988d6663                   206
-#define ComConf_ComSignal_SCUAvlbly_h2HSC2_ab4ba2ce                   207
-#define ComConf_ComSignal_SCUDrvrIntrvnAHSC2_efc2a4db                 208
-#define ComConf_ComSignal_SCUNRCDAvlblHSC2_efc2a4db                   209
-#define ComConf_ComSignal_SCUShifterLvrPosHSC2_efc2a4db               210
-#define ComConf_ComSignal_SCUShifterPosInvsnHSC2_efc2a4db             211
-#define ComConf_ComSignal_SCUShifterPosRCHSC2_efc2a4db                212
-#define ComConf_ComSignal_SDMAvlbly_h2HSC2_ab4ba2ce                   213
-#define ComConf_ComSignal_SecsOfMinuteHSC2_c30fb534                   214
-#define ComConf_ComSignal_SecsOfMinuteHSC4_80f6c9a0                   215
-#define ComConf_ComSignal_Status_LRU1_18ef6e8d                        216
-#define ComConf_ComSignal_Status_SRU3_67c459fd                        217
-#define ComConf_ComSignal_StrgWhlAngHSC2_dccc170c                     218
-#define ComConf_ComSignal_StrgWhlAngVHSC2_dccc170c                    219
-#define ComConf_ComSignal_SurndViewSelnHSC4_c0316154                  220
-#define ComConf_ComSignal_SysBPMEnbdHSC2_f8a32097                     221
-#define ComConf_ComSignal_SysBPMHSC2_f8a32097                         222
-#define ComConf_ComSignal_SysOpnlMd_h2HSC2_67e1a250                   223
-#define ComConf_ComSignal_SysPwrMd_h2HSC2_67e1a250                    224
-#define ComConf_ComSignal_SysVolMdV_h2HSC2_67e1a250                   225
-#define ComConf_ComSignal_SysVolMd_h2HSC2_67e1a250                    226
-#define ComConf_ComSignal_SysVolV_h2HSC2_67e1a250                     227
-#define ComConf_ComSignal_SysVol_h2HSC2_67e1a250                      228
-#define ComConf_ComSignal_TBOXAccelZHSC4_09f4c130                     229
-#define ComConf_ComSignal_TBOXAccelZVHSC4_09f4c130                    230
-#define ComConf_ComSignal_TBOXToIECUCtrlPotclHSC4_bd586014            231
-#define ComConf_ComSignal_TCAvlbly_h2HSC2_ab4ba2ce                    232
-#define ComConf_ComSignal_TCSAHSC2_5ee26fe4                           233
-#define ComConf_ComSignal_TMSpdV_h1HSC4_d68cf0b9                      234
-#define ComConf_ComSignal_TMSpd_h1HSC4_d68cf0b9                       235
-#define ComConf_ComSignal_TOF_LRU1_18ef6e8d                           236
-#define ComConf_ComSignal_TOF_SRU3_67c459fd                           237
-#define ComConf_ComSignal_TOUCH_SCREEN_ACMDHSC4_c0316154              238
-#define ComConf_ComSignal_TOUCH_SCREEN_BCMDHSC4_c0316154              239
-#define ComConf_ComSignal_TOUCH_SCREEN_STATUS_h4HSC4_c0316154         240
-#define ComConf_ComSignal_TPMSFHSC4_74dd8a6f                          241
-#define ComConf_ComSignal_TboxP2PRCHSC4_09f4c130                      242
-#define ComConf_ComSignal_TimeDspFmtHSC2_c30fb534                     243
-#define ComConf_ComSignal_TimeDspFmtHSC4_80f6c9a0                     244
-#define ComConf_ComSignal_TrShftLvrPosV_h1HSC2_8bd5df01               245
-#define ComConf_ComSignal_TrShftLvrPos_h1HSC2_8bd5df01                246
-#define ComConf_ComSignal_TrlrHitchSwAHSC2_762c2774                   247
-#define ComConf_ComSignal_VCUAccReqStsHSC2_cacaa258                   248
-#define ComConf_ComSignal_VCUAccReqValHSC2_cacaa258                   249
-#define ComConf_ComSignal_VCUNRCDAvlblHSC2_cacaa258                   250
-#define ComConf_ComSignal_VSELatAccHSC2_542766fd                      251
-#define ComConf_ComSignal_VSELatAccVHSC2_542766fd                     252
-#define ComConf_ComSignal_VSELongtAccHSC2_542766fd                    253
-#define ComConf_ComSignal_VSELongtAccVHSC2_542766fd                   254
-#define ComConf_ComSignal_VSESysAHSC2_5ee26fe4                        255
-#define ComConf_ComSignal_VehBkwdSwReqHSC4_09f4c130                   256
-#define ComConf_ComSignal_VehBkwdSwReqVHSC4_09f4c130                  257
-#define ComConf_ComSignal_VehDynYawRateHSC2_5ee26fe4                  258
-#define ComConf_ComSignal_VehDynYawRateVHSC2_5ee26fe4                 259
-#define ComConf_ComSignal_VehFwdSwReqHSC4_09f4c130                    260
-#define ComConf_ComSignal_VehFwdSwReqVHSC4_09f4c130                   261
-#define ComConf_ComSignal_VehLckngStaHSC4_0f57ab67                    262
-#define ComConf_ComSignal_VehOdoV_h2HSC2_78aeb97b                     263
-#define ComConf_ComSignal_VehOdo_h2HSC2_78aeb97b                      264
-#define ComConf_ComSignal_VehRoadWhlLReqHSC4_09f4c130                 265
-#define ComConf_ComSignal_VehRoadWhlLReqVHSC4_09f4c130                266
-#define ComConf_ComSignal_VehRoadWhlRReqHSC4_09f4c130                 267
-#define ComConf_ComSignal_VehRoadWhlRReqVHSC4_09f4c130                268
-#define ComConf_ComSignal_VehSideLghtStsHSC2_762c2774                 269
-#define ComConf_ComSignal_VehSpdAvgDrvnHSC2_49997ba7                  270
-#define ComConf_ComSignal_VehSpdAvgDrvnVHSC2_49997ba7                 271
-#define ComConf_ComSignal_VehSpdAvgNonDrvnHSC2_49997ba7               272
-#define ComConf_ComSignal_VehSpdAvgNonDrvnVHSC2_49997ba7              273
-#define ComConf_ComSignal_WhlGndVelLDrvnHSC2_cdd3755d                 274
-#define ComConf_ComSignal_WhlGndVelLDrvnVHSC2_cdd3755d                275
-#define ComConf_ComSignal_WhlGndVelLNonDrvnHSC2_435c72be              276
-#define ComConf_ComSignal_WhlGndVelLNonDrvnVHSC2_435c72be             277
-#define ComConf_ComSignal_WhlGndVelRDrvnHSC2_cdd3755d                 278
-#define ComConf_ComSignal_WhlGndVelRDrvnVHSC2_cdd3755d                279
-#define ComConf_ComSignal_WhlGndVelRNonDrvnHSC2_435c72be              280
-#define ComConf_ComSignal_WhlGndVelRNonDrvnVHSC2_435c72be             281
-#define ComConf_ComSignal_Width_LRU1_18ef6e8d                         282
+#define ComConf_ComSignal_ComSignal_Aceinna_AccX                      54
+#define ComConf_ComSignal_ComSignal_Aceinna_AccY                      55
+#define ComConf_ComSignal_ComSignal_Aceinna_AccZ                      56
+#define ComConf_ComSignal_ComSignal_Aceinna_GryoX                     57
+#define ComConf_ComSignal_ComSignal_Aceinna_GryoZ                     58
+#define ComConf_ComSignal_ComSignal_Aceinna_GyroY                     59
+#define ComConf_ComSignal_ComSignal_Aceinna_Pitch                     60
+#define ComConf_ComSignal_ComSignal_Aceinna_Roll                      61
+#define ComConf_ComSignal_DTCInfomationAPA_SecCAN2_3e47bb85           62
+#define ComConf_ComSignal_DayTimeRunningLampOnHSC2_34092009           63
+#define ComConf_ComSignal_DiagnosticFuncAddrReq_h2_a8412cb3           64
+#define ComConf_ComSignal_DiagnosticReqP2P_h2_2483449d                65
+#define ComConf_ComSignal_DipdBeamLghtOnHSC2_762c2774                 66
+#define ComConf_ComSignal_DircnIndLampSwStsHSC2_762c2774              67
+#define ComConf_ComSignal_DistRCAvgDrvnHSC2_49997ba7                  68
+#define ComConf_ComSignal_DistRCAvgDrvnRstOcdHSC2_49997ba7            69
+#define ComConf_ComSignal_DistRCAvgDrvnSrcHSC2_49997ba7               70
+#define ComConf_ComSignal_DistRCAvgDrvnVHSC2_49997ba7                 71
+#define ComConf_ComSignal_DrvrDoorOpenStsHSC2_762c2774                72
+#define ComConf_ComSignal_DrvrSbltAtcHSC2_2128899b                    73
+#define ComConf_ComSignal_DrvrSbltAtcVHSC2_2128899b                   74
+#define ComConf_ComSignal_DrvrSelAPAParkngMdHSC2_d7b82a4e             75
+#define ComConf_ComSignal_DrvrSelAPAParkngMdHSC4_7f07551a             76
+#define ComConf_ComSignal_DrvrSelAPASlotBearngHSC2_d7b82a4e           77
+#define ComConf_ComSignal_DrvrSelAPASlotBearngHSC4_7f07551a           78
+#define ComConf_ComSignal_ECMAvlbly_h2HSC2_ab4ba2ce                   79
+#define ComConf_ComSignal_EPBAppcnStsHSC2_ecbe2b89                    80
+#define ComConf_ComSignal_EPBAppcnStsPVHSC2_ecbe2b89                  81
+#define ComConf_ComSignal_EPBAvlblyStsHSC2_ecbe2b89                   82
+#define ComConf_ComSignal_EPBAvlblyStsPVHSC2_ecbe2b89                 83
+#define ComConf_ComSignal_EPBSwStsHSC2_20142b17                       84
+#define ComConf_ComSignal_EPBSwStsVHSC2_20142b17                      85
+#define ComConf_ComSignal_EPSAPAAlvRCHSC2_a6919738                    86
+#define ComConf_ComSignal_EPSAPAChksmHSC2_a6919738                    87
+#define ComConf_ComSignal_EPSAPAInhHSC2_a6919738                      88
+#define ComConf_ComSignal_EPSAPAStsHSC2_a6919738                      89
+#define ComConf_ComSignal_EPTAccelActuPosHSC2_533eb1f8                90
+#define ComConf_ComSignal_EPTAccelActuPosVHSC2_533eb1f8               91
+#define ComConf_ComSignal_EPTBrkPdlDscrtInptStsHSC2_533eb1f8          92
+#define ComConf_ComSignal_EPTBrkPdlDscrtInptStsVHSC2_533eb1f8         93
+#define ComConf_ComSignal_EPTRdy_h1HSC2_9f94b166                      94
+#define ComConf_ComSignal_EPTStCmdOn_h1HSC2_533eb1f8                  95
+#define ComConf_ComSignal_EnRunAHSC2_235f8f9b                         96
+#define ComConf_ComSignal_FICMAvlbly_h2HSC2_ab4ba2ce                  97
+#define ComConf_ComSignal_FICMP2PQuitReqHSC4_0c9b61ca                 98
+#define ComConf_ComSignal_FICMPLCRtCoverSwReqHSC4_0c9b61ca            99
+#define ComConf_ComSignal_FICMPLCRtEndSwReqHSC4_0c9b61ca              100
+#define ComConf_ComSignal_FICMPLCSwReqHSC4_0c9b61ca                   101
+#define ComConf_ComSignal_FICMRouteChangeCheckHSC4_0c9b61ca           102
+#define ComConf_ComSignal_FICMRouteReqHSC4_0c9b61ca                   103
+#define ComConf_ComSignal_FICMSilentSearchCheckHSC4_0c9b61ca          104
+#define ComConf_ComSignal_FICMSilentSearchReqHSC4_0c9b61ca            105
+#define ComConf_ComSignal_FLDoorHadlSwAHSC4_5c9d774f                  106
+#define ComConf_ComSignal_FLObsDist_sech2_SecCAN2_84546eef            107
+#define ComConf_ComSignal_FLObsRng_sech2_SecCAN2_27d72756             108
+#define ComConf_ComSignal_FLSideObsDist_sech2_SecCAN2_eb7d27c8        109
+#define ComConf_ComSignal_FLTirePrsHSC4_fa528d8c                      110
+#define ComConf_ComSignal_FLTirePrsVHSC4_fa528d8c                     111
+#define ComConf_ComSignal_FRDoorHadlSwAHSC4_5c9d774f                  112
+#define ComConf_ComSignal_FRObsDist_sech2_SecCAN2_84546eef            113
+#define ComConf_ComSignal_FRObsRng_sech2_SecCAN2_27d72756             114
+#define ComConf_ComSignal_FRSideObsDist_sech2_SecCAN2_eb7d27c8        115
+#define ComConf_ComSignal_FRTirePrsHSC4_fa528d8c                      116
+#define ComConf_ComSignal_FRTirePrsVHSC4_fa528d8c                     117
+#define ComConf_ComSignal_FrtFogLghtOnHSC2_762c2774                   118
+#define ComConf_ComSignal_FrtMidLObsDist_sech2_SecCAN2_8e9167f6       119
+#define ComConf_ComSignal_FrtMidLObsRng_sech2_SecCAN2_27d72756        120
+#define ComConf_ComSignal_FrtMidRObsDist_sech2_SecCAN2_8e9167f6       121
+#define ComConf_ComSignal_FrtMidRObsRng_sech2_SecCAN2_27d72756        122
+#define ComConf_ComSignal_FrtObsDist_sech2_SecCAN2_27d72756           123
+#define ComConf_ComSignal_FrtPDCAudWrnng_sech2_SecCAN2_27d72756       124
+#define ComConf_ComSignal_FrtPsngDoorOpenStsHSC2_762c2774             125
+#define ComConf_ComSignal_HCUAvlbly_h2HSC2_ab4ba2ce                   126
+#define ComConf_ComSignal_HourOfDayHSC2_c30fb534                      127
+#define ComConf_ComSignal_HourOfDayHSC4_80f6c9a0                      128
+#define ComConf_ComSignal_HydBstrCmpstnReqHSC2_70a619c8               129
+#define ComConf_ComSignal_IPCAvlbly_h2HSC2_ab4ba2ce                   130
+#define ComConf_ComSignal_LDircnIOHSC2_762c2774                       131
+#define ComConf_ComSignal_LDrvnWhlRotlDistPlsCtrHSC2_16026180         132
+#define ComConf_ComSignal_LDrvnWhlRotlDistTRCHSC2_16026180            133
+#define ComConf_ComSignal_LDrvnWhlRotlDistTmspHSC2_16026180           134
+#define ComConf_ComSignal_LDrvnWhlRotlDistVHSC2_16026180              135
+#define ComConf_ComSignal_LDrvnWhlRotlRstOcdHSC2_16026180             136
+#define ComConf_ComSignal_LDrvnWhlRotlSeqNumHSC2_16026180             137
+#define ComConf_ComSignal_LNonDrvnWhlRotlDircnHSC2_988d6663           138
+#define ComConf_ComSignal_LNonDrvnWhlRotlDistPCHSC2_daa8611e          139
+#define ComConf_ComSignal_LNonDrvnWhlRotlDistTHSC2_daa8611e           140
+#define ComConf_ComSignal_LNonDrvnWhlRotlDistTRCHSC2_daa8611e         141
+#define ComConf_ComSignal_LNonDrvnWhlRotlDistVHSC2_daa8611e           142
+#define ComConf_ComSignal_LNonDrvnWhlRotlRstOcdHSC2_daa8611e          143
+#define ComConf_ComSignal_LNonDrvnWhlRotlSeqNumHSC2_daa8611e          144
+#define ComConf_ComSignal_LRCTAWrnngHSC4_693ba2af                     145
+#define ComConf_ComSignal_LdspcOpenStsHSC2_762c2774                   146
+#define ComConf_ComSignal_MainBeamLghtOnHSC2_762c2774                 147
+#define ComConf_ComSignal_MinuteOfHourHSC2_c30fb534                   148
+#define ComConf_ComSignal_MinuteOfHourHSC4_80f6c9a0                   149
+#define ComConf_ComSignal_NRCDAlvRCHSC2_6ae5c0ff                      150
+#define ComConf_ComSignal_NRCDFHSC2_6ae5c0ff                          151
+#define ComConf_ComSignal_NRCDMstrChlg_h2HSC2_407c19cd                152
+#define ComConf_ComSignal_NRCDSts_h2HSC2_32bfb16e                     153
+#define ComConf_ComSignal_OtsdAirTemCrValMsk_h2HSC2_bc30b68d          154
+#define ComConf_ComSignal_OtsdAirTemCrValV_h2HSC2_bc30b68d            155
+#define ComConf_ComSignal_OtsdAirTemCrVal_h2HSC2_bc30b68d             156
+#define ComConf_ComSignal_P2PExeAvlblHSC4_09f4c130                    157
+#define ComConf_ComSignal_P2PExeAvlblVHSC4_09f4c130                   158
+#define ComConf_ComSignal_P2PSwReqHSC4_8dbecfca                       159
+#define ComConf_ComSignal_PDCCofignSts_sech2_SecCAN2_27d72756         160
+#define ComConf_ComSignal_PDCSwReqHSC2_46783686                       161
+#define ComConf_ComSignal_PDCSwReqHSC4_687c4159                       162
+#define ComConf_ComSignal_PDCSysSts_sech2_SecCAN2_27d72756            163
+#define ComConf_ComSignal_PEPSSSBAHSC4_5c9d774f                       164
+#define ComConf_ComSignal_PEPSSSBAVHSC4_5c9d774f                      165
+#define ComConf_ComSignal_PEPSSSBFltStsHSC4_d21270ac                  166
+#define ComConf_ComSignal_Peak_LRU1_18ef6e8d                          167
+#define ComConf_ComSignal_PwrMdAutoCtrlAvlblHSC2_f8a32097             168
+#define ComConf_ComSignal_PwrMdMstrAccryA_h2HSC2_67e1a250             169
+#define ComConf_ComSignal_PwrMdMstrRunCrkA_h2HSC2_67e1a250            170
+#define ComConf_ComSignal_RDircnIOHSC2_762c2774                       171
+#define ComConf_ComSignal_RDrvnWhlRotlDistPlsCtrHSC2_16026180         172
+#define ComConf_ComSignal_RDrvnWhlRotlDistTRCHSC2_16026180            173
+#define ComConf_ComSignal_RDrvnWhlRotlDistTmspHSC2_16026180           174
+#define ComConf_ComSignal_RDrvnWhlRotlDistVHSC2_16026180              175
+#define ComConf_ComSignal_RDrvnWhlRotlRstOcdHSC2_16026180             176
+#define ComConf_ComSignal_RDrvnWhlRotlSeqNumHSC2_16026180             177
+#define ComConf_ComSignal_RLDoorOpenStsHSC2_762c2774                  178
+#define ComConf_ComSignal_RLObsDist_sech2_SecCAN2_84546eef            179
+#define ComConf_ComSignal_RLObsRng_sech2_SecCAN2_27d72756             180
+#define ComConf_ComSignal_RLSideObsDist_sech2_SecCAN2_eb7d27c8        181
+#define ComConf_ComSignal_RLTirePrsHSC4_fa528d8c                      182
+#define ComConf_ComSignal_RLTirePrsVHSC4_fa528d8c                     183
+#define ComConf_ComSignal_RNonDrvnWhlRotlDircnHSC2_988d6663           184
+#define ComConf_ComSignal_RNonDrvnWhlRotlDistPCHSC2_daa8611e          185
+#define ComConf_ComSignal_RNonDrvnWhlRotlDistTHSC2_daa8611e           186
+#define ComConf_ComSignal_RNonDrvnWhlRotlDistTRCHSC2_daa8611e         187
+#define ComConf_ComSignal_RNonDrvnWhlRotlDistVHSC2_daa8611e           188
+#define ComConf_ComSignal_RNonDrvnWhlRotlRstOcdHSC2_daa8611e          189
+#define ComConf_ComSignal_RNonDrvnWhlRotlSeqNumHSC2_daa8611e          190
+#define ComConf_ComSignal_RRCTAWrnngHSC4_693ba2af                     191
+#define ComConf_ComSignal_RRDoorOpenStsHSC2_762c2774                  192
+#define ComConf_ComSignal_RRObsDist_sech2_SecCAN2_84546eef            193
+#define ComConf_ComSignal_RRObsRng_sech2_SecCAN2_27d72756             194
+#define ComConf_ComSignal_RRSideObsDist_sech2_SecCAN2_eb7d27c8        195
+#define ComConf_ComSignal_RRTirePrsHSC4_fa528d8c                      196
+#define ComConf_ComSignal_RRTirePrsVHSC4_fa528d8c                     197
+#define ComConf_ComSignal_RrFogLghtOnHSC2_762c2774                    198
+#define ComConf_ComSignal_RrMidLObsDist_sech2_SecCAN2_8e9167f6        199
+#define ComConf_ComSignal_RrMidLObsRng_sech2_SecCAN2_27d72756         200
+#define ComConf_ComSignal_RrMidRObsDist_sech2_SecCAN2_8e9167f6        201
+#define ComConf_ComSignal_RrMidRObsRng_sech2_SecCAN2_27d72756         202
+#define ComConf_ComSignal_RrObsDist_sech2_SecCAN2_27d72756            203
+#define ComConf_ComSignal_RrPDCAudWrnng_sech2_SecCAN2_27d72756        204
+#define ComConf_ComSignal_RstrFctryDeftsReqHSC2_d7b82a4e              205
+#define ComConf_ComSignal_RstrFctryDeftsReqHSC4_f9bc5d91              206
+#define ComConf_ComSignal_SCREEN_COORD_AXHSC4_c0316154                207
+#define ComConf_ComSignal_SCREEN_COORD_AYHSC4_c0316154                208
+#define ComConf_ComSignal_SCREEN_COORD_BXHSC4_c0316154                209
+#define ComConf_ComSignal_SCREEN_COORD_BYHSC4_c0316154                210
+#define ComConf_ComSignal_SCSAPAAcclAHSC2_988d6663                    211
+#define ComConf_ComSignal_SCSAPAAlvRCHSC2_988d6663                    212
+#define ComConf_ComSignal_SCSAPAAvlblHSC2_988d6663                    213
+#define ComConf_ComSignal_SCSNRCDAvlblHSC2_988d6663                   214
+#define ComConf_ComSignal_SCUAvlbly_h2HSC2_ab4ba2ce                   215
+#define ComConf_ComSignal_SCUDrvrIntrvnAHSC2_efc2a4db                 216
+#define ComConf_ComSignal_SCUNRCDAvlblHSC2_efc2a4db                   217
+#define ComConf_ComSignal_SCUShifterLvrPosHSC2_efc2a4db               218
+#define ComConf_ComSignal_SCUShifterPosInvsnHSC2_efc2a4db             219
+#define ComConf_ComSignal_SCUShifterPosRCHSC2_efc2a4db                220
+#define ComConf_ComSignal_SDMAvlbly_h2HSC2_ab4ba2ce                   221
+#define ComConf_ComSignal_SecsOfMinuteHSC2_c30fb534                   222
+#define ComConf_ComSignal_SecsOfMinuteHSC4_80f6c9a0                   223
+#define ComConf_ComSignal_Status_LRU1_18ef6e8d                        224
+#define ComConf_ComSignal_Status_SRU3_67c459fd                        225
+#define ComConf_ComSignal_StrgWhlAngHSC2_dccc170c                     226
+#define ComConf_ComSignal_StrgWhlAngVHSC2_dccc170c                    227
+#define ComConf_ComSignal_SurndViewSelnHSC4_c0316154                  228
+#define ComConf_ComSignal_SysBPMEnbdHSC2_f8a32097                     229
+#define ComConf_ComSignal_SysBPMHSC2_f8a32097                         230
+#define ComConf_ComSignal_SysOpnlMd_h2HSC2_67e1a250                   231
+#define ComConf_ComSignal_SysPwrMd_h2HSC2_67e1a250                    232
+#define ComConf_ComSignal_SysVolMdV_h2HSC2_67e1a250                   233
+#define ComConf_ComSignal_SysVolMd_h2HSC2_67e1a250                    234
+#define ComConf_ComSignal_SysVolV_h2HSC2_67e1a250                     235
+#define ComConf_ComSignal_SysVol_h2HSC2_67e1a250                      236
+#define ComConf_ComSignal_TBOXAccelZHSC4_09f4c130                     237
+#define ComConf_ComSignal_TBOXAccelZVHSC4_09f4c130                    238
+#define ComConf_ComSignal_TBOXToIECUCtrlPotclHSC4_bd586014            239
+#define ComConf_ComSignal_TCAvlbly_h2HSC2_ab4ba2ce                    240
+#define ComConf_ComSignal_TCSAHSC2_5ee26fe4                           241
+#define ComConf_ComSignal_TMSpdV_h1HSC4_d68cf0b9                      242
+#define ComConf_ComSignal_TMSpd_h1HSC4_d68cf0b9                       243
+#define ComConf_ComSignal_TOF_LRU1_18ef6e8d                           244
+#define ComConf_ComSignal_TOF_SRU3_67c459fd                           245
+#define ComConf_ComSignal_TOUCH_SCREEN_ACMDHSC4_c0316154              246
+#define ComConf_ComSignal_TOUCH_SCREEN_BCMDHSC4_c0316154              247
+#define ComConf_ComSignal_TOUCH_SCREEN_STATUS_h4HSC4_c0316154         248
+#define ComConf_ComSignal_TPMSFHSC4_74dd8a6f                          249
+#define ComConf_ComSignal_TboxP2PRCHSC4_09f4c130                      250
+#define ComConf_ComSignal_TimeDspFmtHSC2_c30fb534                     251
+#define ComConf_ComSignal_TimeDspFmtHSC4_80f6c9a0                     252
+#define ComConf_ComSignal_TrShftLvrPosV_h1HSC2_8bd5df01               253
+#define ComConf_ComSignal_TrShftLvrPos_h1HSC2_8bd5df01                254
+#define ComConf_ComSignal_TrlrHitchSwAHSC2_762c2774                   255
+#define ComConf_ComSignal_VCUAccReqStsHSC2_cacaa258                   256
+#define ComConf_ComSignal_VCUAccReqValHSC2_cacaa258                   257
+#define ComConf_ComSignal_VCUNRCDAvlblHSC2_cacaa258                   258
+#define ComConf_ComSignal_VSELatAccHSC2_542766fd                      259
+#define ComConf_ComSignal_VSELatAccVHSC2_542766fd                     260
+#define ComConf_ComSignal_VSELongtAccHSC2_542766fd                    261
+#define ComConf_ComSignal_VSELongtAccVHSC2_542766fd                   262
+#define ComConf_ComSignal_VSESysAHSC2_5ee26fe4                        263
+#define ComConf_ComSignal_VehBkwdSwReqHSC4_09f4c130                   264
+#define ComConf_ComSignal_VehBkwdSwReqVHSC4_09f4c130                  265
+#define ComConf_ComSignal_VehDynYawRateHSC2_5ee26fe4                  266
+#define ComConf_ComSignal_VehDynYawRateVHSC2_5ee26fe4                 267
+#define ComConf_ComSignal_VehFwdSwReqHSC4_09f4c130                    268
+#define ComConf_ComSignal_VehFwdSwReqVHSC4_09f4c130                   269
+#define ComConf_ComSignal_VehLckngStaHSC4_0f57ab67                    270
+#define ComConf_ComSignal_VehOdoV_h2HSC2_78aeb97b                     271
+#define ComConf_ComSignal_VehOdo_h2HSC2_78aeb97b                      272
+#define ComConf_ComSignal_VehRoadWhlLReqHSC4_09f4c130                 273
+#define ComConf_ComSignal_VehRoadWhlLReqVHSC4_09f4c130                274
+#define ComConf_ComSignal_VehRoadWhlRReqHSC4_09f4c130                 275
+#define ComConf_ComSignal_VehRoadWhlRReqVHSC4_09f4c130                276
+#define ComConf_ComSignal_VehSideLghtStsHSC2_762c2774                 277
+#define ComConf_ComSignal_VehSpdAvgDrvnHSC2_49997ba7                  278
+#define ComConf_ComSignal_VehSpdAvgDrvnVHSC2_49997ba7                 279
+#define ComConf_ComSignal_VehSpdAvgNonDrvnHSC2_49997ba7               280
+#define ComConf_ComSignal_VehSpdAvgNonDrvnVHSC2_49997ba7              281
+#define ComConf_ComSignal_WhlGndVelLDrvnHSC2_cdd3755d                 282
+#define ComConf_ComSignal_WhlGndVelLDrvnVHSC2_cdd3755d                283
+#define ComConf_ComSignal_WhlGndVelLNonDrvnHSC2_435c72be              284
+#define ComConf_ComSignal_WhlGndVelLNonDrvnVHSC2_435c72be             285
+#define ComConf_ComSignal_WhlGndVelRDrvnHSC2_cdd3755d                 286
+#define ComConf_ComSignal_WhlGndVelRDrvnVHSC2_cdd3755d                287
+#define ComConf_ComSignal_WhlGndVelRNonDrvnHSC2_435c72be              288
+#define ComConf_ComSignal_WhlGndVelRNonDrvnVHSC2_435c72be             289
+#define ComConf_ComSignal_Width_LRU1_18ef6e8d                         290
 /**\} */
 
 /**
@@ -2251,23 +2259,23 @@
 #define Com_GetSizeOfConstValueUInt16OfPCConfig()                     2U  /**< the number of accomplishable value elements in Com_ConstValueUInt16 */
 #define Com_GetSizeOfConstValueUInt32OfPCConfig()                     1U  /**< the number of accomplishable value elements in Com_ConstValueUInt32 */
 #define Com_GetSizeOfConstValueUInt8OfPCConfig()                      6U  /**< the number of accomplishable value elements in Com_ConstValueUInt8 */
-#define Com_GetSizeOfHandleRxPduDeferredOfPCConfig()                  66U  /**< the number of accomplishable value elements in Com_HandleRxPduDeferred */
+#define Com_GetSizeOfHandleRxPduDeferredOfPCConfig()                  69U  /**< the number of accomplishable value elements in Com_HandleRxPduDeferred */
 #define Com_GetSizeOfIPduGroupInfoOfPCConfig()                        8U  /**< the number of accomplishable value elements in Com_IPduGroupInfo */
-#define Com_GetSizeOfIPduGroupInfoOfRxPduInfoIndOfPCConfig()          66U  /**< the number of accomplishable value elements in Com_IPduGroupInfoOfRxPduInfoInd */
+#define Com_GetSizeOfIPduGroupInfoOfRxPduInfoIndOfPCConfig()          69U  /**< the number of accomplishable value elements in Com_IPduGroupInfoOfRxPduInfoInd */
 #define Com_GetSizeOfIPduGroupInfoOfTxPduInfoIndOfPCConfig()          48U  /**< the number of accomplishable value elements in Com_IPduGroupInfoOfTxPduInfoInd */
 #define Com_GetSizeOfIPduGroupInfoToSubIPduGroupsIndOfPCConfig()      8U  /**< the number of accomplishable value elements in Com_IPduGroupInfoToSubIPduGroupsInd */
-#define Com_GetSizeOfRxAccessInfoIndOfPCConfig()                      283U  /**< the number of accomplishable value elements in Com_RxAccessInfoInd */
-#define Com_GetSizeOfRxAccessInfoOfPCConfig()                         283U  /**< the number of accomplishable value elements in Com_RxAccessInfo */
-#define Com_GetSizeOfRxDefPduBufferOfPCConfig()                       495U  /**< the number of accomplishable value elements in Com_RxDefPduBuffer */
-#define Com_GetSizeOfRxPduCalloutFuncPtrOfPCConfig()                  5U  /**< the number of accomplishable value elements in Com_RxPduCalloutFuncPtr */
-#define Com_GetSizeOfRxPduInfoIndOfPCConfig()                         66U  /**< the number of accomplishable value elements in Com_RxPduInfoInd */
-#define Com_GetSizeOfRxPduInfoOfPCConfig()                            66U  /**< the number of accomplishable value elements in Com_RxPduInfo */
+#define Com_GetSizeOfRxAccessInfoIndOfPCConfig()                      291U  /**< the number of accomplishable value elements in Com_RxAccessInfoInd */
+#define Com_GetSizeOfRxAccessInfoOfPCConfig()                         291U  /**< the number of accomplishable value elements in Com_RxAccessInfo */
+#define Com_GetSizeOfRxDefPduBufferOfPCConfig()                       519U  /**< the number of accomplishable value elements in Com_RxDefPduBuffer */
+#define Com_GetSizeOfRxPduCalloutFuncPtrOfPCConfig()                  13U  /**< the number of accomplishable value elements in Com_RxPduCalloutFuncPtr */
+#define Com_GetSizeOfRxPduInfoIndOfPCConfig()                         69U  /**< the number of accomplishable value elements in Com_RxPduInfoInd */
+#define Com_GetSizeOfRxPduInfoOfPCConfig()                            69U  /**< the number of accomplishable value elements in Com_RxPduInfo */
 #define Com_GetSizeOfRxSigBufferArrayBasedOfPCConfig()                63U  /**< the number of accomplishable value elements in Com_RxSigBufferArrayBased */
 #define Com_GetSizeOfRxSigBufferSInt16OfPCConfig()                    4U  /**< the number of accomplishable value elements in Com_RxSigBufferSInt16 */
-#define Com_GetSizeOfRxSigBufferUInt16OfPCConfig()                    42U  /**< the number of accomplishable value elements in Com_RxSigBufferUInt16 */
-#define Com_GetSizeOfRxSigBufferUInt32OfPCConfig()                    1U  /**< the number of accomplishable value elements in Com_RxSigBufferUInt32 */
+#define Com_GetSizeOfRxSigBufferUInt16OfPCConfig()                    48U  /**< the number of accomplishable value elements in Com_RxSigBufferUInt16 */
+#define Com_GetSizeOfRxSigBufferUInt32OfPCConfig()                    3U  /**< the number of accomplishable value elements in Com_RxSigBufferUInt32 */
 #define Com_GetSizeOfRxSigBufferUInt8OfPCConfig()                     228U  /**< the number of accomplishable value elements in Com_RxSigBufferUInt8 */
-#define Com_GetSizeOfRxSigInfoOfPCConfig()                            283U  /**< the number of accomplishable value elements in Com_RxSigInfo */
+#define Com_GetSizeOfRxSigInfoOfPCConfig()                            291U  /**< the number of accomplishable value elements in Com_RxSigInfo */
 #define Com_GetSizeOfTmpRxBufferOfPCConfig()                          8U  /**< the number of accomplishable value elements in Com_TmpRxBuffer */
 #define Com_GetSizeOfTxBufferOfPCConfig()                             345U  /**< the number of accomplishable value elements in Com_TxBuffer */
 #define Com_GetSizeOfTxModeFalseOfPCConfig()                          8U  /**< the number of accomplishable value elements in Com_TxModeFalse */
@@ -3931,6 +3939,9 @@ typedef struct Com_HandleRxPduDeferredStructSTag
   Com_HandleRxPduDeferredType APA_SecCH_FrP02_oCAN02_3abd61be[1];
   Com_HandleRxPduDeferredType APA_SecCH_FrP03_oCAN02_3abd61be[1];
   Com_HandleRxPduDeferredType APA_SecCH_FrP04_oCAN02_3abd61be[1];
+  Com_HandleRxPduDeferredType ComIPdu_Aceinna_Angles[1];
+  Com_HandleRxPduDeferredType ComIPdu_Aceinna_Accel[1];
+  Com_HandleRxPduDeferredType ComIPdu_Aceinna_AngleRate[1];
   Com_HandleRxPduDeferredType DIAG_DTCInfo_APA_oCAN02_3abd61be[1];
   Com_HandleRxPduDeferredType DIAG_FuncReq_HSC2_oCAN00_3abd61be[1];
   Com_HandleRxPduDeferredType DIAG_PhysReq_P2P_oCAN00_3abd61be[1];
@@ -4002,6 +4013,9 @@ typedef struct Com_RxDefPduBufferStructSTag
   Com_RxDefPduBufferType APA_SecCH_FrP02_oCAN02_3abd61be[8];
   Com_RxDefPduBufferType APA_SecCH_FrP03_oCAN02_3abd61be[8];
   Com_RxDefPduBufferType APA_SecCH_FrP04_oCAN02_3abd61be[8];
+  Com_RxDefPduBufferType ComIPdu_Aceinna_Angles[8];
+  Com_RxDefPduBufferType ComIPdu_Aceinna_Accel[8];
+  Com_RxDefPduBufferType ComIPdu_Aceinna_AngleRate[8];
   Com_RxDefPduBufferType DIAG_DTCInfo_APA_oCAN02_3abd61be[7];
   Com_RxDefPduBufferType DIAG_FuncReq_HSC2_oCAN00_3abd61be[7];
   Com_RxDefPduBufferType DIAG_PhysReq_P2P_oCAN00_3abd61be[8];
@@ -4077,14 +4091,14 @@ typedef struct Com_RxDefPduBufferStructSTag
 /**   \brief  type to access Com_HandleRxPduDeferred in an index and symbol based style. */
 typedef union Com_HandleRxPduDeferredUTag
 {  /* PRQA S 0750 */  /* MD_CSL_18.4 */
-  Com_HandleRxPduDeferredType raw[66];
+  Com_HandleRxPduDeferredType raw[69];
   Com_HandleRxPduDeferredStructSType str;
 } Com_HandleRxPduDeferredUType;
 
 /**   \brief  type to access Com_RxDefPduBuffer in an index and symbol based style. */
 typedef union Com_RxDefPduBufferUTag
 {  /* PRQA S 0750 */  /* MD_CSL_18.4 */
-  Com_RxDefPduBufferType raw[495];
+  Com_RxDefPduBufferType raw[519];
   Com_RxDefPduBufferStructSType str;
 } Com_RxDefPduBufferUType;
 
@@ -4238,7 +4252,7 @@ extern CONST(Com_IPduGroupInfoType, COM_CONST) Com_IPduGroupInfo[8];
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-extern CONST(Com_IPduGroupInfoOfRxPduInfoIndType, COM_CONST) Com_IPduGroupInfoOfRxPduInfoInd[66];
+extern CONST(Com_IPduGroupInfoOfRxPduInfoIndType, COM_CONST) Com_IPduGroupInfoOfRxPduInfoInd[69];
 #define COM_STOP_SEC_CONST_8BIT
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
@@ -4291,7 +4305,7 @@ extern CONST(Com_IPduGroupInfoOfTxPduInfoIndType, COM_CONST) Com_IPduGroupInfoOf
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-extern CONST(Com_RxAccessInfoType, COM_CONST) Com_RxAccessInfo[283];
+extern CONST(Com_RxAccessInfoType, COM_CONST) Com_RxAccessInfo[291];
 #define COM_STOP_SEC_CONST_UNSPECIFIED
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
@@ -4308,7 +4322,7 @@ extern CONST(Com_RxAccessInfoType, COM_CONST) Com_RxAccessInfo[283];
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-extern CONST(Com_RxAccessInfoIndType, COM_CONST) Com_RxAccessInfoInd[283];
+extern CONST(Com_RxAccessInfoIndType, COM_CONST) Com_RxAccessInfoInd[291];
 #define COM_STOP_SEC_CONST_16BIT
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
@@ -4325,7 +4339,7 @@ extern CONST(Com_RxAccessInfoIndType, COM_CONST) Com_RxAccessInfoInd[283];
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-extern CONST(ComRxPduCalloutType, COM_CONST) Com_RxPduCalloutFuncPtr[5];
+extern CONST(ComRxPduCalloutType, COM_CONST) Com_RxPduCalloutFuncPtr[13];
 #define COM_STOP_SEC_CONST_UNSPECIFIED
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
@@ -4351,7 +4365,7 @@ extern CONST(ComRxPduCalloutType, COM_CONST) Com_RxPduCalloutFuncPtr[5];
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-extern CONST(Com_RxPduInfoType, COM_CONST) Com_RxPduInfo[66];
+extern CONST(Com_RxPduInfoType, COM_CONST) Com_RxPduInfo[69];
 #define COM_STOP_SEC_CONST_UNSPECIFIED
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
@@ -4368,7 +4382,7 @@ extern CONST(Com_RxPduInfoType, COM_CONST) Com_RxPduInfo[66];
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-extern CONST(Com_RxPduInfoIndType, COM_CONST) Com_RxPduInfoInd[66];
+extern CONST(Com_RxPduInfoIndType, COM_CONST) Com_RxPduInfoInd[69];
 #define COM_STOP_SEC_CONST_8BIT
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
@@ -4390,7 +4404,7 @@ extern CONST(Com_RxPduInfoIndType, COM_CONST) Com_RxPduInfoInd[66];
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-extern CONST(Com_RxSigInfoType, COM_CONST) Com_RxSigInfo[283];
+extern CONST(Com_RxSigInfoType, COM_CONST) Com_RxSigInfo[291];
 #define COM_STOP_SEC_CONST_UNSPECIFIED
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
@@ -4870,7 +4884,7 @@ extern VAR(Com_RxIPduGroupStopISRLockCounterType, COM_VAR_NOINIT) Com_RxIPduGrou
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-extern VAR(Com_RxPduGrpActiveType, COM_VAR_NOINIT) Com_RxPduGrpActive[66];
+extern VAR(Com_RxPduGrpActiveType, COM_VAR_NOINIT) Com_RxPduGrpActive[69];
 #define COM_STOP_SEC_VAR_NOINIT_8BIT
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
@@ -4921,7 +4935,7 @@ extern VAR(Com_RxSigBufferSInt16Type, COM_VAR_NOINIT) Com_RxSigBufferSInt16[4];
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-extern VAR(Com_RxSigBufferUInt16Type, COM_VAR_NOINIT) Com_RxSigBufferUInt16[42];
+extern VAR(Com_RxSigBufferUInt16Type, COM_VAR_NOINIT) Com_RxSigBufferUInt16[48];
 #define COM_STOP_SEC_VAR_NOINIT_16BIT
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
@@ -4938,7 +4952,7 @@ extern VAR(Com_RxSigBufferUInt16Type, COM_VAR_NOINIT) Com_RxSigBufferUInt16[42];
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */
 /*lint -restore */
-extern VAR(Com_RxSigBufferUInt32Type, COM_VAR_NOINIT) Com_RxSigBufferUInt32[1];
+extern VAR(Com_RxSigBufferUInt32Type, COM_VAR_NOINIT) Com_RxSigBufferUInt32[3];
 #define COM_STOP_SEC_VAR_NOINIT_32BIT
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_19.1 */

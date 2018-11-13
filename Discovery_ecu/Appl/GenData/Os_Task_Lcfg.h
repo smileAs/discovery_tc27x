@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Task_Lcfg.h
- *   Generation Time: 2018-08-04 14:15:27
+ *   Generation Time: 2018-11-11 09:44:58
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -112,6 +112,9 @@
 
 # define OS_START_SEC_CORE0_CONST_UNSPECIFIED
 # include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+/*! Task configuration data: Core0_OsTask_1ms */
+extern CONST(Os_TaskConfigType, OS_CONST) OsCfg_Task_Core0_OsTask_1ms;
 
 /*! Task configuration data: Default_BSW_Async_Task_Core0 */
 extern CONST(Os_TaskConfigType, OS_CONST) OsCfg_Task_Default_BSW_Async_Task_Core0;

@@ -106,7 +106,7 @@ Contents
 </TR>
 <TR>
 <TD><B>Config</B></TD>
-<TD>discovery_ecu.dpa</TD>
+<TD>discovery_ecu.dpa"</TD>
 </TR>
 <TR>
 <TD><B>ECU Project</B></TD>
@@ -118,6 +118,7 @@ Contents
 <H2><A NAME="refGeneratedFiles"><FONT SIZE=5 FACE="Verdana, Arial, Helvetica">2 Generated Files</FONT></A></H2>
 Rte_BswM.h<br>
 Rte_ComM.h<br>
+Rte_cycle_task.h<br>
 Rte_Dcm.h<br>
 Rte_EcuM.h<br>
 Rte_Os_OsCore_Core0_swc.h<br>
@@ -126,6 +127,7 @@ Rte_Os_OsCore_Core2_swc.h<br>
 Rte_disc_ecu.h<br>
 Rte_BswM_Type.h<br>
 Rte_ComM_Type.h<br>
+Rte_cycle_task_Type.h<br>
 Rte_Dcm_Type.h<br>
 Rte_EcuM_Type.h<br>
 Rte_Os_OsCore_Core0_swc_Type.h<br>
@@ -148,6 +150,7 @@ EcuM_MemMap.h<br>
 Os_OsCore_Core0_swc_MemMap.h<br>
 Os_OsCore_Core1_swc_MemMap.h<br>
 Os_OsCore_Core2_swc_MemMap.h<br>
+cycle_task_MemMap.h<br>
 disc_ecu_MemMap.h<br>
 Rte_Compiler_Cfg.h<br>
 usrostyp.h<br>
@@ -224,6 +227,12 @@ CONST Size: 0 Bytes<br>
 <TD><B>Type</B></TD>
 <TD><B>Schedule</B></TD>
 <TD><B>Priority</B></TD>
+</TR>
+<TR>
+<TD>Core0_OsTask_1ms</TD>
+<TD>Basic</TD>
+<TD>NON</TD>
+<TD>50</TD>
 </TR>
 <TR>
 <TD>Default_BSW_Async_Task_Core0</TD>
@@ -570,6 +579,13 @@ CONST Size: 0 Bytes<br>
 <TD>n/a</TD>
 <TD>n/a</TD>
 <TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>TimingEvent</B> Cyclic 1ms</TD>
+<TD>Core0_Task_1ms</TD>
+<TD>Core0_OsTask_1ms</TD>
+<TD>n/a</TD>
+<TD>Rte_Al_TE_Cycle_Task_1ms_Core0_Task_1ms</TD>
 </TR>
 <TR>
 <TD><B>TimingEvent</B> Cyclic 10ms</TD>

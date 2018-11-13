@@ -419,12 +419,12 @@
       "MaxAtomicMemoryAccess" : "4"
    },
    "SIPDirectories" : [
-      "C:\\Users\\USER\\Desktop\\TC\\9.27\\discovery_tc27x\\"
+      "C:\\backup\\discovery_tc27x - daohang\\"
    ],
    "SourceFileList" : [
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -434,7 +434,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -444,7 +444,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -454,7 +454,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -464,7 +464,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -474,7 +474,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -484,7 +484,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -494,7 +494,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -504,7 +504,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -514,7 +514,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -524,7 +524,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -534,7 +534,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -544,7 +544,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -554,7 +554,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -564,7 +564,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -574,7 +574,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -584,7 +584,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -594,7 +594,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -604,7 +604,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -614,7 +614,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -624,7 +624,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -634,7 +634,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -644,7 +644,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -654,7 +654,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -664,7 +664,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -674,7 +674,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -684,7 +684,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -694,7 +694,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -704,7 +704,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -714,7 +714,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -724,7 +724,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -734,7 +734,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -744,7 +744,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -754,7 +754,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -764,7 +764,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -774,7 +774,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -784,7 +784,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -794,7 +794,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -804,7 +804,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -814,7 +814,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -824,7 +824,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -834,7 +834,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -844,7 +844,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -854,7 +854,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -864,7 +864,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -874,7 +874,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -884,7 +884,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -894,7 +894,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -904,7 +904,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -914,7 +914,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -924,7 +924,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -934,7 +934,27 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/cycle_task"
+         ],
+         "SourceFile" : "Source/cycle_task.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_cycle_task"
+         ],
+         "SourceFile" : "Source/TSC_cycle_task.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -944,7 +964,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -954,7 +974,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -964,7 +984,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -974,7 +994,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -984,7 +1004,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -994,7 +1014,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -1004,7 +1024,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -1014,7 +1034,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -1024,7 +1044,7 @@
       },
       {
          "IncludeDirectoryList" : [
-            "C:/Users/USER/Desktop/TC/9.27/discovery_tc27x/Misc/RteAnalyzer/include",
+            "C:/backup/discovery_tc27x - daohang/Misc/RteAnalyzer/include",
             "Source",
             "..",
             "../Components",
@@ -1034,6 +1054,12 @@
       }
    ],
    "TaskList" : [
+      {
+         "OsApplication" : "Untrusted_BSW_Core0",
+         "Preemptive" : "0",
+         "Priority" : "50",
+         "TaskName" : "Core0_OsTask_1ms"
+      },
       {
          "OsApplication" : "Untrusted_BSW_Core0",
          "Preemptive" : "0",
@@ -1089,5 +1115,5 @@
          "TaskName" : "IdleTask_OsCore_Core2"
       }
    ],
-   "TemplateDataBaseDirectory" : "C:\\Users\\USER\\Desktop\\TC\\9.27\\discovery_tc27x\\Generators\\Rte"
+   "TemplateDataBaseDirectory" : "C:\\backup\\discovery_tc27x - daohang\\Generators\\Rte"
 }

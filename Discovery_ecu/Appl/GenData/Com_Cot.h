@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Com_Cot.h
- *   Generation Time: 2018-09-27 17:21:16
+ *   Generation Time: 2018-11-06 14:11:48
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -99,9 +99,17 @@ FUNC(boolean, COM_APPL_CODE) MessageTX_P2P_HSC2_FrP00(PduIdType PduId, P2VAR(Pdu
 /* Configurable interface RxPduCallout */
 FUNC(boolean, COM_APPL_CODE) ComIPduCallout_Read_LRU1_oLIN00_3abd61be(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr);
 FUNC(boolean, COM_APPL_CODE) ComIPduCallout_Read_SRU3_oLIN00_3abd61be(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr);
+FUNC(boolean, COM_APPL_CODE) MessageRX_0x194_HSC2_ECM_FrP04(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr);
+FUNC(boolean, COM_APPL_CODE) MessageRX_0x1E5_SAS_HSC2_FrP00(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr);
+FUNC(boolean, COM_APPL_CODE) MessageRX_0x1E9_SCS_HSC2_FrP05(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr);
+FUNC(boolean, COM_APPL_CODE) MessageRX_Aceinna_Accel_0x08F02D80(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr);
 FUNC(boolean, COM_APPL_CODE) MessageRX_GW_HSC2_FrP13(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr);
 FUNC(boolean, COM_APPL_CODE) MessageRX_GW_HSC2_HCU_FrP13(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr);
-FUNC(boolean, COM_APPL_CODE) MessageRX_SCS_HSC2_FrP05(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr);
+FUNC(boolean, COM_APPL_CODE) MessageRx_0x185_SCS_HSC2_FrP02(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr);
+FUNC(boolean, COM_APPL_CODE) MessageRx_0x348_SCS_HSC2_FrP11(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr);
+FUNC(boolean, COM_APPL_CODE) MessageRx_0x34A_SCS_HSC2_FrP12(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr);
+FUNC(boolean, COM_APPL_CODE) MessageRx_Aceinna_AngleRate_0x0CF02A80(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr);
+FUNC(boolean, COM_APPL_CODE) MessageRx_Aceinna_Angles_0x0CF02980(PduIdType PduId, P2CONST(PduInfoType, AUTOMATIC, COM_APPL_DATA) PduInfoPtr);
 
 
 

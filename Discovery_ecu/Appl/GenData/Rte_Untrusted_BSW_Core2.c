@@ -9,7 +9,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  Rte_Untrusted_BSW_Core2.c
- *        Config:  discovery_ecu.dpa
+ *        Config:  discovery_ecu.dpa"
  *   ECU-Project:  P2P
  *
  *     Generator:  MICROSAR RTE Generator Version 4.14.0
@@ -37,6 +37,7 @@
 #include "Rte_Os_OsCore_Core0_swc.h"
 #include "Rte_Os_OsCore_Core1_swc.h"
 #include "Rte_Os_OsCore_Core2_swc.h"
+#include "Rte_cycle_task.h"
 #include "Rte_disc_ecu.h"
 #include "SchM_BswM.h"
 #include "SchM_Can.h"
@@ -171,6 +172,7 @@
 #define RTE_CONST_MSEC_SystemTimer_Core0_0 (0UL)
 #define RTE_CONST_MSEC_SystemTimer_Core1_0 (0UL)
 #define RTE_CONST_MSEC_SystemTimer_Core2_0 (0UL)
+#define RTE_CONST_MSEC_SystemTimer_Core0_1 (80000UL)
 #define RTE_CONST_MSEC_SystemTimer_Core0_10 (800000UL)
 #define RTE_CONST_MSEC_SystemTimer_Core1_10 (400000UL)
 #define RTE_CONST_MSEC_SystemTimer_Core2_10 (400000UL)

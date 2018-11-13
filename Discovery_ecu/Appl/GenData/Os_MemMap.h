@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_MemMap.h
- *   Generation Time: 2018-09-29 15:39:32
+ *   Generation Time: 2018-11-11 09:44:57
  *           Project: discovery_ecu - Version 1.0
  *          Delivery: CBD1800319_D00
  *      Tool Version: DaVinci Configurator (beta) 5.15.11 SP1
@@ -300,6 +300,34 @@
 # undef OS_CanIsr_2_CODE_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
 # pragma section
 # undef OS_STOP_SEC_CanIsr_2_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_Core0_OsTask_1ms_CODE /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_Core0_OsTask_1ms_CODE_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma section ".text.OS_Core0_OsTask_1ms_CODE" ax
+# undef OS_START_SEC_Core0_OsTask_1ms_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_Core0_OsTask_1ms_CODE /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_Core0_OsTask_1ms_CODE_OPEN
+#  error Section OS_Core0_OsTask_1ms_CODE is currently not opened and so cannot be closed.
+# endif
+# undef OS_Core0_OsTask_1ms_CODE_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma section
+# undef OS_STOP_SEC_Core0_OsTask_1ms_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
 # undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
 #endif
 

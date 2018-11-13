@@ -2301,6 +2301,15 @@
                                   <SHORT-NAME>Dcm</SHORT-NAME>
                                   <TYPE-TREF DEST="SERVICE-SW-COMPONENT-TYPE">/MICROSAR/Dcm_swc/ComponentTypes/Dcm</TYPE-TREF>
                                 </SW-COMPONENT-PROTOTYPE>
+                                <SW-COMPONENT-PROTOTYPE UUID="a77d5a28-99b1-4cb8-8154-e54c0ab7df00">
+                                  <SHORT-NAME>Cycle_Task_1ms</SHORT-NAME>
+                                  <ANNOTATIONS>
+                                    <ANNOTATION>
+                                      <ANNOTATION-ORIGIN>DV:Flattener</ANNOTATION-ORIGIN>
+                                    </ANNOTATION>
+                                  </ANNOTATIONS>
+                                  <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/cycle_task</TYPE-TREF>
+                                </SW-COMPONENT-PROTOTYPE>
                               </COMPONENTS>
                               <CONNECTORS>
                                 <ASSEMBLY-SW-CONNECTOR UUID="d67cf062-b684-42c0-8a78-9a8896faec24">
@@ -2365,6 +2374,7 @@
                                     <SD GID="64b44c9e-d4bd-479d-944b-521580277cb3">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE</SD>
                                     <SD GID="93c70d17-4ecf-48f9-a2b8-668c6ae07f94">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/BswM</SD>
                                     <SD GID="4bf28023-c36c-406e-99d5-e8718d62b4a4">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/ComM</SD>
+                                    <SD GID="a77d5a28-99b1-4cb8-8154-e54c0ab7df00">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/Cycle_Task_1ms</SD>
                                     <SD GID="25f22c46-746c-477a-ad05-57cc7d851cf1">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/Dcm</SD>
                                     <SD GID="a0450ca5-9e92-4cd5-b589-d99e3b2a2ef5">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/EcuM</SD>
                                     <SD GID="451a6bcd-783a-41db-b136-be913ff923f5">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/Os_OsCore_Core0_swc</SD>
@@ -2372,8 +2382,12 @@
                                     <SD GID="1a23adec-b4c0-4445-a6f5-1e30dc9f7822">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/Os_OsCore_Core2_swc</SD>
                                     <SD GID="ebe43691-4b16-458d-aceb-c02f016889ea">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/disc_ecu</SD>
                                     <SD GID="40753325-08f3-4890-b4f7-8c72e2ca4cb4">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/FLATMAP</SD>
+                                    <SD GID="6c5d492f-e4cf-4eb1-b21f-14eb6bb868a2">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/FLATMAP/Cycle_Task_1ms</SD>
                                     <SD GID="43d560a5-377a-4c29-97dc-3d7035569a1f">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/SYSTEM</SD>
                                     <SD GID="f22fc294-9428-4681-8faf-2480535826cd">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/SYSTEM/COMPOSITIONTYPE</SD>
+                                    <SD GID="97D9E94F-A9A1-47A2-A55E-3CECB81C3D1F">/ComponentTypes/cycle_task</SD>
+                                    <SD GID="ABFC2045-A3F4-4D5E-BDAE-C20F3C1F9D8D">/ComponentTypes/cycle_task/cycle_task_InternalBehavior/TMT_Core0_Task_1ms</SD>
+                                    <SD GID="E69F5892-6CF6-4BE7-8BFD-19219FCAC740">/ComponentTypes/cycle_task_Implementation</SD>
                                     <SD GID="36A1A150-A215-4B2F-8303-DEE7C3674026">/ComponentTypes/disc_ecu</SD>
                                     <SD GID="2AEDDE32-8CD8-4C5A-9013-BD08FAA1B62F">/ComponentTypes/disc_ecu/disc_ecu_InternalBehavior/TMT_10ms_disc_ecu_main</SD>
                                     <SD GID="95EEC4E2-2D92-49C1-B3A5-E10E1A2D6B25">/ComponentTypes/disc_ecu/disc_ecu_InternalBehavior/TMT_Core0_Task_100ms</SD>
@@ -2381,6 +2395,7 @@
                                     <SD GID="6A9CE206-E0C5-4040-90E1-66B2F5F3A3E8">/ComponentTypes/disc_ecu/disc_ecu_InternalBehavior/TMT_Core0_Task_50ms</SD>
                                     <SD GID="3499D0F5-902D-4BA4-8EA0-48CFBFF65177">/ComponentTypes/disc_ecu_Implementation</SD>
                                     <SD GID="D51FD86A-D0F1-4F5F-9564-56C43CB6FBB4">/ECUCompositionTypes/ECU_Composition</SD>
+                                    <SD GID="BDF8F8B1-3780-4FF8-8089-5F0F42861C48">/ECUCompositionTypes/ECU_Composition/Cycle_Task_1ms</SD>
                                     <SD GID="5262803D-DD5B-48B9-AED9-97AAA574BA0A">/ECUCompositionTypes/ECU_Composition/disc_ecu</SD>
                                     <SD GID="df949289-dc96-41fe-9f32-3ec8f8e8e192">/MICROSAR/BswM_ib_bswmd/BswModuleDescriptions/BswM/BswMBehavior</SD>
                                     <SD GID="d1f46e8c-a8a1-498f-b6b8-00e07af76a9f">/MICROSAR/BswM_ib_bswmd/BswModuleDescriptions/BswM/BswMBehavior/BSWM_EXCLUSIVE_AREA_0</SD>
