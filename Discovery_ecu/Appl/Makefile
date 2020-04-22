@@ -60,7 +60,7 @@ include Makefile.static
 #       COMPILER_LIB  = $(COMPILER_BASE)\lib
 #------------------------------------------------------------------------------
 #COMPILER_BASE = D:\uti\HIGHTEC\TRICORE\V4.6.3.0\toolchains\tricore\v4.6.3.0
-COMPILER_BASE = C:\HIGHTEC\toolchains\tricore\v4.6.5.0
+COMPILER_BASE = C:\HIGHTEC\toolchains\tricore\v4.6.6.1
 COMPILER_BIN  = $(COMPILER_BASE)\bin
 COMPILER_INC  = $(COMPILER_BASE)\tricore\include \
                 $(COMPILER_BASE)\tricore\include\machine
